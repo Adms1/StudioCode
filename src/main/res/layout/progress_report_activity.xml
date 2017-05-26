@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+
+    <include
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/d2_actionbar" />
+
+    <RelativeLayout
+        android:id="@+id/rel_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/app_bg" >
+
+        <RelativeLayout
+            android:id="@+id/rel_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="My Students"
+                android:textColor="@color/black" />
+            <!--android:text="@string/progresreportlable"-->
+            <!--<LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtLabel"
+                android:layout_marginTop="5dp"
+                android:weightSum="6" >
+
+                <TextView
+                    android:id="@+id/txtFirstName"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:text="First Name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtLastname"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="3"
+                    android:text="Last Name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtLevels"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>-->
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_below="@+id/txtLabel"
+                android:divider="@null"
+                android:dividerHeight="8dp">
+
+            </ListView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtNoRecord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/norecord"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

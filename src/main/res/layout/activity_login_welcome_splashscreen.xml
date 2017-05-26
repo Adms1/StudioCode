@@ -1,0 +1,192 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E4E4E4"
+    android:orientation="vertical"
+    tools:context=".Login_welcome_splashscreen">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/d2_login_welcome_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/actionBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:scrollbars="none"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/app_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/llSwimMeetInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionBar"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <com.meg7.widget.CircleImageView
+            android:id="@+id/inst_DP"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_change"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/tv_fsn_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/welcome_logo" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/displayheaderTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|left"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="4dp"
+        android:gravity="left"
+        android:padding="6dp"
+        android:text="Welcome to the Waterworks Select Beta!"
+        android:textAlignment="center"
+        android:textColor="@color/design_change_d2"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/displaymsgTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|left"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="4dp"
+        android:gravity="left"
+        android:padding="6dp"
+        android:text="hi"
+        android:textAlignment="center"
+        android:textColor="@color/design_change_d2"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <LinearLayout
+        android:id="@+id/start_redBorder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/displaymsgTxt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|left"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            android:padding="6dp"
+            android:text="Please note:"
+            android:textAlignment="center"
+            android:textColor="@color/design_change_d2"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/displaymsgTxt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|left"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            android:padding="6dp"
+            android:text=""
+            android:textColor="@color/design_change_d2"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+        <!--</LinearLayout>-->
+
+        <TextView
+            android:id="@+id/displaymsgTxt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|left"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            android:padding="6dp"
+            android:text="If you encounter any problems, please go to Help and Support -> “Report a bug” on the main menu and let us know."
+            android:textAlignment="center"
+            android:textColor="@color/design_change_d2"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/displaymsgTxt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|left"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="4dp"
+        android:gravity="left"
+        android:padding="6dp"
+        android:text="Thank you!"
+        android:textAlignment="center"
+        android:textColor="@color/design_change_d2"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/btn_login_welcome_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/displaymsgTxt4"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:background="@color/design_change_d2"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:stateListAnimator="@anim/lift_on_touch"
+        android:text="Yes, I understand"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+</LinearLayout>
+</ScrollView>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
