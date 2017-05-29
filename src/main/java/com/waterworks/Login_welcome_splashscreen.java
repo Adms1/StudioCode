@@ -19,7 +19,7 @@ import com.waterworks.utils.AppConfiguration;
 import com.waterworks.utils.Utility;
 
 /**
- * Created by AndroidPC on 2/6/2017.
+ * Created by Megha on 2/6/2017.
  */
 
 public class Login_welcome_splashscreen extends AppCompatActivity {
