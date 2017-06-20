@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/lay_stdnt_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chkSearchAllDaysAndTime"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/ll_row1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <Button
+                    android:visibility="invisible"
+                    android:layout_width="0dip"
+                    android:layout_height="30dp"
+                    android:layout_weight="0.4"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="10dp"
+                    android:text="Sun"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:visibility="invisible"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="8:00-11:40 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:visibility="invisible"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="12:00-3:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkSearchAllDaysAndTime"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Select All"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- MONDAY -->
+
+            <LinearLayout
+                android:id="@+id/ll_row2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <Button
+                    android:id="@+id/chkMonday"
+                    android:layout_width="0dip"
+                    android:layout_height="33dp"
+                    android:layout_weight="0.4"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Mon"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:id="@+id/chkMondayTime1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="8:00-11:40 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkMondayTime2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="12:00-3:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkMondayTime3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="4:00-7:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- TuesDay -->
+
+            <LinearLayout
+                android:id="@+id/ll_row3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <Button
+                    android:id="@+id/chkTuesDay"
+                    android:layout_width="0dip"
+                    android:layout_height="33dp"
+                    android:layout_weight="0.4"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Tue"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:id="@+id/chkTuesDayTime1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="8:00-11:40 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkTuesDayTime2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="12:00-3:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkTuesDayTime3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="4:00-7:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Wednesday -->
+
+            <LinearLayout
+                android:id="@+id/ll_row4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <Button
+                    android:id="@+id/chkWednesday"
+                    android:layout_width="0dip"
+                    android:layout_height="33dp"
+                    android:layout_weight="0.4"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Wed"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:id="@+id/chkWednesdayTime1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="8:00-11:40 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkWednesdayTime2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="12:00-3:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkWednesdayTime3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="4:00-7:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Thursday -->
+
+            <LinearLayout
+                android:id="@+id/ll_row5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <Button
+                    android:id="@+id/chkThursday"
+                    android:layout_width="0dip"
+                    android:layout_height="33dp"
+                    android:layout_weight="0.4"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Thu"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:id="@+id/chkThursdayTime1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="8:00-11:40 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkThursdayTime2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="12:00-3:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkThursdayTime3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="4:00-7:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Friday -->
+
+            <LinearLayout
+                android:id="@+id/ll_row6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <Button
+                    android:id="@+id/chkFriday"
+                    android:layout_width="0dip"
+                    android:layout_height="33dp"
+                    android:layout_weight="0.4"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Fri"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:id="@+id/chkFridayTime1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="8:00-11:40 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkFridayTime2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="12:00-3:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkFridayTime3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="4:00-7:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Saturday -->
+
+            <LinearLayout
+                android:id="@+id/ll_row7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <Button
+                    android:id="@+id/chkSaturday"
+                    android:layout_width="0dip"
+                    android:layout_height="33dp"
+                    android:layout_weight="0.4"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Sat"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:id="@+id/chkSaturdayTime1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="8:00-11:40 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkSaturdayTime2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="12:00-3:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkSaturdayTime3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="4:00-7:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- SUNDAY -->
+
+            <LinearLayout
+                android:id="@+id/ll_row1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="4" >
+
+                <Button
+                    android:id="@+id/chkSunday"
+                    android:layout_width="0dip"
+                    android:layout_height="33dp"
+                    android:layout_weight="0.4"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="10dp"
+                    android:text="Sun"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:id="@+id/chkSundayTime1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="8:00-11:40 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkSundayTime2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="12:00-3:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/chkSundayTime3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/custom_checkbox_transition"
+                    android:button="@drawable/null_selector"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="4:00-7:40 PM"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

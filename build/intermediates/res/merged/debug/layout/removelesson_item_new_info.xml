@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_rc_item_lt1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="Lesson Type:"
+                    android:textColor="@color/app_text" />
+
+                <TextView
+                    android:id="@+id/tv_rc_item_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/ic_today"
+                    android:gravity="top"
+                    android:text="As Of:29/09/2015"
+                    android:textColor="@color/app_text"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_rc_item_date_new1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="top"
+                    android:text="Remove From Schedule As Ofb"
+                    android:textColor="@color/app_text" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:stateListAnimator="@anim/lift_on_touch"
+        card_view:cardElevation="2sp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:id="@+id/main_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/cancel_background_transition"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/date_selection"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="18"
+                    android:src="@drawable/ic_today" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_rc_item_st"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Time"
+                android:textColor="@color/design_change_d2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="95dp"
+                android:layout_toEndOf="@+id/linearLayout"
+                android:layout_toRightOf="@+id/linearLayout"
+                android:text="-"
+                android:textColor="@color/design_change_d2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_rc_item_student"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toEndOf="@+id/tv_rc_item_day"
+                android:layout_toRightOf="@+id/tv_rc_item_day"
+                android:text="Semi-Private"
+                android:textColor="@color/design_change_d2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.meg7.widget.CircleImageView
+                android:id="@+id/inst_DP"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:checked="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo_change"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_rc_item_instructor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/inst_DP"
+                android:layout_alignStart="@+id/inst_DP"
+                android:layout_below="@+id/inst_DP"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+
+                android:paddingBottom="0dp"
+                android:text="Instructor"
+                android:textColor="#434343"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_rc_item_date_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Date"
+                    android:textColor="#434343"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_rc_item_day"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/linearLayout2"
+                android:layout_marginLeft="15dp"
+                android:layout_toEndOf="@+id/linearLayout2"
+                android:layout_toRightOf="@+id/linearLayout2"
+                android:text="Day"
+                android:textColor="@color/app_text"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tv_rc_item_lt12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/linearLayout2"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/linearLayout2"
+                android:layout_toRightOf="@+id/linearLayout2"
+                android:text="-"
+                android:textColor="#434343"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tv_rc_item_lt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/linearLayout2"
+                android:layout_marginLeft="60dp"
+                android:layout_toEndOf="@+id/linearLayout2"
+                android:layout_toRightOf="@+id/linearLayout2"
+                android:text="Lessontype"
+                android:textColor="#434343"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

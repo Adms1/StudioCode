@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\ob_slide_up.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\ob_slide_up.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\slide_in_left.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\slide_in_left.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\zoom_in.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\zoom_in.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\slide_in_right.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\slide_in_right.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\zoom_out.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\zoom_out.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\ob_slide_down.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\ob_slide_down.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\slide_out_left.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\slide_out_left.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\slide_out_right.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\slide_out_right.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\animator\\slide_right_out.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\animator\\slide_right_out.xml"
+    }
+]

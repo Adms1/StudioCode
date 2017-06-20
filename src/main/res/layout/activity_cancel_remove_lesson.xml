@@ -1,0 +1,211 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CancelRemoveLessonActivityInfo" >
+
+    <include
+        android:id="@+id/cancel_frag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_top" />
+
+    <TextView
+        android:id="@+id/tv_cncl_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cancel_frag"
+        android:layout_marginTop="10dp"
+        android:background="@color/fragment_title_bg"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="Cancel Lessons"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/cancel_frag"
+        android:background="@color/textbox_color" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/cancel_frag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/app_bg"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="Following classes have been released from your schedule."
+            android:textColor="@color/textbox_color"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/title_block"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notice"
+            android:orientation="vertical"
+            android:padding="0dp" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:background="@color/textbox_color" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="120" >
+
+                <TextView
+                    android:id="@+id/st_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:maxLines="1"
+                    android:text="Student"
+                    android:textColor="@color/textbox_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/ls_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="15"
+                    android:maxLines="2"
+                    android:text="Lesson Type"
+                    android:textColor="@color/textbox_color"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/inst_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="30"
+                    android:maxLines="1"
+                    android:text="Instructor"
+                    android:textColor="@color/textbox_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/day"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:maxLines="1"
+                    android:text="Day"
+                    android:textColor="@color/textbox_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/date_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="25"
+                    android:maxLines="1"
+                    android:text="Date/Time"
+                    android:textColor="@color/textbox_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:maxLines="1"
+                    android:text="Date"
+                    android:textColor="@color/textbox_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:background="@color/textbox_color" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_cr_list"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/btn_cr_save"
+            android:layout_below="@+id/title_block"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:scrollbars="none"
+            android:background="@drawable/lv_selector"
+            android:divider="@color/textbox_color"
+            android:dividerHeight="1dp" />
+
+        <TextView
+            android:id="@+id/tv_cr_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_cr_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@color/text_blue"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:text="Release Classes"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_notice_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/chb_cr_confirm"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Lessons on this date and dates going forward will be removed from schedule."
+            android:textColor="@color/red"
+            android:textSize="12dp"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/chb_cr_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_cr_save"
+            android:layout_margin="10dp"
+            android:button="@drawable/customdrawablecheckbox"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="You will be PERMANENTLY removed from the day and time you selected. If you wish only to cancel one class please click the back button. Once you remove a time and day then this time slot will be unavailable for you to schedule in the next 30 days. "
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

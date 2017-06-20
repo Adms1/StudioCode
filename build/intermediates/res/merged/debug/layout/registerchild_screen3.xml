@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/d2_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/rel_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/header"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:text="@string/registerachild"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@color/app_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instructinfo"
+                android:textColor="@color/black"/>
+
+            <RadioGroup
+                android:id="@+id/str1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/str1Yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/customdrawableradionbuttons"
+                    android:padding="10dp"
+                    android:text="Yes"
+                    android:textColor="@color/black"/>
+
+                <RadioButton
+                    android:id="@+id/str1No"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/customdrawableradionbuttons"
+                    android:padding="10dp"
+                    android:text="No"
+                    android:textColor="@color/black"/>
+            </RadioGroup>
+
+            <!-- Medicial Info -->
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/medicalinfo"
+                android:textColor="@color/black"/>
+
+            <RadioGroup
+                android:id="@+id/rgpmedicalinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/str2Yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/customdrawableradionbuttons"
+                    android:padding="10dp"
+                    android:text="Yes"
+                    android:textColor="@color/black"/>
+
+                <RadioButton
+                    android:id="@+id/str2No"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/customdrawableradionbuttons"
+                    android:padding="10dp"
+                    android:text="No"
+                    android:textColor="@color/black"/>
+            </RadioGroup>
+
+            <!-- Visible TextView  and inputbox for description -->
+
+            <LinearLayout
+                android:id="@+id/ll_allergiesOrmedical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txtAllergiesOrmedicalInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/allergiesOrmedicalInfo"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/edtAllergiesOrmedicalInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/input_box"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:text=""/>
+            </LinearLayout>
+
+            <!-- Medicial Info -->
+
+            <TextView
+                android:id="@+id/txtAdditionalInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/additionalinfo"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:id="@+id/ll_additional_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/txtHideInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hideinfo"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txtinfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txtinfo"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/edtDescriptionInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gray_border"
+                    android:maxLength="30"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/txtOtherinfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Please best describe your child on the following "
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <!-- My child is strong-willed -->
+
+                <TextView
+                    android:id="@+id/txtStrongWilled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="My child is strong-willed"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <RadioGroup
+                    android:id="@+id/rgpStrongWilled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:checked="true"
+                        android:padding="5dp"
+                        android:text="Strongly  Agree"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:padding="5dp"
+                        android:text="Somewhat  Agree"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:padding="5dp"
+                        android:text="Not  Agree"
+                        android:textColor="@color/black"/>
+                </RadioGroup>
+
+                <!-- My child is sensitive -->
+
+                <TextView
+                    android:id="@+id/txtsensitive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="My child is sensitive"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <RadioGroup
+                    android:id="@+id/rgpMysensitive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radio4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:checked="true"
+                        android:padding="5dp"
+                        android:text="Strongly  Agree"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:padding="5dp"
+                        android:text="Somewhat  Agree"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:padding="5dp"
+                        android:text="Not  Agree"
+                        android:textColor="@color/black"/>
+                </RadioGroup>
+
+                <!-- My child is Outgoing -->
+
+                <TextView
+                    android:id="@+id/txtMyOutgoing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="My child is Outgoing"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <RadioGroup
+                    android:id="@+id/rgpMyOutgoing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radio7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:checked="true"
+                        android:padding="5dp"
+                        android:text="Strongly  Agree"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:padding="5dp"
+                        android:text="Somewhat  Agree"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/customdrawableradionbuttons"
+                        android:padding="5dp"
+                        android:text="Not  Agree"
+                        android:textColor="@color/black"/>
+                </RadioGroup>
+
+                <!-- Check all that apply -->
+
+                <TextView
+                    android:id="@+id/txtCheckAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Check all that apply"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/chk1_child_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/customdrawablecheckbox"/>
+
+                    <TextView
+                        android:id="@+id/txt1_child_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/chk1_child_register"
+                        android:text="@string/chk1_value"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/chk2_child_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/customdrawablecheckbox"/>
+
+                    <TextView
+                        android:id="@+id/txt2_child_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/chk2_child_register"
+                        android:text="@string/chk2_value"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/chk3_child_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/customdrawablecheckbox"/>
+
+                    <TextView
+                        android:id="@+id/txt3_child_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/chk3_child_register"
+                        android:text="@string/chk3_value"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtbottominfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txtbottominfo"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/edtSwimGoalinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gray_border"
+                    android:maxLength="70"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:text=""/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btnSaveAddAnother"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/design_change_d2"
+                    android:padding="10dp"
+                    android:text="Save &amp; Add Another Child"
+                    android:textColor="@color/white"/>
+
+                <Button
+                    android:id="@+id/btnSaveAndProceed"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@color/design_change_d2"
+                    android:padding="10dp"
+                    android:text="Save &amp; Proceed"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

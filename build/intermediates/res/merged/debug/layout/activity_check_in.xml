@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include
+        android:id="@+id/header"
+        layout="@layout/d2_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please select an activity..."
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnSwimLesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Swim Lesson"
+            android:background="@drawable/button_border"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/btnSwimTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Swim Team"
+            android:background="@drawable/button_border"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/btnLapSwim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lap Swim"
+            android:background="@drawable/button_border"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/btnMonthlyLapSwim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monthly Lap Swim"
+            android:background="@drawable/button_border"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnWaterAerobics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Water Aerobics"
+            android:background="@drawable/button_border"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/btnPhysicalTherapy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Physical Therapy"
+            android:background="@drawable/button_border"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

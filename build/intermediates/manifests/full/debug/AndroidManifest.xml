@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name=".AppConfiguration"
+    package="com.waterworks"
+    android:versionCode="172"
+    android:versionName="2.6.7.3" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <permission
+        android:name="com.waterworks.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.waterworks.permission.MAPS_RECEIVE" />
+
+    <!-- android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" -->
+    <!-- tools:replace="android:icon,android:theme,android:label" -->
+    <application
+        android:name="com.waterworks.ClientApp"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.waterworks.SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:host="www.waterworksswimonline.com"
+                    android:pathPrefix="/login.aspx"
+                    android:scheme="https" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.waterworks.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.DashBoardActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.RegisterActivity1"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.RegisterActivity2"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.RegisterActivity3"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ChangePasswordActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.EmailPreferencesActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.WaterAerobicsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.AttenadnceCodesActivity"
+            android:label="@string/title_activity_attenadnce_codes"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.SwimCampsRegister1Acitivity"
+            android:label="@string/title_activity_attenadnce_codes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.SwimCampsRegister2Activity"
+            android:label="@string/title_activity_attenadnce_codes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.SwimCampRegister3Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.RequestShadowingActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.RegisterChildScreen1Activity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.RegisterChildScreen2Activity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.RegisterChildScreen3Activity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.DetailViewScheduleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.DetailCancelLessonActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.SwimLessonsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.SwimCompititionRegisterAcitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.SwimCompititionUpcomingEventsAcitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.SwimCompititionTrophyRoomAcitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.SwimcompititionRegisterStep2Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.SwimcompititionRegisterStep3Activity"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.Unused.SwimCompitition2Acitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.Unused.SwimCompitition3Acitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.Unused.SwimCompitition4Acitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.Unused.SwimCompitition5Acitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.Unused.SwimCompititionConfirmationPageAcitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ViewCartActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.waterworks.LevelCalculatorActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ViewStudentsListActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ViewCertificateActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ProgressReportActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ProgressReportDetailsActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ViewPaymentHistoryListActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ViewPaymentHistoryListNewActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.RibbenCountActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.RibbenCountDetailsActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.FeedbackActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.HelpCenterActivity"
+            android:label="@string/title_activity_request_shadowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ViewPriceSheetActivity"
+            android:label="@string/title_activity_view_price_sheet"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ViewHoldsActivity"
+            android:label="@string/title_activity_view_holds"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.ViewWaitlistActivity"
+            android:label="@string/title_activity_view_waitlist"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.TransferMakeUpActivity"
+            android:label="@string/title_activity_tansfer_make_up"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.CancelRemoveLessonActivity"
+            android:label="@string/title_activity_cancel_remove_lesson"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.PastDueBalActivity"
+            android:label="@string/title_activity_past_due_bal"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.LapSwimsActivity"
+            android:label="@string/title_activity_lap_swims"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.LapSwimsSessionActivity"
+            android:label="@string/title_activity_lap_swims_session"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.LapSwimsMonthlyActivity"
+            android:label="@string/title_activity_lap_swims_monthly"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.LapSwimsDiscountActivity"
+            android:label="@string/title_activity_lap_swims_discount"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.FamilySwimNightActivity"
+            android:label="@string/title_activity_family_swim_night"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.FamilySwimNightActivity_Register"
+            android:label="@string/title_activity_family_swim_night_register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.CheckIn2Activity"
+            android:label="@string/title_activity_check_in2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.SwimTeamActivity"
+            android:label="@string/title_activity_swim_team"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.DivesAndTurnsRegi1Activity"
+            android:label="@string/title_activity_dives_and_turns_regi1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.DivesAndTurnsRegi2Activity"
+            android:label="@string/title_activity_dive_and_turns_regi2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.DivesAndTurnsRegi3Activity"
+            android:label="@string/title_activity_dives_and_turns_regi3"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.NewTransferMakeUpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.waterworks.TransferLessonActivity"
+            android:label="@string/title_activity_transfer_lesson" />
+        <activity
+            android:name="com.waterworks.TransferSiteActivity"
+            android:label="@string/title_activity_transfer_site" />
+        <activity
+            android:name="com.waterworks.TransferSemiToPrivateActivity"
+            android:label="@string/title_activity_transfer_semi_to_private" />
+        <activity
+            android:name="com.waterworks.MainActivity"
+            android:label="@string/title_activity_main" >
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name="com.waterworks.TodaysScheduleInstructorActivity"
+            android:label="@string/title_activity_todays_schedule_instructor"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.LegalDoc_Check_FamilyDoc"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.waterworks.ReceivePayment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.Info_Help"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ReceivePaymentConfirm"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.CancelRemoveLessonActivityInfo"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- android:theme="@android:style/Theme.Light.NoTitleBar" -->
+        <activity
+            android:name="com.waterworks.CancelSurvey"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.Unused.SwimCompetitionActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.UpcomingDivesAndTurns"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.GetFamilySwimNights"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeRegistration"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeActivityRegister"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeActivityRegister1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeActivityRegister2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeActivityRegister3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeMeritRegister"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeMeritRegister1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeMeritRegister2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeMeritRegister3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeGirlsRegister"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeGirlsRegister1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeGirlsRegister2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ScoutBadgeGirlsRegister3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.JuniorLifeGuard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.JuniorLifeGuardRegister1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.JuniorLifeGuardRegister2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.JuniorLifeGuardRegister3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.WaterPolo"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.WaterPoloRegister1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.WaterPoloRegister2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.WaterPoloRegister3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.SchedulingMain"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- as -->
+        <activity
+            android:name="com.waterworks.sheduling.ScheduleLessonFragement"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ScheduleLessonFragement2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ScheduleLessonFragement3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ScheduleLessonFragement4"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ScheduleLessonFragement5"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ScheduleLessonFragement6"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ScheduleLessonFragement7"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ScheduleMakeupFragment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.WaitListFragment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.SeeMoreUpcomingLessons"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreSwimLession"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreSwimLession2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreRetailStore"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreRetailStoreProductDetail"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreRetailStoreProductList"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ByMoreOtherPrograms"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ByMoreMyCart"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreSelectPaymentMethod"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreAddNewPaymentMethod"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreOrderSummary"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.BuyMoreThankYou"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.d2_MyProfile"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ChangeEmailAddress2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.d2_ChangePassword"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.ManageProfile"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.sheduling.ShedulingFilter"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.ManageStudents"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.EditStudent"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.AddStudent"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.AddStudent2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.CancelLessonFragment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.SendUsMessage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.ReportBug"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.PrivacyPolicy"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.TermsOfUse"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.HelpAndSupportFragment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.Locations"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.AddLocation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.LocationName"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.manageProfile.LocationMap"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.SwimcompititionRegisterStep4Activity"
+            android:label="@string/title_activity_swimcompitition_register_step4"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.SwimcompititionRegisterStep5Activity"
+            android:label="@string/title_activity_swimcompitition_register_step5"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.SwimcompititionRegisterStep6Activity"
+            android:label="@string/title_activity_swimcompitition_register_step4"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.Unused.SwimcompititionRegisterStep3_listActivity"
+            android:label="@string/title_activity_swimcompitition_register_step4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.waterworks.Unused.SwimcompititionRegisterStep3_list3_Activity"
+            android:label="@string/title_activity_swimcompitition_register_step4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.waterworks.Unused.SwimcompititionRegisterStep4_listActivity"
+            android:label="@string/title_activity_swimcompitition_register_step4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.waterworks.ActivityViewAllLevels"
+            android:label="@string/title_activity_swimcompitition_register_step4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.waterworks.CheckInFragment"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.SwimCompititionTrophyRoomResultsAcitivity"
+            android:label="@string/title_activity_swim_competition_tabbed"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <!-- Google Maps Fragment API Key Data -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.maps.v2.API_KEY" -->
+        <!-- android:value="@string/google_api_key" /> -->
+
+        <activity
+            android:name="com.waterworks.manageProfile.AddPaymentAccount"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.waterworks.manageProfile.ManagePaymentAccount"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.waterworks.ActivityCheckin" />
+        <activity
+            android:name="com.waterworks.UpcomingEventCompScheduleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.UpcomingEventCompResultActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.UpcomingEventCompResultDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.UpcomEvntsViewCompRecordsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.Swim4Test"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.Login_welcome_splashscreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.waterworks.SwimCompRegisterSplash"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- <activity -->
+        <!-- android:name=".HomeFragment" -->
+        <!-- android:label="@string/app_name" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:windowSoftInputMode="adjustPan" /> -->
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption k
+
+             ey, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+    </application>
+
+</manifest>

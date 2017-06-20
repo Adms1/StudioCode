@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ReceivePayment" >
+
+    <include
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_top" />
+
+    <TextView
+        android:id="@+id/tv_view_cart_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top"
+        android:layout_marginTop="10dp"
+        android:background="@color/fragment_title_bg"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="Pay Now"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/app_bg"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/Saved_Payment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/saved_pay_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="3sp"
+                        android:text="Choose from Saved Payment Methods"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/save_rotate"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/accordian" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/saved_method_inflate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_bg"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <RadioGroup
+                        android:id="@+id/ahc_selection_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" >
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/add_new_payment_lay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/new_pay_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="3sp"
+                        android:text="Add New Payment Method"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/new_pay_rotate"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/accordian" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/new_pay_lay_hide"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_bg"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioGroup
+                            android:id="@+id/paygroup_options"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp" >
+
+                            <RadioButton
+                                android:id="@+id/pay_by_check"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Pay by Check"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/pay_by_card"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Pay by Credit Card"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <Button
+                            android:id="@+id/info_button_b"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/info_button" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/check_lay"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <EditText
+                            android:id="@+id/name_check"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Name on the Check	"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/routing_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:hint="Routing number"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/acc_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Account Number"
+                            android:imeOptions="actionNext"
+                            android:maxLength="16"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Bank Name"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <Spinner
+                            android:id="@+id/account_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_toRightOf="@+id/txtStar"
+                            android:background="@drawable/drop_down1"
+                            android:drawSelectorOnTop="true"
+                            android:entries="@array/acc_type"
+                            android:paddingLeft="10dp"
+                            android:prompt="@string/hint_account_type" />
+
+                        <EditText
+                            android:id="@+id/address_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Address Line1"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/address_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Address Line2"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/city"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="City"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/state"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="State"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/zipcode"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Zipcode"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <CheckBox
+                            android:id="@+id/save_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:button="@drawable/customdrawablecheckbox"
+                            android:checked="true"
+                            android:padding="5dp"
+                            android:text="Save AHC Details"
+                            android:textColor="@android:color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/credit_card_lay"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <EditText
+                            android:id="@+id/f_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="First Name"
+                            android:imeOptions="actionNext"
+                            android:padding="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/l_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Last Name"
+                            android:imeOptions="actionNext"
+                            android:padding="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/c_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Credit card number"
+                            android:imeOptions="actionNext"
+                            android:inputType="phone"
+                            android:padding="5dp"
+                            android:singleLine="true" />
+
+                        <Spinner
+                            android:id="@+id/card_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_toRightOf="@+id/txtStar"
+                            android:background="@drawable/drop_down1"
+                            android:drawSelectorOnTop="true"
+                            android:entries="@array/card_type"
+                            android:paddingLeft="10dp"
+                            android:prompt="@string/hint_card_type" />
+
+                        <EditText
+                            android:id="@+id/cvv_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="CVV2 Number"
+                            android:inputType="number"
+                            android:imeOptions="actionNext"
+                            android:padding="5dp"
+                            android:singleLine="true" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <Spinner
+                                android:id="@+id/month"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_toRightOf="@+id/txtStar"
+                                android:layout_weight="1"
+                                android:background="@drawable/drop_down1"
+                                android:drawSelectorOnTop="true"
+                                android:entries="@array/month"
+                                android:paddingLeft="10dp" />
+
+                            <Spinner
+                                android:id="@+id/year"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_toRightOf="@+id/txtStar"
+                                android:layout_weight="1"
+                                android:background="@drawable/drop_down1"
+                                android:drawSelectorOnTop="true"
+                                android:entries="@array/year"
+                                android:paddingLeft="10dp" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/c_address_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Address Line1"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/c_address_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Address Line2"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/c_city"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="City"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/c_state"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="State"
+                            android:imeOptions="actionNext"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/c_zipcode"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/input_box"
+                            android:ems="10"
+                            android:hint="Zipcode"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:padding="3dp"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" />
+
+                        <CheckBox
+                            android:id="@+id/save_card_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:button="@drawable/customdrawablecheckbox"
+                            android:checked="true"
+                            android:padding="5dp"
+                            android:text="Save Card Details"
+                            android:textColor="@android:color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/full_half_payment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:visibility="gone" >
+
+                <RadioButton
+                    android:id="@+id/recurring"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:button="@drawable/customdrawableradionbuttons"
+                    android:padding="3dp"
+                    android:text="Recurring"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/one_time_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="10dp"
+                    android:button="@drawable/customdrawableradionbuttons"
+                    android:checked="true"
+                    android:padding="3dp"
+                    android:text="One Time Payment"
+                    android:textColor="@color/black" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/agreed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:button="@drawable/customdrawablecheckbox"
+                android:padding="5dp"
+                android:text=" I agree to the following Terms and Conditions"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/conditions"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/input_box"
+                android:focusableInTouchMode="false"
+                android:hint="Conditions"
+                android:imeOptions="actionNext"
+                android:lines="5"
+                android:padding="5dp"
+                android:scrollbars="vertical"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/conditions_scroll"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:background="@drawable/blue_border"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/conditions_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/confirm_payment"
+                android:layout_width="120dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@color/btn_blue"
+                android:padding="10dp"
+                android:text="Confirm Payment"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

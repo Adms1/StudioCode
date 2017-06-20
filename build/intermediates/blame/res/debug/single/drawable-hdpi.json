@@ -1,0 +1,622 @@
+[
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\close_blue.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\close_blue.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_text_light_disabled.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_text_light_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim13.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim13.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_text_light_disabled.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_text_light_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\background1.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\background1.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\background2.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\background2.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_10.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_10.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_text_dark_disabled.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_text_dark_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\call.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\call.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\scroll.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\scroll.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon5.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon5.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_0.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_0.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim7.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim7.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\custom_checkbox_check.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\custom_checkbox_check.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\powered_by_google_light.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\drawable-hdpi\\powered_by_google_light.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\white_icon3.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\white_icon3.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\custom_checkbox_uncheck_disable.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\custom_checkbox_uncheck_disable.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\download.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\download.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_icon_light_focused.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_icon_light_focused.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_icon_dark_disabled.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_icon_dark_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_text_light_focused.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_text_light_focused.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim14.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim14.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_icon_dark_normal.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_icon_dark_normal.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\white_icon1.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\white_icon1.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\drop_down_new.9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\drop_down_new.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\box.9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\box.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim5.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim5.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon7.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon7.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim11.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim11.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon4.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon4.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim8.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim8.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\radio_btn_on.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\radio_btn_on.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_icon_light_disabled.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_icon_light_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\noti_number.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\noti_number.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_1.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_1.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_11.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_11.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\places_ic_search.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\drawable-hdpi\\places_ic_search.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_text_light_pressed.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_text_light_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_text_dark_disabled.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_text_dark_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\r0old.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\r0old.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\info_button.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\info_button.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_expand.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\ic_action_expand.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\mail_icon.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\mail_icon.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon2.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon2.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_icon_light_disabled.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_icon_light_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\turbo.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\turbo.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\box_dis.9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\box_dis.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\male_selector_bg.9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\male_selector_bg.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\custom_radio_uncheck.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\custom_radio_uncheck.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\box1.9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\box1.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_text_light_pressed.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_text_light_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_text_light_normal.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_text_light_normal.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_icon_dark_pressed.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_icon_dark_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\top_logo2.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\top_logo2.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim4.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim4.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\menu_icon.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\menu_icon.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon8.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon8.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\menu_icon_small.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\menu_icon_small.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\card.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\card.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\arrow.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\arrow.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\water_works_logo.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\water_works_logo.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_2.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_2.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\delete.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\delete.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\r1_blue.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\r1_blue.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\uncheck_box_disable.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\uncheck_box_disable.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim18.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim18.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim15.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim15.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_5.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_5.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_8.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_8.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\top_turbo.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\top_turbo.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\custom_checkbox_uncheck.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\custom_checkbox_uncheck.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_icon_dark_focused.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_icon_dark_focused.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim12.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim12.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_text_light_normal.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_text_light_normal.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim1.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim1.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\down_arr.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\down_arr.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_icon_dark_focused.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_icon_dark_focused.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\scroll_bg.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\scroll_bg.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\radio_btn_off.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\radio_btn_off.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim19.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim19.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\r1.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\r1.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\custom_checkbox_uncheck_orange.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\custom_checkbox_uncheck_orange.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\logo.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\logo.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_icon_light_pressed.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_icon_light_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\home.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\home.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_collapse.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\ic_action_collapse.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\filter_icon.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\filter_icon.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\checkbox.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\checkbox.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon1.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon1.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\r0.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\r0.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_text_dark_normal.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_text_dark_normal.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\button_border.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\button_border.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_7.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_7.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\r0_re.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\r0_re.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_text_dark_pressed.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_text_dark_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\filter.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\filter.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_4.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_4.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_text_dark_pressed.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_text_dark_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\back_arrow.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\back_arrow.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\msg.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\msg.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim2.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim2.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\veiw_cart.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\veiw_cart.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_icon_dark_pressed.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_icon_dark_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\cancelled_check.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\cancelled_check.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\powered_by_google_dark.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\drawable-hdpi\\powered_by_google_dark.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_text_dark_normal.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_text_dark_normal.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim10.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim10.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\shopping_cart.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\shopping_cart.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\profile_pic_holder.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\profile_pic_holder.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_icon_dark_normal.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_icon_dark_normal.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\check.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\check.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\checkboxnew.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\checkboxnew.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim16.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim16.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_text_dark_focused.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_text_dark_focused.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\places_ic_clear.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\drawable-hdpi\\places_ic_clear.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ring.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\ring.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\marker.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\marker.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\accordian.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\accordian.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\promo_thermal.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\promo_thermal.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_icon_light_focused.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_icon_light_focused.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\menu_icon_new.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\menu_icon_new.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\menu_bg.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\menu_bg.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\cal.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\cal.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim17.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim17.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\banner.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\banner.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\horizontal_arr.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\horizontal_arr.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_3.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_3.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\drawer_title.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\drawer_title.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\back_btn.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\back_btn.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_ic_googleplayservices.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_ic_googleplayservices.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon10.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon10.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\custom_checkbox_check_orange.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\custom_checkbox_check_orange.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\r0ol.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\r0ol.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_full_open_on_phone.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\female_selector_bg.9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\female_selector_bg.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_google_signin_btn_icon_light_normal.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_google_signin_btn_icon_light_normal.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\thermal.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\thermal.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon6.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon6.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\logo_change.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\logo_change.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon3.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon3.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim3.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim3.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\white_icon2.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\white_icon2.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim9.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_text_dark_focused.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_text_dark_focused.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_icon_light_normal.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_icon_light_normal.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim6.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim6.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_text_light_focused.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_text_light_focused.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\divider.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\divider.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_icon_light_pressed.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_icon_light_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_plus_signin_btn_icon_dark_disabled.9.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-hdpi\\common_plus_signin_btn_icon_dark_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\notification_box.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\notification_box.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim20.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim20.png"
+    }
+]

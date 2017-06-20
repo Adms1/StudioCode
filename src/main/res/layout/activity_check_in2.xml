@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".CheckIn2Activity" >
+
+     <!--<include
+        layout="@layout/activity_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>-->
+
+    <include
+        android:id="@+id/include_swim_comp_custom_top"
+        layout="@layout/swim_comp_custom_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <!--<TextView
+        android:id="@+id/tv_cl_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check in"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/white"
+        android:background="@color/drawer_bg"
+        android:textAppearance="?android:attr/textAppearanceMedium" />-->
+ 	<LinearLayout 
+        android:id="@+id/ll_cl_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        android:layout_margin="5dp"
+        android:orientation="vertical" >
+        
+ 	    <TextView
+ 	        android:id="@+id/tv_checkin_title2"
+ 	        android:layout_width="wrap_content"
+ 	        android:layout_height="wrap_content"
+ 	        android:layout_margin="10dp"
+ 	        android:textColor="@color/black"/>
+ 	    
+ 	    <ListView 
+ 	        android:id="@+id/lv_checkin_list2"
+ 	        android:layout_width="match_parent"
+ 	        android:layout_height="wrap_content"
+ 	        android:divider="@color/textbox_color"
+ 	        android:layout_marginLeft="10dp"
+ 	        android:layout_marginRight="10dp"
+			android:scrollbars="none"
+ 	        android:layout_marginBottom="10dp"
+ 	        android:dividerHeight="1dp" />
+     </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/schdl_top"
+        layout="@layout/d2_custom_buymorelession_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="1dp"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:gravity="top"
+        android:scrollbarSize="1dp"
+        android:scrollbars="none">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/tv_lession_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Lession Type"
+                android:textColor="@color/black_prefer_client"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_monthlyplan_package"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_lession_type"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:visibility="visible"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/ll_package"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:background="@color/grey_days_selection"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_package"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Packages"
+                            android:textColor="@color/orange"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/select_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/orange" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_monthly_plan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:background="@color/grey_days_selection"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_monthly_plan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Monthly Plans"
+                            android:textColor="@color/design_change_d2"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/select_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/orange"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_lession_package"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_monthlyplan_package"
+                android:layout_marginTop="10dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tv_planstype"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black_prefer_client"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_mostpopular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="7dp"
+                    android:textAlignment="gravity"
+                    android:textColor="#F59A44"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <!-- android:text="                Most popular for\nfamilies with one students" -->
+
+            <LinearLayout
+                android:id="@+id/ll_horizontal_lay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_lession_package"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".6"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:text="Qty"
+                    android:textColor="@color/black_prefer_client"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:text="Your Cost"
+                    android:textColor="@color/black_prefer_client"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:text="Reg. Cost"
+                    android:textColor="@color/black_prefer_client"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:text="Savings  "
+                    android:textColor="@color/black_prefer_client"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/ll_horizontal_lay"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/gray_light" />
+
+            <LinearLayout
+                android:id="@+id/lay_inflatepackage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewLine"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_inflatemothlyplan"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lay_inflatepackage"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone"></LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/ll_add_tocart"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lay_inflatemothlyplan"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/btn_add_tocart"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:stateListAnimator="@anim/lift_on_touch"
+                    card_view:cardBackgroundColor="@color/design_change_d2"
+                    card_view:cardElevation="2sp"
+                    card_view:cardPreventCornerOverlap="true"
+                    card_view:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Add to Cart"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+
+                </android.support.v7.widget.CardView>
+
+                <!--<com.andexert.library.RippleView
+                    android:id="@+id/ripple_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="35dp">
+
+                    <Button
+                        android:id="@+id/btn_add_tocart"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/design_change_d2"
+                        android:padding="10dp"
+                        android:text="Add to Cart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="19sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/btnLogin"
+                        android:background="@drawable/shadow_effect" />
+                </com.andexert.library.RippleView>-->
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/ll_cotinue_shopping"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_add_tocart"
+                android:layout_marginTop="7dp"
+                android:gravity="bottom"
+                android:visibility="visible">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/btn_continue_shopping"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:stateListAnimator="@anim/lift_on_touch"
+                    card_view:cardBackgroundColor="@color/grey_days_selection"
+                    card_view:cardElevation="2sp"
+                    card_view:cardPreventCornerOverlap="true"
+                    card_view:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Continue Shopping"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+
+                </android.support.v7.widget.CardView>
+
+                <!--<com.andexert.library.RippleView
+                    android:id="@+id/ripple_continue_shopping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="35dp">
+
+                    <Button
+                        android:id="@+id/btn_continue_shopping"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/grey_days_selection"
+                        android:padding="10dp"
+                        android:text="Continue Shopping"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="19sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/btnLogin"
+                        android:background="@drawable/shadow_effect" />
+                </com.andexert.library.RippleView>-->
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

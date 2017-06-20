@@ -1,0 +1,305 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="@color/white"
+    tools:context=".DetailCancelLessonActivity" >
+
+    <include 
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_top"/>
+    <TextView 
+	    android:id="@+id/tv_dcl_title"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textColor="@color/white"
+	    android:background="@color/fragment_title_bg"
+	    android:layout_below="@+id/layout_top"
+	    android:layout_marginTop="10dp"
+	    android:paddingBottom="10dp"
+	    android:text="Cancel a Lesson"
+	    android:textAppearance="?android:attr/textAppearanceMedium"
+		android:paddingTop="10dp"
+	    android:paddingLeft="10dp" />
+    
+      <RelativeLayout
+            android:id="@+id/rl_dcl_body"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/tv_dcl_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/app_bg" >
+          
+          <ScrollView 
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_above="@+id/btn_dcl_cancel_lesson"
+              android:layout_marginBottom="10dp"
+              android:scrollbars="none">
+              
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:orientation="vertical" >
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                  	  android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Date:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_date_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Date:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Day:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_day_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Day:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Start Time:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_time_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Time:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Student:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_student_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Student:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Instructor:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_instructor_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Instructor:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Attendence:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_abbr_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Abbr:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Lesson Type:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_lt_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Lesson Type:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Counts:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_count_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Count:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal" >
+
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Comments:"
+                          android:textAppearance="?android:attr/textAppearanceMedium"
+                          android:textColor="@color/black" />
+
+                      <TextView
+                          android:id="@+id/tv_dcl_comments_item"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_weight="1"
+                          android:text="Comments:"
+                          android:textColor="@color/app_text" />
+                  </LinearLayout>
+              </LinearLayout>
+		</ScrollView>
+			<Button 
+                  android:id="@+id/btn_dcl_cancel_lesson"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:background="@color/text_blue"
+                  android:textColor="@color/white"
+                  android:text="Cancel Class"
+                  android:paddingLeft="20dp"
+                  android:paddingRight="20dp"
+                  android:paddingTop="5dp"
+                  android:paddingBottom="5dp"
+                  android:textAppearance="?android:attr/textAppearanceMedium"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginBottom="10dp"
+                  android:layout_alignParentBottom="true" />          
+	</RelativeLayout>
+</RelativeLayout>

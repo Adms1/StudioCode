@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/schdl_top"
+        layout="@layout/d2_custom_buymorelession_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_margin="4dp">
+
+        <TextView
+            android:id="@+id/timemsg_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_timeleft"
+            android:text="@string/str10minittimer"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_timeleft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="8dp"
+            android:paddingTop="20dp"
+            android:text="10:00"
+            android:textColor="@color/black_prefer_client"
+            android:textSize="25dp"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/viewLineGray"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_alignLeft="@+id/tv_timeleft"
+            android:layout_below="@+id/tv_timeleft"
+            android:background="@color/gray"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_alignLeft="@+id/tv_timeleft"
+            android:layout_below="@+id/tv_timeleft"
+            android:background="@color/orange"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/sites_lay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textColor="@color/black_prefer_client"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/sites_lay_dropdown"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100">
+
+                <Button
+                    android:id="@+id/btn_sites"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_sc_select_site"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="95"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:text="Please select a Location"
+                    android:textAllCaps="false"
+                    android:textColor="@color/app_text" />
+
+                <View
+                    android:id="@+id/vw_dropdown"
+                    android:layout_width="0dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="5"
+                    android:background="@drawable/down_arr" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/design_change_d2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_select_lession_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:text="Select Lesson Type"
+        android:textColor="@color/black_prefer_client"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <include
+            android:id="@+id/lession_type"
+            layout="@layout/d2_custom_buymorelessions_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="2dp" />
+    </ScrollView>
+</LinearLayout>

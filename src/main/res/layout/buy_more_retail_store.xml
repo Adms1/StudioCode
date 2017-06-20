@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/schdl_top"
+        layout="@layout/d2_custom_buymorelession_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="5dp"
+        android:background="@color/white"
+        android:scrollbarSize="1dp"
+        android:scrollbars="none">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/sites_lay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/sites_lay_dropdown"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="100">
+
+                        <Button
+                            android:id="@+id/btn_sites"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_sc_select_site"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2dp"
+                            android:layout_weight="95"
+                            android:background="@android:color/transparent"
+                            android:gravity="left|center_vertical"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="10dp"
+                            android:text="Please select a Location"
+                            android:textAllCaps="false"
+                            android:textColor="@color/app_text" />
+
+                        <View
+                            android:id="@+id/vw_dropdown"
+                            android:layout_width="0dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="5"
+                            android:background="@drawable/down_arr" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/design_change_d2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/category_lay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:weightSum="100">
+
+                    <Button
+                        android:id="@+id/btn_sites_category"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_sc_select_site"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="90"
+                        android:background="@android:color/transparent"
+                        android:gravity="left|center_vertical"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:text="Please select a category"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_text" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="5"
+                        android:background="@drawable/down_arr" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/design_change_d2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_thermalsuit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/button_border_select"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/imgv_product"
+                    android:layout_width="166dp"
+                    android:layout_height="120dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/promo_thermal" />
+                <!--android:src="@drawable/thermal"-->
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_swimsuit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:paddingTop="1dp"
+                android:text="Thermal Suits"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/lay_goggles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_border_select"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/imageView_lafitness_private"
+                    android:layout_width="166dp"
+                    android:layout_height="120dp"
+                    android:padding="2dp"
+                    android:src="@drawable/download" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_goggles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Goggles"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:id="@+id/lay_swim_caps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_border_select"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="166dp"
+                    android:layout_height="120dp"
+                    android:padding="2dp"
+                    android:src="@drawable/download" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_swimcaps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Swim Caps"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

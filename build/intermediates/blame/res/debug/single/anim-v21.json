@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\lift_on_touch.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\anim-v21\\lift_on_touch.xml"
+    }
+]

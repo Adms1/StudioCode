@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gray_border"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtEventDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sep 25, 2014"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtEventTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:56:23"
+        android:layout_toLeftOf="@+id/txtEventTimeImprovement"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtEventTimeImprovement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(+00:56:23)"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/black"/>
+
+</RelativeLayout>

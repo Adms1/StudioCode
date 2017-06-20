@@ -1,0 +1,1497 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SwimCampsRegister1Acitivity" >
+
+    <include
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/d2_actionbar" />
+
+    <TextView
+        android:id="@+id/tv_swim_camps_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top"
+        android:layout_marginTop="10dp"
+        android:background="@color/fragment_title_bg"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:visibility="gone"
+        android:paddingTop="10dp"
+        android:text="Swim Competition Confirmation Page"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/txtSelectedStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_swim_camps_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtSelectedStudent"
+        android:background="@color/app_bg"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/rl_data"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txtMeetDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meet Date"
+                    android:textColor="@color/black" />
+
+                <RelativeLayout
+                    android:id="@+id/relItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/txtItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Item"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtExtendedPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Extended Price"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/sep1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/design_change_d2" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/relTotalnoofEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/txtNoofEvents"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@+id/txtNoofPricePrice"
+                        android:text="Total Number of Event Entered (# of total events selected)"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtNoofPricePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="$12"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/design_change_d2" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/relMemberEntryFee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/txtMemberEntryFee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@+id/txtMemberEntryFeePrice"
+                        android:text="Member Entry Fee:(# of students selected)"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtMemberEntryFeePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="$12"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/design_change_d2" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/relNonMemberRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/txtNonMemberRegistration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@+id/txtNonMemberRegistrationPrice"
+                        android:text="Non Member Registration:Add an Additional Fee: $5 for Each Child Selected"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtNonMemberRegistrationPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="$12"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/design_change_d2" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/relLateRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/txtLateRegistration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@+id/txtLateRegistrationPrice"
+                        android:text="Late Registration: (# of students selected) 2 x $0.00
+(This will be charged if you register the Same Day or after 8:15 the night before the swim competition)"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtLateRegistrationPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="$12"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/design_change_d2" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/relTotalAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/txtTotalAmountLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/txtTotalAmount"
+                        android:text="Total Amount:"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtTotalAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="$12"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/design_change_d2" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/relPreviousBill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/txtPreviousBillLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/txtPreviousBill"
+                        android:text="Invoice Amount Billed Previously:"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtPreviousBill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="$12"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/design_change_d2" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/relTotalBalanceDue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/txtTotalBalanceDueLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/txtTotalBalanceDue"
+                        android:text="Total Balance Due for New Invoice:"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtTotalBalanceDue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="$12"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <!-- Volunteer # 1 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" 
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtTitleNoOfVolunteers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Please fill out the volunteer details below."
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtTitleVol1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Volunteer # 1"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol1_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol1_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol1_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol1_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <!-- Volunteer # 2 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" 
+                        android:visibility="gone">
+
+                        <View
+                            android:id="@+id/sep2Vol2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 2"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol2_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol2_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol2_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol2_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                    <!-- Volunteer # 3 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" 
+                        android:visibility="gone">
+
+                        <View
+                            android:id="@+id/sep3Vol3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 3"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol3_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol3_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol3_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol3_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                    <!-- Volunteer # 4 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <View
+                            android:id="@+id/sep4Vol4"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 4"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol4_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol4_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol4_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol4_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                     <!-- Volunteer # 5 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <View
+                            android:id="@+id/sep5Vol5"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 5"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol5_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol5_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol5_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol5_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                    
+                    
+                     <!-- Volunteer # 6 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" 
+                        
+                        android:visibility="gone">
+
+                        <View
+                            android:id="@+id/sep6Vol6"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 6"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol6_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol6_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol6_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol6_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                    <!-- Volunteer # 7 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <View
+                            android:id="@+id/sep7Vol7"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 7"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol7_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol7_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol7_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol7_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                    
+                     <!-- Volunteer # 8 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <View
+                            android:id="@+id/sep8Vol8"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 8"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol8_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol8_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol8_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol8_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                    <!-- Volunteer # 9 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <View
+                            android:id="@+id/sep9Vol9"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 9"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol9_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol9_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol9_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol9_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                    
+                     <!-- Volunteer # 10 -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_vol_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <View
+                            android:id="@+id/sep10Vol10"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/design_change_d2" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/txtTitleVol10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Volunteer # 10"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtFirstnameVol10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_firstname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/edtLastnameVol10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/input_box"
+                            android:hint="@string/hint_lastname"
+                            android:padding="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/txtVol10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimComptBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/txtVol10_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/swimMeetsBefore"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/rgVol10_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/radiobtnYesVol10_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:padding="3dp"
+                                android:text="Yes"
+                                android:textColor="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radiobtnNoVol10_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/customdrawableradionbuttons"
+                                android:checked="true"
+                                android:padding="3dp"
+                                android:text="No"
+                                android:textColor="@color/black" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    
+                    
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnAddToCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/design_change_d2"
+                    android:padding="10dp"
+                    android:text="Add To Cart"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

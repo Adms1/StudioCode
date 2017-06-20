@@ -1,0 +1,481 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".LapSwimsDiscountActivity">
+
+    <!--<include
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_top" />-->
+
+    <RelativeLayout
+        android:id="@+id/actionBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp">
+
+        <View
+            android:id="@+id/blueBack"
+            android:layout_width="fill_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="#003d71" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/relMenu_new"
+            android:text="Lap Swims"
+            android:textColor="@color/white"
+            android:textSize="19sp" />
+
+        <RelativeLayout
+            android:id="@+id/relMenu_new"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true">
+
+            <ImageButton
+                android:id="@+id/ib_menusad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/back_arrow" />
+
+            <Button
+                android:id="@+id/relMenu"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/transparent" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/home" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/actionBar"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        android:background="@color/app_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Please Select a Location"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinSites"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/line_dropdown_bttn" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Monthly Lap Swim Pass"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_lsd_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:maxLines="5"
+                android:paddingRight="2dp"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbarThumbVertical="@drawable/scroll"
+                android:scrollbarTrackVertical="@drawable/scroll_bg"
+                android:scrollbars="vertical"
+                android:text="Lap Swim Discount Pass\nBy purchasing a monthly lap swim discount pass you will have unlimited lap swims to use throughout the period you select. *Please keep in mind that there are some days and times that lap swim is not available. Contact the front desk if you have any questions about the available times/days for lap swimming. The senior discount is for lap swimmers 60 years of age and older. Purchases must be made at the front desk to receive this discount."
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:text="* Unlimited lap swims to use throughout the month.\n\n* Lap swim is not available on some days and times. Please refer to website for schedule.\n\n* Senior discount is for lap swimmers 60 years and older. *Purchase must be made at the front desk to receive this discount"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Cost"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/textbox_color"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="Number of\nMonths"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="Regular\nPrice"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="Discounted\nPrice"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="Senior\nDisc. Price"
+                        android:textColor="@color/app_text" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt1MonthReg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt1MonthDis"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt1MonthSen"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt3MonthReg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt3MonthDis"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt3MonthSen"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="6"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt6MonthReg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt6MonthDis"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt6MonthSen"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="12"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt12MonthReg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt12MonthDis"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+
+                    <TextView
+                        android:id="@+id/txt12MonthSen"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/app_bg"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_text" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Select Number Of Months"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_lsd_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/line_dropdown_bttn"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:textColor="@color/app_text" />
+
+            <TextView
+                android:id="@+id/txtSecondDropDownTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Select Starting Month"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_lsd1_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/line_dropdown_bttn"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:textColor="@color/app_text" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/btn_ls3_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    card_view:cardBackgroundColor="@color/design_change_d2"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:stateListAnimator="@anim/lift_on_touch"
+                    card_view:cardElevation="2sp"
+                    card_view:cardPreventCornerOverlap="true"
+                    card_view:cardUseCompatPadding="true">
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|left"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:paddingTop="10dp"
+                        android:text="Submit"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

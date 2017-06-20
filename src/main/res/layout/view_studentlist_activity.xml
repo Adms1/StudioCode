@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/d2_custom_scheduling_top" />
+
+
+   <HorizontalScrollView
+        android:id="@+id/hsv"
+        android:layout_width="fill_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/text_blue"
+        android:fillViewport="true"
+        android:measureAllChildren="false"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/innerLay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <!-- Progress Report -->
+
+            <LinearLayout
+                android:id="@+id/ll_ProgressReport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgProgressReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/progress_reports"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtProgressReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Progress Report"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+              <View
+                android:id="@+id/sep1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+            </View>
+            <!-- View Certificate -->
+
+            <LinearLayout
+                android:id="@+id/ll_ViewCertificate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgViewCertificate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/veiw_certificates"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtViewCertificate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="View Certificate"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+              <View
+                android:id="@+id/sep1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+            </View>
+            
+            <!-- Ribbon Count -->
+
+            <LinearLayout
+                android:id="@+id/ll_RibbonCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgRibbonCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/view_ribbon_count" 
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/txtRibbonCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Ribbon Count"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+          
+        </LinearLayout>
+    </HorizontalScrollView>
+
+   <RelativeLayout
+        android:id="@+id/rel_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/app_bg" >
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="@color/design_change_d2"
+            android:dividerHeight="1dp"
+             >
+        </ListView>
+
+        <TextView
+            android:id="@+id/txtNoRecord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/norecord"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

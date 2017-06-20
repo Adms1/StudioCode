@@ -1,0 +1,197 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SwimCampsRegister1Acitivity" >
+
+    <include
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/d2_actionbar" />
+
+    <TextView
+        android:id="@+id/tv_swim_camps_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top"
+        android:layout_marginTop="10dp"
+        android:background="@color/fragment_title_bg"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:visibility="gone"
+        android:paddingTop="10dp"
+        android:text="Swim Competition Registration:Step 1 of 5 "
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/rl_data"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tv_swim_camps_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/app_bg"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/tv_sc_select_site"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Sites:"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner1_sites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sc_select_site"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/drop_down1"
+            android:drawSelectorOnTop="true"
+            android:paddingLeft="10dp"
+            android:prompt="@string/hint_select_site"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_sites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sc_select_site"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/drop_down1"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="Choose a site"
+            android:textColor="@color/app_text" />
+
+        <TextView
+            android:id="@+id/tv_lebel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_sites"
+            android:layout_marginTop="10dp"
+            android:text="Select Meet Date:"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner2_MeetDates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_lebel"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/drop_down1"
+            android:drawSelectorOnTop="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:prompt="@string/hint_meet_date"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_MeetDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_lebel"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/drop_down1"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="Choose a Meet Date"
+            android:textColor="@color/app_text" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="The Swim Meet will begin at"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_below="@+id/btn_MeetDate"
+            android:id="@+id/notice1"
+            />
+        <TextView android:id="@+id/time_value"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/notice1"
+            android:textColor="@color/textbox_color"
+            />
+
+        <TextView
+            android:id="@+id/tv_participants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_value"
+            android:layout_marginTop="10dp"
+            android:text="Select the participants you wish to register:"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/btn_swim_camps_regi1_students"
+            android:layout_below="@+id/tv_participants"
+            android:layout_marginTop="5dp"
+            android:divider="@color/design_change_d2"
+            android:dividerHeight="1dp"
+            android:scrollbars="none">
+        </ListView>
+
+        <Button
+            android:id="@+id/btn_swim_camps_regi1_students"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@color/design_change_d2"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="Continue"
+            android:textColor="@color/white" />
+
+        <RelativeLayout
+            android:id="@+id/relAgree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone" >
+
+            <CheckBox
+                android:id="@+id/chkAgree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:button="@drawable/customdrawablecheckbox" />
+
+            <TextView
+                android:id="@+id/tv_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/chkAgree"
+                android:text="@string/agreementSwimRegister1"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

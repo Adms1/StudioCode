@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_chkld_item_name2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="top|left"
+            android:text="Name"
+            android:textColor="@color/app_text" />
+
+        <TextView
+            android:id="@+id/tv_chkld_item_divingblock2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:gravity="top|left"
+            android:text="Diving Block"
+            android:textColor="@color/app_text" />
+
+        <TextView
+            android:id="@+id/tv_chkld_item_endlane2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:gravity="top|left"
+            android:text="End Lane"
+            android:textColor="@color/app_text" />
+    </LinearLayout>
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_chkld_event2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="Event#"
+                android:textColor="@color/app_text" />
+
+            <TextView
+                android:id="@+id/tv_chkld_age2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="Age Group"
+                android:textColor="@color/app_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_chkld_distance2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="Distance"
+                android:textColor="@color/app_text" />
+
+            <TextView
+                android:id="@+id/tv_chkld_stroke2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="Stroke"
+                android:textColor="@color/app_text" />
+        </LinearLayout>
+
+        	<LinearLayout
+        	    android:layout_width="match_parent"
+        	    android:layout_height="wrap_content"
+        	    android:layout_margin="5dp"
+        	    android:orientation="horizontal" >
+
+        	    <TextView
+        	        android:id="@+id/tv_chkld_besttime2"
+        	        android:layout_width="0dp"
+        	        android:layout_height="wrap_content"
+        	        android:layout_gravity="center_vertical"
+        	        android:layout_weight="1"
+        	        android:text="Best Time"
+        	        android:textColor="@color/app_text" />
+
+        	    <TextView
+        	        android:id="@+id/tv_chkld_check2"
+        	        android:layout_width="0dp"
+        	        android:layout_height="wrap_content"
+        	        android:layout_gravity="center_vertical"
+        	        android:layout_weight="1"
+        	        android:text="Check-in Status"
+        	        android:textColor="@color/app_text" />
+        	</LinearLayout>
+
+    </LinearLayout>
+
+	</LinearLayout>
+    
+
+</LinearLayout>

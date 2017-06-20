@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lv_swim_comp_regi5_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/design_change_d2"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="ABC"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtStrokeType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="StrokeType"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/txtStrokeType"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Event"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtAgeGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txtStrokeType"
+            android:layout_marginRight="10dp"
+            android:text="AgeGroup"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEvent"
+            android:layout_marginRight="10dp"
+            android:text="Distance"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/design_change_d2" />
+
+    <TextView
+        android:id="@+id/txtJumpingWall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Would like to start the race by jumping off the wall"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/txtSwimNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Would like to swim next to the wall in an end lane ?"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+     <View
+         android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white" />
+</LinearLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/fragment_top" />
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/drawer_bg"
+        android:fillViewport="true"
+        android:measureAllChildren="false"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/ll_vs_top"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_vs_attendance_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp"
+                android:background="@android:color/transparent"
+                android:text="Attendance Codes"
+                android:textColor="@color/white" />
+
+            <View
+                android:id="@+id/sep1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white" >
+            </View>
+
+            <Button
+                android:id="@+id/btn_vs_past_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp"
+                android:background="@android:color/transparent"
+                android:text="View Past Schedule"
+                android:textColor="@color/white" />
+
+            <View
+                android:id="@+id/sep1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white" >
+            </View>
+
+            <Button
+                android:id="@+id/btn_vs_change_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="13sp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:text="Change Schedule"
+                android:textColor="@color/white" />
+
+            <View
+                android:id="@+id/sep1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white" >
+            </View>
+
+            <Button
+                android:id="@+id/btn_vs_view_price_sheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="13sp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:text="View Price Sheet"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/tv_vs_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:text="Current Schedule"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/ll_vs_body"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="5dp"
+        android:background="@color/app_bg" >
+
+        <TextView
+            android:id="@+id/tv_vs_note1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/app_text" />
+
+        <RelativeLayout
+            android:id="@+id/rl_schedule_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vs_note1"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tv_vs_invoice_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Start of package #751728(1)99 private 1/18/2015"
+                android:textColor="@color/app_text"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/lv_vs_schedule_data"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/tv_vs_invoice_value"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:divider="@color/textbox_color"
+                android:dividerHeight="2dp"
+                android:scrollbars="none"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_noschedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="No Schedule Found"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

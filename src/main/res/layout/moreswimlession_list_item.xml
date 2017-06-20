@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+
+            <LinearLayout
+                android:id="@+id/lay_list_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="5" >
+
+                <RadioButton
+                    android:id="@+id/rb"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".6"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:background="@drawable/button_border_select"
+                     />
+
+                <TextView
+                    android:id="@+id/tv_quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1.1"
+                    android:text="Qty"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                      android:gravity="center"
+                        android:background="@drawable/button_border_select"
+                     />
+
+                <TextView
+                     android:id="@+id/tv_your_cost"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1.1"
+                    android:text="Your Cost"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                     android:gravity="center"
+                        android:background="@drawable/button_border_select"
+                    />
+
+                <TextView
+                     android:id="@+id/tv_reg_cost"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1.1"
+                    android:text="Reg Cost"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                     android:gravity="center"
+                        android:background="@drawable/button_border_select"
+                    />
+
+                <TextView
+                     android:id="@+id/tv_saving"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1.1"
+                    android:text="Savings  "
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                     android:gravity="center"
+                        android:background="@drawable/button_border_select"
+                    />
+            </LinearLayout>
+</LinearLayout>

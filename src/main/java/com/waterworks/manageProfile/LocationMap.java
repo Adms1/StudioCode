@@ -175,7 +175,10 @@ public class LocationMap extends FragmentActivity implements OnMapReadyCallback 
                 if (!isInternetPresent) {
                     onDetectNetworkState().show();
                 } else {
-                    new RemoveLocationAsyncTask().execute();
+                    //            19-06-2017 megha
+                    if(AppConfiguration.checklocationcount>1) {
+                        new RemoveLocationAsyncTask().execute();
+                    }
                 }
             }
         });
@@ -284,8 +287,6 @@ public class LocationMap extends FragmentActivity implements OnMapReadyCallback 
             if (pd != null) {
                 pd.dismiss();
             }
-
-
             if (success.equalsIgnoreCase("True")) {
                 Toast.makeText(LocationMap.this, msg, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(LocationMap.this, Locations.class);

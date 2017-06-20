@@ -1,0 +1,229 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SwimcompititionRegisterStep5Activity">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/d2_actionbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/layout_top"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtCompitition"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="Competition:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCompititionVal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="Value"
+                android:textColor="@color/black"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtCompititionstep"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Step 4:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCompititionstepval"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:text="Acknowledgements"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/txtCompititionstep1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.07"
+                android:background="@drawable/gray_border"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCompititionstep2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.07"
+                android:background="@drawable/gray_border"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="2"
+                android:textColor="@color/black"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtCompititionstep3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.07"
+                android:background="@drawable/gray_border"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="3"
+                android:textColor="@color/black"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtCompititionstep4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.07"
+                android:background="#003d71"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtCompititionstep5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.07"
+                android:background="@drawable/gray_border"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="5"
+                android:textColor="@color/black"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/lastview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_data"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:padding="5dp"
+                android:singleLine="false"
+                android:text="Please read and acknowledge the following information:"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/filter_2"
+                android:layout_below="@+id/textView1"
+                android:layout_marginTop="5dp"
+                android:divider="@null"
+                android:scrollbars="none"
+                android:dividerHeight="0dp" />
+
+            <LinearLayout
+                android:id="@+id/filter_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/btn_swim_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/lay_1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:stateListAnimator="@anim/lift_on_touch"
+                    card_view:cardElevation="2sp"
+                    card_view:cardPreventCornerOverlap="true"
+                    card_view:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/design_change_d2"
+                        android:paddingBottom="10dp"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:text="Next Step: Confirm"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

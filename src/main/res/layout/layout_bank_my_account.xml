@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtLblAccouType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Account Type"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/spinAccontType"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/line_dropdown"/>
+
+    <TextView
+        android:id="@+id/txtLblBankName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Bank Name"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edtBankName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:background="@drawable/gray_border"/>
+
+    <TextView
+        android:id="@+id/txtLblNameOnAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Name on Account"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edtNameonAccount"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:background="@drawable/gray_border"/>
+
+    <TextView
+        android:id="@+id/txtLblAccountNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Account Number"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edtAccountNumber"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:inputType="number"
+        android:maxLength="16"
+        android:singleLine="true"
+        android:background="@drawable/gray_border"/>
+
+    <TextView
+        android:id="@+id/txtLblRoutingNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Routing Number"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edtRoutingNumber"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:inputType="number"
+        android:maxLength="15"
+        android:singleLine="true"
+        android:background="@drawable/gray_border"/>
+
+    <TextView
+        android:id="@+id/txtLblSeeBelowImgCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="13sp"
+        android:text="@string/bank_check_text"
+        android:textColor="@color/gray"/>
+
+    <ImageView
+        android:id="@+id/imgBankCheckImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/check"/>
+
+</LinearLayout>

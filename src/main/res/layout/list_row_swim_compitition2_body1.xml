@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gray_border"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_swim_comp_regi2_item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:id="@+id/txtStrokeType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:padding="2dp"
+        android:singleLine="true"
+        android:text="StrokeType"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/tv_swim_comp_regi2_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+   
+
+    <TextView
+        android:id="@+id/txtEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtStrokeType"
+        android:ellipsize="end"
+        android:padding="2dp"
+
+        android:layout_marginLeft="10dp"
+        android:singleLine="true"
+        android:text="Event"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/txtAgeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/chk"
+        android:layout_below="@+id/txtStrokeType"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:text="AgeGroup"
+        android:textColor="@color/black" />
+    
+    <TextView
+        android:id="@+id/txtControlType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAgeGroup"
+        android:layout_alignParentRight="true"
+        android:text="ControlType"
+        android:textColor="@color/black" 
+        android:visibility="gone"/>
+
+     <TextView
+        android:id="@+id/txtDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/txtEvent"
+        android:text="Distance"
+         android:visibility="gone"
+        android:textColor="@color/black" />
+     
+     <TextView
+        android:id="@+id/txttDid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/txtDistance"
+        android:text="Session # "
+         android:visibility="gone"
+        android:textColor="@color/black" />
+     
+    <CheckBox
+        android:id="@+id/chk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtAgeGroup"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="20dp"
+        android:button="@drawable/customdrawablecheckbox" />
+
+
+</RelativeLayout>

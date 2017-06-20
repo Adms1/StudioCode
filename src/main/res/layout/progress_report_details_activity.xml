@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/d2_actionbar" />
+
+<ScrollView
+    android:id="@+id/ScrollProgressRpt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:fadeScrollbars="false"
+    android:fillViewport="false" >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtStudentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_below="@+id/header"
+        android:text="Current Level"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtCurrentLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_below="@+id/txtStudentName"
+        android:text="Current Level"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+
+    <RelativeLayout
+        android:id="@+id/relStudentLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCurrentLevel">
+
+        <RelativeLayout
+            android:id="@+id/relLevelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtLevelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:text="Level"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:layout_toRightOf="@+id/txtLevelLabel"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCompletePercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="5dp"
+                android:layout_below="@+id/txtLevelLabel"
+                android:text="40%"
+                android:textColor="@color/black"
+                 />
+
+            <TextView
+                android:id="@+id/txtCompletePercentageLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="5dp"
+                android:layout_below="@+id/txtLevelLabel"
+                android:layout_toRightOf="@+id/txtCompletePercentage"
+                android:text="Complete"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+    <!--//Progress Bar Code Goes here-->
+
+        <LinearLayout
+            android:id="@+id/lin_lay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/relLevelText"
+            android:background="@drawable/orange_border"
+            android:layout_alignTop="@+id/relLevelText"
+            android:layout_alignBottom="@+id/relLevelText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="1dp"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtSkillsSetAchieveLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@+id/relStudentLevel"
+        android:text="Skill Sets Achieved"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/relStudentSkill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="7dp"
+        android:layout_below="@+id/txtSkillsSetAchieveLabel" >
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtSkillsSetRemainLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@+id/relStudentSkill"
+        android:text="Skill Sets Remaining"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/relStudentRemainingSkill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="2dp"
+        android:layout_below="@+id/txtSkillsSetRemainLabel" >
+
+        <!--<ListView
+            android:id="@+id/listStudentRemainingSkill"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp">
+        </ListView>-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/txtLevelAndSkillsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:layout_alignParentLeft="true"
+        android:text="Levels &amp; Skills"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtLevelsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="7dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:text="Levels"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+        </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="7dp"
+        >
+
+
+        <!--<LinearLayout
+            android:id="@+id/llExpandableListView"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_border"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" >-->
+
+                <ExpandableListView
+                    android:id="@+id/lvExp"
+                    android:layout_height="match_parent"
+                    android:layout_width="300dp"
+                    android:background="@drawable/gray_border"
+                    android:groupIndicator="@null"
+                    android:keepScreenOn="true"
+                    android:isScrollContainer="true"
+                    android:transcriptMode="alwaysScroll"
+
+            />
+
+            <!--<TextView
+                android:id="@+id/txtNothingToDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:text="Nothing to Display"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                />
+
+            </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/llLevelBoxesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

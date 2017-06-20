@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/d2_actionbar" />
+
+    <RelativeLayout
+        android:id="@+id/rel_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/app_bg" >
+
+        <RelativeLayout
+            android:id="@+id/rel_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text=" Swim Competition Ribbon Tally: "
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:divider="@color/design_change_d2"
+                android:dividerHeight="1dp"
+                android:layout_below="@+id/txtLabel" >
+            </ListView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtNoRecord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/norecord"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

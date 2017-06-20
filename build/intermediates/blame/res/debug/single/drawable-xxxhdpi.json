@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\powered_by_google_dark.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\drawable-xxxhdpi\\powered_by_google_dark.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\places_ic_clear.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\drawable-xxxhdpi\\places_ic_clear.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\places_ic_search.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\drawable-xxxhdpi\\places_ic_search.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\powered_by_google_light.png",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\drawable-xxxhdpi\\powered_by_google_light.png"
+    }
+]

@@ -1,0 +1,1562 @@
+[
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_lesson2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_lesson2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\edittextpopup.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\edittextpopup.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\registerchild_screen1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\registerchild_screen1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_compitition2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_compitition2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\progress_report_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\progress_report_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\viewcart_items.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\viewcart_items.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\help_and_support_fragment.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\help_and_support_fragment.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_ordersummry.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_ordersummry.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pastduebal_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\pastduebal_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\lessonscount.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\lessonscount.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row_manage_account.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\row_manage_account.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition4.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition4.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_question_lay.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_question_lay.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_textview.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_textview.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\help_center_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\help_center_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\instruction_text.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\instruction_text.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\swim_comp_custom_top.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\swim_comp_custom_top.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_view_schedule.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_view_schedule.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_family_swim_night.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_family_swim_night.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_upcoming_event_comp_results.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_upcoming_event_comp_results.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_schedule_a_lession.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_schedule_a_lession.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_custom_studentslay.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_custom_studentslay.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\myaccount1_fragment.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\myaccount1_fragment.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_dives_and_turns_regi1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_dives_and_turns_regi1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_transfer_lesson.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_transfer_lesson.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\removelesson_item_new_info.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\removelesson_item_new_info.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\waterpolo_register1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\waterpolo_register1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_custom_lsntypes.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_custom_lsntypes.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\send_us_message.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\send_us_message.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\checkin2_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\checkin2_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\new_list_row_swim_camp_register3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\new_list_row_swim_camp_register3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\removelesson_item1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\removelesson_item1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_multiplestudent_nextschdl.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_multiplestudent_nextschdl.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_child.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_item_child.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_buy_more_product_list.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_buy_more_product_list.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayoutdisplay.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\linearlayoutdisplay.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutmeritregister2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutmeritregister2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_dive_and_turns_regi2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_dive_and_turns_regi2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_team_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_team_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_swim_competition_tabbed.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_swim_competition_tabbed.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\level_req_popup.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\level_req_popup.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\contact_us_fragment.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\contact_us_fragment.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\myaccount2_fragment.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\myaccount2_fragment.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_comp_all_events.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_comp_all_events.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_checkin.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_checkin.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_camps_register3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_camps_register3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\transfermakeup_count.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\transfermakeup_count.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scheduling_instructor_filter_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scheduling_instructor_filter_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_upcoming_meet_stud_list.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_upcoming_meet_stud_list.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_schedule_regi4_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_schedule_regi4_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dive_turns_2_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\dive_turns_2_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_past_schedule_date_selection.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\dialog_past_schedule_date_selection.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutactivityregister2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutactivityregister2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\removelesson_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\removelesson_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_single.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_single.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_team.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_team.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lap_swims_session.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_lap_swims_session.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_forgetpwd.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\dialog_forgetpwd.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_todays_schedule_instructor.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_todays_schedule_instructor.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\swim_comp_regi5_body.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\swim_comp_regi5_body.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_transfer_semi_to_private.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_transfer_semi_to_private.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\register3_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\register3_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\new_list_row_swim_camp_register3_child.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\new_list_row_swim_camp_register3_child.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\progress_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\progress_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\inst_avai_pop_up_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\inst_avai_pop_up_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cancelalesson_item_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\cancelalesson_item_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\juniorlifeguard.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\juniorlifeguard.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_lesson.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_lesson.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_camp_register2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_camp_register2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_swim_comp_trophy_room.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_swim_comp_trophy_room.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buy_more_retail_store_product_details.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buy_more_retail_store_product_details.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\info_help.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\info_help.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_mycart_items.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_mycart_items.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_addnew_payment_method.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_addnew_payment_method.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_students_line.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_students_line.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_request_shadowing.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_request_shadowing.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\removelesson_item_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\removelesson_item_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_dash_board.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_dash_board.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition5_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition5_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_bank_my_account.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_bank_my_account.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_make_purchase.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_make_purchase.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_tansfer_make_up.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_tansfer_make_up.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_student_list_with_et.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_student_list_with_et.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_viewcertificate.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_viewcertificate.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ribben_count_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\ribben_count_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\inflate_schedule3_body.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\inflate_schedule3_body.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_custom_scheduling_top.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_custom_scheduling_top.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_upcoming_event_comp_results_detail.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_upcoming_event_comp_results_detail.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\email_preferences.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\email_preferences.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_item_powered_by_google.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\layout\\place_autocomplete_item_powered_by_google.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_cancel_lesson_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_cancel_lesson_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\schedule_a_lesson_body_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\schedule_a_lesson_body_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_list_row_schedule_regi4_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_list_row_schedule_regi4_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_family_swim_registration_new_megha.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_family_swim_registration_new_megha.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\header.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buy_more_lessions.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buy_more_lessions.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutgirlsregister1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutgirlsregister1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_marker_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_marker_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_option_footer.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\menu_option_footer.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_custom_inst_inflate.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_custom_inst_inflate.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scheduling_filters_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scheduling_filters_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cancelalesson_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\cancelalesson_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\addstudent2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\addstudent2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cancelalesson_item_new_d2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\cancelalesson_item_new_d2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition_trophy_room.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition_trophy_room.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\viewhold_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\viewhold_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_row_payment_history.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_row_payment_history.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_checklist.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_checklist.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_compitition1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_compitition1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition5_newchange.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition5_newchange.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_check_in.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_check_in.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_desclaimer_checkbox.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_desclaimer_checkbox.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_all_levels.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_view_all_levels.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_camps_register2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_camps_register2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_instructor_list_row.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_instructor_list_row.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_compitition5.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_compitition5.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_additional_telephone.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_additional_telephone.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lap_swims_discount.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_lap_swims_discount.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_radio_button.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_radio_button.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\register2_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\register2_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\region_bylist_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\region_bylist_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_waitlist.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_view_waitlist.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_comp_sched.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_comp_sched.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row_lst_trophy_count_swimcomp_trophies.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\row_lst_trophy_count_swimcomp_trophies.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\home_grid_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\home_grid_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\register1_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\register1_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\viewwaitlist_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\viewwaitlist_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\viewcertificate_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\viewcertificate_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_spinner_text.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_spinner_text.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition5.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition5.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_expandable_list.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_expandable_list.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_swim_static_info.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_swim_static_info.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\moreswimlession_list_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\moreswimlession_list_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_up_layout_buymore.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\pop_up_layout_buymore.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scheduling_days_and_times_filter.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scheduling_days_and_times_filter.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_item_prediction.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\layout\\place_autocomplete_item_prediction.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_size_chart.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\dialog_size_chart.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_textview_row.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_textview_row.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_transfer_site.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_transfer_site.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\legal_doc_check.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\legal_doc_check.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\locations.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\locations.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_group_header.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_group_header.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_a_lesson_body_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_a_lesson_body_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_oredersummary_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_oredersummary_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_login_welcome_actionbar.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_login_welcome_actionbar.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row_event_list.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\row_event_list.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_payment_account.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_add_payment_account.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition6_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition6_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_comp_regi3_body.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_comp_regi3_body.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buy_more_my_cart.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buy_more_my_cart.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_swim_register_step3_list.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_swim_register_step3_list.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition_page_confirmation.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition_page_confirmation.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\report_bug.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\report_bug.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_cancel_lesson.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_cancel_lesson.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\juniorlifeguardregister2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\juniorlifeguardregister2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_custom_buymorelessions_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_custom_buymorelessions_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_student_schedule_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_student_schedule_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_upcoming_event_records.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_upcoming_event_records.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ribben_count_details_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\ribben_count_details_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_cart.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_view_cart.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_dives_and_turns_regi3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_dives_and_turns_regi3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_change_email2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_change_email2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_detail_view_schedule.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_detail_view_schedule.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_top.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_top.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_attenadnce_codes.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_attenadnce_codes.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_remaining.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_remaining.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition3_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition3_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutmeritregister1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutmeritregister1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_family_swim_night_register.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_family_swim_night_register.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_all_events_comp_schedule.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_all_events_comp_schedule.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_fragment.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\layout\\place_autocomplete_fragment.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_progress.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\ae4355f83ac5f6f1d0d2fe57d6156d1fc733112d\\output\\res\\layout\\place_autocomplete_progress.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_change_email.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_change_email.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_comp_results.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_comp_results.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_savedcard.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_savedcard.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\checkin_load_item_body.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\checkin_load_item_body.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\location_map.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\location_map.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_compitition2_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_compitition2_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_buttonview.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_buttonview.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_lesson6.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_lesson6.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_students.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_students.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\swim_comp_summary_child_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\swim_comp_summary_child_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\receivepay_confirm.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\receivepay_confirm.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\waterpolo.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\waterpolo.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\feedback_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\feedback_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_comp_trophy_room_results.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_comp_trophy_room_results.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_loading.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_loading.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_actionbar.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_actionbar.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_progress_report_details.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_progress_report_details.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_compitition2_body1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_compitition2_body1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\terms_of_use.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\terms_of_use.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_schedule_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\view_schedule_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buy_more_lessions2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buy_more_lessions2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_custom_days_selection.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_custom_days_selection.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_compitition4.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_compitition4.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\managestudents.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\managestudents.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\registerchild_screen3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\registerchild_screen3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\seemore_lesson.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\seemore_lesson.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_student_list.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_student_list.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition_register.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition_register.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_custom_buymorelession_top.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_custom_buymorelession_top.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_lesson4.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_lesson4.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_select_payment.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_select_payment.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row_event_result.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\row_event_result.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_up_layout_lafitness.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\pop_up_layout_lafitness.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swimcompitition4_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swimcompitition4_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_cancel_lesson_new_d2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_cancel_lesson_new_d2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_cancel_remove_lesson_new_1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_cancel_remove_lesson_new_1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_ribben_count_details.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_ribben_count_details.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_past_schedule_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\view_past_schedule_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutbadgeregister.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutbadgeregister.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_contact_us.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_contact_us.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_checkin.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\dialog_checkin.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_check_in2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_check_in2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buy_more_retail_store.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buy_more_retail_store.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutactivityregister3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutactivityregister3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_past_due_bal.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_past_due_bal.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buy_more_product_listing.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buy_more_product_listing.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_payment_history_new_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\view_payment_history_new_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_camp_register3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_camp_register3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\addstudent.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\addstudent.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_group.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_group.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition1_old.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition1_old.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_ribben_count.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_ribben_count.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_cancel_remove_lesson.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_cancel_remove_lesson.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_register_step_boxes.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_register_step_boxes.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition2_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition2_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_view_payment_history.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_view_payment_history.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_schedule_confirm_data.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_schedule_confirm_data.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition3_new_list1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition3_new_list1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_event_row.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_event_row.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutmeritregister3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutmeritregister3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_competition.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_competition.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\sheduling_filters.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\sheduling_filters.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_change_pass.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_change_pass.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_progress_report.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_progress_report.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\login_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_camps_register1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_camps_register1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_custom_inst_inflate_lay.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_custom_inst_inflate_lay.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutgirlsregister2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutgirlsregister2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\spinner_textview.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\spinner_textview.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\progress_report_details_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\progress_report_details_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buy_more_lessions_otherprograms.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buy_more_lessions_otherprograms.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_card_my_account.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_card_my_account.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_instructor_list.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_instructor_list.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_thankyou.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_thankyou.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\waterpolo_register3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\waterpolo_register3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\checkbox_right_side.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\checkbox_right_side.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_products_order_summary.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_products_order_summary.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\manage_profile.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\manage_profile.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\checkin_load_item_body_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\checkin_load_item_body_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_lesson3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_lesson3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition4_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition4_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_tabs.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_tabs.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_listview_swimcompitition3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_listview_swimcompitition3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_home_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_student_tabs.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_student_tabs.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\receive_payment.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\receive_payment.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_student_skill_row.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_student_skill_row.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cancelsurvey.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\cancelsurvey.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_top.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_top.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\inst_bio_pop_up_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\inst_bio_pop_up_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_comp_register_splash.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_comp_register_splash.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\grid_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\grid_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_time_filter.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\dialog_time_filter.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\progress_horizontal_holo_no_background_light.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\progress_horizontal_holo_no_background_light.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutgirlsregister3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutgirlsregister3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\transfermakeup_lesson.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\transfermakeup_lesson.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_compitition2_body.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_compitition2_body.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_swim_camp_register1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\list_row_swim_camp_register1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\waterpolo_register2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\waterpolo_register2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_lesson5.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_lesson5.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_waitlist.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_waitlist.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\juniorlifeguardregister3.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\juniorlifeguardregister3.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_competition_tabbed.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_competition_tabbed.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_inflate_schedule3_body.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_inflate_schedule3_body.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\programs_detail_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\programs_detail_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymoreswimlession_list_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymoreswimlession_list_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\edit_students.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\edit_students.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_family_swim_night_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_family_swim_night_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_buttonview_new_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_buttonview_new_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\transfermakeup_site.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\transfermakeup_site.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\transfermakeup_sp.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\transfermakeup_sp.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_up_layout_unpaidclassinform.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\pop_up_layout_unpaidclassinform.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scoutactivityregister1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scoutactivityregister1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login_activity_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\login_activity_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_cancel_remove_lesson_new.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_cancel_remove_lesson_new.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_pool_data.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_pool_data.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login_welcome_splashscreen.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_login_welcome_splashscreen.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_lessons.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_lessons.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_games.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_games.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\myaccount3_fragment.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\myaccount3_fragment.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\transfermakeup_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\transfermakeup_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_detail_cancle_lesson.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_detail_cancle_lesson.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_top_rated.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_top_rated.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scheduling_main.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scheduling_main.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\privacy_policy.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\privacy_policy.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_ordersummry_addshippingaddress.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_ordersummry_addshippingaddress.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_transfer_make_up.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_new_transfer_make_up.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\splash_screen.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\splash_screen.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_add_creditdebit_card.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_add_creditdebit_card.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\change_password.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\change_password.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lap_swims_monthly.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_lap_swims_monthly.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_row_event_detail_results.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\layout_row_event_detail_results.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_remove_payment_account.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\dialog_remove_payment_account.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim_compitition_upcoming_events.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim_compitition_upcoming_events.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_swim4_test.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_swim4_test.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_price_sheet.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_view_price_sheet.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_lesson7.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_lesson7.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_drawer_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\menu_drawer_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_payment_history_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\view_payment_history_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_cancel_survey.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\dialog_cancel_survey.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\blank_view.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\blank_view.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row_event_pool_data.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\row_event_pool_data.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lap_swims.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_lap_swims.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scheduling_filter_new_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scheduling_filter_new_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_studentlist_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\view_studentlist_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\swim_comp_summary_event_list_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\swim_comp_summary_event_list_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_holds.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_view_holds.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\cacc861ba2459171d6e1417103d98cf7dea8d65f\\output\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scheduling_advanced_filter_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scheduling_advanced_filter_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\d2_schedule_makeup.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\d2_schedule_makeup.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_add_checking_account.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_add_checking_account.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_dialog.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\programscetailcctivityc_swimcamp.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\programscetailcctivityc_swimcamp.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_radiobuttonview.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\custom_radiobuttonview.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\water_aerobics_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\water_aerobics_activity.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_manage_accnts.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_manage_accnts.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\admsandroid\\.android\\build-cache\\20ab89c3cef578295d895287eb2b32b4377e5135\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\juniorlifeguardregister1.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\juniorlifeguardregister1.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_upcoming_event_comp_schedule.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_upcoming_event_comp_schedule.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\swimteamdescription_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\swimteamdescription_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_transfer_make_up.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_transfer_make_up.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_up_layout.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\pop_up_layout.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\registerchild_screen2.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\registerchild_screen2.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_swim_compitition5.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\activity_new_swim_compitition5.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buymore_card_details_item.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\buymore_card_details_item.xml"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\level_calculator_activity.xml",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\level_calculator_activity.xml"
+    }
+]

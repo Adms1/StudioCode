@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/txtStudentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Student Name "
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/rel_age_dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtStudentName" >
+
+        <TextView
+            android:id="@+id/txtStudenDOBLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOB : "
+            android:textColor="@color/gray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtStudenDOBValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txtStudenDOBLabel"
+            android:text="12/30/2004"
+            android:textColor="@color/gray" 
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/txtStudenAgeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/txtStudenAgeValue"
+            android:text="Age : "
+            android:textColor="@color/gray" 
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/txtStudenAgeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="24"
+            android:textColor="@color/gray" 
+            android:textSize="12sp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtLessionTypes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_age_dob"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Private,Default"
+        android:textColor="@color/black" />
+
+</RelativeLayout>

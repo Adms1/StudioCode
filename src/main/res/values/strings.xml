@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_crash"></string>
+    <string name="home_welcome"><u>"Welcome to Waterworks!"</u></string>
+    <string name="app_name">Waterworks</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="empty_fields">Blank fields should not allow.</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="existsEmail">Email address already used.</string>
+    <string name="invalidPhone">Invalid phone number</string>
+    <string name="levelCal">Please use the Level Calculator to determine the student\'s level.</string>
+    <string name="selectLessonType">Please select lesson type.</string>
+    <string name="not_match_email">Email does not match the confirm email</string>
+    <string name="not_match_pass">Password does not match the confirm password</string>
+    <string name="hint_email">E-mail Address</string>
+    <string name="hint_confirm_email">Confirm E-mail Address</string>
+    <string name="hint_firstname">First Name</string>
+    <string name="hint_lastname">Last Name</string>
+    <string name="hint_age">Age</string>
+    <string name="hint_birthdate">Date of Birth</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_password_confirm">Confirm Password</string>
+    <string name="hint_street_address">Street Address</string>
+    <string name="hint_apt">Apt#</string>
+    <string name="hint_state">State</string>
+    <string name="hint_best_call">Best Call Back Time</string>
+    <string name="hint_zipcode">Zip Code</string>
+    <string name="hint_subject">Subject</string>
+    <string name="hint_detailed_message">Detailed Message</string>
+    <string name="hint_city">City</string>
+    <string name="hint_prm_tel">Primary Telephone</string>
+    <string name="hint_select_site">Select Site</string>
+    <string name="hint_meet_date">Select Meet Date</string>
+    <string name="hint_select_lessontype">Select Lesson Type</string>
+    <string name="hint_no_of_volunteer">Select No.of Volunteers</string>
+    <string name="hint_select_dept">Select Department</string>
+    <string name="hint_alt_tel">Alternate Number</string>
+    <string name="hint_select_gender">Select Gender</string>
+    <string name="hint_card_type">Card Type</string>
+    <string name="hint_account_type">Account Type</string>
+    <string name="hint_select_level">Select Level</string>
+    <string name="hint_nature_type">Select Nature Type</string>
+    <string name="hint_sendry_tel">Secondary Telephone</string>
+    <string name="selectSite">Select Site</string>
+    <string name="pleasewait">Please wait&#8230;</string>
+    <string name="hint_employee">Name of Employee</string>
+    <string name="fgtpwdtitle">Please enter your email address and we will send you instructions on how to reset your password.</string>
+    <string name="title_activity_dash_board">DashBoardActivity</string>
+    <string name="emailpref_title">We send out alerts and messages based on your past and upcoming schedule.\nHere is a list of alerts available for your account</string>
+    <string name="registerachild">Register a Child</string>
+    <string name="levelText">Please use our Level Calculator to determine the correct level of the participant.</string>
+    <string name="instructinfo">I am aware that if my scheduled instructor is out sick, I will be provided with a substitute instructor. I have the right to decline the substitute and receive a Make-Up class.</string>
+    <string name="medicalinfo">Does your child have any allergies/medical conditions that would be affected by exercise or swimming?</string>
+    <string name="additionalinfo">To better assist us in choosing an appropriate instructor match for your child, <font color="@color/textbox_color"><b><u>please click here.</u></b></font></string>
+    <string name="hideinfo">Hide Optional Questions</string>
+    <string name="txtinfo">We would like to create the best experience possible. These questions will help us match your child with the best instructor as well as help the instructor understand your expectations.\n\nOptional: You may answer as few or as many questions as you like.
+\n\nIf you could describe your perfect instructor in three words how would you describe them? (30 character limit) </string>
+    <string name="chk1_value">I would like my child to eventually move into competitive swimming/join a swim team.</string>
+    <string name="chk2_value">I would like to focus more on speed and distance/endurance.</string>
+    <string name="chk3_value">I would like to focus on technique and shorter distances.</string>
+    <string name="txtbottominfo">Please list any swimming goals you would like to achieve or comments you would like to leave for your instructor. 70 character limit</string>
+    <string name="progresreportlable">Use the chart below to track your swimmer\’s progress as they master skills and advance through the levels.</string>
+    <string name="updateSuccess">Data updated successfully</string>
+    <string name="suggest">We are extremely eager to hear your suggestions.\nPlease describe your suggestion </string>
+    <string name="problem">We are extremely sorry that you faced a problem using our app. Please tell us what happened.\nDetailed Description </string>
+    <string name="swimMeetsBefore">Have you ever been a timer before at one of our swim meets?</string>
+    <string name="swimComptBefore">Have you ever been a timer before at a swim competition?</string>
+    <string name="reminder"><u>REMINDERS:</u></string>
+    <string name="confirmorder"><u>Please confirm your selections</u></string>
+    <string name="createaccount_success">Dear Customer,\n\nThank you for registering with Waterworks Aquatics. You will be receiving an activation email shortly.</string>
+
+    <string-array name="array_volunteers">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="array_name">
+        <item>Home</item>
+        <item>Mom Cell</item>
+        <item>Dad Cell</item>
+        <item>Mom Work</item>
+        <item>Dad Work</item>
+        <item>Grand Parent</item>
+        <item>Baby Sister</item>
+        <item>Relative</item>
+        <item>Fax</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="menuoption">
+        <item>Check In</item>
+        <item>View Profile</item>
+        <item>View My Schedule</item>
+        <item>Make a Purchase</item>
+        <item>Scheduling</item>
+        <item>Kid\'s Corner</item>
+        <item>Cancel a Lesson</item>
+        <item>Contact Us</item>
+        <item>Programs</item>
+        <item>Logout</item>
+    </string-array>
+    <string-array name="menuoption1">
+        <item>Home</item>
+        <!--<item>Check In</item>-->
+        <item>My Account</item>
+        <item>View My Schedule</item>
+        <item>Make a Purchase</item>
+        <item>Scheduling</item>
+        <item>Swim Competition</item>
+        <!--<item>Kid\'s Corner</item>-->
+        <item>Cancel a Lesson</item>
+        <item>Programs</item>
+        <item>Help &amp; Support</item>
+        <item>Logout</item>
+    </string-array>
+    <string-array name="month">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="year">
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+    </string-array>
+    <string-array name="card_type">
+        <item>Please select card type</item>
+        <item>Visa</item>
+        <item>American Express</item>
+        <item>Master Card</item>
+        <item>Discover</item>
+    </string-array>
+    <string-array name="acc_type">
+        <item>Checking</item>
+    </string-array>
+    <string-array name="payment_type">
+        <item>Please select account type</item>
+        <item>Credit or Debit Card</item>
+        <item>Bank Account</item>
+    </string-array>
+
+    <string name="vs_note1">If you are concerned about your child\'s progress at any time, please</string>
+    <string name="clickhere">Click Here.</string>
+    <string name="vs_body_text">All make-up lesson credits must be USED within 6 days after the last paid lesson of the package if you do not plan on renewing OR they will ALL EXPIRE.\n\nMake-up lessons may be used within 30 days after the end of the lesson package ONLY IF you are currently enrolled(You must renew within 6 days after the package ends and begin that new package)and payments are up to date.\n\nMake-ups may not be scheduled more than 7 days in andvance. Day\, time\, and instructor preferences are not guaranteed for make-up class.\n\nMAKE-UP LESSONS MAY NOT REPLACE OR BE SCHEDULED DURING YOUR REGULAR SCHEDULE LESSON DAY AND TIME. ALL MAKE-UPS MUST BE SCHEDULES AT DIFFERENT TIME OR DAY. If you release/end you schedule, your regular lesson time and day may NOT be used as a make-up.\n\nPLEASE MAKE SURE YOU ARE ABLE TO ATTEND THE TIME YOU SCHEDULE THE MAKE-UP AS WE DO NOT RESCHEDULE MAKE-UP LESSONS FOR ANY RESON,INCLUDING ILLNESS.</string>
+    <string name="title_activity_attenadnce_codes">AttenadnceCodesActivity</string>
+    <string name="title_activity_request_shadowing">RequestShadowingActivity</string>
+    <string name="codedata1">Recurring billing is an enhanced method of payment where you do not have to come to our facility to make a payment. Instead, you choose a monthly package based on how many times a week your student swims and you are automatically charged near the end of every month. You pay using a checking account. Your payment details are stored, and all payment information is 100% secure. To cancel recurring billing at any time, please call our front desk at (949) 450&#8211;0777.</string>
+    <string name="codedata2">Recurring billing is an enhanced method of payment where you do not have to come to our facility to make a payment. Instead, you purchase a package monthly. You are automatically charged near the end of every month. You pay using a checking account. Your payment details are stored, and all payment information is 100% secure. To cancel recurring billing at any time, please call our front desk at (949) 450&#8211;0777.</string>
+    <string name="codedata3">Recurring billing is an enhanced method of payment where you do not have to come to our facility to make a payment. Instead, you purchase a package monthly and come in as many, or as few, times as you would like. You are automatically charged near the end of every month. You pay using a checking account. Your payment details are stored, and all payment information is 100% secure. To cancel recurring billing at any time, please call our front desk at (949) 450&#8211;0777.</string>
+    <string name="codedata4">Monthly billing is an enhanced method of payment where you, the customer, does not have to come to the site and order the items every month. An order will be placed automatically for you and you will be charged on your preffered payment method.\nWe store your payment details when you pay for the first order. It is 100% secure.\nYou can call our front desk at (949) 450&#8211;0777 and cancel the recurring payment any time.</string>
+    <string name="codedata5"><b>CWOP</b> (Cancel Without Penalty) &amp; <b>CIS</b> (Call in sick) - This code is used when a client calls before 9:00 AM the day of their lesson. Any client with a class scheduled before 11:00 am, MUST call to cancel 2 hours prior to their lesson. A make up credit will be issued.\n<b>CWP</b>&#8211; Cancel With Penalty. This code is used when client calls after the 9:00 AM deadline or less then 2 hours before the start time of the lesson. No make up credit will be issued.\n<b>NS</b> (No Show)- This code is used when client does not show up to their lesson time. No make up credit issued.\n<b>CBW</b> (Cancel by Waterworks) - This code is used when Waterworks cancels the class for any reason that is due to Waterworks such as a pool closure. The credit for this class will be added to the end of your package and this lesson will not be charged.\n<b>FRZ</b> (Freeze) - This code is used when you use a benefit you have earned from being a loyal member. The credit for this class will be added to the end of your package and this lesson will not be charged.</string>
+    <string name="cancellesson_title1">If you would like to PERMANENTLY remove a class time / schedule, please <u>click here.</u></string>
+    <string name="cancellesson_title2"><u>Click here for more information about cancellations and make up lessons.</u></string>
+    <string name="title_activity_detail_cancle_lesson">DetailCancleLessonActivity</string>
+    <string name="title_activity_swim_lessons">SwimLessonsActivity</string>
+    <string name="title_activity_swim_competition">SwimCompetitionActivity</string>
+    <string name="title_activity_swim_camps">SwimCampsActivity</string>
+    <string name="title_activity_view_cart">ViewCartActivity</string>
+    <string name="question_title">Please answer the questions below to help us determine your child\'s current swim level. This will help us match your child with the appropriate instructor and other student (if there is another student).</string>
+    <string name="question_1"><b>Question #1</b>\n\nIs your child able to swim freestyle (the crawl), using big arms, to cross the length of a 25-yard pool, without touching the bottom or sides of the pool, and without assistance?</string>
+    <string name="question_2a"><b>Question #2</b>\n\nIs your child able to swim backstroke across the length (25 yards) of the pool by themselves without touching the bottom of the pool, the side of the pool and without assistance?</string>
+    <string name="question_2b"><b>Question #2</b>\n\nCan your child swim or kick half way across the pool (12.5 yards) without assistance by using side breathing or rolling from their stomach to their back?</string>
+    <string name="question_3a"><b>Question #3</b>\n\nDoes your child know how to swim legal Breaststroke without any flutter kicks across the length (25 yards) of the pool by themselves without touching the bottom of the pool, the side of pool and without assistance?</string>
+    <string name="question_3b"><b>Question #3</b>\n\nCan your child swim freestyle (the crawl) with 2 unassisted rollover breaths?</string>
+    <string name="question_4yes"><b>Question #4</b>\n\nDoes your child know how to swim legal Butterfly without any flutter kicks across the length (25 yards) of the pool by themselves without touch the bottom of the pool, the side of the pool and without assistance?</string>
+    <string name="question_4no"><b>Question #4</b>\n\nCan your child keep their face and ears entirely in the water for 5 seconds?</string>
+    <string name="question_5"><b>Question #5</b>\n\nDoes your child swim or have swum on a competitive swim team?</string>
+    <string name="question_6"><b>Question #6</b>\n\nDoes your child know how to do freestyle and backstroke flip turns, dive off the starting blocks and streamline push-off the wall?</string>
+    <string name="allergiesOrmedicalInfo">If you answered \'yes\' to the previous question, please use the space below to briefly describe your child\'s allergies/medical conditions.</string>
+    <string name="norecord">Data not available.</string>
+    <string name="norecord_payment_history">No payments could be found for the selected criteria.</string>
+    <string name="edit_children">Edit Children</string>
+    <string name="title_activity_view_price_sheet">ViewPriceSheetActivity</string>
+    <string name="title_activity_view_holds">ViewHoldsActivity</string>
+    <string name="viewholds">The lesson times in the chart below are times that have become available on the waitlist.. These times are being temporarily held for you. If you would like to add these lessons to your schedule, please click the Confirm option. If you do not want to add these lessons to your schedule, please click the Remove option.</string>
+    <string name="title_activity_view_waitlist">ViewWaitlistActivity</string>
+    <string name="viewwaitlist">You are not currently on the waitlist for any lesson times. Please contact our office staff for assistance.</string>
+    <string name="title_activity_tansfer_make_up">TansferMakeUpActivity</string>
+    <string name="title_activity_cancel_remove_lesson">CancelRemoveLessonActivity</string>
+    <string name="removelesson_info">Make up lessons cannot be released. If you have Make up lessons already scheduled that you wish NOT to attend, these classes will have to be Cancelled With Penalty and will not be credited back to your account. If you would like to cancel these make ups, please </string>
+    <string name="title_activity_past_due_bal">PastDueBalActivity</string>
+    <string name="title_activity_view_payments">ViewPaymentsActivity</string>
+    <string name="title_activity_lap_swims">LapSwimsActivity</string>
+    <string name="title_activity_lap_swims_session">LapSwimsSessionActivity</string>
+    <string name="title_activity_lap_swims_monthly">LapSwimsMonthlyActivity</string>
+    <string name="title_activity_lap_swims_discount">LapSwimsDiscountActivity</string>
+    <string name="title_activity_family_swim_night">FamilySwimNightActivity</string>
+    <string name="title_activity_family_swim_night_register">Register</string>
+    <string name="otherPrograms_header_text">In addition to swimming classes, Waterworks Aquatics offers a variety of high quality aquatics programs for children and adults. Tap a program below to sign up or get more information.</string>
+    <!--<string name="swimcampregister2_text">Please select the students you would like to register for this swim competition. Only students that are eligible for competitions are listed below:</string>-->
+    <string name="swimcampregister2_text"> Select students you would like to register.</string>
+    <string name="swimcampregister2_text2">Only eligible students are displayed.</string>
+    <string name="swimcamp_register2_text">Session prices vary by location and date. The following discounts are available at all sites.\nRegister for 3 sessions: $75 discount.\nRegister for 6 sessions: $200 discount.\nRegister for 9 sessions: $400 discount.\n(8:00am early drop off is available at an additional cost of $40 per session).</string>
+    <string name="agreementSwimRegister1">Yes! I am aware that the meet begins at the time above and I must check-in online, by phone, or in person, no later than 1 hour prior to the start time of the meet. </string>
+    <string name="title_activity_check_in2">CheckIn2Activity</string>
+    <string name="swimStep2LongText">In order for us to run a smooth and efficient swim meet, we ask for parent volunteers to help with timing the races. We like to have two timers for each lane to help ensure accurate results. As a timer you are guaranteed a front row seat for the meet, and for most of the races your seat will be in the shade. \n\nYou will also get a free lunch combo from the snack shop which will be delivered to you on the pool deck, as well as front-of-the line privileges to pick up your child\'s ribbons after the meet. Please check in with the announcer no later than 10 minutes before the start time of the meet. At that time you will be given all the instructions and information needed. We ask all of our timers to time for the entire meet which is expected to last between 1.5-2.5 hours with a 10 minute break. \n\n</string>
+    <string name="title_activity_swim_team">SwimTeamActivity</string>
+    <string name="reminders">All participants MUST be checked-in by 12pm the day of the swim meet in order to be assigned a lane for their events.\n\nCheck-in is from 8am-12pm the day of the meet at the front desk; or you may check-in by phone or online between 7am-12pm the morning of the swim meet.\n(760)603-9400 www.waterworksswimonline.com\n\nThe swim meet will begin promptly at 2:00pm.\n\nYou may arrive later to the meet as long as you are checked-in by phone or online by 12:00pm.\n\nEstimated Timeline of Events:\n2:00 I.M. &amp; Butterfly Events\n2:15 Backstroke Events\n2:30 Backstroke Events\n3:00 Freestyle Events</string>
+    <string name="title_activity_dives_and_turns_regi1">DivesAndTurnsRegi1Activity</string>
+    <string name="title_activity_dive_and_turns_regi2">DiveAndTurnsRegi2Activity</string>
+    <string name="title_activity_dives_and_turns_regi3">DivesAndTurnsRegi3Activity</string>
+    <string name="info">\u2022 A make-up lesson will be issued to your account for cancellations made with proper notice.\n\n\u2022 NO make-ups or refunds will be issued for missed, cancelled, or untaken GROUP classes.\n\n\u2022 If your lesson time is before 9:00am: In order to receive a make up lesson, you must cancel your class by 7:00am.\n\n\u2022 If your lesson time is at or after 9:00am: In order to receive a make up lesson, you must cancel your class at least 2 hours prior to the class start time. \n\n\u2022 If you cancel after the times listed above, even in the case of illness, you will NOT receive a make-up lesson. \n\n\u2022 Make-up lessons may NOT replace or be scheduled during your regular lesson time.\n\n\u2022 Make-up lessons CANNOT be added on to the end of your package.</string>
+    <string name="title_activity_transfer_lesson">TransferLessonActivity</string>
+    <string name="title_activity_transfer_site">TransferSiteActivity</string>
+    <string name="title_activity_transfer_semi_to_private">TransferSemiToPrivateActivity</string>
+    <string name="title_activity_programs_detail">ProgramsDetailActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="Compititionstext">Select events for each student</string>
+    <string name="Compititionstext2">Only events that the student qualifies for are displayed</string>
+    <string name="Compititionstep3">Select starting preferences for each student</string>
+
+
+    <!-- new code -->
+    <string name="main_text">Options:</string>
+    <string name="option_progress">Progress:</string>
+    <string name="option_bar_color">Bar color:</string>
+    <string name="option_wheel_color">Wheel color:</string>
+    <string name="interpolated">Interpolated progress:</string>
+    <string name="linear">Linear progress:</string>
+    <string name="ok">OK</string>
+    <string name="about">About</string>
+    <string name="about_text">This app is for demonstrate the Material-ish progress wheel library, which provides a Material-style progress wheel compatible back to API 9. You can have indeterminate and determinate versions of the progress wheel, the later with a linear animation or a interpolated one like in the guidelines.\n\nRefer to the Github project page for more info at https://github.com/pnikosis/materialish-progress. </string>
+    <string name="bullet">\u2022 Any changes you make in this app will affect your current account with Waterworks.</string>
+    <string-array name="progress_value_options">
+        <item>Cycle between 0% and 100%</item>
+        <item>0%</item>
+        <item>10%</item>
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+        <item>100%</item>
+    </string-array>
+    <string-array name="progress_color_options">
+        <item>Default</item>
+        <item>Red</item>
+        <item>Magenta</item>
+    </string-array>
+    <string-array name="wheel_color_options">
+        <item>Default</item>
+        <item>Light Gray</item>
+        <item>Gray</item>
+    </string-array>
+    <string-array name="spinnerQuantity">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string name="survey_text1"><b>Your classes have <color name="@color/red">NOT</color> been released.</b></string>
+    <string name="survey_text">We recommend attending lessons year-round as many children tend to forget what they have learned. In many cases, the student has to be taught basic skills all over again. For children that do not know how to swim across the pool OR children that are under 6 years old, it is most critical to keep attending lessons.</string>
+    <string name="title_activity_new_swim_compitition5">NewSwimCompitition5Activity</string>
+    <string name="title_activity_new_schedule_alesson_step3">NewScheduleALessonStep3Activity</string>
+    <string name="title_activity_schedule_alesson_step4">ScheduleALessonStep4Activity</string>
+    <string name="title_activity_schedule_confermation">ScheduleConfermationActivity</string>
+    <string name="title_activity_todays_schedule_instructor">TodaysScheduleInstructorActivity</string>
+
+    <string name="Pay_notice">Please click the Make Payment button only <b>ONCE</b> Do not Click the browser refresh or reload.Your Account might get charged multiple times if you do so</string>
+
+    <string name="note">If you want to continue past your end date, you \nmust extend your schedule 2 weeks prior to \nyour end date.</string>
+    <string name="noteRemoveTime">Lessons on this date and dates going forward\nwill be removed from your schedule.</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="google_api_key">AIzaSyC9DmvP6mGmshyBbr8wApCqiGAP5ZZVbpM</string><!--<string name="Familycaption">Pricing varies based on location.\n$5 per child &amp; adult($20 max per family) \nThemed events are $7 child/adult ($28 max)</string>-->
+    <string name="Familycaption">Pricing varies based on location.</string>
+    <string name="title_activity_swimcompitition_register_step1">
+        SwimcompititionRegisterStep1Activity
+    </string>
+    <string name="title_activity_swimcompitition_register_step4">
+        SwimcompititionRegisterStep4Activity
+    </string>
+    <string name="title_activity_swimcompitition_register_step5">
+        SwimcompititionRegisterStep5Activity
+    </string>
+    <!--View All Levels Screen-->
+    <string name="VAL_heading">Below are the primary skill requirements for a swimmer to progress to each level.\n\nAdditional skills are needed to advance.</string>
+    <string name="VAL_level2">Swim 5 feet from the wall with their face in the water using flutter kicking.</string>
+    <string name="VAL_level2_2">Comfortable back-float with assistance.</string>
+    <string name="VAL_level3">Swim Freestyle with 2 unassisted 5 second long roll-over breaths.</string>
+    <string name="VAL_level4">Swim half-way (12.5 yards) across the pool with roll-over breathing or side breaths.</string>
+    <string name="VAL_level4_2">Jump into the pool and swim back to the wall.</string>
+    <string name="VAL_level5">Swim Freestyle across the pool (25 yards) with roll-over breathing or side breaths.</string>
+    <string name="VAL_level6">Swim Freestyle across the pool (25 yards) with less than 5 second breaths while the instructor is 10 feet in front of the student Level 7.</string>
+    <string name="VAL_level7">Freestyle across the pool with the instructor behind the student.</string>
+    <string name="VAL_level7_2">Backstroke across the pool (25 yards).</string>
+    <string name="VAL_level8">Breaststroke half-way across the pool; competition “legal” kick is not required.</string>
+    <string name="VAL_level9">Breaststroke across the pool (Competition “legal”).</string>
+    <string name="VAL_level10">Butterfly across the pool (25 yards).</string>
+    <string name="VAL_level10_2">Head-first dive from the side of the pool.</string>
+    <string name="VAL_level11">Track start dive from the racing block.</string>
+    <string name="VAL_level11_2">Open turns for Breaststroke and Butterfly.</string>
+    <string name="VAL_level11_3">Swim 50 continuous yards of each of the 4 competitive strokes.</string>
+    <string name="VAL_level12">Freestyle &amp; Backstroke flip-turns.</string>
+    <string name="VAL_level12_2">Sprinting and speed work on all 4 competitive strokes.</string>
+    <string name="VAL_level12_3">Technical improvements to form and efficiency on all 4 competitive strokes.</string>
+    <string name="title_activity_swim_competition_tabbed">SwimCompetitionTabbedActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="bank_check_text">The routing number is a 9 digit bank identifiation number.\nIt can generally be found in the lower left corner on the front side of a check. See the image for additional details.</string>
+    <string name="swim_competition_register_intro">Swim Competitions are a great way to build confidence in your swimmers and for you to see improvement in their abilities!\nOpen to all swimmers up to age 16 who can swim across the pool (level 5 or higher).\nEvery participant receives a ribbon for their efforts! Staff will be available to jump in and help our littlest swimmers if necessary.</string>
+    <string name="confirm_schedule_instruction">We have placed a temporary hold on the lessons you have selected. Please confirm \nyour selections before the hold expires.After you confirm your schedule, you will be asked \nto submit payment in order to finalize your schedule.</string>
+    <string name="str10minittimer">For your convenience, your schedule will be held for the next 10 minutes. Please submit your payment for lessons in order to finalize your schedule. If you decide not to make payment within this time frame, your schedule will be released.</string>
+
+    <string-array name="alltypes">
+        <item>-All Types-|0</item>
+        <item>Lessons|1</item>
+        <item>Swim Team|6</item>
+        <item>Lap Swim|3,7</item>
+        <item>Water Aerobics|4</item>
+        <item>Birthday Party|5,22</item>
+        <!--<item>Physical Therapy|21</item>-->
+        <item>Free Swim|24,25</item>
+        <item>Girls Scout Program|28</item>
+        <item>Dives and Turns Clinics|33</item>
+        <item>Swim Competition|14,15,16,17</item>
+        <item>Family Swim Nights|8,9,30,31</item>
+        <item>Scout Program|10,11,12,13</item>
+        <item>Jr. Life Guard Prep|34</item>
+        <item>Lifesaving/Swimming Merit Badges|35</item>
+        <item>Aquanaut/Swimming Activity Badges|36</item>
+        <item>Water Polo Conditioning|37</item>
+        <item>Retail Product|39,40</item>
+    </string-array>
+
+    <string-array name="markArray">
+        <item>08:00</item>
+        <item>08:20</item>
+        <item>08:40</item>
+        <item>09:00</item>
+        <item>09:20</item>
+        <item>09:40</item>
+        <item>10:00</item>
+        <item>10:20</item>
+        <item>10:40</item>
+        <item>11:00</item>
+        <item>11:20</item>
+        <item>11:40</item>
+        <item>12:00</item>
+        <item>12:20</item>
+        <item>12:40</item>
+        <item>01:00</item>
+        <item>01:20</item>
+        <item>01:40</item>
+        <item>02:00</item>
+        <item>02:20</item>
+        <item>02:40</item>
+        <item>03:00</item>
+        <item>03:20</item>
+        <item>03:40</item>
+        <item>04:00</item>
+        <item>04:20</item>
+        <item>04:40</item>
+        <item>05:00</item>
+        <item>05:20</item>
+        <item>05:40</item>
+        <item>06:00</item>
+        <item>06:20</item>
+        <item>06:40</item>
+        <item>07:00</item>
+        <item>07:20</item>
+        <item>07:40</item>
+
+    </string-array>
+
+    <string-array name="timeArrayToCheckValidTime">
+        <item>08:00 AM</item>
+        <item>08:20 AM</item>
+        <item>08:40 AM</item>
+        <item>09:00 AM</item>
+        <item>09:20 AM</item>
+        <item>09:40 AM</item>
+        <item>10:00 AM</item>
+        <item>10:20 AM</item>
+        <item>10:40 AM</item>
+        <item>11:00 AM</item>
+        <item>11:20 AM</item>
+        <item>11:40 AM</item>
+        <item>12:00 PM</item>
+        <item>12:20 PM</item>
+        <item>12:40 PM</item>
+        <item>01:00 PM</item>
+        <item>01:20 PM</item>
+        <item>01:40 PM</item>
+        <item>02:00 PM</item>
+        <item>02:20 PM</item>
+        <item>02:40 PM</item>
+        <item>03:00 PM</item>
+        <item>03:20 PM</item>
+        <item>03:40 PM</item>
+        <item>04:00 PM</item>
+        <item>04:20 PM</item>
+        <item>04:40 PM</item>
+        <item>05:00 PM</item>
+        <item>05:20 PM</item>
+        <item>05:40 PM</item>
+        <item>06:00 PM</item>
+        <item>06:20 PM</item>
+        <item>06:40 PM</item>
+        <item>07:00 PM</item>
+        <item>07:20 PM</item>
+        <item>07:40 PM</item>
+
+    </string-array>
+
+</resources>

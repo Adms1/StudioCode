@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".TransferMakeUpActivity" >
+
+	<include 
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_top"/>
+    <TextView 
+	    android:id="@+id/tv_trnsf_name"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textColor="@color/white"
+	    android:background="@color/fragment_title_bg"
+	    android:layout_below="@+id/layout_top"
+	    android:layout_marginTop="10dp"
+	    android:paddingBottom="10dp"
+	    android:text="Tansfer Make-Up"
+	    android:textAppearance="?android:attr/textAppearanceMedium"
+		android:paddingTop="10dp"
+	    android:paddingLeft="10dp" />
+    <TabHost
+        android:id="@+id/TabHost01"
+        android:layout_below="@+id/tv_trnsf_name"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+            <!-- TabWidget used to creat tabs -->
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:tabStripEnabled="false" >
+            </TabWidget>
+            <!-- container of tabs -->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <!-- tab N°1 -->
+                <!-- Inclusion of the interface -->
+                <include
+                    android:id="@+id/onglet1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    layout="@layout/transfermakeup_lesson" >
+                </include>
+                <!-- tab N°2 -->
+                <!-- Inclusion of the interface -->
+                <include
+                    android:id="@+id/Onglet2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    layout="@layout/transfermakeup_sp" >
+                </include>
+                <!-- tab N°3 -->
+                 <!-- Inclusion of the interface -->
+                 <include
+                    android:id="@+id/Onglet3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    layout="@layout/transfermakeup_site" >
+                </include>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>

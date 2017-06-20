@@ -1,0 +1,216 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SwimCampsRegister1Acitivity">
+
+    <include
+        android:id="@+id/include_swim_comp_custom_top"
+        layout="@layout/swim_comp_custom_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include_swim_comp_custom_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/app_bg"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/frontview"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal">
+
+                <com.meg7.widget.CircleImageView
+                    android:id="@+id/inst_DP"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:checked="false"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_change"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/tv_fsn_info"
+                    style="@style/text_views_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_data"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/infoview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/app_bg"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_sc_select_site"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="Upcoming Competitions by Location:"
+                    android:textColor="@color/gray_light"
+                    android:visibility="gone" />
+
+                <!--   <Spinner
+                       android:id="@+id/spinner1_sites"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/tv_sc_select_site"
+                       android:layout_marginTop="5dp"
+                       android:background="@drawable/drop_down1"
+                       android:drawSelectorOnTop="true"
+                       android:paddingLeft="10dp"
+                       android:prompt="@string/hint_select_site"
+                       android:visibility="gone" />-->
+
+                <Button
+                    android:id="@+id/btn_sites"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_sc_select_site"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/line_dropdown_bttn"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="7dp"
+                    android:paddingTop="5dp"
+                    android:text="Please Select a Location"
+                    android:textAllCaps="false"
+                    android:textStyle="normal"
+                    android:textColor="@color/black_prefer_client" />
+
+                <TextView
+                    android:id="@+id/tv_sc_select_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_sites"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textColor="@color/gray_light"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/tv_sc_Fees"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_sc_select_location"
+                    android:paddingTop="5dp"
+                    android:text="Fees"
+                    android:textColor="@color/gray"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtPriceinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tv_sc_Fees"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/blue_payment_history"
+                    android:ellipsize="none"
+                    android:layout_marginLeft="5dp"
+                    android:maxLines="3"
+                    android:padding="4dp"
+                    android:singleLine="false"
+                    android:text=""
+                    android:textColor="@color/gray_avaibility"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relLastview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_data"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvListHeader"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:padding="5dp"
+                    android:text="          Event Date              Start Time"
+                    android:textColor="@color/gray"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:visibility="gone" />
+                <!--android:background="#f2f2f2"-->
+
+                <LinearLayout
+                    android:id="@+id/llListData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/tvListHeader"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+                    <!--android:background="@drawable/gray_border"-->
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llListData"
+                android:layout_gravity="center"
+                android:stateListAnimator="@anim/lift_on_touch"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_margin="20dp"
+                android:background="@color/design_change_d2"
+                android:text="Register"
+                android:textSize="18dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

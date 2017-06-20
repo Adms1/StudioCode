@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:context=".SwimCampsRegister1Acitivity">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/d2_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_swim_camps_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top"
+        android:layout_marginTop="10dp"
+        android:background="@color/fragment_title_bg"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="Swim Competition Registration:Step 3 of 5"
+        android:textColor="@color/white"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/txtSelectedStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_swim_camps_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtSelectedStudent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/app_bg"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/rl_data"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtMeetDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meet Date"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:id="@+id/ll_swim_comp_regi3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <TextView
+                android:id="@+id/txtLongDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rgSwimNextEndWallinfo"
+                android:layout_marginTop="10dp"
+                android:text="@string/swimStep2LongText"
+                android:textColor="@color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/txtVolunteer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtLongDesc"
+                android:layout_marginTop="10dp"
+                android:text="Would like to register as a volunteer ?"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <RadioGroup
+                android:id="@+id/rgVolunteerinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtVolunteer"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radiobtnVolunteerYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/customdrawableradionbuttons"
+                    android:padding="3dp"
+                    android:text="Yes"
+                    android:textColor="@color/black"/>
+
+                <RadioButton
+                    android:id="@+id/radiobtnVolunteerWall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/customdrawableradionbuttons"
+                    android:checked="true"
+                    android:padding="3dp"
+                    android:text="Maybe Next Time"
+                    android:textColor="@color/black"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtNoOfVolunteer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rgVolunteerinfo"
+                android:layout_marginTop="10dp"
+                android:text="How many volunteers are you registering ?"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/spinner1_volunteers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNoOfVolunteer"
+                android:background="@drawable/drop_down1"
+                android:drawSelectorOnTop="true"
+                android:entries="@array/array_volunteers"
+                android:paddingLeft="10dp"
+                android:prompt="@string/hint_no_of_volunteer"/>
+
+            <Button
+                android:id="@+id/btnContinueStep3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner1_volunteers"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@color/design_change_d2"
+                android:padding="10dp"
+                android:text="Continue"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
