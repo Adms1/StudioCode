@@ -68,8 +68,6 @@ public class ProgressReportDetailsActivity extends Activity {
     LinearLayout lin_lay = null, relStudentRemainingSkill = null, relStudentSkill = null, llLevelBoxesLayout = null, llExpandableListView = null;
 
     Context mContext = null;
-
-    //    ListView listStudentSkill;//listStudentRemainingSkill
     TextView title, txtNothingToDisplay, txtStudentName;
     String successViewCertificate;
     String TAG = "ViewCerfiticate";
@@ -135,8 +133,6 @@ public class ProgressReportDetailsActivity extends Activity {
         title.setText("Progress Report");//
         txtStudentName = (TextView) findViewById(R.id.txtStudentName);
         txtStudentName.setText(firstname + " " + lastname);
-//        txtNothingToDisplay = (TextView)findViewById(R.id.txtNothingToDisplay);
-//        llExpandableListView = (LinearLayout) findViewById(R.id.llExpandableListView);
 
         ScrollProgressRpt = (ScrollView) findViewById(R.id.ScrollProgressRpt);
         lin_lay = (LinearLayout) findViewById(R.id.lin_lay);
@@ -144,8 +140,6 @@ public class ProgressReportDetailsActivity extends Activity {
         relStudentSkill = (LinearLayout) findViewById(R.id.relStudentSkill);
         llLevelBoxesLayout = (LinearLayout) findViewById(R.id.llLevelBoxesLayout);
 
-
-//        includeExpList = (View) findViewById(R.id.includeExpList);
         lvExp = (ExpandableListView) findViewById(R.id.lvExp);
         lvExp.setDivider(null);
         lvExp.setDividerHeight(0);
@@ -530,7 +524,6 @@ public class ProgressReportDetailsActivity extends Activity {
                 linearLayout.setLayoutParams(LinearLayoutparams);
 
                 LinearLayout.LayoutParams dateParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//                dateParams.setMargins(paddingBottom, paddingBottom, paddingBottom, 0);
                 dateParams.width = dateTextViewWidth;
 
                 TextView textViewDate = new TextView(mContext);
@@ -543,8 +536,6 @@ public class ProgressReportDetailsActivity extends Activity {
 
 
                 LinearLayout.LayoutParams paramsskillno = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                //               paramsskillno.setMargins(paddingBottom, paddingBottom, paddingBottom, 0);
-
                 TextView textViewSkillNo = new TextView(mContext);
                 textViewSkillNo.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13);
                 textViewSkillNo.setText(studentSkillsArrayList.get(i).getSkillNo().toString());
@@ -554,7 +545,6 @@ public class ProgressReportDetailsActivity extends Activity {
 
 
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                //params.setMargins(paddingBottom, paddingBottom, paddingBottom, 0);
                 params.setMargins(paddingBottom, 0, paddingBottom, 0);
 
                 TextView textViewSkills = new TextView(mContext);

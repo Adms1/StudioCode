@@ -65,23 +65,16 @@ public class FamilySwimNightActivity_Register extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family_swim_night_register);
-        //setContentView(R.layout.activity_family_swim_night);
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
         token = prefs.getString("Token", "");
         familyID = prefs.getString("FamilyID", "");
         siteid = prefs.getString("siteid", "");
-
-        Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID + "\nsiteid=" + siteid);
         Intent intent = getIntent();
         if (null != intent) {
             SelectedDateval = intent.getStringExtra("selectdate");
             SelectedDatevalId = intent.getStringExtra("selectdateid");
             siteidval = intent.getStringExtra("siteid");
             sitename = intent.getStringExtra("sitename");
-
-            Log.d(TAG, "SelectedDateval=" + SelectedDateval);
-            Log.d(TAG, "SelectedDateval=" + SelectedDatevalId);
-
         }
         isInternetPresent = Utility
                 .isNetworkConnected(FamilySwimNightActivity_Register.this);
@@ -114,14 +107,12 @@ public class FamilySwimNightActivity_Register extends Activity {
                             btn_adult.setText(Adult.get(pos));
                             lpw_adult.dismiss();
                             adult = Adult.get(pos);
-
 //                            09/01/2016 megha
 //                            check adult & kids value and call webservice
                             try {
                                 if (adult.length() > 0 && kids.length() > 0) {
                                     new GetCost().execute();
                                     Log.d("adult", adult);
-
                                 }
                             } catch (NullPointerException e) {
                                 Toast.makeText(FamilySwimNightActivity_Register.this, "Please Select Kids value", Toast.LENGTH_LONG).show();
@@ -153,7 +144,6 @@ public class FamilySwimNightActivity_Register extends Activity {
                             } catch (NullPointerException e) {
                                 Toast.makeText(FamilySwimNightActivity_Register.this, "Please Select Adult value", Toast.LENGTH_LONG).show();
                             }
-
                         }
                     });
         } else {
@@ -240,9 +230,7 @@ public class FamilySwimNightActivity_Register extends Activity {
         tv_adult.setVisibility(View.GONE);
         tv_kids.setVisibility(View.GONE);
 
-        lv_cr_list = (ListView)
-
-                findViewById(R.id.lv_cr_list);
+        lv_cr_list = (ListView) findViewById(R.id.lv_cr_list);
 
         btn_submit.setOnClickListener(new OnClickListener() {
                                           @Override
@@ -304,8 +292,6 @@ public class FamilySwimNightActivity_Register extends Activity {
     }
 
     public class GetBasketID extends AsyncTask<Void, Void, Void> {
-//		ProgressDialog pd;
-
         @Override
         protected void onPreExecute() {
             pd.show();
@@ -408,12 +394,7 @@ public class FamilySwimNightActivity_Register extends Activity {
         }
         return month;
     }
-
-    String swimdate, MSG;
-
     private class GetCost extends AsyncTask<Void, Void, Void> {
-//		ProgressDialog pd;
-
         @Override
         protected void onPreExecute() {
             // TODO Auto-generated method stub
@@ -442,8 +423,6 @@ public class FamilySwimNightActivity_Register extends Activity {
 
 
                 String responseString = WebServicesCall.RunScript(AppConfiguration.fsn_getcost, param);
-                Log.d(TAG, "param=GetCost" + param);
-                Log.d(TAG, "param=GetCost responseString" + responseString);
                 try {
                     JSONObject reader = new JSONObject(responseString);
                     getcost = reader.getString("Success");
@@ -493,7 +472,6 @@ public class FamilySwimNightActivity_Register extends Activity {
                 tv_adult.setText(Html.fromHtml("<b>Adults</b> " + AdultPrice.get(0)));
                 tv_kids.setText(Html.fromHtml("<b>Kids</b> " + KidPrice.get(0)));
                 tv_total.setText(Html.fromHtml(FamSwimCost.get(0)));
-                Log.d(TAG, "param=GetCost tv_total" + tv_total.getText());
                 warning = Warning.get(0).toString();
                 if (warning.toString().equalsIgnoreCase("")) {
                     tv_warning.setVisibility(View.GONE);
@@ -510,7 +488,6 @@ public class FamilySwimNightActivity_Register extends Activity {
     }
 
     private class SubmitFamilyNight extends AsyncTask<Void, Void, Void> {
-//		ProgressDialog pd;
 
         @Override
         protected void onPreExecute() {
@@ -537,8 +514,6 @@ public class FamilySwimNightActivity_Register extends Activity {
 
 
             String responseString = WebServicesCall.RunScript(AppConfiguration.fsn_submit, param);
-            Log.d(TAG, "param=SubmitFamilyNight" + param);
-            Log.d(TAG, "param=SubmitFamilyNight responseString" + responseString);
 
             try {
                 JSONObject reader = new JSONObject(responseString);
@@ -565,7 +540,6 @@ public class FamilySwimNightActivity_Register extends Activity {
                 Intent viewcart = new Intent(getApplicationContext(), ByMoreMyCart.class);
                 viewcart.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(viewcart);
-//				finish();
             } else {
                 Toast.makeText(FamilySwimNightActivity_Register.this, "Some internaml error,Please try after sometime.", Toast.LENGTH_LONG).show();
             }
@@ -578,7 +552,6 @@ public class FamilySwimNightActivity_Register extends Activity {
     protected void onDestroy() {
         try {
             if (pd != null && pd.isShowing()) {
-//                pd.dismiss();
             }
         } catch (Exception e) {
             e.printStackTrace();

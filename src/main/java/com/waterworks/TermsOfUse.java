@@ -107,7 +107,6 @@ public class TermsOfUse extends Activity {
     public void onPause() {
         super.onPause();
         this.overridePendingTransition(R.anim.slide_in_right, R.anim.zoom_out);
-//        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override

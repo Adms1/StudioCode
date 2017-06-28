@@ -254,12 +254,6 @@ public class SwimCompititionTrophyRoomResultsAcitivity extends Activity {
 
                 String style = spinSwimStyle.getItemAtPosition(position).toString();
                 makeSpinnerSelectedList(style);
-//                if (position == 0) {
-//                    //do nothing
-//                }else {
-//                    String style = spinSwimStyle.getItemAtPosition(position).toString();
-//                    makeSpinnerSelectedList(style);
-//                }
             }
 
             @Override
@@ -394,8 +388,6 @@ public class SwimCompititionTrophyRoomResultsAcitivity extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 finish();
-//                SwimCompititionTrophyRoomResultsAcitivity.this.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-//                SwimCompititionTrophyRoomResultsAcitivity.this.overridePendingTransition(R.anim.fade_in, R.anim.zoom_in);
             }
         });
 
@@ -511,8 +503,6 @@ public class SwimCompititionTrophyRoomResultsAcitivity extends Activity {
     @Override
     public void onBackPressed() {
         // TODO Auto-generated method stub
-//		super.onBackPressed();
         finish();
-        //  ClearArray();
     }
 }

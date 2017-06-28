@@ -29,7 +29,6 @@ public class LevelCalculatorActivity extends Activity {
 		
 
 		// fetching header view
-
         View view = findViewById(R.id.header);
         TextView title = (TextView)view.findViewById(R.id.action_title);
         title.setText("Register a Child");
@@ -143,7 +142,6 @@ public class LevelCalculatorActivity extends Activity {
 				
 				else if(questions.equals("2a"))
 				{
-					//txtQuestions.setText(R.string.question_3a);
 					questions = "2a";
 					AppConfiguration.levelTypes = "5";
 					
@@ -152,7 +150,6 @@ public class LevelCalculatorActivity extends Activity {
 				
 				else if(questions.equals("3a"))
 				{
-					//txtQuestions.setText(R.string.question_3a);
 					questions = "3a";
 					AppConfiguration.levelTypes = "7";
 					
@@ -162,7 +159,6 @@ public class LevelCalculatorActivity extends Activity {
 				
 				else if(questions.equals("4yes"))
 				{
-					//txtQuestions.setText(R.string.question_5);
 					questions = "4yes";
 					AppConfiguration.levelTypes = "8";
 					
@@ -171,19 +167,13 @@ public class LevelCalculatorActivity extends Activity {
 				
 				else if(questions.equals("5"))
 				{
-					//txtQuestions.setText(R.string.question_5);
-					
 					AppConfiguration.levelTypes = "9";
-					
 					finish();
 				}
 				
 				else if(questions.equals("6"))
 				{
-					//txtQuestions.setText(R.string.question_5);
-					
 					AppConfiguration.levelTypes = "10";
-					
 					finish();
 				}
 			}

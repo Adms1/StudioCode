@@ -42,14 +42,14 @@ import com.wscall.WebServicesCall;
 
 public class ScoutBadgeMeritRegister3 extends Activity{
 
-	String sessonno,childno,studlist,names;
+	String childno;
 	String siteID;
 	Button relMenu;
 	private static String TAG = "ScoutMerit3";
 
 	LinearLayout ll_list;
 	public ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,finalstulist,remark, time;
-	TextView tv_dt3_total_prc_sess,tv_dt3_outstndg_bal,tv_dt3_total_sess_ent,tv_dt3_total_ch_reg, tv_dt3_info;
+	TextView tv_dt3_total_prc_sess,tv_dt3_total_sess_ent,tv_dt3_total_ch_reg, tv_dt3_info;
 	String int_childno;
 	String token,familyID,dataload="False",strStuList, basketID, serverMessage = "";
 	CardView btn_dt3_addtocart;
@@ -88,10 +88,8 @@ public class ScoutBadgeMeritRegister3 extends Activity{
         txtBox1.setTextColor(Color.WHITE);
         txtBox1.setBackgroundColor(getResources().getColor(R.color.design_change_d2));
 		relMenu = (Button)findViewById(R.id.relMenu);
-//		lv_body = (ListView)findViewById(R.id.lv_dt2_list);
 		ll_list = (LinearLayout) findViewById(R.id.ll_list);
 		tv_dt3_total_prc_sess = (TextView)findViewById(R.id.tv_dt3_total_prc_sess);
-		//tv_dt3_outstndg_bal = (TextView)findViewById(R.id.tv_dt3_outstndg_bal);
 		tv_dt3_total_sess_ent = (TextView)findViewById(R.id.tv_dt3_total_sess_ent);
 		tv_dt3_total_ch_reg = (TextView)findViewById(R.id.tv_dt3_total_ch_reg);
 		btn_dt3_addtocart = (CardView)findViewById(R.id.btn_dt3_addtocart);
@@ -206,9 +204,7 @@ public class ScoutBadgeMeritRegister3 extends Activity{
 	}
 	
 	public String method(String str) {
-//	    if (str.length() > 0 && str.charAt(str.length()-1)==',') {
 	      str = str.substring(0, str.length()-1);
-//	    }
 	    return str;
 	}
 
@@ -237,7 +233,6 @@ public class ScoutBadgeMeritRegister3 extends Activity{
 				tv_enddate.setText(Html.fromHtml("<b>Start Time:</b> " + time.get(i)));
 				tv_site.setText(Html.fromHtml("<b>Site:</b> " + sitename.get(i)));
 				tv_price.setText(Html.fromHtml("<b>Unit Price:</b> " + unitprice.get(i)));
-				//holder.tv_remark.setText(Html.fromHtml("<b>Remark:</b> "+remark.get(position)));
 				ll_list.addView(convertView);
 			}
 		}
@@ -361,9 +356,6 @@ public class ScoutBadgeMeritRegister3 extends Activity{
 							}
 						}
 					}
-//					Intent i = new Intent(DivesAndTurnsRegi3Activity.this,ViewCartActivity.class);
-//					startActivity(i);
-//					finish();
 				}else {
 					serverMessage = reader.getString("StudentSessionList");
 				}

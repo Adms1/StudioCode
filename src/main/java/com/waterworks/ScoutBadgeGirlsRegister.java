@@ -283,7 +283,6 @@ public class ScoutBadgeGirlsRegister extends Activity{
 			}else{
 			}
 			already_title.setText(Sc_title);
-			//			txt_checkin.setText(Sc_title);
 			pd.dismiss();
 		}
 

@@ -34,7 +34,6 @@ public class ChangePasswordActivity extends Activity {
 
     String oldPass, newPass;
     String successChangePass, message;
-    ImageView imgBack;
     String token, familyID;
     Context mContext = this;
     Boolean isInternetPresent = false;
@@ -145,7 +144,6 @@ public class ChangePasswordActivity extends Activity {
 
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-
                     message = jsonChildNode.getString("Msg");
                 }
 
@@ -154,7 +152,6 @@ public class ChangePasswordActivity extends Activity {
 
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-
                     message = jsonChildNode.getString("Msg");
                 }
             }

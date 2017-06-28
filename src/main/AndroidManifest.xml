@@ -490,10 +490,6 @@
             android:name=".WaterPoloRegister3"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name=".sheduling.SchedulingMain"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
         <!-- as -->
         <activity
             android:name=".sheduling.ScheduleLessonFragement"
@@ -596,7 +592,7 @@
         <activity
             android:name=".manageProfile.ManageProfile"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".sheduling.ShedulingFilter"
             android:screenOrientation="portrait"

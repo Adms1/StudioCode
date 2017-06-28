@@ -68,10 +68,6 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 	String token, familyID;
 	String email, confirmEmail, password, confirmpass;
 
-	ArrayList<LinearLayout> layouts;
-	int parentLeft, parentRight;
-	int mWidth;
-	int currPosition, prevPosition;
 	LayoutParams params;
 	LinearLayout next, prev;
 	int viewWidth;
@@ -216,28 +212,19 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 					AppConfiguration.ConfrmPassword = confirmpass;
 					Log.d("confirm password   different", AppConfiguration.ConfrmPassword);
 				}
-
-				// confirmpass = edtConfirmPassword.getText().toString();
 				String pFirstname = edtPrimaryFirstname.getText().toString();
 				String pLastname = edtPrimaryLastname.getText().toString();
 				String sFirstname = edtSecondaryFirstName.getText().toString();
 				String sLastname = edtSecondaryLastname.getText().toString();
 				AppConfiguration.EmailAdd = email;
 				AppConfiguration.ConfirmEmail = confirmEmail;
-				//				AppConfiguration.Password = password;
-				//				AppConfiguration.ConfrmPassword = confirmpass;
 				AppConfiguration.PFirstName = pFirstname;
 				AppConfiguration.PLastName = pLastname;
 				AppConfiguration.SFirstName = sFirstname;
 				AppConfiguration.SLastName = sLastname;
 
 				if (chk_reg1.isChecked() == true) {
-					// if(email.isEmpty() || confirmEmail.isEmpty() ||
-					// password.isEmpty() || confirmpass.isEmpty() ||
-					// pFirstname.isEmpty() || pLastname.isEmpty())
-
 					//	    changed by Rakesh 27102015...............		
-
 					if (email.isEmpty() || confirmEmail.isEmpty() || pFirstname.isEmpty() || pLastname.isEmpty()) {
 						Toast.makeText(getActivity(), R.string.empty_fields, Toast.LENGTH_LONG).show();
 					} else {
@@ -246,16 +233,7 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 						} else if (!email.equalsIgnoreCase(confirmEmail)) {
 							Toast.makeText(getActivity(), R.string.not_match_email, Toast.LENGTH_LONG).show();
 						}
-						// else if(!password.equals(confirmpass))
-						// {
-						// Toast.makeText(getActivity(),
-						// R.string.not_match_pass, Toast.LENGTH_LONG).show();
-						// }
 						else {
-							// Intent i = new
-							// Intent(getActivity(),RegisterActivity2.class);
-							// startActivity(i);
-
 							MyAccount2Fragment fragment2 = new MyAccount2Fragment();
 							FragmentManager fragmentManager = getFragmentManager();
 							FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -265,11 +243,6 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 						}
 					}
 				} else {
-					// if(email.isEmpty() || confirmEmail.isEmpty() ||
-					// password.isEmpty() || confirmpass.isEmpty() ||
-					// pFirstname.isEmpty() || pLastname.isEmpty() ||
-					// sFirstname.isEmpty() || sLastname.isEmpty())
-
 					//	 changed by Rakesh 27102015...............
 
 					if (email.isEmpty() || confirmEmail.isEmpty() || pFirstname.isEmpty() || pLastname.isEmpty()
@@ -281,15 +254,7 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 						} else if (!email.equalsIgnoreCase(confirmEmail)) {
 							Toast.makeText(getActivity(), R.string.not_match_email, Toast.LENGTH_LONG).show();
 						}
-						// else if(!password.equals(confirmpass))
-						// {
-						// Toast.makeText(getActivity(),
-						// R.string.not_match_pass, Toast.LENGTH_LONG).show();
-						// }
 						else {
-							// Intent i = new
-							// Intent(getActivity(),RegisterActivity2.class);
-							// startActivity(i);
 
 							MyAccount2Fragment fragment2 = new MyAccount2Fragment();
 							FragmentManager fragmentManager = getFragmentManager();
@@ -297,10 +262,6 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 							fragmentTransaction.addToBackStack(null);
 							fragmentTransaction.replace(R.id.frame_container, fragment2);
 							fragmentTransaction.commit();
-
-							// Log.d("password---", AppConfiguration.Password);
-							// Log.d("confirm password---",
-							// AppConfiguration.ConfrmPassword);
 						}
 					}
 				}
@@ -316,13 +277,8 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 				confirmpass = edtConfirmPassword.getText().toString();
 
 				if (hasFocus) {
-					// Toast.makeText(getApplicationContext(), "got the focus",
-					// Toast.LENGTH_LONG).show();
 
 					if (!password.equals(confirmpass)) {
-						// Toast.makeText(getApplicationContext(),
-						// R.string.not_match_pass, Toast.LENGTH_LONG).show();
-						// edtConfirmPassword.setError(getResources().getString(R.string.not_match_pass));
 
 						AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 						builder.setCancelable(true);
@@ -347,11 +303,7 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 						alert.show();
 					}
 
-				} else {
-					// Toast.makeText(getApplicationContext(), "lost the focus",
-					// Toast.LENGTH_LONG).show();
-
-				}
+				} else {}
 			}
 		});
 		return rootView;
@@ -365,9 +317,6 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 	}
 
 	private void Initialization() {
-
-		// prev = (LinearLayout) findViewById(R.id.prev);
-		// next = (LinearLayout) findViewById(R.id.next);
 
 		relMenu = (Button) rootView.findViewById(R.id.relMenu);
 		relMenu.setOnClickListener(this);
@@ -397,10 +346,6 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 		ll_emailpref = (LinearLayout) rootView.findViewById(R.id.ll_emailpref);
 		ll_viewpayment_history = (LinearLayout) rootView.findViewById(R.id.ll_viewpayment_history);
 		ll_appsettings = (LinearLayout) rootView.findViewById(R.id.ll_appsettings);
-		// edtConfirmPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-		// edtConfirmPassword.setTransformationMethod(new
-		// PasswordTransformationMethod());
-
 	}
 
 	public void loadingMyAccountInfo() {
@@ -516,9 +461,6 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 		protected void onPreExecute() {
 			super.onPreExecute();
 
-			// Toast.makeText(getActivity().getApplicationContext(),
-			// AppConfiguration.token, Toast.LENGTH_LONG).show();
-
 			pd = new ProgressDialog(getActivity());
 			pd.setMessage(getResources().getString(R.string.pleasewait));
 			pd.setCancelable(false);
@@ -543,21 +485,12 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 
 				edtEmailAddress.setText("" + AppConfiguration.EmailAdd);
 				edtConfirmEmailAddress.setText("" + AppConfiguration.ConfirmEmail);
-
-				//      changed by Rakesh 27102015.......		
-
-				// edtPassword.setText(""+AppConfiguration.Password);
-				// edtConfirmPassword.setText(""+AppConfiguration.ConfrmPassword);
+				//      changed by Rakesh 27102015.......
 				edtPrimaryFirstname.setText("" + AppConfiguration.PFirstName);
 				edtPrimaryLastname.setText("" + AppConfiguration.PLastName);
 				edtSecondaryFirstName.setText("" + AppConfiguration.SFirstName);
 				edtSecondaryLastname.setText("" + AppConfiguration.SLastName);
-
-
-				//
-
 				//		      changed by Rakesh 27102015.......
-
 				edtEmailAddress.setKeyListener(null);
 				edtEmailAddress.setClickable(false);
 				edtConfirmEmailAddress.setKeyListener(null);
@@ -594,40 +527,24 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 			successStudentCount = reader.getString("Success");
 			if (successStudentCount.toString().equals("True")) {
 				JSONArray jsonMainNode = reader.optJSONArray("AddChildCount");
-				for (int i = 0; i < jsonMainNode.length(); i++) {
-
-					// Message = jsonChildNode.getString("Msg").trim();
-
-				}
-
+				for (int i = 0; i < jsonMainNode.length(); i++) {}
 			} else {
 				JSONArray jsonMainNode = reader.optJSONArray("AddChildCount");
 				for (int i = 0; i < jsonMainNode.length(); i++) {
-
 					JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-
 					Message = jsonChildNode.getString("Msg").trim();
-
 				}
-
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
 	class checkStudentCountAsyncTask extends AsyncTask<Void, Void, Void> {
 		ProgressDialog pd;
 
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-
-			// Toast.makeText(getActivity().getApplicationContext(),
-			// AppConfiguration.token, Toast.LENGTH_LONG).show();
-
 			pd = new ProgressDialog(getActivity());
 			pd.setMessage(getResources().getString(R.string.pleasewait));
 			pd.setCancelable(false);
@@ -731,10 +648,6 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 			}
 
 			if (successIsEmailExists.toString().equals("True")) {
-				// Toast.makeText(getApplicationContext(),
-				// ""+messageEmailExists, Toast.LENGTH_LONG).show();
-				// edtEmailAddress.setError(getResources().getString(R.string.existsEmail));
-
 				AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 				builder.setCancelable(true);
 				builder.setTitle("WaterWorks");
@@ -744,8 +657,6 @@ public class MyAccount1Fragment extends Fragment implements OnClickListener {
 				builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-
-						// edtEmailAddress.setText("");
 						dialog.dismiss();
 					}
 				});

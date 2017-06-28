@@ -47,15 +47,11 @@ import java.util.concurrent.RunnableFuture;
 public class SwimcompititionRegisterStep5Activity extends Activity {
     String token, familyID, DateValue, eventdates, time, MeetDate_Display, suceessACK, messageACK, sucessmsgACK, MeetID;
     SharedPreferences.Editor editor;
-    ArrayList<Boolean> selectedConditions = new ArrayList<Boolean>();
     ArrayList<HashMap<String, String>> ACKmessage = new ArrayList<HashMap<String, String>>();
     ArrayList<String> MessageText = new ArrayList<String>();
     ArrayList<String> MessageValue = new ArrayList<String>();
     SharedPreferences prefs;
-    TextView txtCompititionVal;
     String TAG = "SwimcompititionRegisterStep5Activity";
-    CardView btn_swim_confirm;
-    LoadCheckboxListAsyncTask loadCheckboxListAsyncTask = null;
 
     CheckBox acknowlegement_chk1, acknowlegement_chk2, acknowlegement_chk3, acknowlegement_chk4, acknowlegement_chk5,
             acknowlegement_chk6, acknowlegement_chk7, acknowlegement_chk8, acknowlegement_chk9, acknowlegement_chk10;
@@ -84,7 +80,6 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
         }
         String[] Meetidsplit = DateValue.split("\\|");
         MeetID = Meetidsplit[1];
-        Log.d("ACKMEETID", MeetID);
         isInternetPresent = Utility.isNetworkConnected(SwimcompititionRegisterStep5Activity.this);
         if (!isInternetPresent) {
             onDetectNetworkState().show();
@@ -93,7 +88,6 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
             new GetAcknowlegements().execute();
             findViewById();
 
-            Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID + "\nDateValue=" + DateValue);
             View view = findViewById(R.id.layout_top);
             TextView title = (TextView) view.findViewById(R.id.action_title);
             title.setText("Acknowledgements");
@@ -371,7 +365,6 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
             }
         });
     }
-
     public void hideUncheckChekboxAckMessage(int number) {
         switch (number) {
             case 1:
@@ -825,12 +818,10 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                     hashmap.put("messageValue", jsonChildNode.getString("messageValue"));
                     MessageText.add("" + jsonChildNode.getString("messageText"));
                     MessageValue.add("" + jsonChildNode.getString("messageValue"));
-                    Log.d("Load Message", MessageText.toString());
                     ACKmessage.add(hashmap);
                 }
             } else {
-                JSONArray jsonMainNode = reader
-                        .optJSONArray("SwimMeetCheck4");
+                JSONArray jsonMainNode = reader.optJSONArray("SwimMeetCheck4");
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     messageACK = jsonChildNode.getString("Msg");
@@ -862,43 +853,33 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                 for (int i = 0; i < MessageText.size(); i++) {
                     if (i == 0) {
                         acknowlegements_txt1.setText(MessageText.get(0));
-                        Log.d("Mesagetext0", MessageText.get(0));
                     }
                     if (i == 1) {
                         acknowlegements_txt2.setText(MessageText.get(1));
-                        Log.d("Mesagetext1", MessageText.get(1));
-                    }
+                                            }
                     if (i == 2) {
                         acknowlegements_txt3.setText(MessageText.get(2));
-                        Log.d("Mesagetext3", MessageText.get(2));
                     }
                     if (i == 3) {
                         acknowlegements_txt4.setText(MessageText.get(3));
-                        Log.d("Mesagetext4", MessageText.get(3));
                     }
                     if (i == 4) {
                         acknowlegements_txt5.setText(MessageText.get(4));
-                        Log.d("Mesagetext5", MessageText.get(4));
                     }
                     if (i == 5) {
                         acknowlegements_txt6.setText(MessageText.get(5));
-                        Log.d("Mesagetext6", MessageText.get(5));
                     }
                     if (i == 6) {
                         acknowlegements_txt7.setText(MessageText.get(6));
-                        Log.d("Mesagetext7", MessageText.get(6));
                     }
                     if (i == 7) {
                         acknowlegements_txt8.setText(MessageText.get(7));
-                        Log.d("Mesagetext8", MessageText.get(7));
                     }
                     if (i == 8) {
                         acknowlegements_txt9.setText(MessageText.get(8));
-                        Log.d("Mesagetext9", MessageText.get(8));
                     }
                     if (i == 9) {
                         acknowlegements_txt10.setText(MessageText.get(9));
-                        Log.d("Mesagetext10", MessageText.get(9));
                     }
                 }
             } else {
@@ -914,183 +895,9 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*------ close 05/01/2017 megha
-        try {
-            HashMap<String, String> param = new HashMap<String, String>();
-            param.put("Token", token);
-            param.put("MeetdatetimeValue", DateValue);
-            param.put("MeetdatetimeText", time);
-            param.put("forstep4", "0");
-            param.put("count", "0");
-            loadCheckboxListAsyncTask = new LoadCheckboxListAsyncTask(param);
-            String responseString = loadCheckboxListAsyncTask.execute().get();
-            ArrayList<HashMap<String, String>> checkBoxTexts = readAndParseJSONChildList(responseString);
-            list = (ListView) findViewById(R.id.list);
-            CustomList customList = new CustomList(this, checkBoxTexts);
-            list.setAdapter(customList);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
------------------------*/
-
-    /*=========================== 05/01/2016
-        public ArrayList<HashMap<String, String>> readAndParseJSONChildList(String in) {
-
-            ArrayList<HashMap<String, String>> checkBoxTexts = new ArrayList<>();
-
-            try {
-                JSONObject reader = new JSONObject(in);
-                String successLoadChildList = reader.getString("Success");
-                if (successLoadChildList.toString().equals("True")) {
-                    JSONArray jsonMainNode = reader.optJSONArray("SwimMeetCheck4");
-
-                    for (int i = 0; i < jsonMainNode.length(); i++) {
-                        HashMap<String, String> hashmap = new HashMap<String, String>();
-
-                        JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-
-                        String messageText = jsonChildNode.getString("messageText").trim();
-                        String messageValue = jsonChildNode.getString("messageValue").trim();
-
-                        hashmap.put("messageText", messageText);
-                        hashmap.put("messageValue", messageValue);
-
-                        checkBoxTexts.add(hashmap);
-                        selectedConditions.add(false);
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return checkBoxTexts;
-        }
-
-        @Override
-        protected void onResume() {
-            super.onResume();
-            this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
-        }
-
-        public class CustomList extends BaseAdapter {
-            private final ArrayList<HashMap<String, String>> data;
-
-            public CustomList(Activity context, ArrayList<HashMap<String, String>> list) {
-                super();
-                this.data = list;
-            }
-
-            @Override
-            public int getCount() {
-                return data.size();
-            }
-
-
-            @Override
-            public long getItemId(int position) {
-                return position;
-            }
-
-            @Override
-            public Object getItem(int position) {
-                // TODO Auto-generated method stub
-                return null;
-            }
-
-            @Override
-            public int getViewTypeCount() {
-
-                return getCount();
-            }
-
-            @Override
-            public int getItemViewType(int position) {
-
-                return position;
-            }
-
-            @Override
-            public View getView(final int position, View view, ViewGroup parent) {
-
-                try {
-                    TextView txtMessageText = null;
-                    CheckBox chk = null;
-                    if (view == null) {
-
-                        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row_swim_compitition4, null);
-
-                        txtMessageText = (TextView) view.findViewById(R.id.txtMessageText);
-                        chk = (CheckBox) view.findViewById(R.id.chk);
-
-                    }
-
-                    txtMessageText.setText(Html.fromHtml(data.get(position).get("messageText")));
-
-                    chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                            if (isChecked) {
-                                selectedConditions.set(position, true);
-                                Log.e("checkedData", selectedConditions.toString());
-                            } else {
-                                selectedConditions.set(position, false);
-                                Log.e("checkedData", selectedConditions.toString());
-                            }
-                        }
-                    });
-                } catch (NullPointerException e) {
-                    e.printStackTrace();
-                } catch (IndexOutOfBoundsException e) {
-                    e.printStackTrace();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                return view;
-            }
-        }
-    ===========================*/
-
-
     @Override
     public void onBackPressed() {
         // TODO Auto-generated method stub
-//		super.onBackPressed();
-//        Intent i = new Intent(SwimcompititionRegisterStep5Activity.this, SwimcompititionRegisterStep4Activity.class);
-//        i.putExtra("datevalue", DateValue);
-//        i.putExtra("time", time);
-//        i.putExtra("eventdates", eventdates);
-//        i.putExtra("MeetDate_Display", MeetDate_Display);
-//        startActivity(i);
         finish();
 
     }

@@ -38,16 +38,12 @@ import com.wscall.WebServicesCall;
 public class MakePurchaseFragment extends Fragment implements OnClickListener {
 
 	public MakePurchaseFragment(){}
-
 	ArrayList<HashMap<String, String>> productList = new ArrayList<HashMap<String, String>>();
-
-
 	View rootView;
 	Button relMenu;
 	Boolean isInternetPresent = false;
 	private static String TAG = "Make Purchase";
 	ArrayList<String> sitename,siteid;
-	//,productname,productid;
 	String message;
 	String data_load= "False",data_load1="True";
 	String siteID,productID;
@@ -79,8 +75,7 @@ public class MakePurchaseFragment extends Fragment implements OnClickListener {
 		Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
 
 
-		isInternetPresent = Utility
-				.isNetworkConnected(getActivity());
+		isInternetPresent = Utility.isNetworkConnected(getActivity());
 		if(!isInternetPresent){
 			onDetectNetworkState().show();
 		}
@@ -128,8 +123,7 @@ public class MakePurchaseFragment extends Fragment implements OnClickListener {
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		isInternetPresent = Utility
-				.isNetworkConnected(getActivity());
+		isInternetPresent = Utility.isNetworkConnected(getActivity());
 		if(!isInternetPresent){
 			onDetectNetworkState().show();
 		}
@@ -374,7 +368,6 @@ public class MakePurchaseFragment extends Fragment implements OnClickListener {
 					public void onCheckedChanged(RadioGroup group, int checkedId) {
 						// TODO Auto-generated method stub
 						try{
-							//int a = productname.indexOf(productname.get(checkedId));
 							productID = productList.get(checkedId).get("siteId");//productid.get(a);
 							Log.i("Product id", ""+productID);
 							if(productID.toString().equalsIgnoreCase("1")){

@@ -41,7 +41,7 @@ import com.wscall.WebServicesCall;
 
 public class WaterPoloRegister3 extends Activity{
 
-	String sessonno,childno,studlist,names;
+	String childno;
 	String siteID;
 	Button relMenu;
 	private static String TAG = "WaterPolo3";
@@ -66,7 +66,6 @@ public class WaterPoloRegister3 extends Activity{
 
 		Log.i(TAG, getIntent().getStringExtra("siteid"));
 		System.out.println("Array : "+WaterPoloRegister2.mChecked);
-		//		Log.i(TAG, getIntent().getStringExtra("childno"));
 		int_childno = getIntent().getStringExtra("childno");
 		strStuList = getIntent().getStringExtra("strStuList");
         siteID = getIntent().getStringExtra("siteid");
@@ -219,9 +218,7 @@ public class WaterPoloRegister3 extends Activity{
 	}
 
 	public String method(String str) {
-		//	    if (str.length() > 0 && str.charAt(str.length()-1)==',') {
 		str = str.substring(0, str.length()-1);
-		//	    }
 		return str;
 	}
 
@@ -254,7 +251,6 @@ public class WaterPoloRegister3 extends Activity{
 				if(dataload.toString().equalsIgnoreCase("True")){
                     Intent i = new Intent(WaterPoloRegister3.this,ByMoreMyCart.class);
 					startActivity(i);
-//					finish();
 				}
 				else{
 				}

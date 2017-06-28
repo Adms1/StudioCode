@@ -138,7 +138,6 @@ public class WaterPoloRegister2 extends Activity {
                             i.putExtra("childno", "" + childno);
                             i.putExtra("strStuList", str.toString());
                             startActivity(i);
-//					finish();
                         } else {
                             Utility.ping(WaterPoloRegister2.this, "Please select at least one session for each student.");
                         }
@@ -278,7 +277,6 @@ public class WaterPoloRegister2 extends Activity {
         @Override
         protected Void doInBackground(Void... params) {
             // TODO Auto-generated method stub
-//            String basketID = (AppConfiguration.BasketID.equals("BasketID")) ? "0" : AppConfiguration.BasketID;
 
             HashMap<String, String> param = new HashMap<String, String>();
             param.put("Token", token);

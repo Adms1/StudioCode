@@ -70,8 +70,7 @@ public class LapSwimsSessionActivity extends Activity {
 		familyID = prefs.getString("FamilyID", "");
 		Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
 		
-		isInternetPresent = Utility
-				.isNetworkConnected(LapSwimsSessionActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(LapSwimsSessionActivity.this);
 		if(isInternetPresent){
 
 			Initialization();
@@ -79,7 +78,6 @@ public class LapSwimsSessionActivity extends Activity {
                 new GetBasketID().execute();
 			}
             try{
-
                 sitesListAsyncTask = new SitesListAsyncTask(token);
                 String responseString = sitesListAsyncTask.execute().get();
                 readAndParseSiteJSON(responseString);
@@ -89,9 +87,7 @@ public class LapSwimsSessionActivity extends Activity {
             }catch (Exception e){
                 e.printStackTrace();
             }
-			lpw_sessions.setAdapter(new ArrayAdapter<String>(
-    	            getApplicationContext(),
-    	            R.layout.edittextpopup,sessions));
+			lpw_sessions.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.edittextpopup,sessions));
 			lpw_sessions.setAnchorView(btn_sessions);
 			lpw_sessions.setHeight(LayoutParams.WRAP_CONTENT);
 			lpw_sessions.setModal(true);
@@ -118,9 +114,7 @@ public class LapSwimsSessionActivity extends Activity {
 		}
 		else{
 			onDetectNetworkState().show();
-			
 		}
-		
 	}
 	private void Initialization() {
 		// TODO Auto-generated method stub
@@ -245,10 +239,6 @@ public class LapSwimsSessionActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-//		super.onBackPressed();
-//		Intent i = new Intent(getApplicationContext(),LapSwimsActivity.class);
-//		i.putExtra("SiteId", siteID);
-//		startActivity(i);
 		finish();
 	}
 	@Override
@@ -335,11 +325,8 @@ public class LapSwimsSessionActivity extends Activity {
 			}
 			if(data_load.toString().equals("True"))
 			{
-//				Toast.makeText(getApplicationContext(), "Added to cart.", Toast.LENGTH_LONG).show();
-//				Intent viewcart = new Intent(getApplicationContext(), ViewCartActivity.class);
                 Intent viewcart = new Intent(getApplicationContext(), ByMoreMyCart.class);
 				startActivity(viewcart);
-//				finish();
 			}
 			else{
 				Toast.makeText(getApplicationContext(), "Some internal error, Please try after sometime.", Toast.LENGTH_LONG).show();
@@ -380,14 +367,12 @@ public class LapSwimsSessionActivity extends Activity {
 			}
 			if(data_load_basket.toString().equalsIgnoreCase("True")){
 				if(AppConfiguration.BasketID.equalsIgnoreCase("0")){
-//					Toast.makeText(TransferMakeUpActivity.this, "Please try after sometime", Toast.LENGTH_LONG).show();
 				}
 				else{
 //					new swimlessonsubmit().execute();
 				}
 			}
 			else{
-//				Toast.makeText(TransferMakeUpActivity.this, "Please try after sometime", Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -431,11 +416,7 @@ public class LapSwimsSessionActivity extends Activity {
 				siteName.add("Please Select a Location");
                 siteMainList.add(hashmap);
             }
-			//else {
-			//	JSONObject jsonChildNode = jsonMainNode.getJSONObject(0);
-			//	siteID=jsonChildNode.getString("siteid");
-			//}
-            for (int i = 0; i < jsonMainNode.length(); i++) {
+			for (int i = 0; i < jsonMainNode.length(); i++) {
 
                 JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
@@ -447,13 +428,7 @@ public class LapSwimsSessionActivity extends Activity {
                 siteName.add("" + jsonChildNode.getString("sitename"));
 
                 siteMainList.add(hashmap);
-//
             }
-
-            Log.d("siteName---", "" + siteName);
-            Log.d("siteName---1", "" + siteName.size());
-            Log.d("siteMainList---", "" + siteMainList);
-            Log.d("siteMainList---1", "" + siteMainList.size());
         } catch (Exception e) {
             e.printStackTrace();
         }

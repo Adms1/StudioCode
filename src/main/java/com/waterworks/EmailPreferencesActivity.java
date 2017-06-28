@@ -93,8 +93,6 @@ public class EmailPreferencesActivity extends Activity {
             public void onClick(View v) {
                 builder = new StringBuilder();
 
-                // Log.d("Inside Button", "Inside Burron" + llCheckbox.getChildCount());
-
                 for (int i = 0; i < llCheckbox.getChildCount(); i++) {
                     View nextChild = llCheckbox.getChildAt(i);
 

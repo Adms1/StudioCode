@@ -54,8 +54,7 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
     ListView list;
     String successLoadChildList;
     String token, familyID;
-    String messageMeetDate, time, currentStudentID;
-    String successMeetDate;
+    String time, currentStudentID;
     CardView btnContinue;
     boolean isSelectedAgreement = false;
     String successSwimCompittionCheck1;
@@ -88,10 +87,8 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
     public List<SwimCompRegi2Item> itemData;
 
     public static HashMap<String, ArrayList<String>> hashmap = new HashMap<String, ArrayList<String>>();
-    boolean checkval;
-    SharedPreferences.Editor editor;
+     SharedPreferences.Editor editor;
     SharedPreferences prefs;
-    ArrayList<String> checked_value = new ArrayList<String>();
     public static SparseBooleanArray mChecked = new SparseBooleanArray();
     private LoadChildData loadChildData = null;
     boolean[] itemChecked;
@@ -120,12 +117,6 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
         tempname = AppConfiguration.swimComptitionStudentName.toString().split("\\,");
 //        30-05-2017 megha
 //        AppConfiguration.global_StudIDChecked.clear();//clear the student ids which were checked in last session
-        String[] tempEventList = AppConfiguration.SelectedEventDataStep2.split(",");
-        List<String> newTempEventList = new ArrayList<String>(Arrays.asList(tempEventList));
-        for (int i = 0; i < newTempEventList.size(); i++) {
-            temp_value.add(newTempEventList.get(i));
-        }
-
 
         HashMap<String, String> hashMap = null;
         for (int i = 0; i < tempid.length; i++) {
@@ -243,7 +234,6 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
             llTabs.addView(childTabs);
         }
     }
-
     View.OnClickListener myClickLIstener = new View.OnClickListener() {
         public void onClick(final View v) {
             llTabs.removeAllViews();
@@ -263,7 +253,6 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
         }
     };
     LinearLayout temp1;
-
     public void initViews() {
         setTitleBar();
         txtCompititionVal = (TextView) findViewById(R.id.txtCompititionVal);
@@ -273,7 +262,6 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
         list = (ListView) findViewById(R.id.list);
         lastraw = (LinearLayout) findViewById(R.id.lastraw);
     }
-
     public void setListners() {
         btnContinue.setOnClickListener(new OnClickListener() {
             @Override
@@ -281,9 +269,8 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
                 if (temp_value.size() == 0) {
                     Toast.makeText(getApplicationContext(), "Please select at least one event for each child.", Toast.LENGTH_LONG).show();
                 } else {
-                    //if one student evnet is also checked then also let go..
                     if (checkedForAll()) {
-                        AppConfiguration.SelectedEventDataStep2 = temp_value.toString();
+                        AppConfiguration.SelectedEventDataStep2 = temp_value.toString().trim();
                         Log.d("selectvalue", AppConfiguration.SelectedEventDataStep2);
                         Intent i = new Intent(SwimcompititionRegisterStep3Activity.this, Swim4Test.class);
                         i.putExtra("datevalue", DateValue);
@@ -299,16 +286,37 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
                                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                     }
-                                })
-                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                }).setIcon(android.R.drawable.ic_dialog_alert)
                                 .show();
                     }
                 }
             }
         });
-
+    }
+//26-06-2017 megha
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AppConfiguration.SelectedEventDataStep2.toString();
+        if (!AppConfiguration.SelectedEventDataStep2.equals("")) {
+            if (temp_value.size() == 0) {
+                String[] tempEventList = AppConfiguration.SelectedEventDataStep2.split(",");
+                List<String> newTempEventList = new ArrayList<String>(Arrays.asList(tempEventList));
+                for (int i = 0; i < newTempEventList.size(); i++) {
+                    temp_value.add(newTempEventList.get(i).replaceFirst(",", "").replaceAll("\\[","").replaceAll("\\]","").trim());
+                    Log.d("backtemp_value",temp_value.toString());
+                    AppConfiguration.selectedStudent1.add(newTempEventList.get(i).replaceFirst(",", "").replaceAll("\\[","").replaceAll("\\]","").trim());
+                }
+            }
+        }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AppConfiguration.SelectedEventDataStep2 = temp_value.toString().trim();
+    }
+//====================
     public boolean checkedForAll() {
         boolean selectedAll = false;
         AppConfiguration.temp_id = AppConfiguration.swimComptitionStudentID.toString().split(",");
@@ -335,7 +343,6 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
     /*-------------------------------------------new code-------------------------------------*/
     private class LoadChildData extends AsyncTask<Void, Void, Void> {
         ProgressDialog pd;
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -473,9 +480,7 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
         int layoutResID;
         LayoutInflater inflater;
 
-
-        public SwimCompRegi2Adapter(Context context, int resource,
-                                    List<SwimCompRegi2Item> data) {
+        public SwimCompRegi2Adapter(Context context, int resource,List<SwimCompRegi2Item> data) {
             super();
             this.data = data;
             this.context = context;
@@ -525,11 +530,8 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
             final TextView txtDistance = (TextView) view.findViewById(R.id.txtDistance);
             final CheckBox chk1 = (CheckBox) view.findViewById(R.id.chk);
 
-            txtStrokeType.setText(Html
-                    .fromHtml("<b>" + data.get(0).getStrokeType().get(position) + " - " + data.get(0).getDistance().get(position) + "</b>"));
-
-            txtEvent.setText("Age:" + " " + data.get(0).getAgeGroup().get(position) + "  " + "  " + "Event" + " #" +
-                    data.get(0).getEvent().get(position));
+            txtStrokeType.setText(Html.fromHtml("<b>" + data.get(0).getStrokeType().get(position) + " - " + data.get(0).getDistance().get(position) + "</b>"));
+            txtEvent.setText("Age:" + " " + data.get(0).getAgeGroup().get(position) + "  " + "  " + "Event" + " #" + data.get(0).getEvent().get(position));
             chk1.setChecked(false);
             chkvalue = true;
             for (String row : AppConfiguration.global_StudIDChecked) {
@@ -538,7 +540,6 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
                     chk1.setChecked(true);
                 }
             }
-
             chk1.setOnClickListener(new OnClickListener() {
 
                 @Override
@@ -555,8 +556,7 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
                         AppConfiguration.selectedStudent1.add(data.get(0).getStudentID().get(0).trim() + "|" + data.get(0).getStrokeType().get(position) + " - " + data.get(0).getDistance().get(position)
                                 + "\n" + "Age: " + "\t" + data.get(0).getAgeGroup().get(position) + " \t\t " + "Event" + " #" + data.get(0).getEvent().get(position));
                         if (!temp_value.contains(data.get(0).getValue().get(position).trim())) {
-
-                            temp_value.add(data.get(0).getValue().get(position).trim());
+                            temp_value.add(data.get(0).getValue().get(position).replaceFirst(",", "").trim());
                             Log.d("add value", "" + temp_value);
                             chk1.setButtonDrawable(R.drawable.custom_check);
                             rel.setBackgroundColor(getResources().getColor(R.color.orange));
@@ -593,16 +593,12 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
                 chk1.setVisibility(View.GONE);
                 txtControlType.setVisibility(View.VISIBLE);
                 txtControlType.setText("Registered");
-
                 Log.e("checkedData", AppConfiguration.selectedStudents.toString());
             }
-
             return view;
         }
     }
-
     protected void ClearArray() {
-
         Event.clear();
         AgeGroup.clear();
         Distance.clear();
@@ -615,7 +611,6 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
         itemData.clear();
         hashmap.clear();
     }
-
     @Override
     public void onBackPressed() {
         // TODO Auto-generated method stub

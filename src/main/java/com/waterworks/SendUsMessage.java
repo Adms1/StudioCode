@@ -98,13 +98,10 @@ public class SendUsMessage extends Activity implements View.OnClickListener, Vie
         spinner2_reference = (Spinner) findViewById(R.id.spinner2_reference);
         ll_secondary_parent = (LinearLayout) findViewById(R.id.ll_secondary_parent);
         btnSend = (CardView) findViewById(R.id.btnSend);
-//        edtName = (EditText)findViewById(R.id.edtName);
         edtFirstName = (EditText) findViewById(R.id.edtName);
-//        edtLastName = (EditText)findViewById(R.id.edtLastName);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtBestCall = (EditText) findViewById(R.id.edtCallbackTime);
         edtPrimarytele = (EditText) findViewById(R.id.edtPhone);
-//        edtAlternate = (EditText)findViewById(R.id.edtAlternate);
         edtSubject = (EditText) findViewById(R.id.edtSubject);
         edtDetailedMessage = (EditText) findViewById(R.id.edtMessage);
         ll_callBack = (LinearLayout) findViewById(R.id.ll_callBack);
@@ -141,12 +138,6 @@ public class SendUsMessage extends Activity implements View.OnClickListener, Vie
                 finish();
             }
         });
-//        returnStack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
         isInternetPresent = Utility.isNetworkConnected(SendUsMessage.this);
         if (!isInternetPresent) {
             onDetectNetworkState().show();
@@ -197,17 +188,11 @@ public class SendUsMessage extends Activity implements View.OnClickListener, Vie
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
-//                    chk_callBack.setBackgroundResource(R.drawable.custom_checkbox_check_orange);
                         chk_callBack.setButtonDrawable(R.drawable.custom_checkbox_check_orange);
                         ll_callBack.setVisibility(View.VISIBLE);
-//                    if( bestcall.isEmpty() || pTelephone.isEmpty() ){
-//                        Toast.makeText(getApplicationContext(), R.string.empty_fields, Toast.LENGTH_LONG).show();
-//                    }
                     } else {
-//                    chk_callBack.setBackgroundResource(R.drawable.custom_check_orange);
                         chk_callBack.setButtonDrawable(R.drawable.custom_checkbox_uncheck);
                         ll_callBack.setVisibility(View.GONE);
-
                     }
                 }
             });
@@ -215,7 +200,6 @@ public class SendUsMessage extends Activity implements View.OnClickListener, Vie
 
             ImageButton ib_menusad = (ImageButton) view.findViewById(R.id.ib_menusad);
             ib_menusad.setBackgroundResource(R.drawable.back_arrow);
-//        edtPrimarytele.setText(formatPhoneNumber( number));
             edtPrimarytele.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
@@ -280,11 +264,8 @@ public class SendUsMessage extends Activity implements View.OnClickListener, Vie
 
         HashMap<String, String> param = new HashMap<String, String>();
         param.put("Token", token);
-//        String responseString = WebServicesCall.RunScript(AppConfiguration.getSiteListURL, param);
         String responseString = WebServicesCall.RunScript(AppConfiguration.scheduleALesssionSiteListURL, param);
         readAndParseJSON(responseString);
-
-
     }
 
     public void readAndParseJSON(String in) {
@@ -301,7 +282,6 @@ public class SendUsMessage extends Activity implements View.OnClickListener, Vie
                 JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
                 hashmap = new HashMap<String, String>();
-
                 hashmap.put("SiteID", jsonChildNode.getString("siteid"));
                 hashmap.put("SiteName", jsonChildNode.getString("sitename"));
 
@@ -317,34 +297,16 @@ public class SendUsMessage extends Activity implements View.OnClickListener, Vie
 
     @Override
     public void onClick(View v) {
-//        if (v == edtFirstName) {
-//            edtFirstName.setBackgroundResource(R.drawable.gray_border);
-//        }
-//        if (v == edtEmail) {
-//            edtEmail.setBackgroundResource(R.drawable.gray_border);
-//        }
-//        if (v == edtSubject) {
-//            edtSubject.setBackgroundResource(R.drawable.gray_border);
-//        }
-//        if (v == edtDetailedMessage) {
-//            edtDetailedMessage.setBackgroundResource(R.drawable.gray_border);
-//        }
-//        if (v == sites_lay) {
-//            sites_lay.setBackgroundResource(R.drawable.gray_border);
-//        }
         if (v == returnStack) {
             finish();
         }
         if (v == btnSend) {
             firstname = edtFirstName.getText().toString();
-//                lastname = edtLastName.getText().toString();
             email = edtEmail.getText().toString();
             bestcall = edtBestCall.getText().toString();
             pTelephone = edtPrimarytele.getText().toString();
-//                sTelephone = edtAlternate.getText().toString();
             subject = edtSubject.getText().toString();
             detailMessage = edtDetailedMessage.getText().toString();
-            Log.d("spinner1.getSelectedItem()...", "" + spinner1.getSelectedItem().toString());
             if (firstname.isEmpty() || email.isEmpty() || subject.isEmpty() || detailMessage.isEmpty() || spinner1.getSelectedItem().toString().equalsIgnoreCase("Please Select")) {
                 validation();
                 Toast.makeText(getApplicationContext(), "Please complete all required fields.", Toast.LENGTH_LONG).show();
@@ -419,14 +381,6 @@ public class SendUsMessage extends Activity implements View.OnClickListener, Vie
                 selectedSiteID = siteMainList.get(1).get("SiteID");
                 spinner1.setSelection(1);
                 spinner1.setPrompt(siteName.get(1));
-
-                Log.d("selectedSiteName--#-1", "" + siteMainList.get(1).get("SiteName"));
-                Log.d("selectedSiteID--#-1", "" + siteMainList.get(1).get("SiteID"));
-                Log.d("selectedSiteName--#-0", "" + siteMainList.get(0).get("SiteName"));
-                Log.d("selectedSiteID--#-0", "" + siteMainList.get(0).get("SiteID"));
-                Log.d("siteName--#-1", "" + siteName.get(1));
-                Log.d("siteName--#-0", "" + siteName.get(0));
-                Log.d("selectedItem--#-0", "" + spinner1.getSelectedItem());
             } else {
                 ll_location.setVisibility(View.VISIBLE);
                 // Spinner1 on item click listener

@@ -6,7 +6,8 @@ import android.text.style.URLSpan;
 /**
  * Created by ADMS10 on 2/2/2016.
  */
-public class URLSpanNoUnderline extends URLSpan {
+public class URLSpanNoUnderline extends URLSpan
+{
     public URLSpanNoUnderline(String p_Url) {
         super(p_Url);
     }

@@ -64,9 +64,9 @@ public class AppConfiguration {
     }
 
     //This local is in use
-//    public static String SOAP_ADDRESS = "http://103.204.192.187:8081/WWWebService/Service.asmx?WSDL";
-//    public static String DOMAIN = "http://103.204.192.187:8081/WWWebServices/Services_Front.asmx/";
-//    public static String PhotoDomain = "http://103.204.192.187:8081/NewCode";
+    public static String SOAP_ADDRESS = "http://103.204.192.187:8081/WWWebService/Service.asmx?WSDL";
+    public static String DOMAIN = "http://103.204.192.187:8081/WWWebServices/Services_Front.asmx/";
+    public static String PhotoDomain = "http://103.204.192.187:8081/NewCode";
 
 //    kishansir pc 07-06-2017
 //    public static String DOMAIN = "http://103.204.192.187:8091/Services_Front.asmx/";
@@ -78,9 +78,9 @@ public class AppConfiguration {
     // ="http://103.246.84.229:8081/WWWebServices/Services_Front.asmx/"; //
 
     // live
-    public static final String DOMAIN = "http://office.waterworksswimonline.com/WWWebService/Services_Front.asmx/";
-    public static String SOAP_ADDRESS = "http://office.waterworksswimonline.com/WWWebService/Service.asmx?WSDL";
-    public static String PhotoDomain = "http://office.waterworksswimonline.com/NewCode";
+//    public static final String DOMAIN = "http://office.waterworksswimonline.com/WWWebService/Services_Front.asmx/";
+//    public static String SOAP_ADDRESS = "http://office.waterworksswimonline.com/WWWebService/Service.asmx?WSDL";
+//    public static String PhotoDomain = "http://office.waterworksswimonline.com/NewCode";
 
     public static int currentapiVersion = android.os.Build.VERSION.SDK_INT;
     public static boolean animation = false;
@@ -493,7 +493,9 @@ public class AppConfiguration {
     public static String scheduleALesssionSiteListURL = "Schl_Get_SiteByFamily";
     public static String scheduleALessionStudentListURL = "Schl_Get_StudentListByFamily";
     public static String scheduleALessionLessonTypesURL = "Schl_Get_Display_options_Step1";
-    public static String scheduleALessionInstructorListURL = "Schl_Get_instrlistbyStudSelectionLevel";
+//    20-06-2017 megha
+//        public static String scheduleALessionInstructorListURL = "Schl_Get_instrlistbyStudSelectionLevel";
+    public static String scheduleALessionInstructorListURL = "Schl_Get_instrlistbyStudSelectionLevel_Android";
     public static String scheduleALessionPageLoad = "Schl_Page_Load";
     public static String scheduleALessionStep2InstructorAvailabilityURL = "Schl_Get_Step2";
     public static String GetInstructorBio = "GetInstructorBio";
@@ -533,6 +535,7 @@ public class AppConfiguration {
     public static String salStep1LessonName = "";
     public static String salStep1LessonText = "";
     public static String selectedStudentID = "";
+    public static String selectedStudentIDforStep2 ="";
     public static String selectedStudentNameToSchedule = "";
     public static String makeUpFlag = "";
     public static String pastDueBalance = "";

@@ -118,10 +118,6 @@ public class RegisterActivity1 extends Activity {
                         } else if (!email.equalsIgnoreCase(confirmEmail)) {
                             Toast.makeText(getApplicationContext(), R.string.not_match_email, Toast.LENGTH_LONG).show();
                         }
-                        //						else if(!password.equals(confirmpass))
-                        //						{
-                        //							Toast.makeText(getApplicationContext(), R.string.not_match_pass, Toast.LENGTH_LONG).show();
-                        //						}
                         else {
                             Intent i = new Intent(RegisterActivity1.this, RegisterActivity2.class);
                             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -139,10 +135,6 @@ public class RegisterActivity1 extends Activity {
                         } else if (!email.equalsIgnoreCase(confirmEmail)) {
                             Toast.makeText(getApplicationContext(), R.string.not_match_email, Toast.LENGTH_LONG).show();
                         }
-                        //						else if(!password.equals(confirmpass))
-                        //						{
-                        //							Toast.makeText(getApplicationContext(), R.string.not_match_pass, Toast.LENGTH_LONG).show();
-                        //						}
                         else {
                             Intent i = new Intent(RegisterActivity1.this, RegisterActivity2.class);
                             startActivityForResult(i, RESULT_OK);
@@ -175,11 +167,8 @@ public class RegisterActivity1 extends Activity {
                 confirmpass = edtConfirmPassword.getText().toString();
 
                 if (hasFocus) {
-                    //  Toast.makeText(getApplicationContext(), "got the focus", Toast.LENGTH_LONG).show();
 
                     if (!password.equals(confirmpass)) {
-                        //Toast.makeText(getApplicationContext(), R.string.not_match_pass, Toast.LENGTH_LONG).show();
-                        //edtConfirmPassword.setError(getResources().getString(R.string.not_match_pass));
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity1.this);
                         builder.setCancelable(true);
@@ -206,7 +195,6 @@ public class RegisterActivity1 extends Activity {
                     }
 
                 } else {
-                    //Toast.makeText(getApplicationContext(), "lost the focus", Toast.LENGTH_LONG).show();
 
 
                 }
@@ -221,10 +209,7 @@ public class RegisterActivity1 extends Activity {
                 confirmEmail = edtConfirmEmailAddress.getText().toString();
 
                 if (hasFocus) {
-                    //  Toast.makeText(getApplicationContext(), "got the focus", Toast.LENGTH_LONG).show();
                     if (!email.equalsIgnoreCase(confirmEmail)) {
-                        //Toast.makeText(getApplicationContext(), R.string.not_match_pass, Toast.LENGTH_LONG).show();
-                        //edtConfirmEmailAddress.setError(""+getResources().getString(R.string.not_match_email));
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity1.this);
                         builder.setCancelable(true);
@@ -246,7 +231,6 @@ public class RegisterActivity1 extends Activity {
                     }
 
                 } else {
-                    //Toast.makeText(getApplicationContext(), "lost the focus", Toast.LENGTH_LONG).show();
 
 
                 }
@@ -261,11 +245,8 @@ public class RegisterActivity1 extends Activity {
                 email = edtEmailAddress.getText().toString();
 
                 if (hasFocus) {
-                    //  Toast.makeText(getApplicationContext(), "got the focus", Toast.LENGTH_LONG).show();
                 } else {
                     if (!AppConfiguration.isValidEmail(email)) {
-                        //Toast.makeText(getApplicationContext(), R.string.invalid_email, Toast.LENGTH_LONG).show();
-                        //edtEmailAddress.setError(getResources().getString(R.string.invalid_email));
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity1.this);
                         builder.setCancelable(true);
@@ -286,7 +267,6 @@ public class RegisterActivity1 extends Activity {
                         alert.show();
 
                     } else {
-                        //Toast.makeText(getApplicationContext(), "lost the focus", Toast.LENGTH_LONG).show();
                         isInternetPresent = Utility.isNetworkConnected(RegisterActivity1.this);
                         if (!isInternetPresent) {
                             onDetectNetworkState().show();
@@ -395,8 +375,6 @@ public class RegisterActivity1 extends Activity {
             }
 
             if (successIsEmailExists.toString().equals("True")) {
-                //Toast.makeText(getApplicationContext(), ""+messageEmailExists,  Toast.LENGTH_LONG).show();
-                //	edtEmailAddress.setError(getResources().getString(R.string.existsEmail));
 
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity1.this);

@@ -69,7 +69,6 @@ public class ViewPriceSheetActivity extends Activity {
 			new viewpricesheet().execute();
 		}
 	}
-
 	private void Initialization() {
 		// TODO Auto-generated method stub
 		lv_pricesheet = (ListView)findViewById(R.id.lv_pricesheet_list);

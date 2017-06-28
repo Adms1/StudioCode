@@ -70,9 +70,6 @@ public class CancelRemoveLessonActivity extends Activity implements OnClickListe
     ArrayList<String> StudentName, wu_sttimehr, wu_sttimemin, wu_Day, wu_lessonname, InstructorName, FormateTime, temp;
     RemoveLessonAdapter adapter;
     private ProgressDialog pd;
-    View note_upper;
-    //int global_position = 0;
-//	Calendar calendar;
 
     String successRelease;
     String messageRelease;
@@ -93,7 +90,6 @@ public class CancelRemoveLessonActivity extends Activity implements OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cancel_remove_lesson_new_1);
-        //setContentView(R.layout.activity_cancel_remove_lesson);
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
         //getting token
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(CancelRemoveLessonActivity.this);
@@ -475,8 +471,6 @@ public class CancelRemoveLessonActivity extends Activity implements OnClickListe
 
             RemoveLessonAdapter.RemoveFrom.set(RemoveLessonAdapter.globalPosition, date);
             Log.e("Array Value", RemoveLessonAdapter.RemoveFrom.toString());
-
-            //upDateList();
         }
     };
 
@@ -489,13 +483,6 @@ public class CancelRemoveLessonActivity extends Activity implements OnClickListe
                 adapter.notifyDataSetChanged(); //for updating the date change
                 lv_cr_list.setAdapter(adapter);
 
-              /*  if(chb_confirm.isChecked()==true){
-                        chb_confirm.setChecked(true);
-                        Log.i("button date selection if","test");
-                    }else{
-                        chb_confirm.setChecked(true);
-                        Log.i("button date selection else" ,"test");
-                }*/
             }
         });
     }
@@ -505,8 +492,6 @@ public class CancelRemoveLessonActivity extends Activity implements OnClickListe
         switch (id) {
             case DATE_DIALOG_ID:
                 Calendar c = Calendar.getInstance();
-
-//			calendar = Calendar.getInstance();        
                 mYear = c.get(Calendar.YEAR);
                 mMonth = c.get(Calendar.MONTH);
                 mDay = c.get(Calendar.DAY_OF_MONTH);
@@ -606,7 +591,6 @@ public class CancelRemoveLessonActivity extends Activity implements OnClickListe
                 .replace("[", "")  //remove the right bracket
                 .replace("]", "")  //remove the left bracket
                 .trim();
-        Log.e("final String CancelRemove Lesson", formatedString);
 
         format_class = formatedString;
         HashMap<String, String> params = new HashMap<String, String>();
@@ -616,7 +600,6 @@ public class CancelRemoveLessonActivity extends Activity implements OnClickListe
 
         String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.releaseRequestClassURL, params);
         readAndParseJSON(responseString);
-        Log.e("final String CancelRemove Lesson" + responseString, responseString);
     }
 
     public void readAndParseJSON(String in) {

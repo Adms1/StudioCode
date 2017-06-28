@@ -48,7 +48,7 @@ public class ReceivePaymentConfirm extends Activity {
 
     String data_load_page = "False", data_load_delete = "False", data_load_apply = "False",
             data_load_empty = "False", data_load_basket = "False";
-    String _Total, _PaidAmount, _DueAmount;
+    String _Total;
     ArrayList<String> _index, _ItemTypeID, _Type, _Item, _Package, _Price, _Qty, _Tax, _Subtotal, _Delete, DeleteEblDble;
     public TextView tv_total;
     ListView lv_view_cart;
@@ -291,7 +291,6 @@ public class ReceivePaymentConfirm extends Activity {
                         _Tax.add(jsonChildNode.getString("Tax"));
                         _Subtotal.add(jsonChildNode.getString("Subtotal"));
                         _Delete.add(jsonChildNode.getString("Delete"));
-                        //								DeleteEblDble.add(jsonChildNode.getString("DeleteEblDble"));
                         DeleteEblDble.add("False");
                     }
                 } else {
@@ -541,7 +540,6 @@ public class ReceivePaymentConfirm extends Activity {
             Intent i = new Intent(ReceivePaymentConfirm.this, DashBoardActivity.class);
             AppConfiguration.BasketID = "BasketID";
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            //			i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
             startActivity(i);
             finish();
         } else {

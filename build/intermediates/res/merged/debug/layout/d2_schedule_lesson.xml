@@ -168,7 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:button="@drawable/custom_radiobutton_orange"
-                        android:checked="false"
+                        android:checked="true"
                         android:paddingLeft="5dp"
                         android:text="I want to hold my lesson time forever" />
 
@@ -306,8 +306,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:button="@drawable/custom_radiobutton_orange"
+                            android:checked="false"
                             android:paddingRight="5dp"
-
                             android:text="Yes"
                             android:textColor="@color/black" />
                         <!--android:button="@drawable/custom_radiobutton_orange"-->
@@ -418,6 +418,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:button="@drawable/custom_check_orange"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="8dp"
                                 android:visibility="gone" />
 
                             <CheckBox
@@ -425,6 +427,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:button="@drawable/custom_check_orange"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="8dp"
                                 android:visibility="gone" />
 
                             <CheckBox
@@ -432,6 +436,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:button="@drawable/custom_check_orange"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="8dp"
                                 android:visibility="gone" />
                         </LinearLayout>
 
@@ -449,6 +455,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:button="@drawable/custom_check_orange"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="8dp"
                                 android:visibility="gone" />
 
                             <CheckBox
@@ -456,6 +464,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:button="@drawable/custom_check_orange"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="8dp"
                                 android:visibility="gone" />
 
                             <CheckBox
@@ -463,6 +473,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:button="@drawable/custom_check_orange"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="8dp"
                                 android:visibility="gone" />
 
                             <CheckBox
@@ -470,6 +482,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:button="@drawable/custom_check_orange"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="8dp"
                                 android:visibility="gone" />
 
                             <CheckBox
@@ -477,6 +491,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:button="@drawable/custom_check_orange"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="8dp"
                                 android:visibility="gone" />
                         </LinearLayout>
                     </RelativeLayout>

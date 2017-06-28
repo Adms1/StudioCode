@@ -61,8 +61,7 @@ public class ContactUsFragment extends Fragment implements OnClickListener {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.contact_us_fragment, container, false);
         //getting token
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(getActivity().getApplicationContext());

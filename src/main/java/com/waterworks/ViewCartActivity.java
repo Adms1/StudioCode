@@ -44,7 +44,7 @@ public class ViewCartActivity extends Activity implements OnClickListener{
 	public TextView tv_total;
 	ImageButton ib_back;
 	
-	String _Total,_PaidAmount,_DueAmount;
+	String _Total;
 	ArrayList<String> _index,_ItemTypeID,_Type,_Item,_Package,_Price,_Qty,_Tax,_Subtotal,_Delete,DeleteEblDble;
 	String token,familyID;
 	
@@ -107,8 +107,7 @@ public class ViewCartActivity extends Activity implements OnClickListener{
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		isInternetPresent = Utility
-				.isNetworkConnected(ViewCartActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(ViewCartActivity.this);
 		if(!isInternetPresent){
 			onDetectNetworkState().show();
 		}
@@ -179,8 +178,6 @@ public class ViewCartActivity extends Activity implements OnClickListener{
 					new EmptyBasket().execute();
 					
 				break;
-				
-
 			default:
 				break;
 			}
@@ -279,13 +276,10 @@ public class ViewCartActivity extends Activity implements OnClickListener{
 				Toast.makeText(ViewCartActivity.this, msg, Toast.LENGTH_LONG).show();
 				lv_view_cart.setVisibility(View.GONE);
 			}
-			
 		}
 	}
 	
 	String msg;
-	
-	
 	private class ApplyPromocode extends AsyncTask<Void, Void, Void>{
 		ProgressDialog pd;
 		@Override
@@ -381,13 +375,11 @@ public class ViewCartActivity extends Activity implements OnClickListener{
 				Toast.makeText(getApplicationContext(), "Basket refreshed.", Toast.LENGTH_LONG).show();
 				AppConfiguration.BasketID ="BasketID";
 				tv_total.setText("Total:");
-				//finish();
-				
+
 				Intent i = new Intent(ViewCartActivity.this,DashBoardActivity.class);
 				i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 				i.putExtra("POS", 4);
 				startActivity(i);
-//				new GetBasketID().execute();
 			}
 			else{
 				Toast.makeText(getApplicationContext(), "Basket not refreshed.", Toast.LENGTH_LONG).show();

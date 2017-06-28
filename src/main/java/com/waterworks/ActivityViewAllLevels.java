@@ -41,10 +41,8 @@ public class ActivityViewAllLevels extends Activity {
 
         ImageButton ib_menusad = (ImageButton)view.findViewById(R.id.ib_menusad);
         ib_menusad.setBackgroundResource(R.drawable.back_arrow);
-
         TextView action_title = (TextView) view.findViewById(R.id.action_title);
         action_title.setText("View All Levels");
-
         Button relMenu = (Button)view.findViewById(R.id.relMenu);
         relMenu.setOnClickListener(new View.OnClickListener() {
             @Override

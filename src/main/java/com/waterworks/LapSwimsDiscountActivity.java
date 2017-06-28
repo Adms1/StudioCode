@@ -47,7 +47,6 @@ public class LapSwimsDiscountActivity extends Activity {
 	Button btn_select_months,btn_starting_month, relMenu;
 	CardView btn_submit;
 	private static String TAG = "LapSwimsDiscountActivity";
-//	ImageButton ib_back;
 	Boolean isInternetPresent = false;
 	String data_load ="False",data_load_basket="False";
 	String siteID;
@@ -106,25 +105,7 @@ public class LapSwimsDiscountActivity extends Activity {
 			int m = Calendar.MONTH;
 			m = m-1;
 			for (int i = m; i < months.length; i++) {
-//				monthsList.add(months[i]);
 			}
-
-			//			Log.i(TAG, "month list = " + monthsList);
-			//			m_months = new String[12];
-			//			for (int j = 0; j < monthsList.size(); j++) {
-			//				m_months[j] = monthsList.get(j)+" "+Calendar.getInstance().get(Calendar.YEAR);
-			//				Log.i(TAG,""+ m_months[j]);
-			//			}
-
-//			int noofMonths = months.length - monthsList.size();
-//
-//			for(int k = 0 ; k < noofMonths ;k++)
-//			{
-//				m_months[monthsList.size()+k] = months[k]+" "+((Calendar.getInstance().get(Calendar.YEAR))+1);
-//				Log.i(TAG,""+ m_months[monthsList.size()+k]);
-//			}
-
-//			siteid = getIntent().getStringExtra("siteid");
 			if(AppConfiguration.BasketID.equalsIgnoreCase("0")){
 				new GetBasketID().execute();
 			}
@@ -236,12 +217,6 @@ public class LapSwimsDiscountActivity extends Activity {
 							lpw_starting_month.dismiss();
 						}
 					});
-
-			//			if(data_load_basket.toString().equalsIgnoreCase("True")){
-			//				lv_list_month.setAdapter(new ListAdapterMonth(LapSwimsMonthlyActivity.this, month_name,btn_submit));
-			//			}
-			//			else{
-			//			}
 		}
 	}
 
@@ -321,8 +296,6 @@ public class LapSwimsDiscountActivity extends Activity {
 				else{
 					String monthlynumber[] = btn_select_months.getText().toString().split("\\s");
 					m_number = monthlynumber[0];
-					Log.i(TAG, m_number);
-					Log.i(TAG, s_month);
 					new LapSwimDiscountSubmit().execute();
 				}
 			}
@@ -337,7 +310,6 @@ public class LapSwimsDiscountActivity extends Activity {
                     siteID = siteMainList.get(position).get("SiteID");
                     getLapSwimPrice();
                 }
-                Log.v(TAG, ""+siteID);
             }
 
             @Override
@@ -393,10 +365,6 @@ public class LapSwimsDiscountActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		//		super.onBackPressed();
-//		Intent i = new Intent(getApplicationContext(),LapSwimsActivity.class);
-//		i.putExtra("SiteId", siteID);
-//		startActivity(i);
 		finish();
 	}
 	@Override
@@ -471,14 +439,12 @@ public class LapSwimsDiscountActivity extends Activity {
 			}
 			if(data_load_basket.toString().equalsIgnoreCase("True")){
 				if(AppConfiguration.BasketID.equalsIgnoreCase("0")){
-					//					Toast.makeText(TransferMakeUpActivity.this, "Please try after sometime", Toast.LENGTH_LONG).show();
 				}
 				else{
 					//					new swimlessonsubmit().execute();
 				}
 			}
 			else{
-				//				Toast.makeText(TransferMakeUpActivity.this, "Please try after sometime", Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -554,12 +520,8 @@ public class LapSwimsDiscountActivity extends Activity {
 			}
 			if(data_load.toString().equals("True"))
 			{
-				//				Toast.makeText(getApplicationContext(), "Added to cart.", Toast.LENGTH_LONG).show();
-//				Intent viewcart = new Intent(getApplicationContext(), ViewCartActivity.class);
                 Intent viewcart = new Intent(getApplicationContext(), ByMoreMyCart.class);
 				startActivity(viewcart);
-
-//				finish();
 			}
 			else{
 				Toast.makeText(getApplicationContext(), "Some internal error, Please try after sometime.", Toast.LENGTH_LONG).show();
@@ -592,13 +554,7 @@ public class LapSwimsDiscountActivity extends Activity {
 				siteName.add("" + jsonChildNode.getString("sitename"));
 
 				siteMainList.add(hashmap);
-//
 			}
-
-			Log.d("siteName---", "" + siteName);
-			Log.d("siteName---1", "" + siteName.size());
-			Log.d("siteMainList---", "" + siteMainList);
-			Log.d("siteMainList---1", "" + siteMainList.size());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

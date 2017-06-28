@@ -45,13 +45,9 @@ public class RegisterActivity2 extends Activity {
     Spinner spinner1, spinner2;
     ArrayList<HashMap<String, String>> phoneTypeList = new ArrayList<HashMap<String, String>>();
     ArrayList<String> typeList = new ArrayList<String>();
-
     String primaryPhoneType;
     String secondaryPhoneType;
-
     EditText edtStreetAddress, edtApt, edtCity, edtState, edtZipCode, edtPrimarytele, edtSecondarytele;
-
-    RelativeLayout rel_back;
     ImageView btnValidZipCode;
     String zipcode;
     String getState = null, getCity = null;
@@ -90,8 +86,6 @@ public class RegisterActivity2 extends Activity {
                 @Override
                 public void onClick(View v) {
 
-//				zipcode = edtZipCode.getText().toString();
-//				new ValidatingZipCodeAsyncTask().execute();
                 }
             });
 

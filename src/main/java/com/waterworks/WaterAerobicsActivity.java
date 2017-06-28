@@ -47,7 +47,6 @@ public class WaterAerobicsActivity extends Activity {
 	Button btn_sessions,relMenu;
 	CardView btn_submit;
 	private static String TAG = "WaterAerobicsActivity";
-//	ImageButton ib_back;
 	Boolean isInternetPresent = false;
 	ListPopupWindow lpw_sessions;
 	ArrayList<String> sessions;
@@ -73,10 +72,8 @@ public class WaterAerobicsActivity extends Activity {
 		familyID = prefs.getString("FamilyID", "");
 		Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
 		
-		isInternetPresent = Utility
-				.isNetworkConnected(WaterAerobicsActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(WaterAerobicsActivity.this);
 		if(isInternetPresent){
-
 			Initialization();
 			if(AppConfiguration.BasketID.equalsIgnoreCase("0")){
 				new GetBasketID().execute();
@@ -437,7 +434,6 @@ public class WaterAerobicsActivity extends Activity {
 			{
                 Intent viewcart = new Intent(getApplicationContext(), ByMoreMyCart.class);
 				startActivity(viewcart);
-//				finish();
 			}
 			else{
 				Toast.makeText(getApplicationContext(), "Some internal error, Please try after sometime.", Toast.LENGTH_LONG).show();
@@ -469,14 +465,8 @@ public class WaterAerobicsActivity extends Activity {
 				hashmap.put("SiteName", jsonChildNode.getString("sitename"));
 
 				siteName.add("" + jsonChildNode.getString("sitename"));
-
 				siteMainList.add(hashmap);
 			}
-
-			Log.d("siteName---", "" + siteName);
-			Log.d("siteName---1", "" + siteName.size());
-			Log.d("siteMainList---", "" + siteMainList);
-			Log.d("siteMainList---1", "" + siteMainList.size());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

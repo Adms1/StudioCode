@@ -2040,6 +2040,7 @@ public class ScheduleLessonFragement2 extends Activity {
         param.put("Pair1_CmbValue2", AppConfiguration.pair1_comboValue2);
         param.put("Pair1_CmbValue3", AppConfiguration.pair1_comboValue3);
         param.put("Pair1_CmbValue4", AppConfiguration.pair1_comboValue4);
+        param.put("StudentId_New",AppConfiguration.selectedStudentIDforStep2);
         Log.d("siteMainList---id1", "" + AppConfiguration.salStep1SiteID);
         String responseString = WebServicesCall.RunScript(AppConfiguration.scheduleALessionInstructorListURL, param);
         readAndParseJSONChildList(responseString);

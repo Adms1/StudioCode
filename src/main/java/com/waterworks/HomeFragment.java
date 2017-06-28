@@ -674,11 +674,11 @@ public class HomeFragment extends Fragment {
 
             String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.Get_RemainingLessons, param);
             try {
-                data_load = "False";
+//                data_load = "False";
 
                 JSONObject reader = new JSONObject(responseString);
                 data_load = reader.getString("Success");
-                if (data_load.toString().equals("True")) {
+                if (data_load.toString().equalsIgnoreCase("True")) {
                     JSONArray jsonMainNode = reader.optJSONArray("FinalArray");
                     for (int i = 0; i < jsonMainNode.length(); i++) {
                         JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
@@ -704,7 +704,8 @@ public class HomeFragment extends Fragment {
 /*            if (pd != null) {
                 pd.dismiss();
             }*/
-            if (data_load.toString().equals("True")) {
+            if (data_load.toString().equalsIgnoreCase("True"))
+            {
                 if (AppConfiguration.LAFitnessResult.equalsIgnoreCase("true")) {
                     if (!count.equals("0") || !count.equals("Past due")) {
                         if (lesson_type.size() > 0) {
@@ -737,7 +738,7 @@ public class HomeFragment extends Fragment {
                                 remaining_lay.addView(view);
                             }
                         } else {
-                            remaining_title.setText(Html.fromHtml("Paid Lessons Remaining: <font color='red'> None</font>"));
+//                            remaining_title.setText(Html.fromHtml("Paid Lessons Remaining: <font color='red'> None</font>"));
                         }
                     } else {
                         singleStudent.setVisibility(View.VISIBLE);

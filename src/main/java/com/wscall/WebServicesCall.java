@@ -47,15 +47,13 @@ public class WebServicesCall {
 			conn.setRequestMethod("POST");
 			conn.setUseCaches(false);
 			conn.setRequestProperty("User-Agent", USER_AGENT);
-			conn.setRequestProperty("Content-Type", 
-					"application/x-www-form-urlencoded");
+			conn.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
 
 			conn.setDoInput(true);
 			conn.setDoOutput(true);
 
 			OutputStream os = conn.getOutputStream();
-			BufferedWriter writer = new BufferedWriter(
-					new OutputStreamWriter(os, "UTF-8"));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
 			writer.write(getPostDataString(params));
 			writer.flush();
 			writer.close();

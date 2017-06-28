@@ -61,8 +61,7 @@ public class RequestShadowingActivity extends Activity implements OnClickListene
 		familyID = prefs.getString("FamilyID", "");
 		Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
 		
-		isInternetPresent = Utility
-				.isNetworkConnected(RequestShadowingActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(RequestShadowingActivity.this);
 		if(!isInternetPresent){
 			onDetectNetworkState().show();
 		}

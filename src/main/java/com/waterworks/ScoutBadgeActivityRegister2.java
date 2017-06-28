@@ -53,7 +53,6 @@ public class ScoutBadgeActivityRegister2 extends Activity {
     ListView lv_body;
     LinearLayout llTabs;
     private ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
-    //	public static ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,finalstulist,remark;
     public static ArrayList<HashMap<String, String>> SwimmingBadgeActivityEventList = new ArrayList<HashMap<String, String>>();
     public static SparseBooleanArray mChecked = new SparseBooleanArray();
     TextView tv_dt2_info;
@@ -64,8 +63,6 @@ public class ScoutBadgeActivityRegister2 extends Activity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scoutactivityregister2);
-
-//		setContentView(R.layout.activity_dive_and_turns_regi2);
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
         token = prefs.getString("Token", "");
         familyID = prefs.getString("FamilyID", "");
@@ -139,7 +136,6 @@ public class ScoutBadgeActivityRegister2 extends Activity {
                             i.putExtra("childno", "" + childno);
                             i.putExtra("strStuList", str.toString());
                             startActivity(i);
-//					finish();
                         } else {
                             Utility.ping(ScoutBadgeActivityRegister2.this, "Please select at least one session for each student.");
                         }
@@ -181,7 +177,6 @@ public class ScoutBadgeActivityRegister2 extends Activity {
             llTabs.removeAllViews();
             makeTabs(v.getTag().toString());
             currentStudentID = v.getTag().toString().trim();
-//            Utility.ping(JuniorLifeGuardRegister2.this, currentStudentID);
             if(SwimmingBadgeActivityEventList.size() > 0){
                 Dt2BodyAdapter dt2BodyAdapter = new Dt2BodyAdapter(SwimmingBadgeActivityEventList);
                 lv_body.setAdapter(dt2BodyAdapter);
@@ -213,17 +208,6 @@ public class ScoutBadgeActivityRegister2 extends Activity {
         btn_dt2_continue = (CardView) findViewById(R.id.btn_continue_dt2);
         lv_body = (ListView) findViewById(R.id.lv_dt2_list);
         tv_dt2_info = (TextView) findViewById(R.id.tv_dt2_info);
-//		FullName = new ArrayList<String>();
-//		Studentid = new ArrayList<String>();
-//		tbid = new ArrayList<String>();
-//		sessionname = new ArrayList<String>();
-//		startdate = new ArrayList<String>();
-//		enddate = new ArrayList<String>();
-//		unitprice = new ArrayList<String>();
-//		sitename = new ArrayList<String>();
-//		finalstulist = new ArrayList<String>();
-//		remark = new ArrayList<String>();
-//        tv_dives_turns_name = (TextView) findViewById(R.id.tv_dives_turns_name);
     }
 
     @Override
@@ -244,7 +228,6 @@ public class ScoutBadgeActivityRegister2 extends Activity {
     @Override
     public void onBackPressed() {
         // TODO Auto-generated method stub
-        //		super.onBackPressed();
         finish();
     }
 
@@ -290,9 +273,6 @@ public class ScoutBadgeActivityRegister2 extends Activity {
         @Override
         protected Void doInBackground(Void... params) {
             // TODO Auto-generated method stub
-
-//            String basketID = (AppConfiguration.BasketID.equals("BasketID")) ? "0" : AppConfiguration.BasketID;
-
             HashMap<String, String> param = new HashMap<String, String>();
             param.put("Token", token);
             param.put("strStuList", stulist);
@@ -357,7 +337,6 @@ public class ScoutBadgeActivityRegister2 extends Activity {
                 }
                 tv_dt2_info.setVisibility(View.GONE);
             } else {
-//				Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
                 tv_dt2_info.setVisibility(View.VISIBLE);
                 tv_dt2_info.setText(msg);
             }
@@ -369,20 +348,8 @@ public class ScoutBadgeActivityRegister2 extends Activity {
     public class Dt2BodyAdapter extends BaseAdapter {
         private final ArrayList<HashMap<String, String>> data = new ArrayList<>();
 
-        //		Context context;
-//		ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,remark;
         public Dt2BodyAdapter(ArrayList<HashMap<String, String>> list) {
             super();
-//			this.context = context;
-//			FullName = fullName;
-//			Studentid = studentid;
-//			this.tbid = tbid;
-//			this.sessionname = sessionname;
-//			this.startdate = startdate;
-//			this.enddate = enddate;
-//			this.unitprice = unitprice;
-//			this.sitename = sitename;
-//			this.remark = remark;
             for (int i = 0; i < list.size(); i++) {
                 if (currentStudentID.equalsIgnoreCase(list.get(i).get("Studentid"))) {
                     this.data.add(list.get(i));

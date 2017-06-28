@@ -109,7 +109,9 @@
         <RelativeLayout
             android:id="@+id/rlInner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/tv_dt3_info"

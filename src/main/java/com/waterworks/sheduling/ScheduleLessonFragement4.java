@@ -330,7 +330,6 @@ public class ScheduleLessonFragement4 extends Activity {
                     Intent i = new Intent(mContext, ScheduleMakeupFragment.class);
                     startActivity(i);
                     finish();
-
                     ((AnimationDrawable) selected_2.getBackground()).start();
                 }
             }
@@ -356,7 +355,6 @@ public class ScheduleLessonFragement4 extends Activity {
                     Intent i = new Intent(mContext, WaitListFragment.class);
                     startActivity(i);
                     finish();
-
                     ((AnimationDrawable) selected_3.getBackground()).start();
                 }
             }
@@ -421,7 +419,6 @@ public class ScheduleLessonFragement4 extends Activity {
 
 
                 decide_layout(last_view(), select_1);
-
                 animation_slide(temp1, temp3, view_1, view_2);
                 last_clicked_position = 1;
             }
@@ -683,21 +680,15 @@ public class ScheduleLessonFragement4 extends Activity {
             animSlidInLeftLine.setAnimationListener(new Animation.AnimationListener() {
                 @Override
                 public void onAnimationStart(Animation animation) {
-
                 }
-
                 @Override
                 public void onAnimationEnd(Animation animation) {
                     v2.setVisibility(View.VISIBLE);
-
                     Animation animSlidInLeftLineRev = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_left_line);
                     v2.startAnimation(animSlidInLeftLineRev);
-
                 }
-
                 @Override
                 public void onAnimationRepeat(Animation animation) {
-
                 }
             });
         } else {
@@ -711,29 +702,20 @@ public class ScheduleLessonFragement4 extends Activity {
             animSlidInRightLineRev.setAnimationListener(new Animation.AnimationListener() {
                 @Override
                 public void onAnimationStart(Animation animation) {
-
                 }
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
                     v2.setVisibility(View.VISIBLE);
-
                     Animation animSlidInRightLine = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_right_line);
                     v2.startAnimation(animSlidInRightLine);
-
-
                 }
-
                 @Override
                 public void onAnimationRepeat(Animation animation) {
-
                 }
             });
         }
-
     }
-
-
     //This will clear old values.
     public void ClearAll() {
         AppConfiguration.pair1_DayTime = "";
@@ -865,7 +847,6 @@ public class ScheduleLessonFragement4 extends Activity {
     public boolean flag = true;
 
     @SuppressWarnings("unused")
-
     public void GetFinalArray() {
         //Reset the counters
         AppConfiguration.st_Student1 = "";
@@ -874,8 +855,7 @@ public class ScheduleLessonFragement4 extends Activity {
         AppConfiguration.st_Student4 = "";
         AppConfiguration.st_Student5 = "";
 
-        String[] tempname = AppConfiguration.Array2String(AppConfiguration.selectedStudentsName)
-                .toString().split("\\,");
+        String[] tempname = AppConfiguration.Array2String(AppConfiguration.selectedStudentsName).toString().split("\\,");
 
         flag = true;
         pr = 0;
@@ -894,7 +874,6 @@ public class ScheduleLessonFragement4 extends Activity {
                 AppConfiguration.st_Student5 = GetCheckedItems(ll_schedule3_body_5, i);
             }
         }
-
         if (AppConfiguration.makeUpFlag.contains("1")) {
             if (pr > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("private_lessons"))) {
                 flag = false;
@@ -964,8 +943,7 @@ public class ScheduleLessonFragement4 extends Activity {
     public void checkChekedStudents() {
         int size = AppConfiguration.selectedStudentsName.size();
         if (size == 1) {
-            if (AppConfiguration.st_Student1.trim().length() == 0
-                    ) {
+            if (AppConfiguration.st_Student1.trim().length() == 0) {
                 doneForAll = false;
             } else {
                 doneForAll = true;
@@ -973,8 +951,7 @@ public class ScheduleLessonFragement4 extends Activity {
         }
         if (size == 2) {
             if (AppConfiguration.st_Student1.trim().length() == 0 ||
-                    AppConfiguration.st_Student2.trim().length() == 0
-                    ) {
+                    AppConfiguration.st_Student2.trim().length() == 0) {
                 doneForAll = false;
             } else {
                 doneForAll = true;
@@ -983,8 +960,7 @@ public class ScheduleLessonFragement4 extends Activity {
         if (size == 3) {
             if (AppConfiguration.st_Student1.trim().length() == 0 ||
                     AppConfiguration.st_Student2.trim().length() == 0 ||
-                    AppConfiguration.st_Student3.trim().length() == 0
-                    ) {
+                    AppConfiguration.st_Student3.trim().length() == 0) {
                 doneForAll = false;
             } else {
                 doneForAll = true;
@@ -1129,8 +1105,6 @@ public class ScheduleLessonFragement4 extends Activity {
 
     public void distributeStudentsTop() {
         int size = AppConfiguration.selectedStudentsName.size();
-
-
         if (size == 1) {
             st_1.setVisibility(View.VISIBLE);
             st_2.setVisibility(View.GONE);
@@ -1162,8 +1136,6 @@ public class ScheduleLessonFragement4 extends Activity {
             st_4.setVisibility(View.VISIBLE);
             st_5.setVisibility(View.VISIBLE);
         }
-
-
         for (int i = 0; i < AppConfiguration.selectedStudentsName.size(); i++) {
             if (i == 0) {
                 if (AppConfiguration.selectedStudentsName.get(i).contains(" ")) {
@@ -1181,7 +1153,6 @@ public class ScheduleLessonFragement4 extends Activity {
                 } else {
                     name_2.setText(AppConfiguration.selectedStudentsName.get(i));
                 }
-
             } else if (i == 2) {
                 if (AppConfiguration.selectedStudentsName.get(i).contains(" ")) {
                     String temp[] = AppConfiguration.selectedStudentsName.get(i).split("\\s+");
@@ -1212,9 +1183,7 @@ public class ScheduleLessonFragement4 extends Activity {
             }
         }
         main_lay.setVisibility(View.VISIBLE);
-    }
-
-    public String GetArrayToString(ArrayList<String> monDay1, ArrayList<String> tueDay1, ArrayList<String> wedDay1,
+    }public String GetArrayToString(ArrayList<String> monDay1, ArrayList<String> tueDay1, ArrayList<String> wedDay1,
                                    ArrayList<String> thuDay1, ArrayList<String> friDay1, ArrayList<String> satDay1, ArrayList<String> sunDay1) {
         String student = "";
 
@@ -1258,93 +1227,59 @@ public class ScheduleLessonFragement4 extends Activity {
             instructorListBuilder2 = "", instructorListBuilder3 = "", instructorListBuilder4 = "";
 
     String instructorListBuilderNew = "";
-    String[] templessonid = AppConfiguration.salStep1LessonID
-            .toString().split("\\,");
+    String[] templessonid = AppConfiguration.salStep1LessonID.toString().split("\\,");
 
     public String check(HashMap<String, Boolean> bool, int j) {
 
-        String[] tempid = AppConfiguration.selectedStudentID.toString()
-                .split("\\,");
+        String[] tempid = AppConfiguration.selectedStudentID.toString().split("\\,");
 
-        String[] tempname = AppConfiguration.Array2String(AppConfiguration.selectedStudentsName)
-                .toString().split("\\,");
+        String[] tempname = AppConfiguration.Array2String(AppConfiguration.selectedStudentsName).toString().split("\\,");
 
         if (AppConfiguration.instructorListBuilder.length() > 0 && AppConfiguration.instructorListBuilder
-                .charAt(AppConfiguration.instructorListBuilder
-                        .length() - 1) == ',') {
+                .charAt(AppConfiguration.instructorListBuilder.length() - 1) == ',') {
             instructorListBuilder = AppConfiguration.instructorListBuilder.toString().substring(0, AppConfiguration.instructorListBuilder.length() - 1);
 
-            instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr.toString().substring(0, AppConfiguration.instructorListBuilderForInstr.length() - 1);
+            instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr.toString().substring(0,
+                    AppConfiguration.instructorListBuilderForInstr.length() - 1);
         }
-
         if (AppConfiguration.instructorListBuilder1.length() > 0
                 && AppConfiguration.instructorListBuilder1
-                .charAt(AppConfiguration.instructorListBuilder1
-                        .length() - 1) == ',') {
+                .charAt(AppConfiguration.instructorListBuilder1.length() - 1) == ',') {
             instructorListBuilder1 = AppConfiguration.instructorListBuilder1
-                    .toString()
-                    .substring(
-                            0,
-                            AppConfiguration.instructorListBuilder1.length() - 1);
+                    .toString().substring(0,AppConfiguration.instructorListBuilder1.length() - 1);
 
             instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr1
-                    .toString()
-                    .substring(
-                            0,
-                            AppConfiguration.instructorListBuilderForInstr1.length() - 1);
+                    .toString().substring(0,AppConfiguration.instructorListBuilderForInstr1.length() - 1);
         }
-
         if (AppConfiguration.instructorListBuilder2.length() > 0
                 && AppConfiguration.instructorListBuilder2
-                .charAt(AppConfiguration.instructorListBuilder2
-                        .length() - 1) == ',') {
+                .charAt(AppConfiguration.instructorListBuilder2.length() - 1) == ',') {
             instructorListBuilder2 = AppConfiguration.instructorListBuilder2
-                    .toString()
-                    .substring(
-                            0,
-                            AppConfiguration.instructorListBuilder2.length() - 1);
+                    .toString().substring(0,AppConfiguration.instructorListBuilder2.length() - 1);
 
             instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr2
-                    .toString()
-                    .substring(
-                            0,
-                            AppConfiguration.instructorListBuilderForInstr2.length() - 1);
+                    .toString().substring(0,AppConfiguration.instructorListBuilderForInstr2.length() - 1);
         }
 
         if (AppConfiguration.instructorListBuilder3.length() > 0
                 && AppConfiguration.instructorListBuilder3
-                .charAt(AppConfiguration.instructorListBuilder3
-                        .length() - 1) == ',') {
+                .charAt(AppConfiguration.instructorListBuilder3.length() - 1) == ',') {
             instructorListBuilder3 = AppConfiguration.instructorListBuilder3
-                    .toString()
-                    .substring(
-                            0,
-                            AppConfiguration.instructorListBuilder3.length() - 1);
+                    .toString().substring(0, AppConfiguration.instructorListBuilder3.length() - 1);
 
             instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr3
-                    .toString()
-                    .substring(
-                            0,
-                            AppConfiguration.instructorListBuilderForInstr3.length() - 1);
+                    .toString().substring(0,AppConfiguration.instructorListBuilderForInstr3.length() - 1);
         }
 
         if (AppConfiguration.instructorListBuilder4.length() > 0
                 && AppConfiguration.instructorListBuilder4
-                .charAt(AppConfiguration.instructorListBuilder4
-                        .length() - 1) == ',') {
+                .charAt(AppConfiguration.instructorListBuilder4.length() - 1) == ',') {
             instructorListBuilder4 = AppConfiguration.instructorListBuilder4
-                    .toString()
-                    .substring(
-                            0,
-                            AppConfiguration.instructorListBuilder4.length() - 1);
+                    .toString().substring(0,AppConfiguration.instructorListBuilder4.length() - 1);
 
             instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr4
-                    .toString()
-                    .substring(
-                            0,
-                            AppConfiguration.instructorListBuilderForInstr4.length() - 1);
+                    .toString().substring(0,AppConfiguration.instructorListBuilderForInstr4.length() - 1);
         }
-
         String instructorlist = "";
         if (j == 0) {
             instructorlist = instructorListBuilder.toString()
@@ -1362,17 +1297,10 @@ public class ScheduleLessonFragement4 extends Activity {
             instructorlist = instructorListBuilder4.toString()
                     .replaceAll("--", "*").replaceAll(",", "|");
         }
-
-
         HashMap<String, Boolean> selected = new HashMap<String, Boolean>();
         selected = bool;
-
-        //		for (int j= 0; j < AppConfiguration.studentsize; j++) {
-
         int i = 0;
-        if (selected.get("Mon_" + i) ||
-                selected.get("Mon_" + (i + 1))
-                || selected.get("Mon_" + (i + 2))) {
+        if (selected.get("Mon_" + i) || selected.get("Mon_" + (i + 1)) || selected.get("Mon_" + (i + 2))) {
 
             _mon = "Monday|True|" + String.valueOf(selected.get("Mon_" + i))
                     + "_" + String.valueOf(selected.get("Mon_" + (i + 1))) + "_"
@@ -1383,7 +1311,6 @@ public class ScheduleLessonFragement4 extends Activity {
             _mon = "Monday|True|" + String.valueOf(selected.get("Mon_" + i))
                     + "_" + String.valueOf(selected.get("Mon_" + (i + 1))) + "_"
                     + String.valueOf(selected.get("Mon_" + (i + 2)));
-            //				_mon="null";
         }
         if (selected.get("Tue_" + i) ||
                 selected.get("Tue_" + (i + 1))
@@ -1391,13 +1318,11 @@ public class ScheduleLessonFragement4 extends Activity {
             _tue = "Tuesday|True|" + String.valueOf(selected.get("Tue_" + i))
                     + "_" + String.valueOf(selected.get("Tue_" + (i + 1))) + "_"
                     + String.valueOf(selected.get("Tue_" + (i + 2)));
-
             AppConfiguration.TUE_Check = true;
         } else {
             _tue = "Tuesday|True|" + String.valueOf(selected.get("Tue_" + i))
                     + "_" + String.valueOf(selected.get("Tue_" + (i + 1))) + "_"
                     + String.valueOf(selected.get("Tue_" + (i + 2)));
-            //				_tue="null";
         }
         if (selected.get("Wed_" + i) ||
                 selected.get("Wed_" + (i + 1))
@@ -1560,15 +1485,11 @@ public class ScheduleLessonFragement4 extends Activity {
         try {
             if (jsonMainNode.length() > 0) {
                 for (int i = 0; i < jsonMainNode.length(); i++) {
-                    JSONObject jsonObject = jsonMainNode
-                            .getJSONObject(i);
-
-
+                    JSONObject jsonObject = jsonMainNode.getJSONObject(i);
                     if (count == 0) {
                         instNamePic.put(jsonObject
                                 .getString("instructors"), jsonObject
                                 .getString("wu_Photo"));
-
                         instructors.add(jsonObject
                                 .getString("instructors"));
                     } else if (count == 1) {
@@ -1604,8 +1525,6 @@ public class ScheduleLessonFragement4 extends Activity {
                                     .getString("instructors"));
                         }
                     }
-
-
                     JSONObject jObject = jsonObject;
 
                     tcm_time.add(jObject
@@ -1662,7 +1581,6 @@ public class ScheduleLessonFragement4 extends Activity {
                             .getString("tcsu_select"));
                     size_ofTIME = tct_time.size();
                 }
-
                 if (count == 0) {
                     _ClassAvailList1.add(instructors);
                 } else if (count == 1) {
@@ -1674,7 +1592,6 @@ public class ScheduleLessonFragement4 extends Activity {
                 } else if (count == 4) {
                     _ClassAvailList1.add(instructors5);
                 }
-
                 _ClassAvailList1.add(tcm_time);
                 _ClassAvailList1.add(tcm_dt);
                 _ClassAvailList1.add(tcm_cond);
@@ -1711,9 +1628,6 @@ public class ScheduleLessonFragement4 extends Activity {
         }
         return ClassAvailList;
     }
-
-    //	ArrayList<String> gender = new ArrayList<String>();
-//	ArrayList<String> name = new ArrayList<String>();
     String[] _gender;
 
     ProgressDialog pd;
@@ -1742,7 +1656,6 @@ public class ScheduleLessonFragement4 extends Activity {
             }
 
             strstudentarry1 = strstudentarry1.trim();
-
             strstudentarry1 = strstudentarry1.substring(0, strstudentarry.length() - 1);
         }
 
@@ -1757,7 +1670,6 @@ public class ScheduleLessonFragement4 extends Activity {
 
             if (AppConfiguration.makeUpFlag == "1") {
                 params.put("calstartdate", Utility.getTodaysDate());
-                Log.d("@@@@@@@@@@@@@@@@@@@@@", Utility.getTodaysDate());
                 params.put("calenddate", Utility.getScheduleMakeupEndDate());
 
             } else {
@@ -1766,14 +1678,10 @@ public class ScheduleLessonFragement4 extends Activity {
 
             }
 
-            params.put("siteid",
-                    AppConfiguration.salStep1SiteID);
-            params.put("strstudentarry",
-                    strstudentarry1);
-            params.put("intrlist",
-                    instructorListBuilderNew);
-            params.put("reserveforever",
-                    AppConfiguration.reserverForever);
+            params.put("siteid", AppConfiguration.salStep1SiteID);
+            params.put("strstudentarry", strstudentarry1);
+            params.put("intrlist", instructorListBuilderNew);
+            params.put("reserveforever", AppConfiguration.reserverForever);
             params.put("Type", "2");
             params.put("schedulechoices", AppConfiguration.schedulechoices);//AppConfiguration.schedulechoices
             params.put("scheduletype", String.valueOf(AppConfiguration.makeup_Clicked));
@@ -1837,7 +1745,6 @@ public class ScheduleLessonFragement4 extends Activity {
             if (AppConfiguration.pair2_DayTime.trim().length() > 0) {
                 AppConfiguration.pair2_DayTime = AppConfiguration.pair2_DayTime.substring(0, AppConfiguration.pair2_DayTime.length() - 1);
                 params.put("pair2_DayTime", AppConfiguration.pair2_DayTime);
-
             } else {
                 params.put("pair2_DayTime", AppConfiguration.pair2_DayTime);
             }
@@ -1868,20 +1775,15 @@ public class ScheduleLessonFragement4 extends Activity {
                     ClassAvailList5 = getValues(jsonMainNode5, 4);
 
                 } else {
-                    JSONArray jsonMainNode = reader
-                            .optJSONArray("ClassAvailList");
-                    JSONObject jsonObject = jsonMainNode
-                            .getJSONObject(0);
+                    JSONArray jsonMainNode = reader.optJSONArray("ClassAvailList");
+                    JSONObject jsonObject = jsonMainNode.getJSONObject(0);
                     Msg = jsonObject.getString("Msg");
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             return null;
         }
-
         @Override
         protected void onPostExecute(Void result) {
             // TODO Auto-generated method stub
@@ -2903,22 +2805,10 @@ public class ScheduleLessonFragement4 extends Activity {
 
     public class getBio extends AsyncTask<Void, Void, Void> {
         ProgressDialog pd;
-        /* (non-Javadoc)
-         * @see android.os.AsyncTask#doInBackground(java.lang.Object[])
-		 */
-
-        /* (non-Javadoc)
-         * @see android.os.AsyncTask#onPreExecute()
-         */
         @Override
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             super.onPreExecute();
-
-//            pd = new ProgressDialog(ScheduleLessonFragement4.this);
-//            pd.setMessage(getResources().getString(R.string.pleasewait));
-//            pd.setCancelable(false);
-//            pd.show();
             aboutInst.clear();
         }
 
@@ -2929,8 +2819,7 @@ public class ScheduleLessonFragement4 extends Activity {
             param.put("Token", token);
             param.put("InstructorID", selectedInstructor);
 
-            String responseString = WebServicesCall
-                    .RunScript(AppConfiguration.DOMAIN + AppConfiguration.GetInstructorBio, param);
+            String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.GetInstructorBio, param);
 
             try {
                 JSONObject reader = new JSONObject(responseString);
@@ -2944,16 +2833,10 @@ public class ScheduleLessonFragement4 extends Activity {
                         JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
                         String wu_InsName = jsonChildNode.getString("wu_InsName").trim();
-                        //						String wu_InsNature = jsonChildNode.getString("wu_InsNature").trim();
-                        //						String wu_InsFeatures = jsonChildNode.getString("wu_InsFeatures").trim();
-                        //						String wu_FirstDate = jsonChildNode.getString("wu_FirstDate").trim();
                         String wu_Photo = jsonChildNode.getString("wu_Photo").trim();
                         String wu_Bio = jsonChildNode.getString("wu_Bio").trim();
 
                         hashmap.put("wu_InsName", wu_InsName);
-                        //						hashmap.put("wu_InsNature", wu_InsNature);
-                        //						hashmap.put("wu_InsFeatures", wu_InsFeatures);
-                        //						hashmap.put("wu_FirstDate", wu_FirstDate);
                         hashmap.put("wu_Photo", wu_Photo);
                         hashmap.put("wu_Bio", wu_Bio);
                         aboutInst.add(hashmap);
@@ -2975,11 +2858,6 @@ public class ScheduleLessonFragement4 extends Activity {
         protected void onPostExecute(Void result) {
             // TODO Auto-generated method stub
             super.onPostExecute(result);
-
-//            if (pd != null && pd.isShowing()) {
-//                pd.dismiss();
-//            }
-
             if (successLoadChildList.toString().equals("True")) {
                 LayoutInflater lInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View layout = lInflater.inflate(R.layout.inst_bio_pop_up_layout, null);
@@ -3069,11 +2947,6 @@ public class ScheduleLessonFragement4 extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-//            pd = new ProgressDialog(ScheduleLessonFragement4.this);
-//            pd.setMessage(getResources().getString(R.string.pleasewait));
-//            pd.setCancelable(false);
-//            pd.show();
-
             instructorAvailableList.clear();
         }
 
@@ -3086,11 +2959,6 @@ public class ScheduleLessonFragement4 extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-//            if (pd != null) {
-//                pd.dismiss();
-//            }
-
-
             if (successLoadChildList.toString().equals("True")) {
 
                 String strMonday = instructorAvailableList.get(0).get("mstr").trim();
@@ -3118,8 +2986,6 @@ public class ScheduleLessonFragement4 extends Activity {
                 tv_appname.setText("Shifts");
 
                 TextView imgv_icon = (TextView) layout.findViewById(R.id.imgv_icon);
-//                Animation animSlidup = AnimationUtils.loadAnimation(mContext, R.anim.slid_up_popup);
-//                layout.startAnimation(animSlidup);
                 imgv_icon.setOnClickListener(new OnClickListener() {
 
                     @Override
@@ -3202,8 +3068,6 @@ public class ScheduleLessonFragement4 extends Activity {
             } else {
                 Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG)
                         .show();
-
-                //				finish();
             }
         }
 
@@ -3216,16 +3080,13 @@ public class ScheduleLessonFragement4 extends Activity {
         param.put("Makeupflg", AppConfiguration.makeUpFlag);
         param.put("sselected", AppConfiguration.selectedStudentID);
         param.put("intrlist", selectedInstructor);
-        param.put("calstartdate", "");
+        param.put("calstartdate","");  /*AppConfiguration.d2_startDate*/
 
-        String responseString = WebServicesCall
-                .RunScript(AppConfiguration.scheduleALessionStep2InstructorAvailabilityURL, param);
+        String responseString = WebServicesCall.RunScript(AppConfiguration.scheduleALessionStep2InstructorAvailabilityURL, param);
         readAndParseJSONChildList_(responseString);
-
     }
 
     public void readAndParseJSONChildList_(String in) {
-
         try {
             JSONObject reader = new JSONObject(in);
             successLoadChildList = reader.getString("Success");
@@ -3236,7 +3097,6 @@ public class ScheduleLessonFragement4 extends Activity {
                     HashMap<String, String> hashmap = new HashMap<String, String>();
 
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-
                     String mstr = jsonChildNode.getString("mstr").trim();
                     String tstr = jsonChildNode.getString("tstr").trim();
                     String wstr = jsonChildNode.getString("wstr").trim();
@@ -3260,11 +3120,7 @@ public class ScheduleLessonFragement4 extends Activity {
 
             } else {
                 JSONArray jsonMainNode = reader.optJSONArray("InstructorList");
-
                 for (int i = 0; i < jsonMainNode.length(); i++) {
-
-                    //					message = jsonChildNode.getString("Msg").trim();
-
                 }
             }
 
@@ -3340,8 +3196,6 @@ public class ScheduleLessonFragement4 extends Activity {
                         pd.show();
                     }
                     displayDone = true;
-                    //					Intent i = new Intent(mContext, ScheduleLessonFragement4.class);
-                    //					startActivity(i);
                 }
             }
         });

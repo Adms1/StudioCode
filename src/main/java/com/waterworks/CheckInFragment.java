@@ -86,7 +86,6 @@ public class CheckInFragment extends Activity{
 		// TODO Auto-generated method stub
 		listView =  (ListView) findViewById(R.id.lv_checkin_load_list);
 		tv_info = (TextView)findViewById(R.id.tv_checkin_info);
-
 		btn_proceed = (Button)findViewById(R.id.btn_checkin_proceed);
 	}
 	@SuppressWarnings("deprecation")

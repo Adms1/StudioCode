@@ -4,12 +4,12 @@
         "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\drawer_title_new.png"
     },
     {
-        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\redio_btn_check.png",
-        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\redio_btn_check.png"
-    },
-    {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\common_plus_signin_btn_icon_light_pressed.9.png",
         "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-xxhdpi\\common_plus_signin_btn_icon_light_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\redio_btn_check.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\redio_btn_check.png"
     },
     {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\view_ribbon_count.png",
@@ -20,12 +20,12 @@
         "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\icon10.png"
     },
     {
-        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\alerticon.png",
-        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\alerticon.png"
-    },
-    {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\common_google_signin_btn_icon_dark_disabled.9.png",
         "source": "C:\\Users\\admsandroid\\.android\\build-cache\\1ab472ba5cd1a62f4cc9d79ed073dd8ccc0f9643\\output\\res\\drawable-xxhdpi\\common_google_signin_btn_icon_dark_disabled.9.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\alerticon.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\alerticon.png"
     },
     {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\common_google_signin_btn_text_light_focused.9.png",
@@ -80,12 +80,12 @@
         "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\view_payment.png"
     },
     {
-        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\icon1.png",
-        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\icon1.png"
-    },
-    {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\size_chart_thermals.png",
         "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\size_chart_thermals.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\icon1.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-xxhdpi\\icon1.png"
     },
     {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\white_icon3.png",

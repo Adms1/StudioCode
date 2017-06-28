@@ -258,11 +258,9 @@ public class ScoutBadgeRegistration extends Activity {
                     _startDate = new ArrayList<String>();
                     _time = new ArrayList<String>();
 
-                    JSONArray jsonMainNode = reader
-                            .optJSONArray("FinalArray");
+                    JSONArray jsonMainNode = reader.optJSONArray("FinalArray");
                     for (int i = 0; i < jsonMainNode.length(); i++) {
-                        JSONObject jsonChildNode = jsonMainNode
-                                .getJSONObject(i);
+                        JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                         _session.add(jsonChildNode.getString("Session"));
                         _capacity.add(jsonChildNode.getString("Capacity"));
                         _endDate.add(jsonChildNode.getString("End Date"));

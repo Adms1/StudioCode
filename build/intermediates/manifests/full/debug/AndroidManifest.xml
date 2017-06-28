@@ -488,10 +488,6 @@
             android:name="com.waterworks.WaterPoloRegister3"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.waterworks.sheduling.SchedulingMain"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
         <!-- as -->
         <activity
             android:name="com.waterworks.sheduling.ScheduleLessonFragement"
@@ -594,7 +590,7 @@
         <activity
             android:name="com.waterworks.manageProfile.ManageProfile"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name="com.waterworks.sheduling.ShedulingFilter"
             android:screenOrientation="portrait"

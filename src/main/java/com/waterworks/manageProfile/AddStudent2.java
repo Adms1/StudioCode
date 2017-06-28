@@ -78,6 +78,7 @@ public class AddStudent2 extends Activity {
         familyID = prefs.getString("FamilyID", "");
 
         fromWhere = getIntent().getStringExtra("fromWhere");
+        Log.d("fromwhere",fromWhere);
         isInternetPresent = Utility.isNetworkConnected(AddStudent2.this);
         if (!isInternetPresent) {
             onDetectNetworkState().show();
@@ -525,28 +526,19 @@ public class AddStudent2 extends Activity {
 //                    Student_Doc_Update();
                     Intent imanage = new Intent(AddStudent2.this,ManageStudents.class);
                     startActivity(imanage);
-//                    ==========================================================
+
                             overridePendingTransition(R.anim.slide_in_right,
                                     R.anim.slide_out_left);
-//                       } else {
-//                            Intent i = new Intent(AddStudent2.this, AddStudent.class);
-//                            startActivity(i);
-//                        }
-//                    }else{
-//                        Intent i = new Intent(AddStudent2.this, AddStudent.class);
-//                        startActivity(i);
-//                    }
                 } else {
                     if (fromWhere != null) {
-                        finish();
-
+//                        finish();
+                        Log.d("fromwhere",fromWhere);
+                        Intent imanage = new Intent(AddStudent2.this,ManageStudents.class);
+                        startActivity(imanage);
                     }
                 }
+ //      ==========================================================
                 AppConfiguration.levelTypes = "";
-//                Intent intentCheckin = new Intent(AddStudent2.this, AddStudent.class);
-//                intentCheckin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                startActivity(intentCheckin);
-//                finish();
             } else {
                 Toast.makeText(getApplicationContext(), "" + message, Toast.LENGTH_LONG).show();
             }

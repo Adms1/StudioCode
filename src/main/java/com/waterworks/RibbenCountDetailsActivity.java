@@ -126,8 +126,7 @@ public class RibbenCountDetailsActivity extends Activity {
         HashMap<String, String> param = new HashMap<String, String>();
         param.put("Token", token);
         param.put("StudentID", studentID);
-        String responseString = WebServicesCall
-                .RunScript(AppConfiguration.ribbenCountDetailsURL, param);
+        String responseString = WebServicesCall.RunScript(AppConfiguration.ribbenCountDetailsURL, param);
         readAndParseJSON(responseString);
     }
 

@@ -69,9 +69,6 @@ public class SwimCampRegister3Activity extends Activity {
     ListView list;
     String successLoadChildList = "";
     String token, familyID;
-    //	TextView txtSelectedStudent;
-    String AddSession;
-    String DropOffEarly;
 
     CardView btnAddToCart;
     TextView txtTotalChildValue, txtTotalSessionValue;
@@ -86,7 +83,7 @@ public class SwimCampRegister3Activity extends Activity {
     String message;
     DecimalFormat df;
 
-    String _nameid, _sessions, _dropoff;//, dropoffNumber = ""/*, final_name_id*/;
+    String _nameid, _sessions, _dropoff;
     ArrayList<String> StudentName = new ArrayList<String>();
     ArrayList<String> StudentID = new ArrayList<String>();
     ArrayList<String> SUM = new ArrayList<String>();

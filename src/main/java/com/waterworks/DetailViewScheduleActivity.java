@@ -74,7 +74,6 @@ public class DetailViewScheduleActivity extends Activity {
 		tv_count.setText(count);
 		tv_comment.setText(comment);
 		ib_back.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub

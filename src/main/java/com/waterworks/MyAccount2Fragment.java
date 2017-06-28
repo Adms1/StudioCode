@@ -133,10 +133,6 @@ public class MyAccount2Fragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-
-                //Toast.makeText(RegisterActivity2.this,"On Button Click : " + primaryPhoneType,Toast.LENGTH_LONG).show();
-                //Toast.makeText(RegisterActivity2.this,"On Button Click : " + secondaryPhoneType,Toast.LENGTH_LONG).show();
-
                 String address = edtStreetAddress.getText().toString();
                 String apt = edtApt.getText().toString();
                 String city = edtCity.getText().toString();
@@ -185,9 +181,6 @@ public class MyAccount2Fragment extends Fragment {
                             AppConfiguration.Phone2 = sTelephone;
                             AppConfiguration.PhoneType2 = secondaryPhoneType;
 
-                            //	Intent i = new Intent(getActivity(),RegisterActivity3.class);
-                            //	startActivity(i);
-
                             MyAccount3Fragment fragment3 = new MyAccount3Fragment();
                             FragmentManager fragmentManager = getFragmentManager();
                             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -207,9 +200,6 @@ public class MyAccount2Fragment extends Fragment {
                         AppConfiguration.PhoneType1 = primaryPhoneType;
                         AppConfiguration.Phone2 = sTelephone;
                         AppConfiguration.PhoneType2 = secondaryPhoneType;
-
-                        //	Intent i = new Intent(getActivity(),RegisterActivity3.class);
-                        //	startActivity(i);
 
                         MyAccount3Fragment fragment3 = new MyAccount3Fragment();
                         FragmentManager fragmentManager = getFragmentManager();

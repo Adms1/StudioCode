@@ -23,7 +23,6 @@ public class AttenadnceCodesActivity extends Activity {
 			}
 		});
 	}
-	
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub

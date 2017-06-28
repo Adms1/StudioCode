@@ -62,8 +62,7 @@ TextView tv_tsm_error;
 		setContentView(R.layout.activity_new_transfer_make_up);
 
 		// getting token
-		SharedPreferences prefs = AppConfiguration
-				.getSharedPrefs(getApplicationContext());
+		SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
 		token = prefs.getString("Token", "");
 		familyID = prefs.getString("FamilyID", "");
 		Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
@@ -102,8 +101,7 @@ TextView tv_tsm_error;
 	}
 	@SuppressWarnings("deprecation")
 	public AlertDialog onDetectNetworkState() {
-		AlertDialog.Builder builder1 = new AlertDialog.Builder(
-				NewTransferMakeUpActivity.this);
+		AlertDialog.Builder builder1 = new AlertDialog.Builder(NewTransferMakeUpActivity.this);
 		builder1.setIcon(getResources().getDrawable(R.drawable.logo));
 		builder1.setMessage("Please turn on internet connection and try again.")
 				.setTitle("No Internet Connection.")
@@ -202,8 +200,7 @@ TextView tv_tsm_error;
 			params.put("Token",token );
 			params.put("FamilyID",familyID );
 					
-			String responseString = WebServicesCall.RunScript(
-					AppConfiguration.transfermakeupload, params);
+			String responseString = WebServicesCall.RunScript(AppConfiguration.transfermakeupload, params);
 			
 			try {
 				JSONObject reader = new JSONObject(responseString);
@@ -237,10 +234,8 @@ TextView tv_tsm_error;
 					p_lastName = new ArrayList<String>();
 					p_siteId = new ArrayList<String>();
 					p_siteName = new ArrayList<String>();
-					JSONArray jsonMainNode = reader
-							.optJSONArray("FinalArray");
-					JSONArray jsonMainNode1 = reader
-							.optJSONArray("PrivateArray");
+					JSONArray jsonMainNode = reader.optJSONArray("FinalArray");
+					JSONArray jsonMainNode1 = reader.optJSONArray("PrivateArray");
 					if (jsonMainNode.toString().equalsIgnoreCase("")) {
 
 					} else {
@@ -379,17 +374,13 @@ TextView tv_tsm_error;
 					all_siteid = new ArrayList<String>();
 					all_sitename = new ArrayList<String>();
 
-					JSONArray jsonMainNode = reader
-							.optJSONArray("Sites");
+					JSONArray jsonMainNode = reader.optJSONArray("Sites");
 
 					for (int i = 0; i < jsonMainNode.length(); i++) {
-						JSONObject jsonChildNode = jsonMainNode
-								.getJSONObject(i);
+						JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
-						all_siteid.add(jsonChildNode
-								.getString("SiteID"));
-						all_sitename.add(jsonChildNode
-								.getString("SiteName"));
+						all_siteid.add(jsonChildNode.getString("SiteID"));
+						all_sitename.add(jsonChildNode.getString("SiteName"));
 					}
 				}
 			} catch (JSONException e) {
@@ -411,9 +402,7 @@ TextView tv_tsm_error;
 			if (data_load_site.toString().equalsIgnoreCase("True")) {
 
 			} else {
-				Toast.makeText(NewTransferMakeUpActivity.this,
-						"Some internaml error,Please try after sometime.", 1)
-						.show();
+				Toast.makeText(NewTransferMakeUpActivity.this, "Some internaml error,Please try after sometime.", 1).show();
 			}
 		}
 	}
@@ -436,8 +425,7 @@ TextView tv_tsm_error;
 			// TODO Auto-generated method stub
 			HashMap<String, String > params = new HashMap<String, String>();
 					
-			String responseString = WebServicesCall.RunScript(
-					AppConfiguration.getInstructorPreferences, params);
+			String responseString = WebServicesCall.RunScript(AppConfiguration.getInstructorPreferences, params);
 			
 			try {
 				JSONObject reader = new JSONObject(responseString);
@@ -446,17 +434,13 @@ TextView tv_tsm_error;
 					all_lessonid = new ArrayList<String>();
 					all_lessonname = new ArrayList<String>();
 
-					JSONArray jsonMainNode = reader
-							.optJSONArray("Lesson");
+					JSONArray jsonMainNode = reader.optJSONArray("Lesson");
 
 					for (int i = 0; i < jsonMainNode.length(); i++) {
-						JSONObject jsonChildNode = jsonMainNode
-								.getJSONObject(i);
+						JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
-						all_lessonid.add(jsonChildNode
-								.getString("lessonid"));
-						all_lessonname.add(jsonChildNode
-								.getString("lessonname"));
+						all_lessonid.add(jsonChildNode.getString("lessonid"));
+						all_lessonname.add(jsonChildNode.getString("lessonname"));
 					}
 				}
 			} catch (JSONException e) {
@@ -477,9 +461,7 @@ TextView tv_tsm_error;
 			}
 			if (data_load_lesson.toString().equalsIgnoreCase("True")) {
 			} else {
-				Toast.makeText(NewTransferMakeUpActivity.this,
-						"Some internaml error,Please try after sometime.", 1)
-						.show();
+				Toast.makeText(NewTransferMakeUpActivity.this, "Some internaml error,Please try after sometime.", 1).show();
 			}
 		}
 
@@ -505,21 +487,16 @@ TextView tv_tsm_error;
 			HashMap<String, String > params = new HashMap<String, String>();
 			params.put("Token",token );
 			params.put("FamilyID",familyID );
-			params.put("BasketID",
-					AppConfiguration.BasketID);
-			params.put("Selected", p_tbid
-					.toString().replaceAll("\\[", "").replaceAll("\\]", ""));
-			String responseString = WebServicesCall.RunScript(
-					AppConfiguration.transfermakeup_privatelesson_transfer, params);
+			params.put("BasketID", AppConfiguration.BasketID);
+			params.put("Selected", p_tbid.toString().replaceAll("\\[", "").replaceAll("\\]", ""));
+			String responseString = WebServicesCall.RunScript(AppConfiguration.transfermakeup_privatelesson_transfer, params);
 			
 			try {
 				JSONObject reader = new JSONObject(responseString);
 				transferdone = reader.getString("Success");
 				if (transferdone.toString().equalsIgnoreCase("true")) {
-					JSONArray jsonMainNode = reader
-							.optJSONArray("FinalArray");
-					JSONObject jsonChildNode = jsonMainNode
-							.getJSONObject(0);
+					JSONArray jsonMainNode = reader.optJSONArray("FinalArray");
+					JSONObject jsonChildNode = jsonMainNode.getJSONObject(0);
 					msg = jsonChildNode.getString("showCart");
 				}
 			} catch (JSONException e) {
@@ -538,19 +515,16 @@ TextView tv_tsm_error;
 				pd.dismiss();
 			}
 			if (transferdone.toString().equalsIgnoreCase("True")) {
-				Toast.makeText(getApplicationContext(), "Lesson Transferred.",
-						Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "Lesson Transferred.", Toast.LENGTH_LONG).show();
 				if (msg.toString().equalsIgnoreCase("True")) {
-					Intent i = new Intent(getApplicationContext(),
-							ViewCartActivity.class);
+					Intent i = new Intent(getApplicationContext(), ViewCartActivity.class);
 					startActivity(i);
 				} else {
 					finish();
 				}
 
 			} else {
-				Toast.makeText(getApplicationContext(),
-						"Not able to transfer lesson.", Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "Not able to transfer lesson.", Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -590,14 +564,10 @@ TextView tv_tsm_error;
 			}
 			if (data_load_basket.toString().equalsIgnoreCase("True")) {
 				if (AppConfiguration.BasketID.equalsIgnoreCase("0")) {
-					// Toast.makeText(TransferMakeUpActivity.this,
-					// "Please try after sometime", Toast.LENGTH_LONG).show();
 				} else {
 					// new swimlessonsubmit().execute();
 				}
 			} else {
-				// Toast.makeText(TransferMakeUpActivity.this,
-				// "Please try after sometime", Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -612,10 +582,8 @@ TextView tv_tsm_error;
 
 				} else {
 					for (int i = 0; i < jsonMainNode.length(); i++) {
-						JSONObject jsonChildNode = jsonMainNode
-								.getJSONObject(i);
-						AppConfiguration.BasketID = jsonChildNode
-								.getString("Basketid");
+						JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
+						AppConfiguration.BasketID = jsonChildNode.getString("Basketid");
 					}
 				}
 			}
@@ -656,16 +624,11 @@ TextView tv_tsm_error;
 					JSONArray jsonMainNode = reader.optJSONArray("FinalArray");
 					for (int i = 0; i < jsonMainNode.length(); i++) {
 
-							JSONObject jsonChildNode = jsonMainNode
-									.getJSONObject(i);
-							LessonID.add(jsonChildNode
-									.getString("LessonID"));
-							LessonName.add(jsonChildNode
-									.getString("LessonName"));
-							Qty.add(jsonChildNode
-									.getString("Qty"));
-							ExpiryDate.add(jsonChildNode
-									.getString("ExpiryDate"));
+							JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
+							LessonID.add(jsonChildNode.getString("LessonID"));
+							LessonName.add(jsonChildNode.getString("LessonName"));
+							Qty.add(jsonChildNode.getString("Qty"));
+							ExpiryDate.add(jsonChildNode.getString("ExpiryDate"));
 					}
 				}
 			} catch (JSONException e) {

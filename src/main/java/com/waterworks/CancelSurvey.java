@@ -285,7 +285,6 @@ public class CancelSurvey extends Activity {
                     rdbThinkComeBackYes.setChecked(false);
                     rdbThinkComeBackNo.setChecked(false);
                     rdbThinkComeBackThinking.setChecked(false);
-
                     rdbThinkComeBackThinking.isChecked();
                 }
             }

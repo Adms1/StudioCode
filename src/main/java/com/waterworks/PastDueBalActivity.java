@@ -55,8 +55,7 @@ public class PastDueBalActivity extends Activity {
 		Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
 
 
-		isInternetPresent = Utility
-				.isNetworkConnected(PastDueBalActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(PastDueBalActivity.this);
 		if(!isInternetPresent){
 			onDetectNetworkState().show();
 		}

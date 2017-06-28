@@ -64,7 +64,6 @@ public class ViewCertificateActivity extends Activity {
 		SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
 		token = prefs.getString("Token", "");
 		familyID = prefs.getString("FamilyID", "");
-		Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
 		
 		// fetching header view
         View view = findViewById(R.id.actionbar);
@@ -229,7 +228,6 @@ public class ViewCertificateActivity extends Activity {
 				
 
 			} else {
-				//Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
 			}
 		}
 	}

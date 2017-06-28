@@ -126,8 +126,6 @@ public class ReportBug extends Activity implements View.OnTouchListener {
                 if(edtIssue.getText().length() == 0){
                     //nothing happens
                 }else {
-//                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-//                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                     v.clearFocus();
                     edtIssueDetail.requestFocus();
                 }
@@ -195,7 +193,6 @@ public class ReportBug extends Activity implements View.OnTouchListener {
                 JSONArray jsonMainNode;
 
                 jsonMainNode = reader.optJSONArray("FinalArray");
-
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     messageFeedback = jsonChildNode.getString("Msg");
@@ -205,11 +202,9 @@ public class ReportBug extends Activity implements View.OnTouchListener {
                 JSONArray jsonMainNode;
 
                 jsonMainNode = reader.optJSONArray("FinalArray");
-
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     messageFeedback = jsonChildNode.getString("Msg");
-
                 }
             }
 
@@ -250,7 +245,6 @@ public class ReportBug extends Activity implements View.OnTouchListener {
         @Override
         protected Void doInBackground(Void... params) {
             submittingSuggestionProblem();
-
             return null;
         }
 
@@ -276,7 +270,6 @@ public class ReportBug extends Activity implements View.OnTouchListener {
     public void onPause() {
         super.onPause();
         this.overridePendingTransition(R.anim.slide_in_right, R.anim.zoom_out);
-//        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override

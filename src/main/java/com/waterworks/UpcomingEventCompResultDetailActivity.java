@@ -59,7 +59,6 @@ public class UpcomingEventCompResultDetailActivity extends Activity {
             fetchAndShowStudentWiseEventData();
         }
     }
-
     public void init() {
         llStudentEventList = (LinearLayout) findViewById(R.id.llStudentEventList);
         txtEventTitle = (TextView) findViewById(R.id.txtEventTitle);

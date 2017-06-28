@@ -67,10 +67,7 @@ public class ViewPaymentHistoryListActivity extends Activity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(ViewStudentsListActivity.this,"You Clicked at " + studentList.get(position).get("ChildrenName"),Toast.LENGTH_SHORT).show();
-
-
-            }
+                            }
         });
 
 
@@ -163,7 +160,6 @@ public class ViewPaymentHistoryListActivity extends Activity {
                     String Itemtype = jsonChildNode.getString("Itemtype").trim();
                     String Itemname = jsonChildNode.getString("Itemname").trim();
                     String invoicedate = jsonChildNode.getString("invoicedate").trim();
-
                     String expirationdate = jsonChildNode.getString("expirationdate").trim();
                     String AmountDue = jsonChildNode.getString("AmountDue").trim();
                     String AmountPaid = jsonChildNode.getString("AmountPaid").trim();
@@ -174,7 +170,6 @@ public class ViewPaymentHistoryListActivity extends Activity {
                     hashmap.put("Itemtype", Itemtype);
                     hashmap.put("Itemname", Itemname);
                     hashmap.put("invoicedate", invoicedate);
-
                     hashmap.put("expirationdate", expirationdate);
                     hashmap.put("AmountDue", AmountDue);
                     hashmap.put("AmountPaid", AmountPaid);
@@ -235,7 +230,6 @@ public class ViewPaymentHistoryListActivity extends Activity {
 
 
             } else {
-                //Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
             }
         }
     }

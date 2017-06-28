@@ -59,10 +59,9 @@ public class DivesAndTurnsRegi1Activity extends Activity {
     String siteID, data_load_site = "False", data_load_basket = "False", data_load_child = "False", savebasket = "False", textPriceInfo;
     Button btn_site;
     CardView btn_continue;
-    //	TableLayout table_dt_childs;
     ArrayList<String> sendingID;
     ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
-//    ListView list;
+
     LinearLayout llListData;
     ScrollView scrollviewdivesandturn;
     @Override

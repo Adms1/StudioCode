@@ -64,8 +64,6 @@ public class CancelRemoveLessonActivityInfo extends Activity{
 		Intent i = getIntent();
 		formatedString = i.getStringExtra("formatedString");
 		Log.d(TAG,"cancel Remove Lsson InfoformatedString="+formatedString);
-
-		/*Toast.makeText(getApplicationContext(), "formatedString."+formatedString,  Toast.LENGTH_LONG).show();*/
 		init();
 	}
 	public void init(){
@@ -107,7 +105,6 @@ public class CancelRemoveLessonActivityInfo extends Activity{
 						onDetectNetworkState().show();
 					} else {
 						new ReleaseAsyncTask().execute();
-						//Toast.makeText(CancelRemoveLessonActivityInfo.this, "Single Value selected", Toast.LENGTH_SHORT).show();
 					}
 				}
 			}

@@ -976,11 +976,9 @@ public class LegalDoc_Check_FamilyDoc extends Activity {
             if (Which_Insert.contains("Family")) {
                 responseString = WebServicesCall
                         .RunScript(DOMAIN + AppConfiguration.legal_doc_URL_insert, param);
-//			responseString=WebServicesCall.RunScript(DOMAIN+AppConfiguration.LegDoc_Insert_StudentDocDetails_FirstPart,param);
             } else if (Which_Insert.contains("Student")) {
                 responseString = WebServicesCall
                         .RunScript(DOMAIN + AppConfiguration.legal_doc_URL_insert_student, param);
-//			responseString =WebServicesCall.RunScript(DOMAIN+AppConfiguration.LegDoc_Insert_StudentDocDetails_New_Full,param);
             }
             try {
                 JSONObject obj = new JSONObject(responseString);

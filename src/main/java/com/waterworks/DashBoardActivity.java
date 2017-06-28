@@ -126,7 +126,6 @@ public class DashBoardActivity extends Activity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         displayView(dispPOS);
-        //		which_view_calls();
     }
 
     private void Initialize() {

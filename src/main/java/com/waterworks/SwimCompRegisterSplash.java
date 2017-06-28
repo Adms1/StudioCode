@@ -18,11 +18,12 @@ import android.widget.TextView;
 import com.waterworks.utils.AppConfiguration;
 
 public class SwimCompRegisterSplash extends Activity {
-  TextView displayText;
+    TextView displayText;
     SharedPreferences prefs;
     String token, familyID, DateValue, eventdates, time, MeetDate_Display;
-    Context mContext=this;
+    Context mContext = this;
     private static int SPLASH_TIME_OUT = 2000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,19 +47,19 @@ public class SwimCompRegisterSplash extends Activity {
         zoom_out.setDuration(100);
         displayText.startAnimation(zoom_out);
 
-       Animation zoom_in = AnimationUtils.loadAnimation(mContext, R.anim.zoom_in);
+        Animation zoom_in = AnimationUtils.loadAnimation(mContext, R.anim.zoom_in);
         zoom_in.setDuration(100);
         displayText.startAnimation(zoom_in);
 
         new Handler().postDelayed(new Runnable() {
-                       @Override
+            @Override
             public void run() {
 
                 Intent i = new Intent(SwimCompRegisterSplash.this, SwimcompititionRegisterStep6Activity.class);
-                           i.putExtra("datevalue", DateValue);
-                           i.putExtra("time", time);
-                           i.putExtra("eventdates", eventdates);
-                           i.putExtra("MeetDate_Display", MeetDate_Display);
+                i.putExtra("datevalue", DateValue);
+                i.putExtra("time", time);
+                i.putExtra("eventdates", eventdates);
+                i.putExtra("MeetDate_Display", MeetDate_Display);
                 startActivity(i);
 
                 // close this activity
@@ -66,6 +67,7 @@ public class SwimCompRegisterSplash extends Activity {
             }
         }, SPLASH_TIME_OUT);
     }
+
     public void setTitleBar() {
         View view = findViewById(R.id.layout_top);
         TextView title = (TextView) view.findViewById(R.id.action_title);

@@ -41,26 +41,22 @@ import java.util.List;
 
 public class SwimcompititionRegisterStep6Activity extends Activity {
 
-    private TextView txtCompititionVal, txtChildName, txtStrokeType, txtEventType,
+    private TextView txtCompititionVal, txtStrokeType, txtEventType,
             txtCompititionVal2, txtCompititionVal3, txtCompititionVal4, confirm_step6checkTxt, confirm_step6chk, confirm_step6check;
     private CardView btn_swim_confirm;
     private LinearLayout llEventList, llTabs;
-    private TextView EventListTxt;
     private ListView list;
     private Context mContext = this;
-    public static ArrayList<String> xyz = new ArrayList<String>();
-    private ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
-    ArrayList<String> tempid = new ArrayList<>();
+      ArrayList<String> tempid = new ArrayList<>();
     ArrayList<String> tempname = new ArrayList<>();
     private String token, familyID, basketID, siteID, DateValue, eventdates, time, MeetDate_Display, eventData, memberString, wwmember;
-    private ArrayList<String> eventDataDisplayRow1, eventDataDisplayRow2;
+    private ArrayList<String> eventDataDisplayRow1;
     private SharedPreferences prefs;
     private String TAG = "SwimcompititionRegisterStep6Activity";
     private GetMemberAsyncTask getMemberAsyncTask = null;
     private SwimCompetitionAddToCartAsyncTask swimCompetitionAddToCartAsyncTask = null;
     private ProgressDialog progressDialog = null;
-    private String str, currentStudentID, selectedStudent, selectedStudentName;
-    String[] eventStroke;
+    private String  currentStudentID;
     public int previousTab, CurrentTab;
     Boolean isInternetPresent = false;
 
@@ -81,7 +77,6 @@ public class SwimcompititionRegisterStep6Activity extends Activity {
             DateValue = intent.getStringExtra("datevalue");
             time = intent.getStringExtra("time");
             MeetDate_Display = intent.getStringExtra("MeetDate_Display");
-            Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID + "\nDateValue=" + DateValue + "\nTime=" + time);
         }
         previousTab = 1;
         CurrentTab = 1;
@@ -114,8 +109,6 @@ public class SwimcompititionRegisterStep6Activity extends Activity {
 
         eventDataDisplayRow1 = AppConfiguration.selectedStudent1;
         makeEventList();
-        Log.d("meghaevent", "" + eventDataDisplayRow1);
-        Log.e("SelectedEventDataStep2", "" + AppConfiguration.SelectedEventDataStep2);
         /*---------------------------------- 05/01/2016 megha------------------------ */
         String[] meetday = MeetDate_Display.split("\\-");
         String[] infotime = time.split("\\@");
@@ -394,9 +387,7 @@ public class SwimcompititionRegisterStep6Activity extends Activity {
                                         public void run() {
                                             progressDialog.dismiss();
                                             Intent viewcart = new Intent(getApplicationContext(), ByMoreMyCart.class);
-//                                            viewcart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             startActivity(viewcart);
-//                                            finish();
                                         }
                                     });
 
@@ -434,7 +425,6 @@ public class SwimcompititionRegisterStep6Activity extends Activity {
         relMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  ClearArray();
                 finish();
             }
         });

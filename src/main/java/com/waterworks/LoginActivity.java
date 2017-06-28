@@ -347,8 +347,7 @@ public class LoginActivity extends Activity {
                             i.putExtra("DOMAIN", DOMAIN);
                             startActivity(i);
                             finish();
-                            overridePendingTransition(R.anim.slide_in_right,
-                                    R.anim.slide_out_left);
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                             Log.d("SLiding", "DOC");
                         } else {
                             SharedPreferences sp1 = getSharedPreferences("key", 0);
@@ -361,8 +360,7 @@ public class LoginActivity extends Activity {
                                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(i);
                                 finish();
-                                overridePendingTransition(R.anim.slide_in_right,
-                                        R.anim.slide_out_left);
+                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 Log.d("SLiding", "Home");
                             } else {
                                 Intent i = new Intent(LoginActivity.this, Login_welcome_splashscreen.class);
@@ -377,6 +375,7 @@ public class LoginActivity extends Activity {
                     } else {
                         Intent i = new Intent(LoginActivity.this, AddStudent.class);//RegisterChildScreen1Activity
                         i.putExtra("DOMAIN", DOMAIN);
+                        i.putExtra("fromWhere", "register");
                         startActivity(i);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     }
@@ -591,7 +590,7 @@ public class LoginActivity extends Activity {
         AppConfiguration.getFamilySwimSiteListURL = DOMAIN + "Get_FamilySwimSiteList";
         AppConfiguration.GetStudentLevelProgressURL = DOMAIN + AppConfiguration.GetStudentLevelProgressURL;
         AppConfiguration.GetStudentLevelprereqURL = DOMAIN + AppConfiguration.GetStudentLevelprereqURL;
-        AppConfiguration.IsLAFitness_Check_Login = DOMAIN + AppConfiguration.IsLAFitness_Check_Login;
+        AppConfiguration.IsLAFitness_Check_Login = DOMAIN +"IsLAFitness_Check_Login";
     }
     @Override
     protected void onResume() {

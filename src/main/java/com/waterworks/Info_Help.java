@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.webkit.WebView;
 
 public class Info_Help extends Activity{
-
 	String imageUrl="";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

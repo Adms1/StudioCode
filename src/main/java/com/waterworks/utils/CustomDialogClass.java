@@ -95,7 +95,8 @@ public class CustomDialogClass extends Dialog implements android.view.View.OnCli
     }
 
     public void readAndParseCardAndCheckingRemoveJSON(String in) {
-        try {
+        try
+        {
             JSONObject reader = new JSONObject(in);
             String success = reader.getString("Success");
             if (success.equalsIgnoreCase("True")) {

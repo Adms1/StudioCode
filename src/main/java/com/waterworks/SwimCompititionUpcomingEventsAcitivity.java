@@ -50,9 +50,6 @@ public class SwimCompititionUpcomingEventsAcitivity extends Activity {
     private SwimCompUpcomingEventsAsyncTask swimCompUpcomingEventsAsyncTask = null;
     private ProgressDialog progressDialog = null;
     private String swimmeetid = "";
-    private SwimCmpt_AllGetEventResultForStudentAsyncTask swimCmpt_allGetEventResultForStudentAsyncTask = null;
-    private ArrayList<String> studIDs = new ArrayList<>(), studNames = new ArrayList<>();
-    private ArrayList<UpcomingEventResultsListModel> upcomingEventResultsListModels = new ArrayList<>();
     Boolean isInternetPresent = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,11 +201,7 @@ public class SwimCompititionUpcomingEventsAcitivity extends Activity {
             btnChecking.setText("You are Checked In");
             txtMiddleMessage.setText("");
         }
-
-        //flgMeet Schedule  and result
-
         String schedule_result[]=flgMeet.toString().trim().split("\\|");
-
 
         if (schedule_result[0].equalsIgnoreCase("0"))
         {
@@ -328,10 +321,6 @@ public class SwimCompititionUpcomingEventsAcitivity extends Activity {
 
     @Override
     public void onBackPressed() {
-//        Intent i = new Intent(mContext, DashBoardActivity.class);
-//        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(i);
-//        this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
         finish();
     }
 

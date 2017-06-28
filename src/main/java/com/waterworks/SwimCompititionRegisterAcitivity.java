@@ -86,10 +86,7 @@ public class SwimCompititionRegisterAcitivity extends Activity {
 
     ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
     Boolean isInternetPresent = false;
-    // Spinner spinner1;
-    // Spinner spinner2_MeetDates;
     String siteID = null;
-    //	ListView list;
     LinearLayout llListData, custom_linear;
     String successLoadChildList;
     String token, familyID;
@@ -99,22 +96,17 @@ public class SwimCompititionRegisterAcitivity extends Activity {
     String successMeetLocation;
 
     boolean isSelectedAgreement = false;
-    String msg1_Hours, msg2_meet, Msg3_Meet;
-    String successSwimCompittionCheck1;
-    String messageNormal;
     //CheckBox chkAgree;
     TextView tv_sc_select_location, txtPriceinfo, tvListHeader, tv_sc_Fees;
     Button btn_sites, btnRegister;
     ListPopupWindow lpw_sitelist, lpw_meetDates;
     private boolean[] thumbnailsselection;
     private int count;
-    //Button _continue;
     int display;
     TextView time_value;
     EditText tv_fsn_info;
     SwimCompitition1Adapter adp;
     RelativeLayout relLastview;
-//    RadioGroup rg;
 
     private LinearLayout ll_upcoming_meet, ll_register, ll_trophy_room;
     private TextView txt_1, txt_2, txt_3;
@@ -141,9 +133,6 @@ public class SwimCompititionRegisterAcitivity extends Activity {
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
         token = prefs.getString("Token", "");
         familyID = prefs.getString("FamilyID", "");
-        //DateValue= prefs.getString("DateValue", "");
-
-        Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
 
         lpw_meetDates = new ListPopupWindow(getApplicationContext());
         tv_fsn_info = (EditText) findViewById(R.id.tv_fsn_info);
@@ -165,18 +154,14 @@ public class SwimCompititionRegisterAcitivity extends Activity {
         selected_3.setVisibility(View.GONE);
 
         ((AnimationDrawable) selected_2.getBackground()).start();
-
         init();
         new Handler().postDelayed(new Runnable() {
-
             @Override
             public void run() {
-
             }
         }, 1000);
 
-        isInternetPresent = Utility
-                .isNetworkConnected(SwimCompititionRegisterAcitivity.this);
+        isInternetPresent = Utility.isNetworkConnected(SwimCompititionRegisterAcitivity.this);
         if (!isInternetPresent) {
             onDetectNetworkState().show();
         } else {
@@ -186,7 +171,6 @@ public class SwimCompititionRegisterAcitivity extends Activity {
             tv_fsn_info.setMovementMethod(new ScrollingMovementMethod());
             new SitesListAsyncTask().execute();
         }
-
         btn_sites.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -200,18 +184,14 @@ public class SwimCompititionRegisterAcitivity extends Activity {
                 }
             }
         });
-
         btnRegister.setOnClickListener(new OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
                 String btn_sitesstr = btn_sites.getText().toString();
-
                 if (!btn_sitesstr.equalsIgnoreCase("Please Select a Location")) {
-
                     if (selectedPosition != -1) {
-
                         Intent i = new Intent(mContext, SwimcompititionRegisterStep2Activity.class);
                         i.putExtra("eventdates", meetDatesNamesValue);
                         i.putExtra("datevalue", meetStartTimeValue);
@@ -219,26 +199,16 @@ public class SwimCompititionRegisterAcitivity extends Activity {
                         i.putExtra("MeetDate_Display", timeValue);
                         i.putExtra("SiteName", siteNamepass);
                         i.putExtra("DateTime", Datevalue);
-
-                        Log.d(TAG, "time:" + MeetDate_DisplayValue);
-                        Log.d(TAG, "starttime:" + meetStartTimeValue);
-                        Log.d(TAG, "MeetDate_Display:" + timeValue);
-                        Log.d(TAG, "DateTime:" + Datevalue);
-                        Log.d(TAG, "eventdates:" + meetDatesNamesValue);
-
                         startActivity(i);
-
                     } else {
                         Toast.makeText(mContext, "Please select event.", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     Toast.makeText(mContext, "Please select a location", Toast.LENGTH_LONG).show();
                 }
-
             }
 
         });
-
         llListData = (LinearLayout) findViewById(R.id.llListData);
         custom_linear = (LinearLayout) findViewById(R.id.custom_linear);
         rg = (RadioGroup) findViewById(R.id.custom_radiogroup);
@@ -433,8 +403,7 @@ public class SwimCompititionRegisterAcitivity extends Activity {
         // TODO Auto-generated method stub
         super.onResume();
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
-        isInternetPresent = Utility
-                .isNetworkConnected(SwimCompititionRegisterAcitivity.this);
+        isInternetPresent = Utility.isNetworkConnected(SwimCompititionRegisterAcitivity.this);
     }
 
     @Override
@@ -448,8 +417,7 @@ public class SwimCompititionRegisterAcitivity extends Activity {
         HashMap<String, String> param = new HashMap<String, String>();
         param.put("Token", token);
 
-        String responseString = WebServicesCall
-                .RunScript(AppConfiguration.DOMAIN + AppConfiguration.Get_SwimcompetitionsSiteURL, param);
+        String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.Get_SwimcompetitionsSiteURL, param);
         readAndParseJSON(responseString);
 
     }
@@ -469,7 +437,6 @@ public class SwimCompititionRegisterAcitivity extends Activity {
 
                 siteName.add("" + jsonChildNode.getString("SiteName"));
                 siteId.add("" + jsonChildNode.getString("SiteID"));
-                Log.d("siteName###", "" + siteName.size());
                 siteMainList.add(hashmap);
             }
 
@@ -522,12 +489,9 @@ public class SwimCompititionRegisterAcitivity extends Activity {
                     tv_sc_Fees.setAnimation(slide_up);
                     txtPriceinfo.setText(textPrice);
                     txtPriceinfo.setAnimation(slide_up);
-
-
                 }
 
                 AppConfiguration.siteID = siteID;
-                Log.e("SiteID", siteID);
                 isInternetPresent = Utility.isNetworkConnected(SwimCompititionRegisterAcitivity.this);
                 if (!isInternetPresent) {
                     onDetectNetworkState().show();
@@ -567,9 +531,7 @@ public class SwimCompititionRegisterAcitivity extends Activity {
 
 
                         }
-
                         AppConfiguration.siteID = siteID;
-                        Log.e("SiteID", siteID);
                         isInternetPresent = Utility.isNetworkConnected(SwimCompititionRegisterAcitivity.this);
                         if (!isInternetPresent) {
                             onDetectNetworkState().show();
@@ -583,9 +545,7 @@ public class SwimCompititionRegisterAcitivity extends Activity {
         }
     }
 
-    // ================================= Meet Dates
-    // =======================================
-
+    // ================================= Meet Dates =======================================
     public void loadMeetDatesList() {
 
         HashMap<String, String> param = new HashMap<String, String>();
@@ -602,15 +562,13 @@ public class SwimCompititionRegisterAcitivity extends Activity {
 
             successMeetDate = reader.getString("Success");
             if (successMeetDate.toString().equals("True")) {
-                JSONArray jsonMainNode = reader
-                        .optJSONArray("SwimMeetDateBySite");
+                JSONArray jsonMainNode = reader.optJSONArray("SwimMeetDateBySite");
 
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     HashMap<String, String> hashmap = new HashMap<String, String>();
 
-                    hashmap.put("DateValue",
-                            jsonChildNode.getString("DateValue"));
+                    hashmap.put("DateValue", jsonChildNode.getString("DateValue"));
                     hashmap.put("DateText", jsonChildNode.getString("DateText"));
 
                     meetDatesNames.add("" + jsonChildNode.getString("MeetDate"));
@@ -623,38 +581,26 @@ public class SwimCompititionRegisterAcitivity extends Activity {
 
                     String[] Meetidsplit = Meetid.split("\\|");
                     AppConfiguration.SwimMeetIDACK = Meetidsplit[1];
-                    Log.d("MeetID", AppConfiguration.SwimMeetIDACK);
-
-                    Log.e("loadMeetDatesLocationList DateValue", DateValue.toString());
                     meetDatesMainList.add(hashmap);
                 }
             } else {
-                JSONArray jsonMainNode = reader
-                        .optJSONArray("SwimMeetDateBySite");
+                JSONArray jsonMainNode = reader.optJSONArray("SwimMeetDateBySite");
 
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-
                     messageMeetDate = jsonChildNode.getString("Msg");
-
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
     public void loadMeetDatesLocationList() {
 
         HashMap<String, String> param = new HashMap<String, String>();
         param.put("SiteID", siteID);
-        Log.e("loadMeetDatesLocationList SiteID", siteID);
 
-        String responseString = WebServicesCall
-                .RunScript(
-                        AppConfiguration.swimCompititionMeetDatesLocationURL, param);
+        String responseString = WebServicesCall.RunScript(AppConfiguration.swimCompititionMeetDatesLocationURL, param);
         readAndParseJSONMeetDatesLocation(responseString);
     }
 
@@ -675,11 +621,6 @@ public class SwimCompititionRegisterAcitivity extends Activity {
                     ZipCode.add(" " + jsonChildNode.getString("ZipCode"));
                     siteNamepass = jsonChildNode.getString("SiteName");
                     AppConfiguration.siteAddress = jsonChildNode.getString("Address1");
-                    Log.e("Address1.toString()", Address1.toString());
-                    Log.e("SiteName1.toString() ", SiteName1.toString());
-                    Log.e(" State.toString()", State.toString());
-                    Log.e("ZipCode.toString()", ZipCode.toString());
-
                 }
             } else {
                 JSONArray jsonMainNode = reader.optJSONArray("Sites");
@@ -785,9 +726,7 @@ public class SwimCompititionRegisterAcitivity extends Activity {
 
             } else {
                 relLastview.setVisibility(View.GONE);
-                Toast.makeText(getApplicationContext(), "" + messageMeetDate,
-                        Toast.LENGTH_LONG).show();
-
+                Toast.makeText(getApplicationContext(), "" + messageMeetDate, Toast.LENGTH_LONG).show();
                 AppConfiguration.SwimMeetID = "";
             }
 
@@ -811,7 +750,6 @@ public class SwimCompititionRegisterAcitivity extends Activity {
                 tvDate.setTextColor(Color.BLACK);
                 tvTime.setText(meetStartTime.get(i));
                 chkEvent.setTag(String.valueOf(i));
-
 
                 if (i == selectedPosition) {
                     chkEvent.setChecked(true);

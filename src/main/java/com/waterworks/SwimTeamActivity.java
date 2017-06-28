@@ -82,7 +82,7 @@ public class SwimTeamActivity extends Activity {
     String data_load_basket = "False";
     ListView check_inflate;
     ArrayList<Days> dayslist = new ArrayList<>();
-    CharSequence[] m_months, MonthName_Arr;//, Days,
+    CharSequence[] m_months;
 
     protected ArrayList<CharSequence> selectedmonth = new ArrayList<CharSequence>();
     protected ArrayList<CharSequence> selectedmonthForString = new ArrayList<CharSequence>();
@@ -95,7 +95,6 @@ public class SwimTeamActivity extends Activity {
     ListPopupWindow lpw_site, lpw_group, lpw_child, lpw_days;
     String siteID = "", NoOfDay = "";
     Context mContext = this;
-    CheckBox days_check;
     HashMap<String, String> Split_NoOfID_Array = new HashMap<String, String>();
     String cardnumber = "";
     TextView txtPriceinfo, tv_fsn_info;
@@ -109,7 +108,6 @@ public class SwimTeamActivity extends Activity {
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
         token = prefs.getString("Token", "");
         familyID = prefs.getString("FamilyID", "");
-        Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
 
         View view = findViewById(R.id.layout_top);
         TextView title = (TextView) view.findViewById(R.id.action_title);
@@ -142,10 +140,7 @@ public class SwimTeamActivity extends Activity {
         isInternetPresent = Utility.isNetworkConnected(SwimTeamActivity.this);
         if (isInternetPresent) {
             Initialization();
-
-
             new CardCheck().execute();
-
             new GetSiteByFID().execute();
             new GetChild().execute();
             new NoOFDays().execute();
@@ -314,12 +309,8 @@ public class SwimTeamActivity extends Activity {
                     // TODO Auto-generated method stub
                     tblRowNoDays.setBackgroundResource(R.drawable.pure_error_border_white);
                     if (day_ready) {
-
-//	Changed by Rakesh 28102015........................					
-//						tv_price.setText(" ");
                         lpw_days.show();
                     } else {
-//                        Toast.makeText(mContext, "Please select Month", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -692,8 +683,6 @@ public class SwimTeamActivity extends Activity {
                 } else {
                     btn_site.setText("Select Site");
                     siteID = siteid.get(0);
-//                    new GetGroup().execute();
-//                    new GetDescription().execute();
                     lpw_site = new ListPopupWindow(getApplicationContext());
                     lpw_site.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.edittextpopup, sitename));
                     lpw_site.setAnchorView(btn_site);
@@ -801,10 +790,7 @@ public class SwimTeamActivity extends Activity {
                         // TODO Auto-generated method stub
                         btn_group.setText(GroupName.get(pos));
                         Log.i(TAG, GroupName.get(pos));
-                        // String temp[] = SwimteamDetail.get(pos).split("\\|");
                         GroupID = GroupIDSW.get(pos);
-                        // price = temp[1];
-                        // tv_price.setText(price);
                         lpw_group.dismiss();
                     }
                 });
@@ -892,7 +878,6 @@ public class SwimTeamActivity extends Activity {
                     }
                 });
             } else {
-                // Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -1039,15 +1024,10 @@ public class SwimTeamActivity extends Activity {
     public static String DaysValue = "";
 
     private class NoOFDays extends AsyncTask<Void, Void, Void> {
-        // ProgressDialog pd;
         @Override
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             super.onPreExecute();
-            // pd = new ProgressDialog(SwimTeamActivity.this);
-            // pd.setMessage("Please wait...");
-            // pd.setCancelable(false);
-            // pd.show();
         }
 
         @Override
@@ -1108,9 +1088,6 @@ public class SwimTeamActivity extends Activity {
                     lpw_days.setHeight(LayoutParams.WRAP_CONTENT);
                     lpw_days.setModal(true);
                     hwMnySelct = Integer.parseInt(NoOfDayName_Arr.get(0));
-// changed by Rakesh 28102015..............
-//					tv_price.setText(Split_NoOfID_Array.get(NoOfDayName_Arr.get(0)));
-
                     DaysValue = Split_NoOfID_Array.get(NoOfDayName_Arr.get(0));
                     NoOfDay = NoOfDayID_Arr.get(0);
 
@@ -1121,8 +1098,6 @@ public class SwimTeamActivity extends Activity {
                             // TODO Auto-generated method stub
 
                             btn_no_days.setText(NoOfDayName_Arr.get(pos));
-
-                            Log.e("NoOfDayName_Arr.get(pos)", "  " + NoOfDayName_Arr.get(pos));
                             NoOfDay = NoOfDayID_Arr.get(pos);
                             Log.e("NoOfDay", "  " + NoOfDay);
                             hwMnySelct = Integer.parseInt(NoOfDayName_Arr.get(pos));
@@ -1133,7 +1108,6 @@ public class SwimTeamActivity extends Activity {
                             // changed by Rakesh 28102015..............
                             DaysValue = Split_NoOfID_Array.get(NoOfDayName_Arr.get(pos));
                             tv_price.setText(SwimTeamActivity.DaysValue);
-//							tv_price.setText(Split_NoOfID_Array.get(NoOfDayName_Arr.get(pos)));
 
                             lpw_days.dismiss();
                             new FillDays().execute();
@@ -1153,7 +1127,6 @@ public class SwimTeamActivity extends Activity {
                     Helper.getListViewSize(check_inflate);
                 }
             } else {
-                // Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -1163,8 +1136,6 @@ public class SwimTeamActivity extends Activity {
             View view = check_inflate.getChildAt(i);
             CheckBox cb = (CheckBox) view.findViewById(R.id.day);
             cb.setChecked(true);
-//	 changed by Rakesh 28102015................		
-//			tv_price.setText(Split_NoOfID_Array.get(NoOfDayName_Arr.get(0)));
         }
     }
 

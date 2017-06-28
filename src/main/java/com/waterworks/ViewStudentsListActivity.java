@@ -62,8 +62,6 @@ public class ViewStudentsListActivity extends Activity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(ViewStudentsListActivity.this,"You Clicked at " + studentList.get(position).get("ChildrenName"),Toast.LENGTH_SHORT).show();
-
                 AppConfiguration.studentID = "" + studentList.get(position).get("SstudentId");
                 AppConfiguration.studentFirstname = "" + studentList.get(position).get("SFirstName");
                 AppConfiguration.studentLastname = "" + studentList.get(position).get("SLastName");
@@ -109,7 +107,6 @@ public class ViewStudentsListActivity extends Activity {
                 AppConfiguration.Description = "" + studentList.get(position).get("Description");
                 AppConfiguration.Swimgoals = "" + studentList.get(position).get("Swimgoals");
                 Intent i = new Intent(ViewStudentsListActivity.this, EditStudent.class);
-//                Intent i = new Intent(ViewStudentsListActivity.this, EditChildScreen1Activity.class);
                 startActivity(i);
             }
         });
@@ -230,7 +227,6 @@ public class ViewStudentsListActivity extends Activity {
                     String DateOfBirth = jsonChildNode.getString("DateOfBirth").trim();
                     String Age = jsonChildNode.getString("Age").trim();
                     String ClassType = jsonChildNode.getString("ClassType").trim();
-
                     String SFirstName = jsonChildNode.getString("SFirstName").trim();
                     String SLastName = jsonChildNode.getString("SLastName").trim();
                     String WU_SGender = jsonChildNode.getString("WU_SGender").trim();
@@ -241,7 +237,6 @@ public class ViewStudentsListActivity extends Activity {
                     String SAllergy = jsonChildNode.getString("SAllergy").trim();
                     String SAllergyDesc = jsonChildNode.getString("SAllergyDesc").trim();
                     String Sactive = jsonChildNode.getString("Sactive").trim();
-
                     String Description = jsonChildNode.getString("Description").trim();
                     String ChildStrongWilledValue = jsonChildNode.getString("ChildStrongWilledValue").trim();
                     String ChildSensitiveValue = jsonChildNode.getString("ChildSensitiveValue").trim();
@@ -249,7 +244,6 @@ public class ViewStudentsListActivity extends Activity {
                     String competitiveswimming = jsonChildNode.getString("competitiveswimming").trim();
                     String distance = jsonChildNode.getString("distance").trim();
                     String techniqueandshorter = jsonChildNode.getString("techniqueandshorter").trim();
-
                     String Swimgoals = jsonChildNode.getString("Swimgoals").trim();
 
 
@@ -258,7 +252,6 @@ public class ViewStudentsListActivity extends Activity {
                     hashmap.put("DateOfBirth", DateOfBirth);
                     hashmap.put("Age", Age);
                     hashmap.put("ClassType", ClassType);
-
                     hashmap.put("SFirstName", SFirstName);
                     hashmap.put("SLastName", SLastName);
                     hashmap.put("WU_SGender", WU_SGender);
@@ -269,7 +262,6 @@ public class ViewStudentsListActivity extends Activity {
                     hashmap.put("SAllergyDesc", SAllergyDesc);
                     hashmap.put("SAllergy", SAllergy);
                     hashmap.put("Sactive", Sactive);
-
                     hashmap.put("Description", Description);
                     hashmap.put("ChildStrongWilledValue", ChildStrongWilledValue);
                     hashmap.put("ChildSensitiveValue", ChildSensitiveValue);
@@ -334,7 +326,6 @@ public class ViewStudentsListActivity extends Activity {
 
 
             } else {
-                //Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
             }
         }
     }

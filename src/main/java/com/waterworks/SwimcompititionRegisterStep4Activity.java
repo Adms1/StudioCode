@@ -34,7 +34,6 @@ public class SwimcompititionRegisterStep4Activity extends Activity {
     String TAG = "SwimcompititionRegisterStep4Activity";
     String token, familyID, studentname1, studentname2;
     CardView btnContinueStep3;
-    TextView txtSelectedStudent, txtMeetDate;
     RadioButton radiobtnWater, radiobtnWall, radiobtndivingblock, radiobtnYes, radiobtnNoPreferences;
     private ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
     ArrayList<String> tempid = new ArrayList<>();
@@ -55,16 +54,12 @@ public class SwimcompititionRegisterStep4Activity extends Activity {
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
         token = prefs.getString("Token", "");
         familyID = prefs.getString("FamilyID", "");
-        Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
-
         Intent intent = getIntent();
         if (null != intent) {
             eventdates = intent.getStringExtra("eventdates");
             DateValue = intent.getStringExtra("datevalue");
             time = intent.getStringExtra("time");
             MeetDate_Display = intent.getStringExtra("MeetDate_Display");
-            Log.d(TAG, "eventdates=" + eventdates);
-            Log.d(TAG, "DateValue=" + DateValue);
         }
 
         initViews();
@@ -72,21 +67,8 @@ public class SwimcompititionRegisterStep4Activity extends Activity {
         lay_1.startAnimation(animSlidInLeft);
         setListners();
 
-//        tempid = AppConfiguration.swimComptitionStudentID.toString().trim().split("\\,");
-//        tempname = AppConfiguration.swimComptitionStudentName.toString().split("\\,");
-
         String[] tempEventList = AppConfiguration.SelectedEventDataStep2.split(",");
         List<String> newTempEventList = new ArrayList<String>(Arrays.asList(tempEventList));
-
-        /*List<String> TempID = new ArrayList<String>(Arrays.asList(tempid));
-
-        for (int i = 0; i < TempID.size(); i++) {
-            for (int j = 0; j < newTempEventList.size(); j++) {
-                if (newTempEventList.get(j).toString().contains(TempID.get(i).toString().trim())) {
-                    newTempID.add(TempID.get(i).toString().trim());
-                }
-            }
-        }*/
 
         String[] tempnew = AppConfiguration.swimComptitionStudentIDName.split("\\,");
         for (int i = 0; i < tempnew.length; i++) {
@@ -109,11 +91,7 @@ public class SwimcompititionRegisterStep4Activity extends Activity {
 
         swimerstartTxt1.setText("Where should" + " " + " " + tempname.get(0) + " " + " " + "start the race?");
         swimerendTxt1.setText("Should " + " " + " " + tempname.get(0) + " " + " " + "swim next to the wall in an end lane?");
-//        selectedStudent = tempid.get(0).toString();
-//        selectedStudentName = tempname.get(0).toString();
 
-
-        Log.d("megha name", selectedStudentName);
 //        filling step3_jumpingwall default radio button values
         HashMap<String, String> hashMapStep3_jumpingwall = new HashMap<>();
         for (int i = 0; i < tempid.size(); i++) {
@@ -218,20 +196,16 @@ public class SwimcompititionRegisterStep4Activity extends Activity {
                 }
                 AppConfiguration.step3_jumpingwall = step3_jumpingwallString.toString();
                 AppConfiguration.step3_endlane = step3_endLaneString.toString();
-                Log.e(TAG, AppConfiguration.step3_jumpingwall);
-                Log.e(TAG, AppConfiguration.step3_endlane);
 
                 int selectedId = rg1.getCheckedRadioButtonId();
                 int selectedIdyes = rg2.getCheckedRadioButtonId();
 
                 if (selectedId >= 0 && selectedIdyes >= 0) {
-
                     Intent i = new Intent(SwimcompititionRegisterStep4Activity.this, SwimcompititionRegisterStep5Activity.class);
                     i.putExtra("datevalue", DateValue);
                     i.putExtra("time", time);
                     i.putExtra("eventdates", eventdates);
                     i.putExtra("MeetDate_Display", MeetDate_Display);
-
                     startActivity(i);
                 } else {
                     Toast.makeText(mcontext, "Please select at least one event for each child.", Toast.LENGTH_LONG).show();
@@ -259,7 +233,6 @@ public class SwimcompititionRegisterStep4Activity extends Activity {
 
             childTabs.setTag(tempid.get(i).toString() + "," + tempname.get(i).toString());
             selectedStudentName = tempid.get(i).toString() + "," + tempname.get(i).toString();
-//            currentStudentID = tempid.get(i).toString();
             childTabs.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1f));
             childTabs.setOnClickListener(myClickLIstener);
 
@@ -299,14 +272,6 @@ public class SwimcompititionRegisterStep4Activity extends Activity {
 
             Animation animSlidInRight = AnimationUtils.loadAnimation(mcontext, R.anim.slide_in_left);
             lay_1.startAnimation(animSlidInRight);
-
-//            radiobtnWater.setChecked((step3_jumpingwall.get(0).get(selectedStudent).equals("0")) ? true : false);
-//            radiobtnWall.setChecked((step3_jumpingwall.get(0).get(selectedStudent).equals("1")) ? true : false);
-//            radiobtndivingblock.setChecked((step3_jumpingwall.get(0).get(selectedStudent).equals("2")) ? true : false);
-//            radiobtnYes.setChecked((step3_endlane.get(0).get(selectedStudent).equals("0")) ? true : false);
-//            radiobtnNoPreferences.setChecked((step3_endlane.get(0).get(selectedStudent).equals("1")) ? true : false);
-
-
         }
     };
 

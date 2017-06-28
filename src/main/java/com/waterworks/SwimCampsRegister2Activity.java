@@ -50,7 +50,6 @@ public class SwimCampsRegister2Activity extends Activity {
     ListView list;
     String successLoadChildList;
     String token, familyID;
-    //	TextView txtSelectedStudent;
     String AddSession, currentStudentID;
     String DropOffEarly;
     LinearLayout llTabs;
@@ -193,20 +192,10 @@ public class SwimCampsRegister2Activity extends Activity {
                 finish();
             }
         });
-        /*txtSelectedStudent = (TextView) findViewById(R.id.txtSelectedStudent);
-		txtSelectedStudent.setText("Participant:"+AppConfiguration.swimCampsRegister1StudentName);*/
         list = (ListView) findViewById(R.id.list);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-//			   Intent i = new Intent(ProgressReportActivity.this,ProgressReportDetailsActivity.class);
-//			   i.putExtra("studentID", studentID);
-//			   i.putExtra("Firstname", firstname);
-//			   i.putExtra("Lastname", lastname);
-
-//			   startActivity(i);
             }
         });
 
@@ -228,7 +217,6 @@ public class SwimCampsRegister2Activity extends Activity {
                         if (AddSessionValue.get(i) == true) {
                             addSessionName.append(swimCampList.get(i).get("AddName") + ",");
                         } else {
-                            //addSessionName.append("0"+"*");
                         }
                     }
 
@@ -247,7 +235,6 @@ public class SwimCampsRegister2Activity extends Activity {
                         if (DropEarlyOffValue.get(i) == true) {
                             DropOffEarlyBuilder.append(swimCampList.get(i).get("EarlyDropOffID") + ",");
                         } else {
-                            //DropOffEarlyBuilder.append("0"+"*");
                         }
                     }
 
@@ -271,19 +258,12 @@ public class SwimCampsRegister2Activity extends Activity {
                     if (!final_dropoff.equals(""))
                         final_dropoff = final_dropoff.substring(0, final_dropoff.lastIndexOf("|"));
 
-                    //
-                    Log.d("Added Session", "" + AddSession);
-                    Log.d("Added DropOffEarly", "" + DropOffEarly);
-
-//				AppConfiguration.selectedStudentSwimCampRegister2 = AppConfiguration.swimCampsRegister1StudentName +" | " + AppConfiguration.swimCampsRegister1StudentID + " | " + AddSession + " | " + DropOffEarly;
                     Intent i = new Intent(SwimCampsRegister2Activity.this, SwimCampRegister3Activity.class);
                     i.putExtra("Nameid", final_nameid);
                     i.putExtra("Session", final_addsession);
                     i.putExtra("DropOff", final_dropoff);
                     i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
-//                    finish();
-
                 } else {
                     Toast.makeText(SwimCampsRegister2Activity.this, "Please select at least one session before going to next step.", Toast.LENGTH_LONG).show();
                 }
@@ -292,13 +272,11 @@ public class SwimCampsRegister2Activity extends Activity {
         });
 
         // fetching header view
-//		View headerLayout = findViewById(R.id.layout_top);
         Button relMenu = (Button) findViewById(R.id.relMenu);
         relMenu.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
                 onBackPressed();
             }
         });
@@ -312,8 +290,7 @@ public class SwimCampsRegister2Activity extends Activity {
         param.put("SiteID", AppConfiguration.swimCampsRegister1SiteID);
         param.put("SelectedStudent", AppConfiguration.swimCampsRegister1StudentID);
 
-        String responseString = WebServicesCall
-                .RunScript(AppConfiguration.swimCampRegister2, param);
+        String responseString = WebServicesCall.RunScript(AppConfiguration.swimCampRegister2, param);
         readAndParseJSON(responseString);
     }
 
@@ -415,11 +392,9 @@ public class SwimCampsRegister2Activity extends Activity {
     public class CustomList extends ArrayAdapter<String> {
         private final ArrayList<HashMap<String, String>> data = new ArrayList<>();
         ViewHolder holder;
-        int rowsToDisplay = 0;
 
         public CustomList(Activity context, ArrayList<HashMap<String, String>> list) {
             super(context, R.layout.list_row_swim_camp_register2);
-//            this.data = list;
             for(int i = 0;i < list.size();i++){
                 if(currentStudentID.equalsIgnoreCase(list.get(i).get("StudentID"))){
                     this.data.add(list.get(i));
@@ -481,21 +456,13 @@ public class SwimCampsRegister2Activity extends Activity {
                 holder.txtStartDate.setText("Start Date:" + data.get(position).get("Start Date"));
                 holder.txtEndDate.setText("End Date:" + data.get(position).get("End Date"));
 
-            /*holder.chkAdd.setChecked(false);
-            holder.chkEndDropOff.setChecked(false);*/
-
                 holder.chkAdd.setOnCheckedChangeListener(new OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            /*holder.chkAdd.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {*/
 
                         if (isChecked) {
 
                             AddSessionValue.set(position, true);
-//                            added.remove(data.get(position).get("Add"));
-//                            added.add(position, temp_Add.get(position).toString().trim());
                             if (!final_sesson.contains(data.get(position).get("StudentID") + ":" + data.get(position).get("AddName"))) {
                                 final_sesson.add(data.get(position).get("StudentID") + ":" + data.get(position).get("AddName"));
                                 added.add(data.get(position).get("Add"));
@@ -505,8 +472,6 @@ public class SwimCampsRegister2Activity extends Activity {
                         } else {
 
                             AddSessionValue.set(position, false);
-
-//                            added.add("0");
                             if (final_sesson.contains(data.get(position).get("StudentID") + ":" + data.get(position).get("AddName"))) {
                                 final_sesson.remove(data.get(position).get("StudentID") + ":" + data.get(position).get("AddName"));
                                 added.remove(data.get(position).get("Add"));
@@ -519,15 +484,9 @@ public class SwimCampsRegister2Activity extends Activity {
                 holder.chkEndDropOff.setOnCheckedChangeListener(new OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            /*holder.chkEndDropOff.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {*/
-
                         if (isChecked) {
 
                             DropEarlyOffValue.set(position, true);
-//                            DropOff.remove(data.get(position).get("EarlyDropOff"));
-//                            DropOff.add(data.get(position).get("EarlyDropOff"));
                             if (!final_drop.contains(data.get(position).get("StudentID") + ":" + data.get(position).get("EarlyDropOffID"))) {
                                 final_drop.add(data.get(position).get("StudentID") + ":" + data.get(position).get("EarlyDropOffID"));
                                 DropOff.add(data.get(position).get("EarlyDropOff"));
@@ -537,8 +496,6 @@ public class SwimCampsRegister2Activity extends Activity {
                         } else {
 
                             DropEarlyOffValue.set(position, false);
-
-//                            DropOff.add("0");
                             if (final_drop.contains(data.get(position).get("StudentID") + ":" + data.get(position).get("EarlyDropOffID"))) {
                                 final_drop.remove(data.get(position).get("StudentID") + ":" + data.get(position).get("EarlyDropOffID"));
                                 DropOff.remove(data.get(position).get("EarlyDropOff"));
@@ -553,9 +510,6 @@ public class SwimCampsRegister2Activity extends Activity {
                 if (currentStudentID.trim().equalsIgnoreCase(spitString[0].trim()) && spitString[1].trim().equalsIgnoreCase(data.get(position).get("AddName"))) {
                     holder.chkAdd.setChecked(true);
                 }
-                /*else {
-                    holder.chkAdd.setChecked(false);
-                }*/
             }
 
             for (String row : final_drop) {
@@ -563,9 +517,6 @@ public class SwimCampsRegister2Activity extends Activity {
                 if (currentStudentID.trim().equalsIgnoreCase(spitString[0].trim()) && spitString[1].trim().equalsIgnoreCase(data.get(position).get("EarlyDropOffID"))) {
                     holder.chkEndDropOff.setChecked(true);
                 }
-                /*else {
-                    holder.chkEndDropOff.setChecked(false);
-                }*/
             }
 
             return view;
@@ -574,7 +525,6 @@ public class SwimCampsRegister2Activity extends Activity {
         public class ViewHolder {
             TextView txtDescription, txtUnitPrice, txtStartDate, txtEndDate;
             CheckBox chkAdd, chkEndDropOff;
-//            TextView swim_camp_regi2_item_studentname;
         }
 
         @Override

@@ -70,7 +70,6 @@ public class Swim4Test extends Activity {
             DateValue = intent.getStringExtra("datevalue");
             time = intent.getStringExtra("time");
             MeetDate_Display = intent.getStringExtra("MeetDate_Display");
-            Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID + "\nDateValue=" + DateValue + "\nTime=" + time);
         }
 
 
@@ -206,7 +205,6 @@ public class Swim4Test extends Activity {
                 filter_4.setVisibility(View.GONE);
                 filter_5.setVisibility(View.GONE);
 
-//                select_1.setVisibility(View.VISIBLE);
                 select_2.setVisibility(View.INVISIBLE);
                 select_3.setVisibility(View.INVISIBLE);
                 select_4.setVisibility(View.INVISIBLE);
@@ -243,7 +241,6 @@ public class Swim4Test extends Activity {
                 filter_5.setVisibility(View.GONE);
 
                 select_1.setVisibility(View.INVISIBLE);
-//                select_2.setVisibility(View.VISIBLE);
                 select_3.setVisibility(View.INVISIBLE);
                 select_4.setVisibility(View.INVISIBLE);
                 select_5.setVisibility(View.INVISIBLE);
@@ -277,7 +274,6 @@ public class Swim4Test extends Activity {
 
                 select_1.setVisibility(View.INVISIBLE);
                 select_2.setVisibility(View.INVISIBLE);
-//                select_3.setVisibility(View.VISIBLE);
                 select_4.setVisibility(View.INVISIBLE);
                 select_5.setVisibility(View.INVISIBLE);
 
@@ -312,7 +308,6 @@ public class Swim4Test extends Activity {
                 select_1.setVisibility(View.INVISIBLE);
                 select_2.setVisibility(View.INVISIBLE);
                 select_3.setVisibility(View.INVISIBLE);
-//                select_4.setVisibility(View.VISIBLE);
                 select_5.setVisibility(View.INVISIBLE);
 
                 name_1.setTextColor(getResources().getColor(R.color.design_change_d2));
@@ -345,7 +340,6 @@ public class Swim4Test extends Activity {
                 select_2.setVisibility(View.INVISIBLE);
                 select_3.setVisibility(View.INVISIBLE);
                 select_4.setVisibility(View.INVISIBLE);
-//                select_5.setVisibility(View.VISIBLE);
 
                 name_1.setTextColor(getResources().getColor(R.color.design_change_d2));
                 name_2.setTextColor(getResources().getColor(R.color.design_change_d2));
@@ -403,7 +397,6 @@ public class Swim4Test extends Activity {
             if (i == 0) {
                 if (tempname.get(i).contains(" ")) {
                     String temp[] = tempname.get(i).split("\\s+");
-                    //					name_1.setText(temp[0] + "\n" + temp[1]);
                     name_1.setText(temp[0]);
                     student1Txt.setText("Where should" + " " + temp[0] + " " + "start the race?");
                     student1_2Txt.setText("Should"  + " " + temp[0] + " " + "swim next to the wall in an end lane?");
@@ -415,7 +408,6 @@ public class Swim4Test extends Activity {
             } else if (i == 1) {
                 if (tempname.get(i).contains(" ")) {
                     String temp[] = tempname.get(i).split("\\s+");
-                    //					name_2.setText(temp[0] + "\n" + temp[1]);
                     name_2.setText(temp[0]);
                     student2Txt.setText("Where should" + " " + temp[0] + " " + "start the race?");
                     student2_2Txt.setText("Should" +  " " + temp[0] + " " + "swim next to the wall in an end lane?");
@@ -428,7 +420,6 @@ public class Swim4Test extends Activity {
             } else if (i == 2) {
                 if (tempname.get(i).contains(" ")) {
                     String temp[] = tempname.get(i).split("\\s+");
-                    //					name_3.setText(temp[0] + "\n" + temp[1]);
                     name_3.setText(temp[0]);
                     student3Txt.setText("Where should" + " " + temp[0] + " " +  "start the race?");
                     student3_2Txt.setText("Should" + " "  + temp[0] + " "  + "swim next to the wall in an end lane?");
@@ -441,7 +432,6 @@ public class Swim4Test extends Activity {
             } else if (i == 3) {
                 if (tempname.get(i).contains(" ")) {
                     String temp[] = tempname.get(i).split("\\s+");
-                    //					name_4.setText(temp[0] + "\n" + temp[1]);
                     name_4.setText(temp[0]);
                     student4Txt.setText("Where should" + " " + temp[0] + " " +  "start the race?");
                     student4_2Txt.setText("Should" + " " + temp[0] + " " + "swim next to the wall in an end lane?");
@@ -454,7 +444,6 @@ public class Swim4Test extends Activity {
             } else if (i == 4) {
                 if (tempname.get(i).contains(" ")) {
                     String temp[] = tempname.get(i).split("\\s+");
-                    //					name_5.setText(temp[0] + "\n" + temp[1]);
                     name_5.setText(temp[0]);
                     student5Txt.setText("Where should"+ " " + temp[0] + " " + "start the race?");
                     student5_2Txt.setText("Should" + " " + temp[0] + " " + "swim next to the wall in an end lane?");
@@ -561,9 +550,6 @@ public class Swim4Test extends Activity {
 
         int pos_1 = Integer.parseInt(v_1.getTag().toString());
         int pos_2 = Integer.parseInt(v_2.getTag().toString());
-
-        Log.d("Pos1", String.valueOf(pos_1));
-        Log.d("Pos2", String.valueOf(pos_2));
 
         select_lay(pos_1, pos_2);
         if (pos_1 < pos_2) {
@@ -843,7 +829,6 @@ public class Swim4Test extends Activity {
                         i.putExtra("time", time);
                         i.putExtra("eventdates", eventdates);
                         i.putExtra("MeetDate_Display", MeetDate_Display);
-
                         startActivity(i);
                     } else {
                         Toast.makeText(mContext, "Please select how the swimmer would like to begin the race.", Toast.LENGTH_LONG).show();
@@ -862,17 +847,9 @@ public class Swim4Test extends Activity {
 
         if (!slide_left) {
             Animation animSlidInLeft = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_left);
-//            ll1.startAnimation(animSlidInLeft);
-//            ll2.startAnimation(animSlidInLeft);
-//            ll3.startAnimation(animSlidInLeft);
-//            ll4.startAnimation(animSlidInLeft);
             ll5.startAnimation(animSlidInLeft);
 
             if (ll1.getVisibility() == View.VISIBLE) {
-//                Animation animFadeOut = AnimationUtils.loadAnimation(mContext, R.anim.slide_out_left);
-//                ll1.startAnimation(animFadeOut);
-//                ll2.startAnimation(animFadeOut);
-//                ll3.startAnimation(animFadeOut);
             }
             Animation animSlidInLeftLine = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_left_line_rev);
             v1.startAnimation(animSlidInLeftLine);
@@ -892,16 +869,8 @@ public class Swim4Test extends Activity {
             });
         } else {
             Animation animSlidInRight = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_right);
-////            days_st_1.startAnimation(animSlidInRight);
-////            ll2.startAnimation(animSlidInRight);
-//            ll3.startAnimation(animSlidInRight);
-//            ll4.startAnimation(animSlidInRight);
             ll5.startAnimation(animSlidInRight);
             if (ll1.getVisibility() == View.VISIBLE) {
-                Animation animFadeOut = AnimationUtils.loadAnimation(mContext, R.anim.slide_out_right);
-//                ll5.startAnimation(animFadeOut);
-//                ll3.startAnimation(animFadeOut);
-//                ll4.startAnimation(animFadeOut);
             }
             Animation animSlidInRightLineRev = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_right_line_rev);
             v1.startAnimation(animSlidInRightLineRev);
@@ -936,6 +905,5 @@ public class Swim4Test extends Activity {
         i.putExtra("eventdates", eventdates);
         i.putExtra("MeetDate_Display", MeetDate_Display);
         startActivity(i);
-//        finish();
     }
 }

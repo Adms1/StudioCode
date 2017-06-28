@@ -138,10 +138,8 @@ public class ScoutBadgeActivityRegister1 extends Activity{
 								}
 							}
 						}
-
 						AppConfiguration.activityBadgesStudentID = sendingID.toString().replaceAll("\\[", "").replaceAll("\\]", "");
 						AppConfiguration.activityBadgesStudentName = studentNAME.toString().replaceAll("\\[", "").replaceAll("\\]", "");
-
 						Intent i= new Intent(getApplicationContext(),ScoutBadgeActivityRegister2.class);
 						i.putExtra("siteid", siteID);
 						i.putExtra("stulist", sendingID.toString().replaceAll("\\[", "").replaceAll("\\]", ""));
@@ -295,10 +293,8 @@ public class ScoutBadgeActivityRegister1 extends Activity{
 		protected void onPreExecute() {
 			// TODO Auto-generated method stub
 			super.onPreExecute();
-			//data = 1;
 			Studentid.clear();
 			StudentName.clear();
-//			table_dt_childs.removeAllViews();
 		}
 
 		@Override
@@ -349,10 +345,8 @@ public class ScoutBadgeActivityRegister1 extends Activity{
 					HashMap<String, String> hashmap = new HashMap<String, String>();
 					JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
-					String StudentID = jsonChildNode.getString("Studentid")
-							.trim();
-					String StudentName = jsonChildNode.getString("StudentName")
-							.trim();
+					String StudentID = jsonChildNode.getString("Studentid").trim();
+					String StudentName = jsonChildNode.getString("StudentName").trim();
 
 					hashmap.put("StudentID", StudentID);
 					hashmap.put("StudentName", StudentName);

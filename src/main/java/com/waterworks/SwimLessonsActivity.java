@@ -53,7 +53,6 @@ public class SwimLessonsActivity extends Activity implements OnClickListener{
 	ArrayList<String> LessonName,LessonId,Quantity,PackageID;
 	Boolean isInternetPresent = false;
 	ListPopupWindow pw_lessontype,pw_package;
-
 	String token,familyID;
 	double PACKAGECOST;
 	String lessonid,siteid,data_load="false",finalpackageID,data_load_basket="false",
@@ -255,8 +254,7 @@ public class SwimLessonsActivity extends Activity implements OnClickListener{
 			param.put("SiteID", siteid);
 			param.put("LessonTypeID", lessonid);
 
-			String responseString = WebServicesCall
-					.RunScript(AppConfiguration.swimpackage, param);
+			String responseString = WebServicesCall.RunScript(AppConfiguration.swimpackage, param);
 			GetPackage(responseString);
 			return null;
 		}
@@ -271,8 +269,7 @@ public class SwimLessonsActivity extends Activity implements OnClickListener{
 			btn_package.setEnabled(true);
 			if(data_load.toString().equalsIgnoreCase("True")){
 				pw_package = new ListPopupWindow(getApplicationContext());
-				pw_package.setAdapter(new ArrayAdapter<String>(getApplicationContext(),
-						R.layout.edittextpopup,Quantity));
+				pw_package.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.edittextpopup,Quantity));
 				pw_package.setAnchorView(btn_package);
 				pw_package.setHeight(LayoutParams.WRAP_CONTENT);
 				pw_package.setModal(true);
@@ -363,8 +360,7 @@ public class SwimLessonsActivity extends Activity implements OnClickListener{
 			param.put("BasketID", AppConfiguration.BasketID);
 			param.put("LessonID", lessonid);
 			param.put("PackageID",Packageid);
-			String responseString = WebServicesCall
-					.RunScript(AppConfiguration.swimsubmit, param);
+			String responseString = WebServicesCall.RunScript(AppConfiguration.swimsubmit, param);
 
 			SubmitSwimLesson(responseString);
 			return null;
@@ -427,8 +423,7 @@ public class SwimLessonsActivity extends Activity implements OnClickListener{
 			param.put("Token", ""+token);
 			param.put("siteid", siteid);
 
-			String responseString = WebServicesCall
-					.RunScript(AppConfiguration.Get_BasketID, param);
+			String responseString = WebServicesCall.RunScript(AppConfiguration.Get_BasketID, param);
 
 			GetBasketID(responseString);
 			
@@ -503,8 +498,7 @@ public class SwimLessonsActivity extends Activity implements OnClickListener{
 			param.put("FamilyID", ""+familyID);
 			param.put("SiteID", siteid);
 
-			String responseString = WebServicesCall
-			.RunScript(AppConfiguration.viewpricesheet, param);
+			String responseString = WebServicesCall.RunScript(AppConfiguration.viewpricesheet, param);
 			ViewPriceSheet(responseString);
 			return null;
 		}

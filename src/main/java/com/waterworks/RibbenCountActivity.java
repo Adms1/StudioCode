@@ -130,8 +130,7 @@ public class RibbenCountActivity extends Activity {
 		HashMap<String, String > param = new HashMap<String, String>();
 		param.put("Token",token );
 		
-		String responseString = WebServicesCall
-		.RunScript(AppConfiguration.ribbenCountURL, param);
+		String responseString = WebServicesCall.RunScript(AppConfiguration.ribbenCountURL, param);
 		readAndParseJSON(responseString);
 		
 	}
@@ -217,14 +216,12 @@ public class RibbenCountActivity extends Activity {
 			}
 
 			if (successRibbenCount.toString().equals("True")) {
-
 				CustomList adapter = new CustomList(RibbenCountActivity.this,ribbenList);
 				list.setAdapter(adapter);
 				
 
 			} else {
-				Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
 			}
 		}
 	}

@@ -166,7 +166,6 @@ public class ViewPaymentHistoryListNewActivity extends Activity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
 
@@ -178,7 +177,6 @@ public class ViewPaymentHistoryListNewActivity extends Activity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
         isInternetPresent = Utility.isNetworkConnected(ViewPaymentHistoryListNewActivity.this);
@@ -268,10 +266,12 @@ public class ViewPaymentHistoryListNewActivity extends Activity {
 
             txtDate.setText(paymentHistoryModels.get(i).getInvoicedate());
             txtSite.setText(paymentHistoryModels.get(i).getSitename());
-            if(paymentHistoryModels.get(i).getAmountPaid().equals("0.00")){
-                String strview ="CREDITED";
+            if (paymentHistoryModels.get(i).getAmountPaid().equals("0.00")) {
+                String strview = "CREDITED";
                 txtPaymentType.setText(strview);
-            }else{txtPaymentType.setText(paymentHistoryModels.get(i).getPaymentType());}
+            } else {
+                txtPaymentType.setText(paymentHistoryModels.get(i).getPaymentType());
+            }
             txtInvoiceTotal.setText(paymentHistoryModels.get(i).getTotalAmount());
             txtAmmountPaid.setText(paymentHistoryModels.get(i).getAmountPaid());
 
@@ -419,16 +419,9 @@ public class ViewPaymentHistoryListNewActivity extends Activity {
                 siteName.add("" + jsonChildNode.getString("SiteName"));
 
                 siteMainList.add(hashmap);
-//
             }
-
-            Log.d("siteName---", "" + siteName);
-            Log.d("siteName---1", "" + siteName.size());
-            Log.d("siteMainList---", "" + siteMainList);
-            Log.d("siteMainList---1", "" + siteMainList.size());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 }

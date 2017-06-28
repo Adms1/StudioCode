@@ -60,7 +60,6 @@ public class UpcomingEventCompResultActivity extends Activity {
         setContentView(R.layout.activity_upcoming_event_comp_results);
 
         swimmeetid = getIntent().getStringExtra("swimmeetid");
-
         topTabsViewListnersAnimation();
         init();
 

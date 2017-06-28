@@ -114,9 +114,6 @@ public class GetFamilySwimNights extends Activity{
 		sep2 = (View)findViewById(R.id.sep2);
 		already_title = (TextView)findViewById(R.id.already_title);
 		upcoming_title = (TextView)findViewById(R.id.upcoming_title);
-
-		//		register_btn.setVisibility(View.VISIBLE);
-
 		sep1.setVisibility(View.GONE);
 		sep2.setVisibility(View.VISIBLE);
 

@@ -280,7 +280,6 @@ public class ActivityCheckin extends Activity {
             dialog.show();
         }
     }
-
     public void addHeader() {
         //Custom Header
         View view = findViewById(R.id.header);

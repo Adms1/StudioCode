@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/actionBar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp" >
+        android:layout_marginBottom="10dp">
 
         <View
             android:id="@+id/blueBack"
@@ -34,7 +34,7 @@
             android:layout_height="60dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:clickable="true" >
+            android:clickable="true">
 
             <ImageButton
                 android:id="@+id/ib_menusad"
@@ -51,6 +51,7 @@
                 android:layout_alignParentLeft="true"
                 android:background="@android:color/transparent" />
         </RelativeLayout>
+
         <Button
             android:id="@+id/btnHome"
             android:layout_width="40dp"
@@ -63,18 +64,18 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:paddingBottom="5dp"
         android:layout_height="fill_parent"
+        android:paddingBottom="5dp"
         android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -96,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -121,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal"
-                android:padding="0dp" >
+                android:padding="0dp">
 
                 <EditText
                     android:id="@+id/et_primary"
@@ -129,8 +130,8 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:background="@drawable/bordergray"
-                    android:imeOptions="actionNext"
                     android:hint="Enter Phone Number"
+                    android:imeOptions="actionNext"
                     android:inputType="number"
                     android:paddingLeft="5dp"
                     android:singleLine="true"
@@ -145,11 +146,11 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/bordergray"
-                    android:weightSum="100" >
+                    android:weightSum="100">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content">
 
                         <Button
                             android:id="@+id/first_btn"
@@ -157,9 +158,9 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:background="@android:color/transparent"
+                            android:hint="-Select Type-"
                             android:paddingLeft="5dp"
                             android:textAllCaps="false"
-                            android:hint="-Select Type-"
                             android:textColor="@color/app_text"
                             android:textSize="13sp" />
 
@@ -197,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -214,7 +215,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal"
-                android:padding="0dp" >
+                android:padding="0dp">
 
                 <EditText
                     android:id="@+id/et_secondary"
@@ -222,9 +223,9 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:background="@drawable/bordergray"
+                    android:hint="Enter Phone Number"
                     android:imeOptions="actionNext"
                     android:inputType="number"
-                    android:hint="Enter Phone Number"
                     android:paddingLeft="5dp"
                     android:singleLine="true"
                     android:textColor="@color/black"
@@ -238,11 +239,11 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/bordergray"
-                    android:weightSum="100" >
+                    android:weightSum="100">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content">
 
                         <Button
                             android:id="@+id/second_btn"
@@ -250,9 +251,9 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:background="@android:color/transparent"
+                            android:hint="-Select Type-"
                             android:paddingLeft="5dp"
                             android:textAllCaps="false"
-                            android:hint="-Select Type-"
                             android:textColor="@color/app_text"
                             android:textSize="13sp" />
 
@@ -280,7 +281,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -295,8 +296,7 @@
                 android:id="@+id/custom_additional"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
-            </LinearLayout>
+                android:orientation="vertical"></LinearLayout>
 
             <LinearLayout
                 android:id="@+id/add_addtional"
@@ -306,7 +306,7 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:paddingBottom="3dp"
-                android:paddingTop="3dp" >
+                android:paddingTop="3dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -338,7 +338,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -389,7 +389,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -414,10 +414,10 @@
                 android:layout_height="40dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                android:maxLength="5"
                 android:background="@drawable/bordergray"
                 android:imeOptions="actionNext"
                 android:inputType="number"
+                android:maxLength="5"
                 android:paddingLeft="5dp"
                 android:singleLine="true"
                 android:textColor="@color/black"
@@ -444,7 +444,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -481,7 +481,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -534,7 +534,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -571,7 +571,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -596,49 +596,50 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/bordergray"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:inputType="text"
                 android:paddingLeft="5dp"
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textSize="13sp" />
 
-            <!--<RelativeLayout
+            <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp" >-->
+                android:layout_marginTop="10dp" >
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/btn_update"
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_update"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="10dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:stateListAnimator="@anim/lift_on_touch"
+                card_view:cardElevation="2sp"
+                android:focusable="true"
+                card_view:cardPreventCornerOverlap="true"
+                card_view:cardUseCompatPadding="true">
+
+                <TextView
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginRight="35dp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:stateListAnimator="@anim/lift_on_touch"
-                    card_view:cardElevation="2sp"
-                    card_view:cardPreventCornerOverlap="true"
-                    card_view:cardUseCompatPadding="true">
+                    android:layout_height="55dp"
+                    android:background="@color/design_change_d2"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Update Profile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="55dp"
-                        android:background="@color/design_change_d2"
-                        android:padding="10dp"
-                        android:gravity="center"
-                        android:text="Update Profile"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"/>
+            </android.support.v7.widget.CardView>
 
-                </android.support.v7.widget.CardView>
-
-            <!--</RelativeLayout>-->
+           </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 

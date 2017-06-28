@@ -38,15 +38,11 @@ public class Utility {
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
         if (ni == null) {
-
-
             // There are no active networks.
             return false;
         } else
             return true;
     }
-
-
     public static void ping(Context context, String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }

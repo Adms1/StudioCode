@@ -56,8 +56,7 @@ public class CheckIn2Activity extends Activity {
         familyID = prefs.getString("FamilyID", "");
         Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
 
-        isInternetPresent = Utility
-                .isNetworkConnected(getApplicationContext());
+        isInternetPresent = Utility.isNetworkConnected(getApplicationContext());
         if (!isInternetPresent) {
             onDetectNetworkState().show();
         } else {
@@ -124,8 +123,7 @@ public class CheckIn2Activity extends Activity {
         // TODO Auto-generated method stub
         super.onResume();
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
-        isInternetPresent = Utility
-                .isNetworkConnected(getApplicationContext());
+        isInternetPresent = Utility.isNetworkConnected(getApplicationContext());
         if (!isInternetPresent) {
             onDetectNetworkState().show();
         }

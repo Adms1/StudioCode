@@ -68,7 +68,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
     View rootView;
     Boolean isInternetPresent = false;
     String message;
-    Button btnFeedback, btnHelpCenter;
     ArrayList<HashMap<String, String>> contactList = new ArrayList<HashMap<String, String>>();
     String successContact;
     RelativeLayout title_black, rlPhoneNumber, rlSendMessage, rlReportBug, rlPrivacyPolicy, rlTermsOfUse;
@@ -86,7 +85,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
     String MenuName[];
     int dispPOS = 0;
     SharedPreferences SP;
-//    ListView list;
 
     String token, familyID;
     @Override
@@ -101,8 +99,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
             e.printStackTrace();
         }
         tv_version_numb_name.setText("Client Version "+pInfo.versionName.toString());
-//        Log.d("versionname.....", SplashScreen.versionname);
-//        tv_version_numb_name.setText("Client Version "+"2.5.5.4");
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
         //getting token
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(this.getApplicationContext());
@@ -114,7 +110,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
 
         isInternetPresent = Utility.isNetworkConnected(this);
         if (!isInternetPresent) {
-//            AppConfiguration.showAlertDialog(this, null, null);
             onDetectNetworkState().show();
         } else {
             new LoadContactListAsyncTask().execute();
@@ -126,10 +121,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
         ImageButton ib_menusad = (ImageButton) findViewById(R.id.ib_menusad);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ib_menusad.setBackgroundResource(R.drawable.menu_icon_new);
-        LinearLayout ll_ProgressReport, ll_ViewCertificate, ll_RibbonCount;
-//        ll_ProgressReport = (LinearLayout) view.findViewById(R.id.scdl_lsn);
-//        ll_ViewCertificate = (LinearLayout) view.findViewById(R.id.scdl_mkp);
-//        ll_RibbonCount = (LinearLayout) view.findViewById(R.id.waitlist);
         rlPhoneNumber = (RelativeLayout) findViewById(R.id.rlPhoneNumber);
         rlSendMessage = (RelativeLayout) findViewById(R.id.rlSendMessage);
         rlReportBug = (RelativeLayout) findViewById(R.id.rlReportBug);
@@ -141,20 +132,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
         if(tv_web != null) {
             removeUnderlines((Spannable)tv_web.getText());
         }
-//        tv_web.setText(Html.fromHtml("<a href=\"http://waterworksswim.com\">http://waterworksswim.com</a>"));
-
-//        tv_web.getAutoLinkMask();
-//        tv_web.setMovementMethod(LinkMovementMethod.getInstance());
-//        View vert_1 = (View) view.findViewById(R.id.vert_1);
-//        vert_1.setVisibility(View.GONE);
-//        ll_ProgressReport.setVisibility(View.GONE);
-
-//        TextView txt_2 = (TextView) view.findViewById(R.id.txt_2);
-//        TextView txt_3 = (TextView) view.findViewById(R.id.txt_3);
-//
-//        txt_2.setText("Feedback");
-//        txt_3.setText("Help Center");
-
         Button relMenu = (Button) findViewById(R.id.relMenu_thnx);
         relMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,34 +150,9 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
                 finish();
             }
         });
-//        ll_ViewCertificate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(HelpAndSupportFragment.this, FeedbackActivity.class);
-//                startActivity(i);
-//            }
-//        });
-
-//        ll_RibbonCount.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(HelpAndSupportFragment.this, HelpCenterActivity.class);
-//                startActivity(i);
-//            }
-//        });
-
         rlPhoneNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*String phoneNumber = tvPhoneNumber.getText().toString().replace("(", "").replace(")", "").replace("-", "").replace(" ", "");
-                Log.d("phoneNumber--", "" + phoneNumber);
-                try {
-                    Intent callIntent = new Intent(Intent.ACTION_CALL);
-                    callIntent.setData(Uri.parse("tel:" + phoneNumber));
-                    startActivity(callIntent);
-                }catch (SecurityException e){
-                    e.printStackTrace();
-                }*/
                 String phoneNumber = tvPhoneNumber.getText().toString().replace("(", "").replace(")", "").replace("-", "").replace(" ", "");
                 startActivity( new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+1" + phoneNumber)));
             }
@@ -314,63 +266,40 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
     }
     private void displayView(int position) {
         // update the main content by replacing fragments
-        //		Toast.makeText(getApplicationContext(), ""+position, Toast.LENGTH_SHORT).show();
 
         switch (position) {
             case 0:
-//                AppConfiguration.makeup_Clicked = 0;
-//
-//                gooo(0);
                 Intent iDash = new Intent(HelpAndSupportFragment.this, DashBoardActivity.class);
                 iDash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(iDash);
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-
-//                fragment = new HomeFragment();
-//                myid = fragment.getId();
-//                mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 break;
             case 1:
                 gooo(1);
-//                fragment = new CheckInFragment();
                 break;
             case 2:
                 gooo(2);
-//                Intent acc = new Intent(d2_MyProfile.this,d2_MyProfile.class);
-//                startActivity(acc);
-//                fragment = new MyAccount1Fragment();
                 break;
             case 3:
                 gooo(3);
-//                fragment = new ViewScheduleFragment();
                 break;
             case 4:
                 gooo(4);
-//                fragment = new MakePurchaseFragment();
                 break;
             case 5:
                 gooo(5);
-
-//                Intent i = new Intent(d2_MyProfile.this, ScheduleLessonFragement.class);
-//                startActivity(i);
                 break;
             case 7:
                 gooo(7);
-//                fragment = new CancelLessonFragment();
                 break;
             case 8:
                 gooo(8);
-//                fragment = new ContactUsFragment();
                 break;
             case 9:
                 gooo(9);
-//                fragment = new ProgramFragment();
                 break;
             case 10:
-
-
-                AlertDialog.Builder alertdialogbuilder2 = new AlertDialog.Builder(
-                        HelpAndSupportFragment.this);
+                AlertDialog.Builder alertdialogbuilder2 = new AlertDialog.Builder(HelpAndSupportFragment.this);
                 alertdialogbuilder2.setTitle("WaterWorks");
                 alertdialogbuilder2.setIcon(getResources().getDrawable(R.drawable.alerticon));
                 try {
@@ -403,8 +332,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
                                             editor.putString("password", "");
                                             editor.putBoolean("AUTO_ISCHECK", false).commit();
                                             editor.commit();
-
-                                            //										startActivity(new Intent(DashboardActivity.this,WelcometoGPSActivity.class));
                                             Intent loginIntent = new Intent(
                                                     getApplicationContext(),
                                                     LoginActivity.class);
@@ -440,7 +367,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
             // update selected item and title, then close the drawer
             mDrawerList.setItemChecked(position, true);
             mDrawerList.setSelection(position);
-            //			setTitle(navMenuTitles[position]);
             mDrawerLayout.closeDrawers();
         } else {
             // error in creating fragment
@@ -463,160 +389,7 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
         super.onStop();
         ConstantData.destroyed = true;
     }
-
-
-/* public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.help_and_support_fragment, container, false);
-//        getActivity().overridePendingTransition(R.animator.zoom_in, R.animator.zoom_out);
-        if (AppConfiguration.animation) {
-            mFade = new Fade(Fade.IN);
-        }
-        //getting token
-        SharedPreferences prefs = AppConfiguration.getSharedPrefs(this.getApplicationContext());
-        token = prefs.getString("Token", "");
-        familyID = prefs.getString("FamilyID", "");
-        Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
-
-        initialization();
-
-        isInternetPresent = Utility.isNetworkConnected(this);
-        if (!isInternetPresent) {
-            AppConfiguration.showAlertDialog(this, null, null);
-        } else {
-
-            new LoadContactListAsyncTask().execute();
-
-            btnFeedback.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
-
-            btnHelpCenter.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
-
-
-        }
-
-//        list = (ListView) rootView.findViewById(R.id.list);
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//
-//            }
-//        });
-        title_black = (RelativeLayout) rootView.findViewById(R.id.title_black);
-        title_black.setVisibility(View.GONE);
-        View view = rootView.findViewById(R.id.header);
-
-        TextView title = (TextView) view.findViewById(R.id.page_title);
-        title.setText("Help & Support");
-
-        ImageButton ib_menusad = (ImageButton) view.findViewById(R.id.ib_menusad);
-        ib_menusad.setBackgroundResource(R.drawable.menu_icon_new);
-        LinearLayout ll_ProgressReport, ll_ViewCertificate, ll_RibbonCount;
-        ll_ProgressReport = (LinearLayout) view.findViewById(R.id.scdl_lsn);
-        ll_ViewCertificate = (LinearLayout) view.findViewById(R.id.scdl_mkp);
-        ll_RibbonCount = (LinearLayout) view.findViewById(R.id.waitlist);
-        rlPhoneNumber = (RelativeLayout) rootView.findViewById(R.id.rlPhoneNumber);
-        rlSendMessage = (RelativeLayout) rootView.findViewById(R.id.rlSendMessage);
-        rlReportBug = (RelativeLayout) rootView.findViewById(R.id.rlReportBug);
-        rlPrivacyPolicy = (RelativeLayout) rootView.findViewById(R.id.rlPrivacyPolicy);
-        rlTermsOfUse = (RelativeLayout) rootView.findViewById(R.id.rlTermsOfUse);
-        tvPhoneNumber = (TextView) rootView.findViewById(R.id.tvPhoneNumber);
-        View vert_1 = (View) view.findViewById(R.id.vert_1);
-        vert_1.setVisibility(View.GONE);
-        ll_ProgressReport.setVisibility(View.GONE);
-
-        TextView txt_2 = (TextView) view.findViewById(R.id.txt_2);
-        TextView txt_3 = (TextView) view.findViewById(R.id.txt_3);
-
-        txt_2.setText("Feedback");
-        txt_3.setText("Help Center");
-
-        Button relMenu = (Button) view.findViewById(R.id.returnStack);
-        relMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DashBoardActivity.onLeft();
-            }
-        });
-
-        ll_ViewCertificate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HelpAndSupportFragment.this, FeedbackActivity.class);
-                startActivity(i);
-            }
-        });
-
-        ll_RibbonCount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HelpAndSupportFragment.this, HelpCenterActivity.class);
-                startActivity(i);
-            }
-        });
-
-        rlPhoneNumber.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String phoneNumber = tvPhoneNumber.getText().toString().replace("(", "").replace(")", "").replace("-", "").replace(" ", "");
-                Log.d("phoneNumber--", "" + phoneNumber);
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + phoneNumber));
-                startActivity(callIntent);
-            }
-        });
-
-        rlSendMessage.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent sendMsgIntent = new Intent(HelpAndSupportFragment.this, SendUsMessage.class);
-                startActivity(sendMsgIntent);
-            }
-        });
-        rlReportBug.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent reportBugIntent = new Intent(HelpAndSupportFragment.this, ReportBug.class);
-                startActivity(reportBugIntent);
-            }
-        });
-        rlPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent privacyPolicyIntent = new Intent(HelpAndSupportFragment.this, PrivacyPolicy.class);
-                startActivity(privacyPolicyIntent);
-            }
-        });
-        rlTermsOfUse.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent termsUseIntent = new Intent(HelpAndSupportFragment.this, TermsOfUse.class);
-                startActivity(termsUseIntent);
-            }
-        });
-        return rootView;
-    }*/
-
     public void initialization() {
-//        btnFeedback = (Button) rootView.findViewById(R.id.btnFeedback);
-//        btnHelpCenter = (Button) rootView.findViewById(R.id.btnHelpCenter);
-
     }
 
     public void getContactList() {
@@ -690,20 +463,10 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
             }
 
             if (successContact.toString().equals("True")) {
-
                 tvPhoneNumber.setText(contactList.get(0).get("Pnoneno").toString());
-
-//                CustomList adapter = new CustomList(getActivity(),contactList);
-//                list.setAdapter(adapter);
-
-
-            } else {
-                //Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
             }
-
         }
     }
-
     public class CustomList extends ArrayAdapter<String> {
         private final Activity context;
         private final ArrayList<HashMap<String, String>> data;
@@ -783,7 +546,6 @@ public class HelpAndSupportFragment extends Activity implements View.OnClickList
     public void onPause() {
         super.onPause();
         this.overridePendingTransition(R.anim.slide_in_right, R.anim.zoom_out);
-//        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override

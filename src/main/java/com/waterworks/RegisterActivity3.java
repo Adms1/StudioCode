@@ -53,16 +53,11 @@ public class RegisterActivity3 extends Activity {
     ArrayList<String> thirdListName = new ArrayList<String>();
     ArrayList<String> secondaryListName = new ArrayList<String>();
 
-
-    //Spinner masterSpinner;
-    //	Spinner spinnerThirdlevel;
-    //	Spinner spinnerSecondaryChild;
     String siteID = "0";
 
     String firstSiteSelected = "0", thirdSiteSelected = "0", secondSiteSelected = "0";
     int isMasterDropDown = 0;
     int isChildDropDown = 0;
-    int isChild2DropDown = 0;
     EditText edtThirdLevel, edtSecondaryLevel;
     CardView btnSubmit;
 
@@ -82,19 +77,13 @@ public class RegisterActivity3 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register3_activity);
         DOMAIN = getIntent().getStringExtra("DOMAIN");
-
-        //spinner1 = (Spinner) findViewById(R.id.spinner1_sites);
         btnSubmit = (CardView) findViewById(R.id.btnSubmit);
         ll_secondary_parent = (LinearLayout) findViewById(R.id.ll_secondary_parent);
         llerrorBorderChildLevel1 = (LinearLayout) findViewById(R.id.llerrorBorderChildLevel1);
         llerrorBorderChildLevel2 = (LinearLayout) findViewById(R.id.llerrorBorderChildLevel2);
-        //masterSpinner = (Spinner)findViewById(R.id.spinner_master);
         btn_master = (Button) findViewById(R.id.btn_master);
-        //spinnerThirdlevel = (Spinner)findViewById(R.id.spinner_child_level1);
         btn_third_level = (Button) findViewById(R.id.btn_third_level);
         edtThirdLevel = (EditText) findViewById(R.id.edtChildLevel1);
-
-        //spinnerSecondaryChild = (Spinner) findViewById(R.id.spinner_child_level2);
         btn_secondary = (Button) findViewById(R.id.btn_secondary);
         edtSecondaryLevel = (EditText) findViewById(R.id.edtChildLevel2);
 
@@ -214,7 +203,6 @@ public class RegisterActivity3 extends Activity {
                         Toast.makeText(getApplicationContext(), "Please enter hear about text.", Toast.LENGTH_LONG).show();
                         llerrorBorderChildLevel2.setBackgroundResource(R.drawable.error_border);
                     } else {
-                        //Toast.makeText(getApplicationContext(), "Successful.", Toast.LENGTH_LONG).show();
                         isInternetPresent = Utility.isNetworkConnected(RegisterActivity3.this);
                         if (!isInternetPresent) {
                             onDetectNetworkState().show();
@@ -290,8 +278,6 @@ public class RegisterActivity3 extends Activity {
 
             if (successMaster.toString().equals("True")) {
 
-                //masterSpinner.setVisibility(View.VISIBLE);
-
                 JSONArray jsonMainNode = reader.optJSONArray("MasterList");
 
                 for (int i = 0; i < jsonMainNode.length(); i++) {
@@ -306,7 +292,6 @@ public class RegisterActivity3 extends Activity {
                     FirstList.add(hashmap);
                 }
             } else {
-                //masterSpinner.setVisibility(View.GONE);
             }
 
         } catch (Exception e) {
@@ -354,17 +339,12 @@ public class RegisterActivity3 extends Activity {
             lpw_master.setAnchorView(btn_master);
             lpw_master.setHeight(LayoutParams.WRAP_CONTENT);
             lpw_master.setModal(true);
-            lpw_master.setOnItemClickListener(
-                    new OnItemClickListener() {
+            lpw_master.setOnItemClickListener(new OnItemClickListener() {
 
                         @Override
-                        public void onItemClick(AdapterView<?> parent, View view,
-                                                int position, long id) {
-
-
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             btn_master.setText(firstListName.get(position));
                             lpw_master.dismiss();
-
                             btn_third_level.setVisibility(View.GONE);
                             edtThirdLevel.setVisibility(View.GONE);
                             btn_secondary.setVisibility(View.GONE);
@@ -372,7 +352,6 @@ public class RegisterActivity3 extends Activity {
 
 
                             firstSiteSelected = FirstList.get(position).get("master");
-                            //masterSiteSelected = masterSiteSelected.replace(':','/');
                             AppConfiguration.strMaster = firstSiteSelected;
 
                             //dropdown or inputbox
@@ -504,87 +483,14 @@ public class RegisterActivity3 extends Activity {
 
 
                             thirdSiteSelected = thirdList.get(position).get("child");
-                            //child1SiteSelected = child1SiteSelected.replace(':','/');
-
                             if (isChildDropDown == 0) {
                                 AppConfiguration.strChild = thirdSiteSelected;
-
                             } else {
-
                                 AppConfiguration.strOther = "" + edtThirdLevel.getText().toString();
                                 Log.e("childLevelOne", "" + AppConfiguration.strOther);
                             }
                         }
                     });
-
-            //
-            //				ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(RegisterActivity3.this,android.R.layout.simple_spinner_item, thirdListName);
-            //				dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            //				spinnerThirdlevel.setAdapter(dataAdapter);
-            //
-            //				if(isChildDropDown == 0)
-            //				{
-            //
-            //					if(thirdListName.size() > 0)
-            //						btn_third_level.setVisibility(View.VISIBLE);
-            //					else
-            //						btn_third_level.setVisibility(View.GONE);
-            //
-            //					edtThirdLevel.setVisibility(View.GONE);
-            //				}
-            //				else
-            //				{
-            //					edtThirdLevel.setVisibility(View.VISIBLE);
-            //					btn_third_level.setVisibility(View.GONE);
-            //
-            //				}
-            //
-            //
-            //				spinnerThirdlevel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            //
-            //					@Override
-            //					public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long arg3) {
-            //
-            //						thirdSiteSelected = thirdList.get(position).get("child");
-            //						//child1SiteSelected = child1SiteSelected.replace(':','/');
-            //
-            //						if(isChildDropDown == 0)
-            //						{
-            //							AppConfiguration.strChild = thirdSiteSelected;
-            //
-            //						}
-            //						else
-            //						{
-            //
-            //							AppConfiguration.strOther = ""+edtThirdLevel.getText().toString();
-            //							Log.e("childLevelOne",""+AppConfiguration.strOther);
-            //						}
-            //
-            //
-            //
-            //
-            //						//next child is dropdown or input box
-            ////						if(isChildDropDown == 0)
-            ////						{
-            ////							spinnerSecondaryChild.setVisibility(View.VISIBLE);
-            ////							edtSecondaryLevel.setVisibility(View.GONE);
-            ////
-            ////						}
-            ////						else
-            ////						{
-            ////							spinnerSecondaryChild.setVisibility(View.GONE);
-            ////							edtSecondaryLevel.setVisibility(View.VISIBLE);
-            ////						}
-            //
-            //
-            //					}
-            //
-            //					@Override
-            //					public void onNothingSelected(AdapterView<?> arg0) {
-            //					}
-            //				});
-
-
         }
     }
 
@@ -720,10 +626,6 @@ public class RegisterActivity3 extends Activity {
                     btn_secondary.setVisibility(View.GONE);
                     edtSecondaryLevel.setVisibility(View.VISIBLE);
                 }
-
-                //spinnerSecondaryChild.setVisibility(View.GONE);
-                //edtSecondaryLevel.setVisibility(View.GONE);
-
                 btn_third_level.setVisibility(View.GONE);
                 edtThirdLevel.setVisibility(View.GONE);
             }
@@ -855,9 +757,7 @@ public class RegisterActivity3 extends Activity {
         param.put("City", AppConfiguration.City);
         param.put("SiteID", AppConfiguration.SiteID);
         param.put("strMaster", AppConfiguration.strMaster);
-//		param.put("strSecondary", AppConfiguration.strSecondary);,
         param.put("strSecondary", secondSiteSelected);
-//		param.put("strChild", AppConfiguration.strChild);
         param.put("strChild", thirdSiteSelected);
         param.put("strOther", AppConfiguration.strOther);
         param.put("status", "0");
@@ -945,8 +845,6 @@ public class RegisterActivity3 extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
-
-                                //Toast.makeText(getApplicationContext(), ""+message, Toast.LENGTH_LONG).show();
                                 Intent i = new Intent(RegisterActivity3.this, SplashScreen.class);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 i.putExtra("DOMAIN", DOMAIN);

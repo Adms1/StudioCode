@@ -42,11 +42,9 @@ public class TransferSemiToPrivateActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_transfer_semi_to_private);
-		SharedPreferences prefs = AppConfiguration
-				.getSharedPrefs(getApplicationContext());
+		SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
 		token = prefs.getString("Token", "");
 		familyID = prefs.getString("FamilyID", "");
-		Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
 
 		isInternetPresent = Utility
 				.isNetworkConnected(TransferSemiToPrivateActivity.this);
@@ -150,8 +148,7 @@ public class TransferSemiToPrivateActivity extends Activity {
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		isInternetPresent = Utility
-				.isNetworkConnected(TransferSemiToPrivateActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(TransferSemiToPrivateActivity.this);
 		if (!isInternetPresent) {
 			onDetectNetworkState().show();
 		}
@@ -185,8 +182,7 @@ public class TransferSemiToPrivateActivity extends Activity {
 			param.put("BasketID", AppConfiguration.BasketID);
 			param.put("Selected",NewTransferMakeUpActivity.p_tbid.toString().replaceAll("\\[", "").replaceAll("\\]", ""));
 
-			String responseString = WebServicesCall
-			.RunScript(AppConfiguration.transfermakeup_privatelesson_transfer, param);
+			String responseString = WebServicesCall.RunScript(AppConfiguration.transfermakeup_privatelesson_transfer, param);
 			try {
     			JSONObject reader = new JSONObject(responseString);
     			transferdone = reader.getString("Success");

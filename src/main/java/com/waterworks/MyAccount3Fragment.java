@@ -38,7 +38,8 @@ import com.waterworks.utils.Utility;
 import com.wscall.WebServicesCall;
 
 public class MyAccount3Fragment extends Fragment {
-    public MyAccount3Fragment(){}
+    public MyAccount3Fragment() {
+    }
 
     String TAG = "MyAccount Screen3";
     LinearLayout ll_secondary_parent;
@@ -55,11 +56,11 @@ public class MyAccount3Fragment extends Fragment {
 
     String siteID;
 
-    String firstSiteSelected,thirdSiteSelected,secondSiteSelected;
+    String firstSiteSelected, thirdSiteSelected, secondSiteSelected;
     int isMasterDropDown = 0;
     int isChildDropDown = 0;
     int isChild2DropDown = 0;
-    EditText edtThirdLevel,edtSecondaryLevel;
+    EditText edtThirdLevel, edtSecondaryLevel;
     Button btnSubmit;
 
     String successMaster;
@@ -67,39 +68,36 @@ public class MyAccount3Fragment extends Fragment {
     String registerSuccess = "";
     String message;
     //Spinner spinner1;
-    Button btn_sites,btn_master,btn_secondary,btn_third_level;
-    ListPopupWindow lpw_sitelist,lpw_master,lpw_secondary,lpw_thirdlevel;
-    String token,familyID;
+    Button btn_sites, btn_master, btn_secondary, btn_third_level;
+    ListPopupWindow lpw_sitelist, lpw_master, lpw_secondary, lpw_thirdlevel;
+    String token, familyID;
     View rootView;
     //EditText edtHearAbout;
     String registerSuccessMessage;
     Boolean isInternetPresent = false;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.myaccount3_fragment, container, false);
 
         //getting token
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(getActivity());
         token = prefs.getString("Token", "");
         familyID = prefs.getString("FamilyID", "");
-        Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
+        Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
 
         //spinner1 = (Spinner) findViewById(R.id.spinner1_sites);
         btnSubmit = (Button) rootView.findViewById(R.id.btnSubmit);
-        ll_secondary_parent = (LinearLayout)rootView.findViewById(R.id.ll_secondary_parent);
+        ll_secondary_parent = (LinearLayout) rootView.findViewById(R.id.ll_secondary_parent);
         //masterSpinner = (Spinner)findViewById(R.id.spinner_master);
-        btn_master = (Button)rootView.findViewById(R.id.btn_master);
+        btn_master = (Button) rootView.findViewById(R.id.btn_master);
         //spinnerThirdlevel = (Spinner)findViewById(R.id.spinner_child_level1);
-        btn_third_level = (Button)rootView.findViewById(R.id.btn_third_level);
-        edtThirdLevel = (EditText)rootView.findViewById(R.id.edtChildLevel1);
+        btn_third_level = (Button) rootView.findViewById(R.id.btn_third_level);
+        edtThirdLevel = (EditText) rootView.findViewById(R.id.edtChildLevel1);
+        btn_secondary = (Button) rootView.findViewById(R.id.btn_secondary);
+        edtSecondaryLevel = (EditText) rootView.findViewById(R.id.edtChildLevel2);
 
-        //spinnerSecondaryChild = (Spinner) findViewById(R.id.spinner_child_level2);
-        btn_secondary = (Button)rootView.findViewById(R.id.btn_secondary);
-        edtSecondaryLevel = (EditText)rootView.findViewById(R.id.edtChildLevel2);
-
-        btn_sites = (Button)rootView.findViewById(R.id.btn_sites);
+        btn_sites = (Button) rootView.findViewById(R.id.btn_sites);
         lpw_sitelist = new ListPopupWindow(getActivity().getApplicationContext());
         lpw_master = new ListPopupWindow(getActivity().getApplicationContext());
         lpw_secondary = new ListPopupWindow(getActivity().getApplicationContext());
@@ -150,29 +148,25 @@ public class MyAccount3Fragment extends Fragment {
         });
 
 
-        if(!AppConfiguration.strOther.equals("") && !AppConfiguration.strOther.equals("0"))
-        {
+        if (!AppConfiguration.strOther.equals("") && !AppConfiguration.strOther.equals("0")) {
             edtThirdLevel.setEnabled(true);
             edtThirdLevel.setVisibility(View.VISIBLE);
-            edtThirdLevel.setText(""+AppConfiguration.strOther);
+            edtThirdLevel.setText("" + AppConfiguration.strOther);
             edtThirdLevel.setEnabled(false);
-        }
-        else if(!AppConfiguration.hearAbout_third.equals("")){
+        } else if (!AppConfiguration.hearAbout_third.equals("")) {
             edtThirdLevel.setEnabled(true);
             edtThirdLevel.setVisibility(View.VISIBLE);
-            edtThirdLevel.setText(""+AppConfiguration.hearAbout_third);
+            edtThirdLevel.setText("" + AppConfiguration.hearAbout_third);
             edtThirdLevel.setEnabled(false);
-        }
-        else if(!AppConfiguration.hearAbout_second.equals("")){
+        } else if (!AppConfiguration.hearAbout_second.equals("")) {
             edtThirdLevel.setEnabled(true);
             edtSecondaryLevel.setVisibility(View.VISIBLE);
-            edtSecondaryLevel.setText(""+AppConfiguration.hearAbout_second);
+            edtSecondaryLevel.setText("" + AppConfiguration.hearAbout_second);
             edtThirdLevel.setEnabled(false);
-        }
-        else {
+        } else {
             edtThirdLevel.setEnabled(true);
             edtSecondaryLevel.setVisibility(View.VISIBLE);
-            edtSecondaryLevel.setText(""+AppConfiguration.hearAbout_first);
+            edtSecondaryLevel.setText("" + AppConfiguration.hearAbout_first);
             edtThirdLevel.setEnabled(false);
         }
 
@@ -185,12 +179,12 @@ public class MyAccount3Fragment extends Fragment {
                 String edtthirdLevel = edtThirdLevel.getText().toString();
 
 
-                if(!edtthirdLevel.equals(""))
-                    AppConfiguration.strOther = ""+edtthirdLevel;
-                else if(!edtsecondary.equals(""))
-                    AppConfiguration.strOther = ""+edtsecondary;
+                if (!edtthirdLevel.equals(""))
+                    AppConfiguration.strOther = "" + edtthirdLevel;
+                else if (!edtsecondary.equals(""))
+                    AppConfiguration.strOther = "" + edtsecondary;
                 else
-                    AppConfiguration.strOther = ""+edtsecondary;
+                    AppConfiguration.strOther = "" + edtsecondary;
 
                 isInternetPresent = Utility.isNetworkConnected(getActivity());
                 if (!isInternetPresent) {
@@ -216,6 +210,7 @@ public class MyAccount3Fragment extends Fragment {
 
         return rootView;
     }
+
     public AlertDialog onDetectNetworkState() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
         builder1.setIcon(R.drawable.logo);
@@ -246,8 +241,8 @@ public class MyAccount3Fragment extends Fragment {
         FirstList.clear();
         firstListName.clear();
 
-        HashMap<String, String > params = new HashMap<String, String>();
-        params.put("Siteid",siteID );
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("Siteid", siteID);
 
         String responseString = WebServicesCall.RunScript(AppConfiguration.getDataSpinner1URL, params);
         readAndParseJSONMaster(responseString);
@@ -258,11 +253,7 @@ public class MyAccount3Fragment extends Fragment {
             JSONObject reader = new JSONObject(in);
             successMaster = reader.getString("Success");
 
-            if(successMaster.toString().equals("True"))
-            {
-
-                //masterSpinner.setVisibility(View.VISIBLE);
-
+            if (successMaster.toString().equals("True")) {
                 JSONArray jsonMainNode = reader.optJSONArray("MasterList");
 
                 for (int i = 0; i < jsonMainNode.length(); i++) {
@@ -271,15 +262,12 @@ public class MyAccount3Fragment extends Fragment {
                     HashMap<String, String> hashmap = new HashMap<String, String>();
 
                     hashmap.put("master", jsonChildNode.getString("master"));
-                    hashmap.put("hearaboutlabel",jsonChildNode.getString("hearaboutlabel"));
+                    hashmap.put("hearaboutlabel", jsonChildNode.getString("hearaboutlabel"));
 
                     firstListName.add(jsonChildNode.getString("hearaboutlabel"));
                     FirstList.add(hashmap);
                 }
-            }
-            else
-            {
-                //masterSpinner.setVisibility(View.GONE);
+            } else {
             }
 
         } catch (Exception e) {
@@ -315,21 +303,16 @@ public class MyAccount3Fragment extends Fragment {
                 pd.dismiss();
             }
 
-            if(successMaster.toString().equals("True"))
-            {
+            if (successMaster.toString().equals("True")) {
 
                 btn_master.setVisibility(View.VISIBLE);
-            }
-            else
-            {
+            } else {
                 btn_master.setVisibility(View.GONE);
 
             }
 
-            for(int i = 0 ; i < FirstList.size(); i++)
-            {
-                if(FirstList.get(i).get("master").contains(AppConfiguration.strMaster))
-                {
+            for (int i = 0; i < FirstList.size(); i++) {
+                if (FirstList.get(i).get("master").contains(AppConfiguration.strMaster)) {
                     btn_master.setText(firstListName.get(i));
 
                     btn_third_level.setVisibility(View.GONE);
@@ -339,7 +322,6 @@ public class MyAccount3Fragment extends Fragment {
 
 
                     firstSiteSelected = FirstList.get(i).get("master");
-                    //masterSiteSelected = masterSiteSelected.replace(':','/');
                     AppConfiguration.strMaster = firstSiteSelected;
 
                     //dropdown or inputbox
@@ -350,14 +332,11 @@ public class MyAccount3Fragment extends Fragment {
                     isMasterDropDown = Integer.parseInt(separated[1]);
 
                     //next child is dropdown or input box
-                    if(isMasterDropDown == 0)
-                    {
+                    if (isMasterDropDown == 0) {
 
                         btn_secondary.setVisibility(View.VISIBLE);
                         edtSecondaryLevel.setVisibility(View.GONE);
-                    }
-                    else
-                    {
+                    } else {
                         btn_secondary.setVisibility(View.GONE);
                         edtSecondaryLevel.setVisibility(View.VISIBLE);
                     }
@@ -372,7 +351,7 @@ public class MyAccount3Fragment extends Fragment {
             }
 
 
-            lpw_master.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(),R.layout.edittextpopup,firstListName));
+            lpw_master.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(), R.layout.edittextpopup, firstListName));
             lpw_master.setAnchorView(btn_master);
             lpw_master.setHeight(LayoutParams.WRAP_CONTENT);
             lpw_master.setModal(true);
@@ -394,7 +373,6 @@ public class MyAccount3Fragment extends Fragment {
 
 
                             firstSiteSelected = FirstList.get(position).get("master");
-                            //masterSiteSelected = masterSiteSelected.replace(':','/');
                             AppConfiguration.strMaster = firstSiteSelected;
 
                             //dropdown or inputbox
@@ -405,14 +383,11 @@ public class MyAccount3Fragment extends Fragment {
                             isMasterDropDown = Integer.parseInt(separated[1]);
 
                             //next child is dropdown or input box
-                            if(isMasterDropDown == 0)
-                            {
+                            if (isMasterDropDown == 0) {
 
                                 btn_secondary.setVisibility(View.VISIBLE);
                                 edtSecondaryLevel.setVisibility(View.GONE);
-                            }
-                            else
-                            {
+                            } else {
                                 btn_secondary.setVisibility(View.GONE);
                                 edtSecondaryLevel.setVisibility(View.VISIBLE);
                             }
@@ -423,61 +398,8 @@ public class MyAccount3Fragment extends Fragment {
                             } else {
                                 new SecondaryAsyncTask().execute();
                             }
-
                         }
                     });
-
-
-            //			ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(RegisterActivity3.this,android.R.layout.simple_spinner_item, firstListName);
-            //			dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            //			masterSpinner.setAdapter(dataAdapter);
-            //
-            //			masterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            //
-            //				@Override
-            //				public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long arg3) {
-            //
-            //					spinnerThirdlevel.setVisibility(View.GONE);
-            //					edtThirdLevel.setVisibility(View.GONE);
-            //	            	spinnerSecondaryChild.setVisibility(View.GONE);
-            //	            	edtSecondaryLevel.setVisibility(View.GONE);
-            //
-            //
-            //	            	firstSiteSelected = FirstList.get(position).get("master");
-            //					//masterSiteSelected = masterSiteSelected.replace(':','/');
-            //					AppConfiguration.strMaster = firstSiteSelected;
-            //
-            //					//dropdown or inputbox
-            //					String[] separated = firstSiteSelected.split("/");
-            //					separated[0] = separated[0];
-            //					separated[1] = separated[1];
-            //
-            //					isMasterDropDown = Integer.parseInt(separated[1]);
-            //
-            //					//next child is dropdown or input box
-            //					if(isMasterDropDown == 0)
-            //					{
-            //
-            //						spinnerSecondaryChild.setVisibility(View.VISIBLE);
-            //						edtSecondaryLevel.setVisibility(View.GONE);
-            //					}
-            //					else
-            //					{
-            //						spinnerSecondaryChild.setVisibility(View.GONE);
-            //						edtSecondaryLevel.setVisibility(View.VISIBLE);
-            //					}
-            //					new SecondaryAsyncTask().execute();
-            //
-            //
-            //				}
-            //
-            //				@Override
-            //				public void onNothingSelected(AdapterView<?> arg0) {
-            //				}
-            //			});
-
-
-
         }
     }
 
@@ -489,8 +411,8 @@ public class MyAccount3Fragment extends Fragment {
         thirdList.clear();
         thirdListName.clear();
 
-        HashMap<String, String > params = new HashMap<String, String>();
-        params.put("strMaster",secondSiteSelected );
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("strMaster", secondSiteSelected);
 
         String responseString = WebServicesCall.RunScript(AppConfiguration.getDataChildLevel1URL, params);
         readAndParseJSONChildLevel1(responseString);
@@ -500,8 +422,7 @@ public class MyAccount3Fragment extends Fragment {
         try {
             JSONObject reader = new JSONObject(in);
             String success = reader.getString("Success");
-            if(success.toString().equals("True"))
-            {
+            if (success.toString().equals("True")) {
 
                 JSONArray jsonMainNode = reader.optJSONArray("MasterList");
 
@@ -511,14 +432,12 @@ public class MyAccount3Fragment extends Fragment {
                     HashMap<String, String> hashmap = new HashMap<String, String>();
 
                     hashmap.put("child", jsonChildNode.getString("child"));
-                    hashmap.put("hearaboutlabel",jsonChildNode.getString("hearaboutlabel"));
+                    hashmap.put("hearaboutlabel", jsonChildNode.getString("hearaboutlabel"));
 
                     thirdListName.add(jsonChildNode.getString("hearaboutlabel"));
                     thirdList.add(hashmap);
                 }
-            }
-            else
-            {
+            } else {
             }
 
         } catch (Exception e) {
@@ -555,49 +474,38 @@ public class MyAccount3Fragment extends Fragment {
             }
 
 
-
-
-            for(int i = 0 ; i < thirdList.size(); i++)
-            {
-                if(thirdList.get(i).get("child").contains(AppConfiguration.strChild))
-                {
+            for (int i = 0; i < thirdList.size(); i++) {
+                if (thirdList.get(i).get("child").contains(AppConfiguration.strChild)) {
                     btn_third_level.setText(thirdListName.get(i));
 
                     thirdSiteSelected = thirdList.get(i).get("child");
-                    //child1SiteSelected = child1SiteSelected.replace(':','/');
 
-                    if(isChildDropDown == 0)
-                    {
+                    if (isChildDropDown == 0) {
                         AppConfiguration.strChild = thirdSiteSelected;
 
-                    }
-                    else
-                    {
+                    } else {
 
-                        AppConfiguration.strOther = ""+edtThirdLevel.getText().toString();
-                        Log.e("childLevelOne",""+AppConfiguration.strOther);
+                        AppConfiguration.strOther = "" + edtThirdLevel.getText().toString();
+                        Log.e("childLevelOne", "" + AppConfiguration.strOther);
                     }
                 }
             }
 
-            if(isChildDropDown == 0)
-            {
+            if (isChildDropDown == 0) {
 
-                if(thirdListName.size() > 0)
+                if (thirdListName.size() > 0)
                     btn_third_level.setVisibility(View.VISIBLE);
                 else
                     btn_third_level.setVisibility(View.GONE);
 
                 edtThirdLevel.setVisibility(View.GONE);
-            }
-            else
-            {
+            } else {
                 edtThirdLevel.setVisibility(View.VISIBLE);
                 btn_third_level.setVisibility(View.GONE);
 
             }
 
-            lpw_thirdlevel.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(),R.layout.edittextpopup,thirdListName));
+            lpw_thirdlevel.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(), R.layout.edittextpopup, thirdListName));
             lpw_thirdlevel.setAnchorView(btn_third_level);
             lpw_thirdlevel.setHeight(LayoutParams.WRAP_CONTENT);
             lpw_thirdlevel.setModal(true);
@@ -614,94 +522,18 @@ public class MyAccount3Fragment extends Fragment {
 
 
                             thirdSiteSelected = thirdList.get(position).get("child");
-                            //child1SiteSelected = child1SiteSelected.replace(':','/');
-
-                            if(isChildDropDown == 0)
-                            {
+                            if (isChildDropDown == 0) {
                                 AppConfiguration.strChild = thirdSiteSelected;
 
-                            }
-                            else
-                            {
+                            } else {
 
-                                AppConfiguration.strOther = ""+edtThirdLevel.getText().toString();
-                                Log.e("childLevelOne",""+AppConfiguration.strOther);
+                                AppConfiguration.strOther = "" + edtThirdLevel.getText().toString();
+                                Log.e("childLevelOne", "" + AppConfiguration.strOther);
                             }
-
 
 
                         }
                     });
-
-            //
-            //				ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(RegisterActivity3.this,android.R.layout.simple_spinner_item, thirdListName);
-            //				dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            //				spinnerThirdlevel.setAdapter(dataAdapter);
-            //
-            //				if(isChildDropDown == 0)
-            //				{
-            //
-            //					if(thirdListName.size() > 0)
-            //						btn_third_level.setVisibility(View.VISIBLE);
-            //					else
-            //						btn_third_level.setVisibility(View.GONE);
-            //
-            //					edtThirdLevel.setVisibility(View.GONE);
-            //				}
-            //				else
-            //				{
-            //					edtThirdLevel.setVisibility(View.VISIBLE);
-            //					btn_third_level.setVisibility(View.GONE);
-            //
-            //				}
-            //
-            //
-            //				spinnerThirdlevel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            //
-            //					@Override
-            //					public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long arg3) {
-            //
-            //						thirdSiteSelected = thirdList.get(position).get("child");
-            //						//child1SiteSelected = child1SiteSelected.replace(':','/');
-            //
-            //						if(isChildDropDown == 0)
-            //						{
-            //							AppConfiguration.strChild = thirdSiteSelected;
-            //
-            //						}
-            //						else
-            //						{
-            //
-            //							AppConfiguration.strOther = ""+edtThirdLevel.getText().toString();
-            //							Log.e("childLevelOne",""+AppConfiguration.strOther);
-            //						}
-            //
-            //
-            //
-            //
-            //						//next child is dropdown or input box
-            ////						if(isChildDropDown == 0)
-            ////						{
-            ////							spinnerSecondaryChild.setVisibility(View.VISIBLE);
-            ////							edtSecondaryLevel.setVisibility(View.GONE);
-            ////
-            ////						}
-            ////						else
-            ////						{
-            ////							spinnerSecondaryChild.setVisibility(View.GONE);
-            ////							edtSecondaryLevel.setVisibility(View.VISIBLE);
-            ////						}
-            //
-            //
-            //					}
-            //
-            //					@Override
-            //					public void onNothingSelected(AdapterView<?> arg0) {
-            //					}
-            //				});
-
-
-
         }
     }
 
@@ -714,8 +546,8 @@ public class MyAccount3Fragment extends Fragment {
         secondaryList.clear();
         secondaryListName.clear();
 
-        HashMap<String, String > params = new HashMap<String, String>();
-        params.put("strChild",firstSiteSelected );
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("strChild", firstSiteSelected);
 
         String responseString = WebServicesCall.RunScript(AppConfiguration.getDataChildLevel2URL, params);
         readAndParseJSONChildLevel2(responseString);
@@ -725,8 +557,7 @@ public class MyAccount3Fragment extends Fragment {
         try {
             JSONObject reader = new JSONObject(in);
             String success = reader.getString("Success");
-            if(success.toString().equals("True"))
-            {
+            if (success.toString().equals("True")) {
 
                 JSONArray jsonMainNode = reader.optJSONArray("MasterList");
 
@@ -736,14 +567,12 @@ public class MyAccount3Fragment extends Fragment {
                     HashMap<String, String> hashmap = new HashMap<String, String>();
 
                     hashmap.put("secondary", jsonChildNode.getString("secondary"));
-                    hashmap.put("hearaboutlabel",jsonChildNode.getString("hearaboutlabel"));
+                    hashmap.put("hearaboutlabel", jsonChildNode.getString("hearaboutlabel"));
 
                     secondaryListName.add(jsonChildNode.getString("hearaboutlabel"));
                     secondaryList.add(hashmap);
                 }
-            }
-            else
-            {
+            } else {
             }
 
         } catch (Exception e) {
@@ -779,20 +608,17 @@ public class MyAccount3Fragment extends Fragment {
                 pd.dismiss();
             }
 
-            if(secondaryListName.size() > 0)
-            {
+            if (secondaryListName.size() > 0) {
 
 
-                for(int i = 0 ; i < secondaryList.size(); i++)
-                {
-                    if(secondaryList.get(i).get("secondary").contains(AppConfiguration.strSecondary))
-                    {
+                for (int i = 0; i < secondaryList.size(); i++) {
+                    if (secondaryList.get(i).get("secondary").contains(AppConfiguration.strSecondary)) {
                         btn_secondary.setText(secondaryListName.get(i));
                         lpw_secondary.dismiss();
 
 
                         secondSiteSelected = secondaryList.get(i).get("secondary");
-                        secondSiteSelected = secondSiteSelected.replace(':','/');
+                        secondSiteSelected = secondSiteSelected.replace(':', '/');
 
                         //dropdown or inputbox
                         String[] separated = secondSiteSelected.split("/");
@@ -800,20 +626,17 @@ public class MyAccount3Fragment extends Fragment {
                         separated[1] = separated[1];
 
                         isChildDropDown = Integer.parseInt(separated[1]);
-                        if(isChildDropDown == 0)
-                        {
-                            AppConfiguration.strSecondary = ""+secondSiteSelected;
+                        if (isChildDropDown == 0) {
+                            AppConfiguration.strSecondary = "" + secondSiteSelected;
                             btn_third_level.setVisibility(View.VISIBLE);
                             edtThirdLevel.setVisibility(View.GONE);
 
-                        }
-                        else
-                        {
+                        } else {
                             btn_third_level.setVisibility(View.GONE);
                             edtThirdLevel.setVisibility(View.VISIBLE);
 
-                            AppConfiguration.strOther = ""+ edtSecondaryLevel.getText().toString();
-                            Log.e("Secondary strOther",""+AppConfiguration.strOther);
+                            AppConfiguration.strOther = "" + edtSecondaryLevel.getText().toString();
+                            Log.e("Secondary strOther", "" + AppConfiguration.strOther);
                         }
 
                         isInternetPresent = Utility.isNetworkConnected(getActivity());
@@ -826,7 +649,7 @@ public class MyAccount3Fragment extends Fragment {
                 }
 
 
-                lpw_secondary.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(),R.layout.edittextpopup,secondaryListName));
+                lpw_secondary.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(), R.layout.edittextpopup, secondaryListName));
                 lpw_secondary.setAnchorView(btn_secondary);
                 lpw_secondary.setHeight(LayoutParams.WRAP_CONTENT);
                 lpw_secondary.setModal(true);
@@ -834,14 +657,14 @@ public class MyAccount3Fragment extends Fragment {
                         new OnItemClickListener() {
 
                             @Override
-                            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                                 btn_secondary.setText(secondaryListName.get(position));
                                 lpw_secondary.dismiss();
 
 
                                 secondSiteSelected = secondaryList.get(position).get("secondary");
-                                secondSiteSelected = secondSiteSelected.replace(':','/');
+                                secondSiteSelected = secondSiteSelected.replace(':', '/');
 
                                 //dropdown or inputbox
                                 String[] separated = secondSiteSelected.split("/");
@@ -849,20 +672,17 @@ public class MyAccount3Fragment extends Fragment {
                                 separated[1] = separated[1];
 
                                 isChildDropDown = Integer.parseInt(separated[1]);
-                                if(isChildDropDown == 0)
-                                {
-                                    AppConfiguration.strSecondary = ""+secondSiteSelected;
+                                if (isChildDropDown == 0) {
+                                    AppConfiguration.strSecondary = "" + secondSiteSelected;
                                     btn_third_level.setVisibility(View.VISIBLE);
                                     edtThirdLevel.setVisibility(View.GONE);
 
-                                }
-                                else
-                                {
+                                } else {
                                     btn_third_level.setVisibility(View.GONE);
                                     edtThirdLevel.setVisibility(View.VISIBLE);
 
-                                    AppConfiguration.strOther = ""+ edtSecondaryLevel.getText().toString();
-                                    Log.e("Secondary strOther",""+AppConfiguration.strOther);
+                                    AppConfiguration.strOther = "" + edtSecondaryLevel.getText().toString();
+                                    Log.e("Secondary strOther", "" + AppConfiguration.strOther);
                                 }
 
                                 isInternetPresent = Utility.isNetworkConnected(getActivity());
@@ -874,25 +694,16 @@ public class MyAccount3Fragment extends Fragment {
                             }
                         });
 
-            }
-            else
-            {
+            } else {
 
                 //next child is dropdown or input box
-                if(isMasterDropDown == 0)
-                {
+                if (isMasterDropDown == 0) {
                     btn_secondary.setVisibility(View.GONE);
                     edtSecondaryLevel.setVisibility(View.GONE);
-                }
-                else
-                {
+                } else {
                     btn_secondary.setVisibility(View.GONE);
                     edtSecondaryLevel.setVisibility(View.VISIBLE);
                 }
-
-                //spinnerSecondaryChild.setVisibility(View.GONE);
-                //edtSecondaryLevel.setVisibility(View.GONE);
-
                 btn_third_level.setVisibility(View.GONE);
                 edtThirdLevel.setVisibility(View.GONE);
             }
@@ -903,12 +714,11 @@ public class MyAccount3Fragment extends Fragment {
     //====================================== child level 2 end ===============================
 
 
-
     //==========================================Start of Site List ===================================================
     public void loadSitesList() {
         siteMainList.clear();
 
-        HashMap<String, String > params = new HashMap<String, String>();
+        HashMap<String, String> params = new HashMap<String, String>();
 
         String responseString = WebServicesCall.RunScript(AppConfiguration.getSiteListURL, params);
         readAndParseJSON(responseString);
@@ -925,9 +735,9 @@ public class MyAccount3Fragment extends Fragment {
                 HashMap<String, String> hashmap = new HashMap<String, String>();
 
                 hashmap.put("SiteID", jsonChildNode.getString("SiteID"));
-                hashmap.put("SiteName",jsonChildNode.getString("SiteName"));
+                hashmap.put("SiteName", jsonChildNode.getString("SiteName"));
 
-                siteName.add(""+jsonChildNode.getString("SiteName"));
+                siteName.add("" + jsonChildNode.getString("SiteName"));
                 siteMainList.add(hashmap);
             }
 
@@ -967,10 +777,8 @@ public class MyAccount3Fragment extends Fragment {
                 pd.dismiss();
             }
 
-            for(int i = 0 ; i < siteMainList.size(); i++)
-            {
-                if(AppConfiguration.SiteID.equals(siteMainList.get(i).get("SiteID")))
-                {
+            for (int i = 0; i < siteMainList.size(); i++) {
+                if (AppConfiguration.SiteID.equals(siteMainList.get(i).get("SiteID"))) {
                     btn_sites.setEnabled(true);
                     btn_sites.setText(siteMainList.get(i).get("SiteName"));
 
@@ -994,7 +802,7 @@ public class MyAccount3Fragment extends Fragment {
             }
 
 
-            lpw_sitelist.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(),R.layout.edittextpopup,siteName));
+            lpw_sitelist.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(), R.layout.edittextpopup, siteName));
             lpw_sitelist.setAnchorView(btn_sites);
             lpw_sitelist.setHeight(LayoutParams.WRAP_CONTENT);
             lpw_sitelist.setModal(true);
@@ -1033,33 +841,32 @@ public class MyAccount3Fragment extends Fragment {
 
     //======================================== Submit button event =======================
 
-    public void submittingData()
-    {
-        HashMap<String, String > params = new HashMap<String, String>();
-        params.put("Token",token );
-        params.put("EmailAdd",AppConfiguration.EmailAdd );
-        params.put("ConfirmEmail",AppConfiguration.ConfirmEmail );
-        params.put("Password",AppConfiguration.Password );
-        params.put("ConfrmPassword",AppConfiguration.ConfrmPassword );
-        params.put("PFirstName",AppConfiguration.PFirstName );
-        params.put("PLastName",AppConfiguration.PLastName );
-        params.put("SFirstName",AppConfiguration.SFirstName );
-        params.put("SLastName",AppConfiguration.SLastName );
-        params.put("Address",AppConfiguration.Address );
-        params.put("Zipcode",AppConfiguration.Zipcode );
-        params.put("State",AppConfiguration.State );
-        params.put("City",AppConfiguration.City );
-        params.put("SiteID",AppConfiguration.SiteID );
-        params.put("OrgPass",AppConfiguration.Orgpassword);
-        params.put("OrgCnfrmPass",AppConfiguration.OrgConfrmpassword);
-        if(AppConfiguration.strMaster.equals("") || AppConfiguration.strMaster == null)
+    public void submittingData() {
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("Token", token);
+        params.put("EmailAdd", AppConfiguration.EmailAdd);
+        params.put("ConfirmEmail", AppConfiguration.ConfirmEmail);
+        params.put("Password", AppConfiguration.Password);
+        params.put("ConfrmPassword", AppConfiguration.ConfrmPassword);
+        params.put("PFirstName", AppConfiguration.PFirstName);
+        params.put("PLastName", AppConfiguration.PLastName);
+        params.put("SFirstName", AppConfiguration.SFirstName);
+        params.put("SLastName", AppConfiguration.SLastName);
+        params.put("Address", AppConfiguration.Address);
+        params.put("Zipcode", AppConfiguration.Zipcode);
+        params.put("State", AppConfiguration.State);
+        params.put("City", AppConfiguration.City);
+        params.put("SiteID", AppConfiguration.SiteID);
+        params.put("OrgPass", AppConfiguration.Orgpassword);
+        params.put("OrgCnfrmPass", AppConfiguration.OrgConfrmpassword);
+        if (AppConfiguration.strMaster.equals("") || AppConfiguration.strMaster == null)
             AppConfiguration.strMaster = "0";
-        if(AppConfiguration.strSecondary.equals("") || AppConfiguration.strSecondary == null)
+        if (AppConfiguration.strSecondary.equals("") || AppConfiguration.strSecondary == null)
             AppConfiguration.strSecondary = "0";
-        if(AppConfiguration.strChild.equals("") || AppConfiguration.strChild == null)
+        if (AppConfiguration.strChild.equals("") || AppConfiguration.strChild == null)
             AppConfiguration.strChild = "0";
 
-        params.put("strMaster",AppConfiguration.strMaster );
+        params.put("strMaster", AppConfiguration.strMaster);
         params.put("strChild", AppConfiguration.strChild);
         params.put("strSecondary", AppConfiguration.strSecondary);
         params.put("strOther", AppConfiguration.strOther);
@@ -1094,12 +901,11 @@ public class MyAccount3Fragment extends Fragment {
     public void readAndParseJSONSubmit(String in) {
         try {
             JSONObject reader = new JSONObject(in);
-            registerSuccess= reader.getString("Success");
+            registerSuccess = reader.getString("Success");
 
             Log.d("registerSuccess", registerSuccess);
 
-            if(registerSuccess.toString().equals("True"))
-            {
+            if (registerSuccess.toString().equals("True")) {
 
                 JSONArray jsonMainNode = reader.optJSONArray("UpdateFamilyDtl");
 
@@ -1108,9 +914,7 @@ public class MyAccount3Fragment extends Fragment {
                     registerSuccessMessage = jsonChildNode.getString("Msg");
 
                 }
-            }
-            else
-            {
+            } else {
                 JSONArray jsonMainNode = reader.optJSONArray("UpdateFamilyDtl");
 
                 for (int i = 0; i < jsonMainNode.length(); i++) {
@@ -1153,27 +957,21 @@ public class MyAccount3Fragment extends Fragment {
                 pd.dismiss();
             }
 
-            if(registerSuccess.toString().equals("True"))
-            {
+            if (registerSuccess.toString().equals("True")) {
                 AppConfiguration.strOther = "";
-                Intent i = new Intent(getActivity(),DashBoardActivity.class);
+                Intent i = new Intent(getActivity(), DashBoardActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.putExtra("POS", 2);
                 startActivity(i);
-                Toast.makeText(getActivity(), ""+registerSuccessMessage, Toast.LENGTH_LONG).show();
-                //				((DashBoardActivity)getActivity()).viewaccount();
+                Toast.makeText(getActivity(), "" + registerSuccessMessage, Toast.LENGTH_LONG).show();
 
-            }
-            else
-            {
+            } else {
                 AppConfiguration.strOther = "";
-                Toast.makeText(getActivity(), ""+registerSuccessMessage, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "" + registerSuccessMessage, Toast.LENGTH_LONG).show();
             }
 
         }
     }
-
-
 
 
 }

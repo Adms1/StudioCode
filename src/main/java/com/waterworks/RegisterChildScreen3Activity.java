@@ -43,16 +43,11 @@ public class RegisterChildScreen3Activity extends FragmentActivity {
 	ArrayList<String> genderList = new ArrayList<String>();
 	ArrayList<String> natureList = new ArrayList<String>();
 	ArrayList<HashMap<String, String>> instructorList = new ArrayList<HashMap<String,String>>();
-
 	Button btnSaveAddAnother,btnSaveAndProceed;
-
-
 	CheckBox checkBox;
 	ImageView imgBack;
 	StringBuilder builder;
 	String message;
-	//Spinner spinner1Level;
-
 	TextView txtAdditionalInfo;
 	LinearLayout ll_additional_info;
 	TextView txtHideInfo;
@@ -365,30 +360,6 @@ public class RegisterChildScreen3Activity extends FragmentActivity {
 			AppConfiguration.strYesNo2 = "N";
 		}
 	}
-
-
-
-	//	public void levelTypesCalculation()
-	//	{
-	//		natureList.add(AppConfiguration.levelTypes);
-	//		//natureList.add("6");
-	//		// Student Gender drop down.
-	//		ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(RegisterChildScreen3Activity.this,android.R.layout.simple_spinner_item, natureList);
-	//		dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-	//		spinner1Level.setAdapter(dataAdapter1);
-	//		spinner1Level.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-	//
-	//			@Override
-	//			public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long arg3) {
-	//
-	//				AppConfiguration.levelTypes = spinner1Level.getSelectedItem().toString();
-	//			}
-	//
-	//			@Override
-	//			public void onNothingSelected(AdapterView<?> arg0) {
-	//			}
-	//		});
-	//	}
 	public void registerChildProcess() {
 
 		HashMap<String, String > param = new HashMap<String, String>();
@@ -491,30 +462,11 @@ public class RegisterChildScreen3Activity extends FragmentActivity {
 
 				if(isSaveAndProceedClick == true)
 				{
-					//					FragmentManager fragmentManager = getFragmentManager();
-					//		            FragmentTransaction fragmentTransaction = fragmentManager
-					//		                    .beginTransaction();
-					//		            MyAccount1Fragment fragmentS1 = new MyAccount1Fragment();
-					//		            fragmentTransaction.replace(R.id.frame_container, fragmentS1);
-					//		            fragmentTransaction.commit();
 
-					//					MyAccount1Fragment fragment = new MyAccount1Fragment();
-					//					FragmentManager fragmentManager = getFragmentManager();
-					//					fragmentManager.beginTransaction()
-					//							.replace(android.R.id.content, fragment).commit();
                     Intent i = new Intent(RegisterChildScreen3Activity.this,RegisterChildScreen1Activity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
                     finish();
-//					Student_Doc_Update();
-
-					//					if (AppConfiguration.logCount.equals("0")) {
-					//						Intent i = new Intent(RegisterChildScreen3Activity.this,DashBoardActivity.class);
-					//						i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					//						startActivity(i);
-					//						finish();
-					//					} else
-					//						finish();
 				}
 				else
 				{
@@ -544,8 +496,6 @@ public class RegisterChildScreen3Activity extends FragmentActivity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-
-			//Toast.makeText(getActivity().getApplicationContext(), AppConfiguration.token, Toast.LENGTH_LONG).show();
 
 			pd = new ProgressDialog(RegisterChildScreen3Activity.this);
 			pd.setMessage(getResources().getString(R.string.pleasewait));

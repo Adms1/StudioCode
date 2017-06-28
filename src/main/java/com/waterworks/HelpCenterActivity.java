@@ -36,114 +36,80 @@ import com.wscall.WebServicesCall;
 @SuppressWarnings("deprecation")
 public class HelpCenterActivity extends Activity {
 
-	String TAG = "HelpCenter";
-	LinearLayout ll_secondary_parent;
-	Button btnSubmit;
-	//Spinner spinner1;
-	ArrayList<HashMap<String, String>> phoneTypeList = new ArrayList<HashMap<String, String>>();
-	ArrayList<String> typeList = new ArrayList<String>();
+    String TAG = "HelpCenter";
+    LinearLayout ll_secondary_parent;
+    Button btnSubmit;
+    EditText edtDescription, edtStepReproduce;
+    ArrayList<HashMap<String, String>> siteMainList = new ArrayList<HashMap<String, String>>();
+    ArrayList<String> siteName = new ArrayList<String>();
+    String description, stepReproduce;
+    String successFeedback;
+    String messageFeedback;
 
-	String primaryPhoneType;
-	String secondaryPhoneType;
+    Button btnSuggestChanges, btnProblemReport;
+    int selectedButton = 1;
+    Context mContext = this;
+    Boolean isInternetPresent = false;
+    String token, familyID;
 
-	EditText edtDescription,edtStepReproduce;
+    RelativeLayout rel_problem;
+    TextView txtTitle;
 
-	RelativeLayout rel_back;
-	ArrayList<HashMap<String, String>> siteMainList = new ArrayList<HashMap<String, String>>();
-	ArrayList<String> siteName = new ArrayList<String>();
-	String selectedSiteID,selectedSiteName;
-	String description,stepReproduce;
-	String successFeedback;
-	String messageFeedback;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.help_center_activity);
 
-	Button btnSuggestChanges,btnProblemReport;
-	int selectedButton = 1;
-	Context mContext=this;
-	Boolean isInternetPresent = false;
-	String token,familyID;
+        //getting token
+        SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
+        token = prefs.getString("Token", "");
+        familyID = prefs.getString("FamilyID", "");
+        Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
+        ll_secondary_parent = (LinearLayout) findViewById(R.id.ll_secondary_parent);
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        edtDescription = (EditText) findViewById(R.id.edtDescription);
+        edtStepReproduce = (EditText) findViewById(R.id.edtStepReproduce);
 
-	RelativeLayout rel_problem;
-	TextView txtTitle;
+        btnSuggestChanges = (Button) findViewById(R.id.btnSuggestChanges);
+        btnProblemReport = (Button) findViewById(R.id.btnProblemReport);
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.help_center_activity);
+        rel_problem = (RelativeLayout) findViewById(R.id.rel_problem);
+        txtTitle = (TextView) findViewById(R.id.txtTitle);
 
-		//getting token
-		SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
-		token = prefs.getString("Token", "");
-		familyID = prefs.getString("FamilyID", "");
-		Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
+        btnSuggestChanges.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        btnProblemReport.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
 
-		//	spinner1 = (Spinner) findViewById(R.id.spinner1_sites);
-		ll_secondary_parent = (LinearLayout) findViewById(R.id.ll_secondary_parent);
-		btnSubmit = (Button) findViewById(R.id.btnSubmit);
-		edtDescription = (EditText)findViewById(R.id.edtDescription);
-		edtStepReproduce = (EditText)findViewById(R.id.edtStepReproduce);
+        btnSubmit.setOnClickListener(new OnClickListener() {
 
-		btnSuggestChanges = (Button) findViewById(R.id.btnSuggestChanges);
-		btnProblemReport = (Button) findViewById(R.id.btnProblemReport);
-
-		rel_problem = (RelativeLayout)findViewById(R.id.rel_problem);
-		txtTitle = (TextView)findViewById(R.id.txtTitle);
-
-
-
-
-		btnSuggestChanges.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-
-
-			}
-		});
-
-
-		btnProblemReport.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-
-
-			}
-		});
-
-		btnSubmit.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-
-
-				description = edtDescription.getText().toString();
-				stepReproduce = edtStepReproduce.getText().toString(); 
-
-				if(description.isEmpty())
-				{
-					Toast.makeText(getApplicationContext(), R.string.empty_fields, Toast.LENGTH_LONG).show();
-				}
-				else
-				{
-					isInternetPresent = Utility.isNetworkConnected(HelpCenterActivity.this);
-					if (!isInternetPresent) {
-						onDetectNetworkState().show();
-					} else {
-						new SuggestionOrProblemAsyncTask().execute();
-					}
-
-				}
-			}
-		});
-
-
-		// fetching header view
-
+            @Override
+            public void onClick(View v) {
+                description = edtDescription.getText().toString();
+                stepReproduce = edtStepReproduce.getText().toString();
+                if (description.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), R.string.empty_fields, Toast.LENGTH_LONG).show();
+                } else {
+                    isInternetPresent = Utility.isNetworkConnected(HelpCenterActivity.this);
+                    if (!isInternetPresent) {
+                        onDetectNetworkState().show();
+                    } else {
+                        new SuggestionOrProblemAsyncTask().execute();
+                    }
+                }
+            }
+        });
+        // fetching header view
         View view = findViewById(R.id.header);
-
-        TextView title = (TextView)view.findViewById(R.id.page_title);
+        TextView title = (TextView) view.findViewById(R.id.page_title);
         title.setText("Contact us");
-        LinearLayout ll_ProgressReport,ll_ViewCertificate,ll_RibbonCount;
+        LinearLayout ll_ProgressReport, ll_ViewCertificate, ll_RibbonCount;
         ll_ProgressReport = (LinearLayout) view.findViewById(R.id.scdl_lsn);
         ll_ViewCertificate = (LinearLayout) view.findViewById(R.id.scdl_mkp);
         ll_RibbonCount = (LinearLayout) view.findViewById(R.id.waitlist);
@@ -152,16 +118,16 @@ public class HelpCenterActivity extends Activity {
         vert_1.setVisibility(View.GONE);
         ll_ProgressReport.setVisibility(View.GONE);
 
-        TextView txt_2 = (TextView)view.findViewById(R.id.txt_2);
-        TextView txt_3 = (TextView)view.findViewById(R.id.txt_3);
+        TextView txt_2 = (TextView) view.findViewById(R.id.txt_2);
+        TextView txt_3 = (TextView) view.findViewById(R.id.txt_3);
 
         txt_2.setText("Suggest Changes");
         txt_3.setText("Report a Problem");
 
-        ImageButton ib_menusad = (ImageButton)view.findViewById(R.id.ib_menusad);
+        ImageButton ib_menusad = (ImageButton) view.findViewById(R.id.ib_menusad);
         ib_menusad.setBackgroundResource(R.drawable.menu_icon_new);
 
-        Button relMenu = (Button)view.findViewById(R.id.returnStack);
+        Button relMenu = (Button) view.findViewById(R.id.returnStack);
         relMenu.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,124 +166,115 @@ public class HelpCenterActivity extends Activity {
             }
         });
 
-	}
+    }
 
-	public AlertDialog onDetectNetworkState() {
-		AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
-		builder1.setIcon(R.drawable.logo);
-		builder1.setMessage("Please turn on internet connection and try again.")
-				.setTitle("No Internet Connection.")
-				.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+    public AlertDialog onDetectNetworkState() {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
+        builder1.setIcon(R.drawable.logo);
+        builder1.setMessage("Please turn on internet connection and try again.")
+                .setTitle("No Internet Connection.")
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						finish();
-					}
-				})
-				.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // TODO Auto-generated method stub
+                        finish();
+                    }
+                })
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
-					}
-				});
-		return builder1.create();
-	}
-	//===================================== feedback =======================================
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // TODO Auto-generated method stub
+                        startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+                    }
+                });
+        return builder1.create();
+    }
+    //===================================== feedback =======================================
 
-	public void submittingSuggestionProblem() {
+    public void submittingSuggestionProblem() {
 
-		HashMap<String, String > param = new HashMap<String, String>();
-		param.put("Token",token );
-		param.put("Description", ""+description);
-		param.put("Type", ""+selectedButton);
-		param.put("StepReproduce", ""+stepReproduce);
+        HashMap<String, String> param = new HashMap<String, String>();
+        param.put("Token", token);
+        param.put("Description", "" + description);
+        param.put("Type", "" + selectedButton);
+        param.put("StepReproduce", "" + stepReproduce);
 
-		String responseString = WebServicesCall.RunScript(AppConfiguration.HelpURLNEW, param);
-		readAndParseJSONFeedback(responseString);
+        String responseString = WebServicesCall.RunScript(AppConfiguration.HelpURLNEW, param);
+        readAndParseJSONFeedback(responseString);
 
-	}
+    }
 
-	public void readAndParseJSONFeedback(String in) {
+    public void readAndParseJSONFeedback(String in) {
 
-		try {
-			JSONObject reader = new JSONObject(in);
-			successFeedback = reader.getString("Success");
-			if(successFeedback.toString().equals("True"))
-			{
-				JSONArray jsonMainNode;
+        try {
+            JSONObject reader = new JSONObject(in);
+            successFeedback = reader.getString("Success");
+            if (successFeedback.toString().equals("True")) {
+                JSONArray jsonMainNode;
 
-				jsonMainNode = reader.optJSONArray("FinalArray");
+                jsonMainNode = reader.optJSONArray("FinalArray");
+                for (int i = 0; i < jsonMainNode.length(); i++) {
+                    JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
+                    messageFeedback = jsonChildNode.getString("Msg");
 
-				for (int i = 0; i < jsonMainNode.length(); i++) {
-					JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-					messageFeedback = jsonChildNode.getString("Msg"); 
+                }
+            } else {
+                JSONArray jsonMainNode;
 
-				}
-			}
-			else
-			{
-				JSONArray jsonMainNode;
+                jsonMainNode = reader.optJSONArray("FinalArray");
+                for (int i = 0; i < jsonMainNode.length(); i++) {
+                    JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
+                    messageFeedback = jsonChildNode.getString("Msg");
 
-				jsonMainNode = reader.optJSONArray("FinalArray");
-
-				for (int i = 0; i < jsonMainNode.length(); i++) {
-					JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-					messageFeedback = jsonChildNode.getString("Msg"); 
-
-				}
-			}
+                }
+            }
 
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-	}
-
-
-	class SuggestionOrProblemAsyncTask extends AsyncTask<Void, Void, Void> {
-		ProgressDialog pd;
-
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-			pd = new ProgressDialog(HelpCenterActivity.this);
-			pd.setMessage(getResources().getString(R.string.pleasewait));
-			pd.setCancelable(false);
-			pd.show();
-		}
-
-		@Override
-		protected Void doInBackground(Void... params) {
-			submittingSuggestionProblem();
-
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(Void result) {
-			super.onPostExecute(result);
-			if (pd != null) {
-				pd.dismiss();
-			}
-
-			if(successFeedback.toString().equals("True"))
-			{
-				Toast.makeText(getApplicationContext(), ""+messageFeedback,  Toast.LENGTH_LONG).show();
-				finish();
-			}
-			else
-			{
-				Toast.makeText(getApplicationContext(), ""+messageFeedback,  Toast.LENGTH_LONG).show();
-			}
+    }
 
 
+    class SuggestionOrProblemAsyncTask extends AsyncTask<Void, Void, Void> {
+        ProgressDialog pd;
 
-		}
-	}
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pd = new ProgressDialog(HelpCenterActivity.this);
+            pd.setMessage(getResources().getString(R.string.pleasewait));
+            pd.setCancelable(false);
+            pd.show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            submittingSuggestionProblem();
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            if (pd != null) {
+                pd.dismiss();
+            }
+
+            if (successFeedback.toString().equals("True")) {
+                Toast.makeText(getApplicationContext(), "" + messageFeedback, Toast.LENGTH_LONG).show();
+                finish();
+            } else {
+                Toast.makeText(getApplicationContext(), "" + messageFeedback, Toast.LENGTH_LONG).show();
+            }
+
+
+        }
+    }
 
 
 }

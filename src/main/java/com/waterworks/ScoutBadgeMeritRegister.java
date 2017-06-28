@@ -50,8 +50,7 @@ public class ScoutBadgeMeritRegister extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_swim_competition);
-		SharedPreferences prefs = AppConfiguration
-				.getSharedPrefs(getApplicationContext());
+		SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
 		token = prefs.getString("Token", "");
 		familyID = prefs.getString("FamilyID", "");
 		init();
@@ -247,17 +246,14 @@ public class ScoutBadgeMeritRegister extends Activity{
 					Sc_title = reader.getString("Msg");
 				}
 				if (SwimCampData.toString().equals("True")) {
-
 					Get_Capacity = new ArrayList<String>();
 					Get_EndDate = new ArrayList<String>();
 					Get_Name = new ArrayList<String>();
 					Get_StartDate = new ArrayList<String>();
 
-					JSONArray jsonMainNode = reader
-							.optJSONArray("FinalArray");
+					JSONArray jsonMainNode = reader.optJSONArray("FinalArray");
 					for (int i = 0; i < jsonMainNode.length(); i++) {
-						JSONObject jsonChildNode = jsonMainNode
-								.getJSONObject(i);
+						JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 						Get_Name.add(jsonChildNode.getString("Name"));
 						Get_Capacity.add(jsonChildNode.getString("Capacity"));
 						Get_StartDate.add(jsonChildNode.getString("Start Date"));
@@ -284,7 +280,6 @@ public class ScoutBadgeMeritRegister extends Activity{
 			}else{
 			}
 			already_title.setText(Sc_title);
-			//			txt_checkin.setText(Sc_title);
 			pd.dismiss();
 		}
 

@@ -58,8 +58,6 @@ public class SwimCompititionTrophyRoomAcitivity extends Activity {
 
     private LinearLayout ll_upcoming_meet, ll_register, ll_trophy_room, llTrophyRoomRibonCountLayout, llTrophyList;
     private TextView txt_1, txt_2, txt_3, txtStudentName, txtParticipant, txtTimeImprovement, txtTotal, txtTrophyCount, txtTrophyStatus, txtLabelViewResults;
-//    private_lessons ListView listTropiesCount;
-//    private_lessons TrophiesCountListAdapter trophiesCountListAdapter = null;
     private View selected_1, selected_2, selected_3;
     private GetStudentRibbonCountAsyncTask getStudentRibbonCountAsyncTask = null;
     private GetChildListAsyncTask getChildListAsyncTask = null;
@@ -108,7 +106,6 @@ public class SwimCompititionTrophyRoomAcitivity extends Activity {
                 txtTimeImprovement = (TextView) child.findViewById(R.id.txtTimeImprovement);
                 txtTotal = (TextView) child.findViewById(R.id.txtTotal);
                 txtLabelViewResults = (TextView) child.findViewById(R.id.txtLabelViewResults);
-//            listTropiesCount = (ListView) child.findViewById(R.id.listTropiesCount);
                 llTrophyList = (LinearLayout) child.findViewById(R.id.llTrophyList);
 
                 for (HashMap<String, String> listMap : trophyCountList.get(i)) {
@@ -435,8 +432,6 @@ public class SwimCompititionTrophyRoomAcitivity extends Activity {
     @Override
     public void onBackPressed() {
         // TODO Auto-generated method stub
-//		super.onBackPressed();
         finish();
-        //  ClearArray();
     }
 }

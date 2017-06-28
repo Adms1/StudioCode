@@ -11,20 +11,15 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.widget.CardView;
-import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,14 +58,12 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swim_compitition2_new);
 // getting token
-        SharedPreferences prefs = AppConfiguration
-                .getSharedPrefs(getApplicationContext());
+        SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
         token = prefs.getString("Token", "");
         familyID = prefs.getString("FamilyID", "");
 
         Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
         txtCompititionVal = (TextView) findViewById(R.id.txtCompititionVal);
-//        list = (ListView) findViewById(R.id.list);
         isInternetPresent = Utility.isNetworkConnected(SwimcompititionRegisterStep2Activity.this);
         Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
         Intent intent = getIntent();
@@ -81,12 +74,7 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
             MeetDate_Display = intent.getStringExtra("MeetDate_Display");
             SiteName = intent.getStringExtra("SiteName");
             starttime = intent.getStringExtra("meetStartTime");
-//            Toast.makeText(getApplicationContext(), "DateValue" + DateValue, Toast.LENGTH_LONG).show();
-            // sitename = intent.getStringExtra("sitename");
-            // sitename = intent.getStringExtra("sitename");
-            Log.d(TAG, "eventdates=" + eventdates);
-            Log.d(TAG, "sitename=" + SiteName);
-            Log.d(TAG, "DateValue SwimcompititionRegisterStep2Activity=" + DateValue);
+
             txtCompititionVal.setText(MeetDate_Display);
         }
         if (!isInternetPresent) {
@@ -115,9 +103,6 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
             relMenu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                Intent i=new Intent(SwimcompititionRegisterStep2Activity.this,SwimCompititionRegisterAcitivity.class);
-//                i.putExtra("datevalue", DateValue);
-//                startActivity(i);
                     finish();
                 }
             });
@@ -135,16 +120,13 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
                     for (int i = 0; i < thumbnailsselection.length; i++) {
                         if (thumbnailsselection[i] == true) {
                             noSelect = true;
-                            Log.e("sel pos thu-->", "" + i);
                             studentID.add(childList.get(i).get("StudentID").toString().trim());
                             studentNAME.add(childList.get(i).get("StudentName").toString().trim());
                         }
                     }
                     AppConfiguration.totalSelectedStudent = studentNAME.size();
                     if (!noSelect) {
-                        Toast.makeText(SwimcompititionRegisterStep2Activity.this,
-                                "Please select at lease one student.",
-                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SwimcompititionRegisterStep2Activity.this, "Please select at lease one student.", Toast.LENGTH_SHORT).show();
                     } else {
                         AppConfiguration.swimComptitionStudentID = studentID
                                 .toString().replaceAll("\\[", "")
@@ -202,6 +184,8 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
         isInternetPresent = Utility
                 .isNetworkConnected(SwimcompititionRegisterStep2Activity.this);
+        AppConfiguration.SelectedEventDataStep2="";
+        AppConfiguration.selectedStudent1.clear();
     }
 
     public void readAndParseJSONSwimMeetDateCheck(String in) {
@@ -209,8 +193,7 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
             JSONObject reader = new JSONObject(in);
             successSwimCompittionCheck1 = reader.getString("Success");
             if (successSwimCompittionCheck1.toString().equals("True")) {
-                JSONArray jsonMainNode = reader
-                        .optJSONArray("SwimMeetDateStep1check");
+                JSONArray jsonMainNode = reader.optJSONArray("SwimMeetDateStep1check");
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     msg1_Hours = jsonChildNode.getString("Msg1_Hours");
@@ -218,8 +201,7 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
                     Msg3_Meet = jsonChildNode.getString("Msg3_Meet");
                 }
             } else {
-                JSONArray jsonMainNode = reader
-                        .optJSONArray("SwimMeetDateStep1check");
+                JSONArray jsonMainNode = reader.optJSONArray("SwimMeetDateStep1check");
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     messageNormal = jsonChildNode.getString("Msg");
@@ -261,13 +243,11 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
             if (successSwimCompittionCheck1.equals("True")) {
                 if (msg1_Hours.equals("null") && msg2_meet.equals("null")
                         && Msg3_Meet.equals("null")) {
-                    Intent i = new Intent(SwimcompititionRegisterStep2Activity.this,
-                            SwimcompititionRegisterStep3Activity.class);
+                    Intent i = new Intent(SwimcompititionRegisterStep2Activity.this, SwimcompititionRegisterStep3Activity.class);
                     i.putExtra("datevalue", DateValue);
                     i.putExtra("time", time);
                     i.putExtra("eventdates", eventdates);
                     i.putExtra("MeetDate_Display", MeetDate_Display);
-                    //  i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
                 } else {
                     if (!msg1_Hours.equals("null")) {
@@ -322,9 +302,7 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
         param.put("Token", token);
         param.put("FamilyID", familyID);
         param.put("meetdate",Meetdate1);
-//        String responseString = WebServicesCall
-//                .RunScript(AppConfiguration.swimCampRegister1, param);
-//        readAndParseJSONChildList(responseString);
+
         String responseString = WebServicesCall.RunScript(AppConfiguration.swimCampRegister1_new, param);
         readAndParseJSONChildList(responseString);
     }
@@ -374,14 +352,10 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
                 pd.dismiss();
             }
             if (successLoadChildList.toString().equals("True")) {
-                /*CustomList adapter = new CustomList(SwimcompititionRegisterStep2Activity.this, childList);*/
-//                list.setAdapter(adapter);
                 count = childList.size();
                 thumbnailsselection = new boolean[count];
                 loadDataList(childList);
             } else {
-                // Toast.makeText(getApplicationContext(), "",
-                // Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -397,7 +371,6 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
                 checkbox.setId(i);
                 checkbox.setButtonDrawable(R.drawable.custom_check_orange);
                 txtStudentName.setId(i);
-//                checkbox.setOnClickListener(onClickListener);
                 checkbox.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         // TODO Auto-generated method stub
@@ -407,12 +380,10 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
                             cb.setChecked(false);
                             cb.setButtonDrawable(R.drawable.custom_check_orange);
                             thumbnailsselection[id] = false;
-                            Log.e("checkedData", thumbnailsselection.toString());
                         } else {
                             cb.setChecked(true);
                             thumbnailsselection[id] = true;
                             cb.setButtonDrawable(R.drawable.custom_check_orange);
-                            Log.e("checkedData", thumbnailsselection.toString());
                         }
                     }
                 });
@@ -441,13 +412,9 @@ public class SwimcompititionRegisterStep2Activity extends Activity {
             if (thumbnailsselection[id]) {
                 cb.setChecked(false);
                 thumbnailsselection[id] = false;
-
-                Log.e("checkedData", thumbnailsselection.toString());
             } else {
                 cb.setChecked(true);
                 thumbnailsselection[id] = true;
-
-                Log.e("checkedData", thumbnailsselection.toString());
             }
         }
     };

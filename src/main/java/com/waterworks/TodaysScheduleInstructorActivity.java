@@ -15,6 +15,7 @@ public class TodaysScheduleInstructorActivity extends Activity {
 		setContentView(R.layout.activity_todays_schedule_instructor);
 	}
 
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

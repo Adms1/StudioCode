@@ -71,12 +71,15 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
 
 
 /**
@@ -175,13 +178,6 @@ public class ScheduleLessonFragement extends Activity {
         AppConfiguration.pair2_Cmbo2 = "";
         AppConfiguration.pair3_Cmbo2 = "";
         AppConfiguration.pair4_Cmbo2 = "";
-
-//        08-06-2017 megha
-        AppConfiguration.pair1Check = "";
-        AppConfiguration.pair2Check = "";
-
-        AppConfiguration.pair1lessontype = "";
-        AppConfiguration.pair2lessontype = "";
 
         AppConfiguration.pair1_InstrList = "";
         AppConfiguration.pair2_InstrList = "";
@@ -597,8 +593,7 @@ public class ScheduleLessonFragement extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 // Rakesh 20112015............
-                endDateredBorder
-                        .setBackgroundResource(R.drawable.pure_error_border_white);
+                endDateredBorder.setBackgroundResource(R.drawable.pure_error_border_white);
                 Calendar minDate = Calendar.getInstance();
                 // minDate.set(mYEAR,
                 // mMONTH - 1,
@@ -615,8 +610,7 @@ public class ScheduleLessonFragement extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                start_redBorder
-                        .setBackgroundResource(R.drawable.pure_error_border_white);
+                start_redBorder.setBackgroundResource(R.drawable.pure_error_border_white);
                 Calendar minDate = Calendar.getInstance();
                 minDate.set(startyear, startmonth - 1, startday, 00, 00, 01);
                 DatePickerDialog mDialog = new DatePickerDialog(mContext,
@@ -655,11 +649,12 @@ public class ScheduleLessonFragement extends Activity {
                         @Override
                         public void run() {
                             students_check.startAnimation(new ExpandCollapseAnimation(students_check, 500, 0, ScheduleLessonFragement.this));
-                            scrollview.canScrollVertically(scrollview.getBottom());
+                            scrollview.scrollTo(1,scrollview.getBottom());
 
                         }
                     }, 500);
                 } else {
+                    yes1.setChecked(false);
                     AppConfiguration.schedulechoices = "7";
                     students_check.startAnimation(new ExpandCollapseAnimation(students_check, 500, 1, ScheduleLessonFragement.this));
 
@@ -667,7 +662,7 @@ public class ScheduleLessonFragement extends Activity {
                         @Override
                         public void run() {
                             que2.startAnimation(new ExpandCollapseAnimation(que2, 500, 0, ScheduleLessonFragement.this));
-                            scrollview.canScrollVertically(scrollview.getBottom());
+                            scrollview.scrollTo(1,scrollview.getBottom());
                         }
                     }, 500);
                 }
@@ -786,7 +781,6 @@ public class ScheduleLessonFragement extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (checkCHEKCSvalue(Integer.parseInt(combo1_limit), Integer.parseInt(combo2_limit)) == false) {
-
                 } else {
                     checkBox.setChecked(false);
                     if (isChecked)
@@ -870,7 +864,6 @@ public class ScheduleLessonFragement extends Activity {
             note_upper.setVisibility(View.INVISIBLE);
             que1.setVisibility(View.INVISIBLE);
         }
-
         @Override
         public void onAnimationEnd(Animation animation) {
             rel_enddate.setVisibility(View.VISIBLE);
@@ -878,12 +871,10 @@ public class ScheduleLessonFragement extends Activity {
             note_upper.setVisibility(View.VISIBLE);
             que1.setVisibility(View.VISIBLE);
         }
-
         @Override
         public void onAnimationRepeat(Animation animation) {
         }
     };
-
     public void radioButtonLogic(String forWhich, RadioButton rr) {
         System.out.println(forWhich);
         if (forWhich.equalsIgnoreCase("next")) {
@@ -968,9 +959,7 @@ public class ScheduleLessonFragement extends Activity {
             }
         }
     }
-
     public void nextMethod() {
-
         AppConfiguration.studentsize = AppConfiguration.selectedStudentsName.size();
         AppConfiguration.selectedStudentNameToSchedule = AppConfiguration.Array2String(AppConfiguration.selectedStudentsName);
         if (students_check.getVisibility() == View.VISIBLE) {
@@ -994,7 +983,6 @@ public class ScheduleLessonFragement extends Activity {
             }
         }
     }
-
     /**
      * Common Checkbox click method for all checkboxes.
      * Just go through this method and you'll get desire output
@@ -1018,7 +1006,6 @@ public class ScheduleLessonFragement extends Activity {
             }
         });
     }
-
     /**
      * Common validation like : startdate
      * EndDate
@@ -1056,7 +1043,6 @@ public class ScheduleLessonFragement extends Activity {
         }
         return validate;
     }
-
     /**
      * Questions validation
      *
@@ -1083,7 +1069,6 @@ public class ScheduleLessonFragement extends Activity {
         }
         return validate;
     }
-
     /**
      * After the all filters jump from this activity to Another.
      */
@@ -1093,12 +1078,31 @@ public class ScheduleLessonFragement extends Activity {
         AppConfiguration.salStep1LessonID = "";
         AppConfiguration.salStep1LessonText = "";
 
+
+        if (yes1.isChecked()) { //Combo remove duplicate selectedID 22-06-2017 navin
+
+            List duplicateList = new ArrayList();
+            duplicateList.clear();
+
+            for (int p=0;p<selectedID.size();p++) {
+                duplicateList.add(selectedID.get(p));
+            }
+
+            HashSet<String> listToSet = new HashSet<String>(duplicateList);
+             List<String> listWithoutDuplicates = new ArrayList<String>(listToSet);
+            selectedID.clear();
+            for(int k=0;k<listWithoutDuplicates.size();k++) {
+                if(!listWithoutDuplicates.get(k).equalsIgnoreCase("")) {
+                    selectedID.add(listWithoutDuplicates.get(k));
+                    System.out.println("Akjump" + selectedID);
+                }
+            }
+        }
+
         AppConfiguration.selectedStudentID = selectedStudents.toString().replaceAll("\\[", "").replaceAll("\\]", "");
-
+        AppConfiguration.selectedStudentIDforStep2 = selectedStudentsStep2.toString().replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s+", "");
         AppConfiguration.salStep1LessonID = selectedID.toString().replaceAll("\\[", "").replaceAll("\\]", "");
-
         AppConfiguration.salStep1LessonText = selectedText.toString().replaceAll("\\[", "").replaceAll("\\]", "");
-
         AppConfiguration.d2_startDate = start_date.getText().toString();
         AppConfiguration.d2_endDate = end_date.getText().toString();
 
@@ -1199,10 +1203,8 @@ public class ScheduleLessonFragement extends Activity {
         @Override
         protected Void doInBackground(Void... params) {
             loadSitesList();
-
             return null;
         }
-
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
@@ -1434,8 +1436,7 @@ public class ScheduleLessonFragement extends Activity {
             HashMap<String, String> params = new HashMap<String, String>();
             params.put("Token", token);
 
-            String responseString = WebServicesCall.RunScript(
-                    AppConfiguration.scheduleALessionStudentListURL, params);
+            String responseString = WebServicesCall.RunScript(AppConfiguration.scheduleALessionStudentListURL, params);
             try {
                 JSONObject reader = new JSONObject(responseString);
                 successGetStudentList = reader.getString("Success");
@@ -1455,20 +1456,14 @@ public class ScheduleLessonFragement extends Activity {
                         hashmap.put("StudentID", StudentID);
                         hashmap.put("SFirstName", SFirstName);
                         hashmap.put("SAge", SAge);
-
                         studentList.add(hashmap);
                     }
-                } else {
-
-                }
-
+                } else {}
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             return null;
         }
-
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
@@ -1531,7 +1526,6 @@ public class ScheduleLessonFragement extends Activity {
                         JSONObject jsonChildNode = jsonLessonLst_1.getJSONObject(i);
 
                         HashMap<String, String> hashmap = new HashMap<String, String>();
-
                         hashmap.put("LessonID", jsonChildNode.getString("LessionValue"));
                         hashmap.put("LessonName", jsonChildNode.getString("LessionType"));
                         hashmap.put("Enable", jsonChildNode.getString("Enable"));
@@ -1543,7 +1537,6 @@ public class ScheduleLessonFragement extends Activity {
                             JSONObject jsonChildNode = jsonLessonLst_2.getJSONObject(i);
 
                             HashMap<String, String> hashmap = new HashMap<String, String>();
-
                             hashmap.put("LessonID", jsonChildNode.getString("LessionValue"));
                             hashmap.put("LessonName", jsonChildNode.getString("LessionType"));
                             hashmap.put("Enable", jsonChildNode.getString("Enable"));
@@ -1556,7 +1549,6 @@ public class ScheduleLessonFragement extends Activity {
                             JSONObject jsonChildNode = jsonLessonLst_3.getJSONObject(i);
 
                             HashMap<String, String> hashmap = new HashMap<String, String>();
-
                             hashmap.put("LessonID", jsonChildNode.getString("LessionValue"));
                             hashmap.put("LessonName", jsonChildNode.getString("LessionType"));
                             hashmap.put("Enable", jsonChildNode.getString("Enable"));
@@ -1569,11 +1561,9 @@ public class ScheduleLessonFragement extends Activity {
                             JSONObject jsonChildNode = jsonLessonLst_4.getJSONObject(i);
 
                             HashMap<String, String> hashmap = new HashMap<String, String>();
-
                             hashmap.put("LessonID", jsonChildNode.getString("LessionValue"));
                             hashmap.put("LessonName", jsonChildNode.getString("LessionType"));
                             hashmap.put("Enable", jsonChildNode.getString("Enable"));
-
                             lessonTypesMainListForStudent4.add(hashmap);
                         }
                     }
@@ -1583,18 +1573,13 @@ public class ScheduleLessonFragement extends Activity {
                             JSONObject jsonChildNode = jsonLessonLst_5.getJSONObject(i);
 
                             HashMap<String, String> hashmap = new HashMap<String, String>();
-
                             hashmap.put("LessonID", jsonChildNode.getString("LessionValue"));
                             hashmap.put("LessonName", jsonChildNode.getString("LessionType"));
                             hashmap.put("Enable", jsonChildNode.getString("Enable"));
-
                             lessonTypesMainListForStudent5.add(hashmap);
                         }
                     }
-                } else {
-
-                }
-
+                } else {}
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1618,7 +1603,6 @@ public class ScheduleLessonFragement extends Activity {
                     final TextView track = (TextView) view.findViewById(R.id.track);
 
                     MainLay.setTag(studentList.get(i).get("SFirstName"));
-
                     if (i == 0) {
                         Temp_Lessons = lessonTypesMainListForStudent1;
                     } else if (i == 1) {
@@ -1643,13 +1627,13 @@ public class ScheduleLessonFragement extends Activity {
                         final RadioButton radioBtn = (RadioButton) RadioView.findViewById(R.id.radio_btn);
                         radioBtn.setText(Temp_Lessons.get(j).get("LessonName"));
                         radioBtn.setId(Integer.parseInt(Temp_Lessons.get(j).get("LessonID")));
-                        if (Temp_Lessons.get(j).get("Enable").equalsIgnoreCase("true")) {
-
-                        }else{
-                            radioBtn.setEnabled(false);
-                        }
+//                        if (Temp_Lessons.get(j).get("Enable").equalsIgnoreCase("true")) {
+//
+//                        }else{
+//                            radioBtn.setEnabled(false);
+//                        }
                         radioBtn.setTag(studentList.get(i).get("StudentID")
-                                + "|" + Temp_Lessons.get(j).get("LessonID")
+                                + "|" + Temp_Lessons.get(j).get("LessonID").trim()
                                 + "|" + studentList.get(i).get("SFirstName")
                                 + "|" + studentList.get(i).get("SAge"));
 
@@ -1659,9 +1643,6 @@ public class ScheduleLessonFragement extends Activity {
                             @Override
                             public void onClick(View v) {
                                 // TODO Auto-generated method stub
-
-
-                                scrollview.scrollTo(0, btn_next_card.getBottom());
                                 //07-06-2017 megha
                                 if (AppConfiguration.salStep1SiteLAFitness.equalsIgnoreCase("true")) {
                                     boolean agecheck = false;
@@ -1699,12 +1680,15 @@ public class ScheduleLessonFragement extends Activity {
                                     removeIT = true;
                                     clearCheckboxes();
                                     lsnTypes.clearCheck();
+                                    que1_grp.clearCheck();
+                                    yes1.setChecked(false);
                                     track.setText("");
 //                                    TransitionDrawable transition = (TransitionDrawable) superlay.getBackground();
 //                                    transition.reverseTransition(200);
                                     superlay.setBackgroundResource(R.color.student_back);
                                     MainLay.setBackgroundResource(R.color.student_back);
                                 } else {
+                                    scrollview.fullScroll(View.FOCUS_DOWN);
                                     studentName.setTag("checked");
                                     removeIT = false;
                                     track.setText(radioBtn.getText().toString());
@@ -1806,7 +1790,6 @@ public class ScheduleLessonFragement extends Activity {
                     }
                 }
             }
-
             if (AppConfiguration.animation) {
                 loadingScreens.startAnimation(animSlidup);
                 loadingScreens.animate()
@@ -1814,10 +1797,7 @@ public class ScheduleLessonFragement extends Activity {
                         .setDuration(300)
                         .setListener(new Animator.AnimatorListener() {
                             @Override
-                            public void onAnimationStart(Animator animation) {
-
-                            }
-
+                            public void onAnimationStart(Animator animation) {}
                             @Override
                             public void onAnimationEnd(Animator animation) {
                                 loadingScreens.setVisibility(View.GONE);
@@ -1828,11 +1808,9 @@ public class ScheduleLessonFragement extends Activity {
                                 endDateredBorder.startAnimation(animSlidup);
                                 student_title.startAnimation(animSlidup);
                             }
-
                             @Override
                             public void onAnimationCancel(Animator animation) {
                             }
-
                             @Override
                             public void onAnimationRepeat(Animator animation) {
                             }
@@ -1844,19 +1822,18 @@ public class ScheduleLessonFragement extends Activity {
             new GetMakeUpCount().execute();
         }
     }
-
     LinkedHashMap<String, String> filterd = new LinkedHashMap<String, String>();
-
-
     public void addToarray() {
-        selectedID.clear();
-        selectedText.clear();
+            selectedID.clear();
+            selectedText.clear();
+            selectedID.add(clsID.trim());
+            selectedID.add(clsID_2.trim());
+            selectedID.add(clsID_3.trim());
+            selectedID.add(clsID_4.trim());
+            selectedID.add(clsID_5.trim());
 
-        selectedID.add(clsID);
-        selectedID.add(clsID_2);
-        selectedID.add(clsID_3);
-        selectedID.add(clsID_4);
-        selectedID.add(clsID_5);
+
+
         selectedText.add(clsTxt);
         selectedText.add(clsTxt_2);
         selectedText.add(clsTxt_3);
@@ -1875,7 +1852,6 @@ public class ScheduleLessonFragement extends Activity {
      * @param stName
      */
     boolean flag = true;
-
     public void addToCorrectArray(String clsID, String stName) {
         if (flag) {
             doSomeStuff();
@@ -1884,15 +1860,12 @@ public class ScheduleLessonFragement extends Activity {
             if (sp_lesson.contains(stName)) {
                 sp_lesson.remove(stName);
             }
-
             if (grp_lesson.contains(stName)) {
                 grp_lesson.remove(stName);
             }
-
             if (strkINT.contains(stName)) {
                 strkINT.remove(stName);
             }
-
             if (PMadv.contains(stName)) {
                 PMadv.remove(stName);
             }
@@ -1920,7 +1893,6 @@ public class ScheduleLessonFragement extends Activity {
             if (adltInt.contains(stName)) {
                 adltInt.remove(stName);
             }
-
         } else {
             if (clsID.equals("2")) {//SemiPrivate
                 if (!sp_lesson.contains(stName)) {
@@ -2001,7 +1973,6 @@ public class ScheduleLessonFragement extends Activity {
                 if (grp_lesson.contains(stName)) {
                     grp_lesson.remove(stName);
                 }
-
                 if (strkINT.contains(stName)) {
                     strkINT.remove(stName);
                 }
@@ -2032,10 +2003,8 @@ public class ScheduleLessonFragement extends Activity {
                 if (adltInt.contains(stName)) {
                     adltInt.remove(stName);
                 }
-
             }
         }
-
         if (sp_lesson.size() > 1
                 || grp_lesson.size() > 1
                 || strkINT.size() > 1
@@ -2049,22 +2018,15 @@ public class ScheduleLessonFragement extends Activity {
                 || adltBeg.size() > 1
                 || adltInt.size() > 1) {
             AppConfiguration.reserverForever = "0";
-
-
-            Log.d("Expand---", "Expand");
             que1.startAnimation(new ExpandCollapseAnimation(que1, 500, 0, ScheduleLessonFragement.this));
         } else {
             try {
                 doSomeStuff();
-                Log.d("collapse---", "collapse");
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
-
-        System.out.println("SpLessons:" + sp_lesson);
-        System.out.println("GrpLessons:" + grp_lesson);
     }
 
     public void removeFromOther(String clsID, String stName) {
@@ -2745,10 +2707,10 @@ public class ScheduleLessonFragement extends Activity {
         temp_ID.removeAll(Collections.singleton(""));
         temp_TXT.removeAll(Collections.singleton(""));
 
-        selectedID.clear();
+       // selectedID.clear();
         selectedText.clear();
 
-        selectedID.addAll(temp_ID);
+        //selectedID.addAll(temp_ID); navin 22-06-22017
         selectedText.addAll(temp_TXT);
 
     }
@@ -2759,13 +2721,21 @@ public class ScheduleLessonFragement extends Activity {
      * except 1st user ID.
      */
     public void ReFilterIDS() {
+//        20-06-2017 megha change for 3&2 and 2&2 combo
         boolean found = false;
         ArrayList<String> tempID = new ArrayList<String>();
+        ArrayList<String> tempID1 = new ArrayList<String>();
+        ArrayList<String> tempID2 = new ArrayList<String>();
+        tempID1.clear();
+        tempID2.clear();
         tempID.addAll(selectedStudents);
         for (int i = 0; i < AppConfiguration.comboID.size(); i++) {
+
+            tempID1.add(AppConfiguration.comboID.get(i));
+
             if (new ArrayList<String>(filterd.values()).contains(AppConfiguration.comboID.get(i))) {
                 if (found) {
-                    tempID.remove(AppConfiguration.comboID.get(i));
+                    tempID.remove(AppConfiguration.comboID.get(i).trim());
                 }
                 found = true;
             }
@@ -2773,18 +2743,28 @@ public class ScheduleLessonFragement extends Activity {
 
         found = false;
         for (int i = 0; i < AppConfiguration.comboID2.size(); i++) {
+
+            tempID2.add(AppConfiguration.comboID2.get(i));
             if (new ArrayList<String>(filterd.values()).contains(AppConfiguration.comboID2.get(i))) {
                 if (found) {
-                    tempID.remove(AppConfiguration.comboID2.get(i));
+                    tempID.remove(AppConfiguration.comboID2.get(i).trim());
                 }
                 found = true;
             }
         }
 
-
+        ArrayList<String> tempM = new ArrayList<String>();
+        if (tempID2.size() >= 1) {
+            tempM.add(tempID1 + "|" + tempID2);
+        } else {
+            tempM.add(String.valueOf(tempID1 + "" + tempID2));
+        }
         selectedStudents.clear();
+        selectedStudentsStep2.clear();
+
         selectedStudents.addAll(tempID);
-        System.out.println("Filterd IDs " + tempID);
+        selectedStudentsStep2.addAll(tempM);
+        System.out.println("Filterd IDs " + tempM);
 
         nextMethod();
     }
@@ -2792,7 +2772,7 @@ public class ScheduleLessonFragement extends Activity {
     ArrayList<String> selectedStudents = new ArrayList<String>();
     ArrayList<String> selectedID = new ArrayList<String>();
     ArrayList<String> selectedText = new ArrayList<String>();
-
+    ArrayList<String> selectedStudentsStep2 = new ArrayList<String>();
 
     public void typeFace() {
         Typeface regular = Typeface.createFromAsset(mContext.getAssets(), "RobotoRegular.ttf");

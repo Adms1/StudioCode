@@ -46,7 +46,6 @@ public class JuniorLifeGuardRegister3 extends Activity{
 	String siteID;
 	Button relMenu;
 	private static String TAG = "JuniorRegister3";
-//	ListView lv_body;
 	public ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,finalstulist,remark, time;
 	TextView tv_dt3_total_prc_sess,tv_dt3_outstndg_bal,tv_dt3_total_sess_ent,tv_dt3_total_ch_reg;
 	String int_childno;
@@ -99,9 +98,7 @@ public class JuniorLifeGuardRegister3 extends Activity{
 			}
 		});
 		relMenu = (Button)findViewById(R.id.relMenu);
-//		lv_body = (ListView)findViewById(R.id.lv_dt2_list);
 		tv_dt3_total_prc_sess = (TextView)findViewById(R.id.tv_dt3_total_prc_sess);
-		//tv_dt3_outstndg_bal = (TextView)findViewById(R.id.tv_dt3_outstndg_bal);
 		tv_dt3_total_sess_ent = (TextView)findViewById(R.id.tv_dt3_total_sess_ent);
 		tv_dt3_total_ch_reg = (TextView)findViewById(R.id.tv_dt3_total_ch_reg);
 		btn_dt3_addtocart = (CardView) findViewById(R.id.btn_dt3_addtocart);
@@ -178,33 +175,6 @@ public class JuniorLifeGuardRegister3 extends Activity{
 			}
 		});
 	}
-	/*public void get_checked(){
-		for (int i = 0; i < JuniorLifeGuardRegister2.mChecked.size(); i++) {
-			if(JuniorLifeGuardRegister2.mChecked.get(i)){
-				int key = JuniorLifeGuardRegister2.mChecked.keyAt(i);
-				System.out.println("Key Value : " + key);
-				*//*FullName.add(JuniorLifeGuardRegister2.FullName.get(key));
-				Studentid.add(JuniorLifeGuardRegister2.Studentid.get(key));
-				tbid.add(JuniorLifeGuardRegister2.tbid.get(key));
-				sessionname.add(JuniorLifeGuardRegister2.sessionname.get(key));
-				startdate.add(JuniorLifeGuardRegister2.startdate.get(key));
-				enddate.add(JuniorLifeGuardRegister2.enddate.get(key));
-				unitprice.add(JuniorLifeGuardRegister2.unitprice.get(key));
-				sitename.add(JuniorLifeGuardRegister2.sitename.get(key));
-				remark.add(JuniorLifeGuardRegister2.remark.get(key));*//*
-			}
-		}
-		*//*lv_body.setAdapter(new Dt2BodyAdapter(JuniorLifeGuardRegister3.this,
-				FullName, Studentid, tbid, sessionname, startdate, enddate, unitprice, sitename,remark, time));*//*
-		tv_dt3_total_prc_sess.setText("$ "+ String.valueOf(total()));
-		//tv_dt3_outstndg_bal.setText("$ "+String.valueOf(total()));
-		tv_dt3_total_sess_ent.setText(String.valueOf(sessionname.size()));
-		tv_dt3_total_ch_reg.setText(int_childno);
-
-		String Studlist = array_spliter(Studentid, tbid);
-		System.out.println("StudentList : "+Studlist);
-	}*/
-
 	public int total(){
 		int total=0;
 		for (int i = 0; i < unitprice.size(); i++) {
@@ -233,9 +203,7 @@ public class JuniorLifeGuardRegister3 extends Activity{
 	}
 
 	public String method(String str) {
-		//	    if (str.length() > 0 && str.charAt(str.length()-1)==',') {
 		str = str.substring(0, str.length()-1);
-		//	    }
 		return str;
 	}
 
@@ -327,7 +295,6 @@ public class JuniorLifeGuardRegister3 extends Activity{
 					holder.tv_enddate.setText(Html.fromHtml("<b>Start Time:</b> "+time.get(position)));
 					holder.tv_site.setText(Html.fromHtml("<b>Site:</b> "+sitename.get(position)));
 					holder.tv_price.setText(Html.fromHtml("<b>Unit Price:</b> "+unitprice.get(position)));
-					//holder.tv_remark.setText(Html.fromHtml("<b>Remark:</b> "+remark.get(position)));
 				}
 				else{
 					holder = (ViewHolder) convertView.getTag();
@@ -377,7 +344,6 @@ public class JuniorLifeGuardRegister3 extends Activity{
 
 					Intent i = new Intent(JuniorLifeGuardRegister3.this,ByMoreMyCart.class);
 					startActivity(i);
-//					finish();
 				}
 				else{
 				}
@@ -482,11 +448,8 @@ public class JuniorLifeGuardRegister3 extends Activity{
 
 			if(dataload.toString().equalsIgnoreCase("True")){
 				if(FullName.size()>0){
-					/*lv_body.setAdapter(new Dt2BodyAdapter(JuniorLifeGuardRegister3.this,
-							FullName, Studentid, tbid, sessionname, startdate, enddate, unitprice, sitename,remark, time));*/
 					loadDataList();
 					tv_dt3_total_prc_sess.setText("$ "+ TotalSessionsPrice);
-					//tv_dt3_outstndg_bal.setText("$ "+TotalSessionsPrice);
 					tv_dt3_total_sess_ent.setText(TotalSessionsEntered);
 					tv_dt3_total_ch_reg.setText(TotalChildrenRegistered);
 				}else{
@@ -521,7 +484,6 @@ public class JuniorLifeGuardRegister3 extends Activity{
 				tv_enddate.setText(Html.fromHtml("<b>Start Time:</b> " + time.get(i)));
 				tv_site.setText(Html.fromHtml("<b>Site:</b> " + sitename.get(i)));
 				tv_price.setText(Html.fromHtml("<b>Unit Price:</b> " + unitprice.get(i)));
-				//holder.tv_remark.setText(Html.fromHtml("<b>Remark:</b> "+remark.get(position)));
 				llListData.addView(convertView);
 			}
 		}

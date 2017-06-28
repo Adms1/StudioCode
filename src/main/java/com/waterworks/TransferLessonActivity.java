@@ -20,7 +20,6 @@ public class TransferLessonActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_transfer_lesson);
-
 		Initialization();
 	}
 

@@ -63,8 +63,6 @@ public class Login_welcome_splashscreen extends AppCompatActivity {
         buttonok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                SharedPreferences.Editor editor = SP.edit();
-//                editor.putString("LoginStatus",user );
                 isInternetPresent = Utility.isNetworkConnected(Login_welcome_splashscreen.this);
                 if (!isInternetPresent)
                 {
@@ -85,8 +83,7 @@ public class Login_welcome_splashscreen extends AppCompatActivity {
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
                     finish();
-                    overridePendingTransition(R.anim.slide_in_right,
-                            R.anim.slide_out_left);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
             }
         });

@@ -53,10 +53,8 @@ public class SwimCampsRegister1Acitivity extends Activity {
 	ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
 
 	Boolean isInternetPresent = false;
-	// Spinner spinner1;
 	String siteID;
     View include_layout_step_boxes;
-//	ListView list;
 	LinearLayout llListData;
 	String successLoadChildList;
 	String token, familyID;
@@ -93,7 +91,6 @@ public class SwimCampsRegister1Acitivity extends Activity {
         txtHeader.setText("Swim Camps");
         btn_sites = (Button) findViewById(R.id.btn_sites);
         lpw_sitelist = new ListPopupWindow(getApplicationContext());
-//        list = (ListView) findViewById(R.id.list);
 		llListData = (LinearLayout) findViewById(R.id.llListData);
 		ScrollView =(ScrollView)findViewById(R.id.ScrollView);
 
@@ -204,7 +201,6 @@ public class SwimCampsRegister1Acitivity extends Activity {
 			}
 		});
 		// fetching header view
-//		View headerLayout = findViewById(R.id.layout_top);
 		Button relMenu = (Button) findViewById(R.id.relMenu);
 		relMenu.setOnClickListener(new OnClickListener() {
 
@@ -393,10 +389,8 @@ public class SwimCampsRegister1Acitivity extends Activity {
 
 					JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
-					String StudentID = jsonChildNode.getString("StudentID")
-							.trim();
-					String StudentName = jsonChildNode.getString("StudentName")
-							.trim();
+					String StudentID = jsonChildNode.getString("StudentID").trim();
+					String StudentName = jsonChildNode.getString("StudentName").trim();
 
 					hashmap.put("StudentID", StudentID);
 					hashmap.put("StudentName", StudentName);

@@ -50,8 +50,7 @@ public class ViewWaitlistActivity extends Activity implements OnClickListener{
 		familyID = prefs.getString("FamilyID", "");
 		Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
 		
-		isInternetPresent = Utility
-				.isNetworkConnected(ViewWaitlistActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(ViewWaitlistActivity.this);
 		if(!isInternetPresent){
 			onDetectNetworkState().show();
 		}

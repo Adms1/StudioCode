@@ -262,7 +262,7 @@ public class ProgressWheel extends View {
     //----------------------------------
 
     @SuppressLint("NewApi")
-	protected void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
         canvas.drawArc(circleBounds, 360, 360, false, rimPaint);
@@ -743,7 +743,7 @@ public class ProgressWheel extends View {
          * Method to call when the progress reaches a value
          * in order to avoid float precision issues, the progress
          * is rounded to a float with two decimals.
-         *
+         * <p>
          * In indeterminate mode, the callback is called each time
          * the wheel completes an animation cycle, with, the progress value is -1.0f
          *

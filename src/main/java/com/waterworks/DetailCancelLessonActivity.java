@@ -48,8 +48,7 @@ public class DetailCancelLessonActivity extends Activity {
 		token = prefs.getString("Token", "");
 		familyID = prefs.getString("FamilyID", "");
 		Log.d(TAG,"Token="+token+"\nFamilyID="+familyID);
-		isInternetPresent = Utility
-				.isNetworkConnected(DetailCancelLessonActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(DetailCancelLessonActivity.this);
 		if(isInternetPresent){
 			date = getIntent().getStringExtra("date");
 			day = getIntent().getStringExtra("day");
@@ -77,8 +76,7 @@ public class DetailCancelLessonActivity extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		isInternetPresent = Utility
-				.isNetworkConnected(DetailCancelLessonActivity.this);
+		isInternetPresent = Utility.isNetworkConnected(DetailCancelLessonActivity.this);
 		if(isInternetPresent){
 			Initialization();
 		}

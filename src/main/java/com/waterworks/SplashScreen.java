@@ -294,7 +294,9 @@ public class SplashScreen extends Activity {
 		AppConfiguration.scheduleALesssionSiteListURL = "Schl_Get_SiteByFamily";
 		AppConfiguration.scheduleALessionStudentListURL = "Schl_Get_StudentListByFamily";
 		AppConfiguration.scheduleALessionLessonTypesURL = "Schl_Get_Display_options_Step1";
-		AppConfiguration.scheduleALessionInstructorListURL = "Schl_Get_instrlistbyStudSelectionLevel";
+//		AppConfiguration.scheduleALessionInstructorListURL = "Schl_Get_instrlistbyStudSelectionLevel";
+		AppConfiguration.scheduleALessionInstructorListURL = "Schl_Get_instrlistbyStudSelectionLevel_Android";
+
 		AppConfiguration.scheduleALessionPageLoad = "Schl_Page_Load";
 		AppConfiguration.scheduleALessionStep2InstructorAvailabilityURL = "Schl_Get_Step2";
 		AppConfiguration.scheduleALessionStep3 = "Schl_Get_Step3";

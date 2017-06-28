@@ -83,19 +83,6 @@ public class LapSwimsMonthlyActivity extends Activity {
 		lv_list_month = (ListView)findViewById(R.id.lv_ls2_list);
 		btn_submit = (Button)findViewById(R.id.btn_ls2_submit);
 		
-//		month_name.add("JANUARY "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("FEBRUARY "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("MARCH "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("APRIL "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("MAY "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("JUNE "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("JULY "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("AUGUST "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("SEPTEMBER "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("OCTOBER "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("NOVEMBER "+Calendar.getInstance().get(Calendar.YEAR));
-//		month_name.add("DECEMBER "+Calendar.getInstance().get(Calendar.YEAR));
-		
 		ib_back = (ImageButton)findViewById(R.id.ib_back);
 		ib_back.setOnClickListener(new OnClickListener() {
 

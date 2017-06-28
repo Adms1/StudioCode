@@ -1204,6 +1204,7 @@ public class ShedulingFilter extends Activity {
             }
 
             filterAdvanced();
+
             ClassAvailListTempStud0 = ClassAvailListTemp0;
             ClassAvailListTempStud2 = ClassAvailListTemp2;
             ClassAvailListTempStud3 = ClassAvailListTemp3;

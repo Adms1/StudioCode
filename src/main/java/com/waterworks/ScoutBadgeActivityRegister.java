@@ -209,7 +209,6 @@ public class ScoutBadgeActivityRegister extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent i = new Intent(mContext,ScoutBadgeActivityRegister1.class);
-				//				Intent i = new Intent(mContext,SwimCompititionRegisterAcitivity.class);
 				startActivity(i);
 				finish();
 			}
@@ -254,11 +253,9 @@ public class ScoutBadgeActivityRegister extends Activity{
 					Get_Name = new ArrayList<String>();
 					Get_StartDate = new ArrayList<String>();
 
-					JSONArray jsonMainNode = reader
-							.optJSONArray("FinalArray");
+					JSONArray jsonMainNode = reader.optJSONArray("FinalArray");
 					for (int i = 0; i < jsonMainNode.length(); i++) {
-						JSONObject jsonChildNode = jsonMainNode
-								.getJSONObject(i);
+						JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 						Get_Name.add(jsonChildNode.getString("Name"));
 						Get_Capacity.add(jsonChildNode.getString("Capacity"));
 						Get_StartDate.add(jsonChildNode.getString("Start Date"));
@@ -285,7 +282,6 @@ public class ScoutBadgeActivityRegister extends Activity{
 			}else{
 			}
 			already_title.setText(Sc_title);
-			//			txt_checkin.setText(Sc_title);
 			pd.dismiss();
 		}
 

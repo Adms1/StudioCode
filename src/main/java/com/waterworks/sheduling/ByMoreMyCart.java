@@ -193,7 +193,8 @@ public class ByMoreMyCart extends Activity {
 //                    new cardDetailAsyncTask().execute();
 //                }
 //                new cardDetailAsyncTask().execute();\
-                if (totalPromoArray.size() > 0) {
+//                20-06-2017 megha
+                if (!successStr1.equalsIgnoreCase("False")) {
                     Intent i = new Intent(getApplicationContext(), BuyMoreSelectPaymentMethod.class);
                     startActivity(i);
                     finish();
@@ -559,7 +560,7 @@ public class ByMoreMyCart extends Activity {
                     || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("35") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("12")
                     || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("10") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("34")
                     || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("33") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("14")
-                    || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("15")|| myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("38")) {
+                    || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("15") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("38")) {
                 tv_view_cart_item_package.setText("Student: " + myCartArray.get(i).get("StudentName"));
 
             } else if (myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("3") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("4")) {
@@ -579,7 +580,7 @@ public class ByMoreMyCart extends Activity {
                         int qtystr = Integer.parseInt(myCartArray.get(i).get("Qty"));
                         if (qtystr >= packagestr) {
                             tv_view_cart_item_package.setText(myCartArray.get(i).get("Qty") + " Lesson Package");
-                        }else {
+                        } else {
                             tv_view_cart_item_package.setText(myCartArray.get(i).get("Package") + " Lesson Package");
                         }
                     } else {
@@ -600,7 +601,7 @@ public class ByMoreMyCart extends Activity {
                 if (myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("4") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("7")
                         || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("37") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("36")
                         || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("35") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("34")
-                        || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("33") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("3")||
+                        || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("33") || myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("3") ||
                         myCartArray.get(i).get("ItemTypeID").equalsIgnoreCase("38")) {
                     tv_view_cart_item_type.setText(myCartArray.get(i).get("Item"));
 

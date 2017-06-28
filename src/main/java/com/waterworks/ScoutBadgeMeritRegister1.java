@@ -65,7 +65,6 @@ public class ScoutBadgeMeritRegister1 extends Activity {
     ArrayList<String> StudentName, Studentid, sendingID;
     TextView txtSelChildText, txtPriceinfo;
     EditText tv_fsn_info;
-    //	ListView list;
     LinearLayout llListData;
     ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
 ScrollView scrollviewmeritbadge;
@@ -171,7 +170,6 @@ ScrollView scrollviewmeritbadge;
                         i.putExtra("stulist", sendingID.toString().replaceAll("\\[", "").replaceAll("\\]", ""));
                         i.putExtra("childno", "" + sendingID.size());
                         startActivity(i);
-//                        finish();
                     } else {
                         Toast.makeText(getApplicationContext(), "Please select at least one child.", Toast.LENGTH_SHORT).show();
                     }
@@ -202,7 +200,6 @@ ScrollView scrollviewmeritbadge;
         btn_site = (Button) findViewById(R.id.btn_dt_sites);
         relMenu = (Button) findViewById(R.id.relMenu);
         lpw_site = new ListPopupWindow(getApplicationContext());
-//		table_dt_childs = (TableLayout)findViewById(R.id.table_dt_childs);
         StudentName = new ArrayList<String>();
         Studentid = new ArrayList<String>();
         btn_continue = (CardView) findViewById(R.id.btn_continue_dt1);
@@ -431,10 +428,8 @@ ScrollView scrollviewmeritbadge;
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
             pd.show();
-            //data = 1;
             Studentid.clear();
             StudentName.clear();
-//			table_dt_childs.removeAllViews();
         }
         @Override
         protected Void doInBackground(Void... params) {
@@ -457,11 +452,9 @@ ScrollView scrollviewmeritbadge;
                 pd.dismiss();
             }
             if (data_load_child.toString().equals("True")) {
-                //	rl_rs_inside_body.setVisibility(View.VISIBLE);
                 sendingID = new ArrayList<String>();
                 loadDataList(childList);
             } else {
-                //	rl_rs_inside_body.setVisibility(View.GONE);
                 txtSelChildText.setText("You do not currently have a child that is eligible for this program.");
                 txtSelChildText.setTextColor(getResources().getColor(R.color.red));
             }

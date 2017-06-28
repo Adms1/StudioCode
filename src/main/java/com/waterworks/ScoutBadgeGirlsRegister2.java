@@ -57,11 +57,8 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
     CardView btn_dt2_continue;
     ListView lv_body;
     private ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
-    //	public static ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,finalstulist;
     public static ArrayList<HashMap<String, String>> GirlsScoutEventList = new ArrayList<HashMap<String, String>>();
     public static SparseBooleanArray mChecked = new SparseBooleanArray();
-    //	TextView tv_dives_turns_name;
-//    Animation animSlidInLeft = null;
     ArrayList<String> checked_value = new ArrayList<String>();
     View childTabs, viewOrangeBar;
 
@@ -76,8 +73,7 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
         familyID = prefs.getString("FamilyID", "");
         Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
 
-        isInternetPresent = Utility
-                .isNetworkConnected(ScoutBadgeGirlsRegister2.this);
+        isInternetPresent = Utility.isNetworkConnected(ScoutBadgeGirlsRegister2.this);
 
         if (isInternetPresent) {
             siteid = getIntent().getStringExtra("siteid");
@@ -124,7 +120,6 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
                             if (!strStudentID.toString().contains(valueArray[0])) {
                                 strStudentID = strStudentID.append(valueArray[0] + ", ");
                             }
-
                             if (str.toString().contains(valueArray[0])) {
                                 str = str.append("*" + valueArray[1]);
                             } else {
@@ -133,7 +128,6 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
                                 } else {
                                     str = str.append(valueArray[0] + "|" + valueArray[1]);
                                 }
-
                             }
                         }
 
@@ -145,7 +139,6 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
                             i.putExtra("childno", "" + childno);
                             i.putExtra("strStuList", str.toString());
                             startActivity(i);
-//					finish();
                         } else {
 //                            05-06-2017 megha
                             childTabs.setBackgroundResource(R.drawable.error_border);
@@ -192,12 +185,9 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
             llTabs.removeAllViews();
             makeTabs(v.getTag().toString());
             currentStudentID = v.getTag().toString().trim();
-//            Utility.ping(JuniorLifeGuardRegister2.this, currentStudentID);
             if (GirlsScoutEventList.size() > 0) {
                 Dt2BodyAdapter dt2BodyAdapter = new Dt2BodyAdapter(GirlsScoutEventList);
                 lv_body.setAdapter(dt2BodyAdapter);
-//                animSlidInLeft = AnimationUtils.loadAnimation(ScoutBadgeGirlsRegister2.this, R.anim.slide_in_right);
-//                lv_body.setAnimation(animSlidInLeft);
             } else {
                 Utility.ping(ScoutBadgeGirlsRegister2.this, "No Sessions Available");
             }
@@ -224,16 +214,6 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
         });
         btn_dt2_continue = (CardView) findViewById(R.id.btn_continue_dt2);
         lv_body = (ListView) findViewById(R.id.lv_dt2_list);
-//		FullName = new ArrayList<String>();
-//		Studentid = new ArrayList<String>();
-//		tbid = new ArrayList<String>();
-//		sessionname = new ArrayList<String>();
-//		startdate = new ArrayList<String>();
-//		enddate = new ArrayList<String>();
-//		unitprice = new ArrayList<String>();
-//		sitename = new ArrayList<String>();
-//		finalstulist = new ArrayList<String>();
-//		tv_dives_turns_name = (TextView)findViewById(R.id.tv_dives_turns_name);
     }
 
     @Override
@@ -249,7 +229,6 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
         isInternetPresent = Utility
                 .isNetworkConnected(ScoutBadgeGirlsRegister2.this);
-//        animSlidInLeft = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
     }
 
     @Override
@@ -359,7 +338,6 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
                 if (GirlsScoutEventList.size() > 0) {
                     Dt2BodyAdapter dt2BodyAdapter = new Dt2BodyAdapter(GirlsScoutEventList);
                     lv_body.setAdapter(dt2BodyAdapter);
-//                    lv_body.startAnimation(animSlidInLeft);
                 } else {
                     Utility.ping(ScoutBadgeGirlsRegister2.this, "No Sessions Available");
                 }
@@ -375,19 +353,9 @@ public class ScoutBadgeGirlsRegister2 extends Activity {
     public class Dt2BodyAdapter extends BaseAdapter {
         private final ArrayList<HashMap<String, String>> data = new ArrayList<>();
 
-        //		Context context;
-//		ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename;
+
         public Dt2BodyAdapter(ArrayList<HashMap<String, String>> list) {
             super();
-//			this.context = context;
-//			FullName = fullName;
-//			Studentid = studentid;
-//			this.tbid = tbid;
-//			this.sessionname = sessionname;
-//			this.startdate = startdate;
-//			this.enddate = enddate;
-//			this.unitprice = unitprice;
-//			this.sitename = sitename;
             for (int i = 0; i < list.size(); i++) {
                 if (currentStudentID.equalsIgnoreCase(list.get(i).get("Studentid"))) {
                     this.data.add(list.get(i));

@@ -128,7 +128,6 @@ public class TinyDB {
                 return "";
             }
         }
-
         return mFolder.getPath() + '/' + imageName;
     }
 

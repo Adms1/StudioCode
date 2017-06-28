@@ -78,7 +78,6 @@ public class UpcomingEventCompScheduleActivity extends Activity {
         llAllEventsList = (LinearLayout) findViewById(R.id.llAllEventsList);
         txtEstDuration = (TextView) findViewById(R.id.txtEstDuration);
     }
-
     public void fetchAndShowEventData() {
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
@@ -116,7 +115,6 @@ public class UpcomingEventCompScheduleActivity extends Activity {
             llAllEventListRow = (LinearLayout) child.findViewById(R.id.llAllEventListRow);
 
             txtEventTimeAndName.setText(upcomingAllEventStudListModels.get(i).getStartTime() + " " + upcomingAllEventStudListModels.get(i).getEventDescription());
-
             for (UpcomingAllEventStudListModel.Events eventList : upcomingAllEventStudListModels.get(i).getEventsList()) {
                 View childll = getLayoutInflater().inflate(R.layout.list_row_all_events_comp_schedule, null, false);
                 llAllEventsRow = (LinearLayout) childll.findViewById(R.id.llAllEventsRow);
@@ -135,14 +133,11 @@ public class UpcomingEventCompScheduleActivity extends Activity {
                     for (UpcomingEventStudListModel.Events eventListTop : upcomingEventStudListModels.get(k).getEventsList()) {
                         if (txtEventSymbol.getText().toString().equalsIgnoreCase(eventListTop.getEventNumber())) {
                             llAllEventsRow.setBackgroundColor(mContext.getResources().getColor(R.color.orange));
-                        }/*else {
-                            llAllEventListRow.setBackgroundResource(R.drawable.gray_border);
-                        }*/
+                        }
                     }
                 }
                 llAllEventListRow.addView(childll);
             }
-
             llAllEventsList.addView(child);
         }
     }
@@ -339,8 +334,7 @@ public class UpcomingEventCompScheduleActivity extends Activity {
                     IsUpcomingEventsflg = jsonChildNode.getString("IsUpcomingEvents");
                 }
             } else {
-                JSONArray jsonMainNode = reader
-                        .optJSONArray("EmailPref");
+                JSONArray jsonMainNode = reader.optJSONArray("EmailPref");
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     messageTime = jsonChildNode.getString("Msg");

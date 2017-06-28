@@ -42,7 +42,6 @@ public class ScoutBadgeActivityRegister3 extends Activity{
 
 	Button relMenu;
 	private static String TAG = "ScoutActivity3";
-//	ListView lv_body;
 	LinearLayout ll_list;
 	public ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,finalstulist, remarks, time;
 	TextView tv_dt3_total_prc_sess,tv_dt3_outstndg_bal,tv_dt3_total_sess_ent,tv_dt3_total_ch_reg;
@@ -77,7 +76,6 @@ public class ScoutBadgeActivityRegister3 extends Activity{
 			new GetDataForList().execute();
 			init();
 		}
-//		get_checked();
 	}
 		public void init(){
 		View include_layout_step_boxes = (View) findViewById(R.id.include_layout_step_boxes);
@@ -95,10 +93,8 @@ public class ScoutBadgeActivityRegister3 extends Activity{
 			}
 		});
 		relMenu = (Button)findViewById(R.id.relMenu);
-//		lv_body = (ListView)findViewById(R.id.lv_dt2_list);
 		ll_list = (LinearLayout) findViewById(R.id.ll_list);
 		tv_dt3_total_prc_sess = (TextView)findViewById(R.id.tv_dt3_total_prc_sess);
-		//tv_dt3_outstndg_bal = (TextView)findViewById(R.id.tv_dt3_outstndg_bal);
 		tv_dt3_total_sess_ent = (TextView)findViewById(R.id.tv_dt3_total_sess_ent);
 		tv_dt3_total_ch_reg = (TextView)findViewById(R.id.tv_dt3_total_ch_reg);
 		btn_dt3_addtocart = (CardView)findViewById(R.id.btn_dt3_addtocart);
@@ -173,32 +169,6 @@ public class ScoutBadgeActivityRegister3 extends Activity{
 			}
 		});
 	}
-	/*public void get_checked(){
-		for (int i = 0; i < ScoutBadgeActivityRegister2.mChecked.size(); i++) {
-			if(ScoutBadgeActivityRegister2.mChecked.get(i)){
-				int key = ScoutBadgeActivityRegister2.mChecked.keyAt(i);
-				System.out.println("Key Value : "+key);
-//				FullName.add(ScoutBadgeActivityRegister2.FullName.get(key));
-//				Studentid.add(ScoutBadgeActivityRegister2.Studentid.get(key));
-//				tbid.add(ScoutBadgeActivityRegister2.tbid.get(key));
-//				sessionname.add(ScoutBadgeActivityRegister2.sessionname.get(key));
-//				startdate.add(ScoutBadgeActivityRegister2.startdate.get(key));
-//				enddate.add(ScoutBadgeActivityRegister2.enddate.get(key));
-//				unitprice.add(ScoutBadgeActivityRegister2.unitprice.get(key));
-//				sitename.add(ScoutBadgeActivityRegister2.sitename.get(key));
-			}
-		}
-		lv_body.setAdapter(new Dt2BodyAdapter(ScoutBadgeActivityRegister3.this,
-				FullName, Studentid, tbid, sessionname, startdate, enddate, unitprice, sitename,  remarks, time));
-		tv_dt3_total_prc_sess.setText("$ "+ String.valueOf(total()));
-		//tv_dt3_outstndg_bal.setText("$ "+String.valueOf(total()));
-		tv_dt3_total_sess_ent.setText(String.valueOf(sessionname.size()));
-		tv_dt3_total_ch_reg.setText(int_childno);
-		
-		String Studlist = array_spliter(Studentid, tbid);
-		System.out.println("StudentList : "+Studlist);
-	}*/
-	
 	public int total(){
 		int total=0;
 		for (int i = 0; i < unitprice.size(); i++) {
@@ -227,9 +197,7 @@ public class ScoutBadgeActivityRegister3 extends Activity{
 	}
 	
 	public String method(String str) {
-//	    if (str.length() > 0 && str.charAt(str.length()-1)==',') {
 	      str = str.substring(0, str.length()-1);
-//	    }
 	    return str;
 	}
 
@@ -258,7 +226,6 @@ public class ScoutBadgeActivityRegister3 extends Activity{
 				tv_enddate.setText(Html.fromHtml("<b>Start Time:</b> " + time.get(i)));
 				tv_site.setText(Html.fromHtml("<b>Site:</b> " + sitename.get(i)));
 				tv_price.setText(Html.fromHtml("<b>Unit Price:</b> " + unitprice.get(i)));
-				//holder.tv_remark.setText(Html.fromHtml("<b>Remark:</b> "+remark.get(position)));
 				ll_list.addView(convertView);
 			}
 		}
@@ -272,116 +239,6 @@ public class ScoutBadgeActivityRegister3 extends Activity{
 			e.printStackTrace();
 		}
 	}
-
-	///////////////Dt2BodyAdapter//////////////////
-	/*public class Dt2BodyAdapter extends BaseAdapter{
-
-		Context context;
-		ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,  remarks, time;
-		public Dt2BodyAdapter(Context context, ArrayList<String> fullName,
-				ArrayList<String> studentid, ArrayList<String> tbid,
-				ArrayList<String> sessionname, ArrayList<String> startdate,
-				ArrayList<String> enddate, ArrayList<String> unitprice,
-				ArrayList<String> sitename, ArrayList<String> remarks, ArrayList<String> time) {
-			super();
-			this.context = context;
-			FullName = fullName;
-			Studentid = studentid;
-			this.tbid = tbid;
-			this.sessionname = sessionname;
-			this.startdate = startdate;
-			this.enddate = enddate;
-			this.unitprice = unitprice;
-			this.sitename = sitename;
-			this.remarks = remarks;
-            this.time = time;
-		}
-
-		@Override
-		public int getCount() {
-			// TODO Auto-generated method stub
-			return Studentid.size();
-		}
-
-		@Override
-		public Object getItem(int arg0) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public long getItemId(int arg0) {
-			// TODO Auto-generated method stub
-			return arg0;
-		}
-		@Override
-		public int getViewTypeCount() {
-
-			return getCount();
-		}
-
-		@Override
-		public int getItemViewType(int position) {
-
-			return position;
-		}
-
-		public class ViewHolder{
-			TextView tv_name,tv_sess,tv_desc,tv_stdate,tv_enddate,tv_site,tv_price,tv_remark;
-			CheckBox chb_add;
-		}
-
-		@Override
-		public View getView(final int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
-			final ViewHolder holder;
-			try{
-				if(convertView==null){
-					holder = new ViewHolder();
-
-					convertView = LayoutInflater.from(parent.getContext()).inflate(
-							R.layout.dive_turns_2_item, null);
-					holder.tv_name = (TextView)convertView.findViewById(R.id.dt2_name);
-					holder.tv_sess = (TextView)convertView.findViewById(R.id.dt2_sess);
-					holder.tv_desc = (TextView)convertView.findViewById(R.id.dt2_desc);
-					holder.tv_stdate = (TextView)convertView.findViewById(R.id.dt2_stdate);
-					holder.tv_enddate = (TextView)convertView.findViewById(R.id.dt2_eddate);
-					holder.tv_site = (TextView)convertView.findViewById(R.id.dt2_site);
-					holder.tv_price = (TextView)convertView.findViewById(R.id.dt2_untprice);
-					holder.tv_remark = (TextView)convertView.findViewById(R.id.dt2_remark);
-					holder.tv_remark.setVisibility(View.GONE);
-					holder.chb_add = (CheckBox)convertView.findViewById(R.id.dt2_add);
-
-					holder.chb_add.setVisibility(View.GONE);
-					
-					holder.tv_name.setText(Html.fromHtml("<b>Participant:</b> "+FullName.get(position)));
-					holder.tv_sess.setText(Html.fromHtml("<b>Session#:</b> "+tbid.get(position)));
-					holder.tv_desc.setText(Html.fromHtml("<b>Description:</b> "+sessionname.get(position)));
-					holder.tv_stdate.setText(Html.fromHtml("<b>Start Date:</b> "+startdate.get(position)));
-                    holder.tv_enddate.setText(Html.fromHtml("<b>Start Time:</b> "+time.get(position)));
-					holder.tv_site.setText(Html.fromHtml("<b>Site:</b> "+sitename.get(position)));
-					holder.tv_price.setText(Html.fromHtml("<b>Unit Price:</b> "+unitprice.get(position)));
-					//holder.tv_remark.setText(Html.fromHtml("<b>Remark:</b> " +remarks.get(position)));
-				}
-				else{
-					holder = (ViewHolder) convertView.getTag();
-				}
-
-			}
-			catch(NullPointerException e){
-				e.printStackTrace();
-			}
-			catch (IndexOutOfBoundsException e) {
-				// TODO: handle exception
-				e.printStackTrace();
-			}
-			catch(Exception e){
-				e.printStackTrace();
-			}
-			return convertView;
-		}
-	}*/
-	
 	private class AddToCart extends AsyncTask<Void, Void, Void>{
 		ProgressDialog pd;
 		@Override
@@ -411,11 +268,8 @@ public class ScoutBadgeActivityRegister3 extends Activity{
 				JSONObject reader = new JSONObject(responseString);
 				dataload= reader.getString("Success");
 				if(dataload.toString().equalsIgnoreCase("True")){
-					
-//					Intent i = new Intent(ScoutBadgeActivityRegister3.this,ViewCartActivity.class);
                     Intent i = new Intent(ScoutBadgeActivityRegister3.this,ByMoreMyCart.class);
 					startActivity(i);
-//					finish();
 				}
 				else{
 				}
@@ -517,11 +371,8 @@ String TotalChildrenRegistered="",TotalSessionsEntered="",TotalSessionsPrice="";
 			
 			if(dataload.toString().equalsIgnoreCase("True")){
 				if(FullName.size()>0){
-					/*lv_body.setAdapter(new Dt2BodyAdapter(ScoutBadgeActivityRegister3.this,
-							FullName, Studentid, tbid, sessionname, startdate, enddate, unitprice, sitename, remarks, time));*/
 					loadList();
 					tv_dt3_total_prc_sess.setText("$ "+ TotalSessionsPrice);
-					//tv_dt3_outstndg_bal.setText("$ "+TotalSessionsPrice);
 					tv_dt3_total_sess_ent.setText(TotalSessionsEntered);
 					tv_dt3_total_ch_reg.setText(TotalChildrenRegistered);
 				}else{

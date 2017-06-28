@@ -244,6 +244,7 @@ public class CancelLessonFragment extends Activity {
         intentDashboard.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intentDashboard);
         finish();
+        AppConfiguration.schedulechoices="7";
     }
     private void Initialization() {
         text_permanentlyCancel = (TextView) findViewById(R.id.text_permanentlyCancel);

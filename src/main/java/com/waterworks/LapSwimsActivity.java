@@ -11,14 +11,12 @@ import android.widget.LinearLayout;
 
 public class LapSwimsActivity extends Activity {
 	LinearLayout ll_ls_1,ll_ls_2,ll_ls_3;
-//	ImageButton btn_back;
 	String siteid;
 	Button relMenu;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lap_swims);
-//		siteid = getIntent().getStringExtra("SiteId");
 		Initialization();
 	}
 
@@ -59,9 +57,7 @@ public class LapSwimsActivity extends Activity {
 			public void onClick(View paramView) {
 				// TODO Auto-generated method stub
 				Intent sessionsLapIntent = new Intent(getApplicationContext(),LapSwimsSessionActivity.class);
-//				sessionsLapIntent.putExtra("siteid", siteid);
 				startActivity(sessionsLapIntent);
-//				finish();
 			}
 		});
 		ll_ls_2.setOnClickListener(new OnClickListener() {
@@ -69,11 +65,8 @@ public class LapSwimsActivity extends Activity {
 			@Override
 			public void onClick(View paramView) {
 				// TODO Auto-generated method stub
-//				Intent discountLapIntent = new Intent(getApplicationContext(),LapSwimsMonthlyActivity.class);
 				Intent monthLapIntent = new Intent(getApplicationContext(),LapSwimsDiscountActivity.class);
-//				monthLapIntent.putExtra("siteid", siteid);
 				startActivity(monthLapIntent);
-//				finish();
 			}
 		});
 
@@ -83,16 +76,13 @@ public class LapSwimsActivity extends Activity {
 			public void onClick(View paramView) {
 				// TODO Auto-generated method stub
 				Intent discountLapIntent = new Intent(getApplicationContext(),LapSwimsMonthlyActivity.class);
-//				discountLapIntent.putExtra("siteid", siteid);
 				startActivity(discountLapIntent);
-//				finish();
 			}
 		});
 	}
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
         finish();
     }
 }

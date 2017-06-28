@@ -150,9 +150,6 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
     }
 
     public void fetchEventPoolData(final String ageGroupid, final String strokeID) {
-//        progressDialog = new ProgressDialog(this);
-//        progressDialog.setCancelable(false);
-//        progressDialog.setMessage("Please wait...");
         progressDialog.show();
 
         new Thread(new Runnable() {
@@ -236,7 +233,6 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
             llEventRow = (LinearLayout) child.findViewById(R.id.llEventRow);
 
             txtEventName.setText(poolRecordsModels.get(i).getEventDescription());
-//        txtStudentName.setBackgroundColor(getResources().getColor(R.color.student_back));
 
             for (HashMap<String, String> stringStringArrayList : poolRecordsModels.get(i).getEventDetails()) {
                 View childll = getLayoutInflater().inflate(R.layout.row_event_pool_data, null, false);

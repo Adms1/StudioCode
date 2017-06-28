@@ -28,6 +28,7 @@ public class PrivacyPolicy extends Activity {
         returnStack=(Button)view.findViewById(R.id.returnStack);
         page_title=(TextView)view.findViewById(R.id.page_title);
         tv_privacy_policy=(TextView)findViewById(R.id.tv_privacy_policy);
+
         tv_privacy_policy.setText(Html.fromHtml("<table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">\n" +
                 "<tbody>\n" +
                 "\n" +

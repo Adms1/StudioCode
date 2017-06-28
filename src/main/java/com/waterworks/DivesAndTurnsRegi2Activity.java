@@ -70,9 +70,7 @@ public class DivesAndTurnsRegi2Activity extends Activity {
 
         isInternetPresent = Utility.isNetworkConnected(DivesAndTurnsRegi2Activity.this);
         if (isInternetPresent) {
-
             siteid = Integer.parseInt(getIntent().getStringExtra("siteid"));
-
             stulist = getIntent().getStringExtra("stulist");
             childno = getIntent().getStringExtra("childno");
             basketID = Utility.getBasketID(this, String.valueOf(siteid));
@@ -221,7 +219,6 @@ public class DivesAndTurnsRegi2Activity extends Activity {
     @Override
     public void onBackPressed() {
         // TODO Auto-generated method stub
-        //		super.onBackPressed();
         finish();
     }
 
@@ -267,10 +264,6 @@ public class DivesAndTurnsRegi2Activity extends Activity {
         @Override
         protected Void doInBackground(Void... params) {
             // TODO Auto-generated method stub
-			/*String basketID = (AppConfiguration.BasketID.equals("BasketID")) ? "0" :  AppConfiguration.BasketID;
-			if(basketID=="BasketID") {
-				basketID="0";
-			}*/
             HashMap<String, String> param = new HashMap<String, String>();
             param.put("Token", token);
             param.put("strStuList", stulist);
@@ -492,7 +485,6 @@ public class DivesAndTurnsRegi2Activity extends Activity {
                 dataload = reader.getString("Success");
                 if (dataload.toString().equalsIgnoreCase("True")) {
                     strStudid = strStudentID.substring(0, strStudentID.length() - 2);
-                    // = strStudentID.toString().substring(0, strStudentID.length() - 1);
                     if (strStudid.trim().length() == AppConfiguration.divesAndTurnsRegister1StudentID.length()) {
                         Intent i = new Intent(getApplicationContext(), DivesAndTurnsRegi3Activity.class);
                         i.putExtra("siteid", "" + siteid);

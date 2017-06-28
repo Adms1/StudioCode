@@ -19,7 +19,6 @@ import org.acra.annotation.ReportsCrashes;
         resToastText = R.string.toast_crash)
 
 public class ClientApp extends Application {
-
     @Override
     public void onCreate() {
 

@@ -236,7 +236,6 @@ public class ProgressReportActivity extends Activity {
 				
 
 			} else {
-				//Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -269,10 +268,7 @@ public class ProgressReportActivity extends Activity {
 			
 			TextView txtChildName = (TextView) rowView.findViewById(R.id.txtChildName);
 			txtChildName.setText(childList.get(position).get("SFirstName") +" "+ childList.get(position).get("SLastName"));
-			
-//			TextView txtChildLastName = (TextView) rowView.findViewById(R.id.txtChildLastName);
-//			txtChildLastName.setText(childList.get(position).get("SLastName"));
-			
+
 			return rowView;
 		}
 	}

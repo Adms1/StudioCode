@@ -60,10 +60,8 @@ public class WaterPoloRegister1 extends Activity {
     String siteID, data_load_site = "False", data_load_basket = "False", data_load_child = "False", savebasket = "False";
     Button btn_site;
     CardView btn_continue;
-    //	TableLayout table_dt_childs;
     ArrayList<String> StudentName, Studentid, sendingID;
     ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
-//    ListView list;
     LinearLayout llListData;
     TextView tv_fsn_info, txtPriceinfo, txtSelChildText;
     String textInfo, textPriceInfo;
@@ -191,7 +189,6 @@ public class WaterPoloRegister1 extends Activity {
                         i.putExtra("stulist", sendingID.toString().replaceAll("\\[", "").replaceAll("\\]", ""));
                         i.putExtra("childno", "" + sendingID.size());
                         startActivity(i);
-//					finish();
                     } else {
                         Toast.makeText(getApplicationContext(), "Please select at least one child.", Toast.LENGTH_SHORT).show();
                     }
@@ -383,10 +380,8 @@ public class WaterPoloRegister1 extends Activity {
                     HashMap<String, String> hashmap = new HashMap<String, String>();
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
-                    String StudentID = jsonChildNode.getString("Studentid")
-                            .trim();
-                    String StudentName = jsonChildNode.getString("StudentName")
-                            .trim();
+                    String StudentID = jsonChildNode.getString("Studentid").trim();
+                    String StudentName = jsonChildNode.getString("StudentName").trim();
 
                     hashmap.put("StudentID", StudentID);
                     hashmap.put("StudentName", StudentName);
@@ -453,8 +448,7 @@ public class WaterPoloRegister1 extends Activity {
         private final Activity context;
         private final ArrayList<HashMap<String, String>> data;
 
-        public CustomList(Activity context,
-                          ArrayList<HashMap<String, String>> list) {
+        public CustomList(Activity context, ArrayList<HashMap<String, String>> list) {
             super(context, R.layout.list_row_swim_camp_register1);
             this.context = context;
             this.data = list;

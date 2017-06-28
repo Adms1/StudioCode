@@ -52,10 +52,8 @@ public class ScoutBadgeMeritRegister2 extends Activity{
     LinearLayout llTabs;
 	ListView lv_body;
     private ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
-//	public static ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,finalstulist,remark;
 	public static ArrayList<HashMap<String, String>> SwimmingBadgeMeritEventList = new ArrayList<HashMap<String, String>>();
 	public static SparseBooleanArray mChecked = new SparseBooleanArray();
-//	TextView tv_dives_turns_name;
 	ArrayList<String> checked_value= new ArrayList<String>();
 
 	@Override
@@ -63,8 +61,6 @@ public class ScoutBadgeMeritRegister2 extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.scoutmeritregister2);
-
-//		setContentView(R.layout.activity_dive_and_turns_regi2);
 		SharedPreferences prefs = AppConfiguration.getSharedPrefs(getApplicationContext());
 		token = prefs.getString("Token", "");
 		familyID = prefs.getString("FamilyID", "");
@@ -139,7 +135,6 @@ public class ScoutBadgeMeritRegister2 extends Activity{
                             i.putExtra("childno",""+childno);
                             i.putExtra("strStuList", str.toString());
                             startActivity(i);
-//					finish();
                         }else {
                             Utility.ping(ScoutBadgeMeritRegister2.this, "Please select at least one session for each student.");
                         }
@@ -182,7 +177,6 @@ public class ScoutBadgeMeritRegister2 extends Activity{
             llTabs.removeAllViews();
             makeTabs(v.getTag().toString());
             currentStudentID = v.getTag().toString().trim();
-//            Utility.ping(JuniorLifeGuardRegister2.this, currentStudentID);
 			if(SwimmingBadgeMeritEventList.size() > 0){
 				Dt2BodyAdapter dt2BodyAdapter = new Dt2BodyAdapter(SwimmingBadgeMeritEventList);
 				lv_body.setAdapter(dt2BodyAdapter);
@@ -213,17 +207,6 @@ public class ScoutBadgeMeritRegister2 extends Activity{
         relMenu = (Button)findViewById(R.id.relMenu);
 		btn_dt2_continue = (CardView)findViewById(R.id.btn_continue_dt2);
 		lv_body = (ListView)findViewById(R.id.lv_dt2_list);
-//		FullName = new ArrayList<String>();
-//		Studentid = new ArrayList<String>();
-//		tbid = new ArrayList<String>();
-//		sessionname = new ArrayList<String>();
-//		startdate = new ArrayList<String>();
-//		enddate = new ArrayList<String>();
-//		unitprice = new ArrayList<String>();
-//		sitename = new ArrayList<String>();
-//		finalstulist = new ArrayList<String>();
-//		remark = new ArrayList<String>();
-//		tv_dives_turns_name = (TextView)findViewById(R.id.tv_dives_turns_name);
 	}
 
 	@Override
@@ -237,8 +220,7 @@ public class ScoutBadgeMeritRegister2 extends Activity{
 		// TODO Auto-generated method stub
 		super.onResume();
 		this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
-		isInternetPresent = Utility
-				.isNetworkConnected(ScoutBadgeMeritRegister2.this);
+		isInternetPresent = Utility.isNetworkConnected(ScoutBadgeMeritRegister2.this);
 	}
 
 	@Override
@@ -361,20 +343,8 @@ public class ScoutBadgeMeritRegister2 extends Activity{
 
 	public class Dt2BodyAdapter extends BaseAdapter{
         private final ArrayList<HashMap<String, String>> data = new ArrayList<>();
-//		Context context;
-//		ArrayList<String> FullName,Studentid,tbid,sessionname,startdate,enddate,unitprice,sitename,remark;
 		public Dt2BodyAdapter(ArrayList<HashMap<String, String>> list) {
 			super();
-//			this.context = context;
-//			FullName = fullName;
-//			Studentid = studentid;
-//			this.tbid = tbid;
-//			this.sessionname = sessionname;
-//			this.startdate = startdate;
-//			this.enddate = enddate;
-//			this.unitprice = unitprice;
-//			this.sitename = sitename;
-//			this.remark = remark;
             for(int i = 0;i < list.size();i++){
                 if(currentStudentID.equalsIgnoreCase(list.get(i).get("Studentid"))){
                     this.data.add(list.get(i));

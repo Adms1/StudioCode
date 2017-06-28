@@ -52,7 +52,6 @@ public class ReceivePayment extends Activity{
 	LinearLayout new_pay_lay_hide,check_lay,credit_card_lay,saved_method_inflate;
 	RadioButton pay_by_check,pay_by_card,recurring,one_time_pay;
 	RadioGroup full_half_payment,paygroup_options;
-	//	EditText conditions;
 	LinearLayout conditions_scroll;
 	Button confirm_payment,info_button_b;
 	CheckBox save_detail,agreed,save_card_detail;
@@ -73,8 +72,7 @@ public class ReceivePayment extends Activity{
 	ArrayList<String> Confirm_msg_arr = new ArrayList<String>();
 	ArrayList<String> rec_value_arr = new ArrayList<String>();
 	ArrayList<String> rec_sh_arr = new ArrayList<String>();
-	ArrayList<String> _wu_ClientName,_wu_CardAccNumber,_wu_PayType,_wu_ExpDate,_wu_BankName,_wu_BankRtngNum
-	,_wu_PayTypeID,_wu_PmtID;
+	ArrayList<String> _wu_ClientName,_wu_CardAccNumber,_wu_PayType,_wu_ExpDate,_wu_BankName,_wu_BankRtngNum,_wu_PayTypeID,_wu_PmtID;
 	ImageButton ib_back;
 	public static String check_detail="";
 	public static String card_detail="",address="",cred_exp="";
@@ -124,8 +122,6 @@ public class ReceivePayment extends Activity{
 		full_half_payment = (RadioGroup)findViewById(R.id.full_half_payment);
 		paygroup_options = (RadioGroup)findViewById(R.id.paygroup_options);
 		ahc_selection_group = (RadioGroup)findViewById(R.id.ahc_selection_group);
-
-		//		conditions = (EditText)findViewById(R.id.conditions);
 
 		confirm_payment = (Button)findViewById(R.id.confirm_payment);
 		info_button_b = (Button)findViewById(R.id.info_button_b);
@@ -263,12 +259,9 @@ public class ReceivePayment extends Activity{
 				}else{
 					full_half_payment.setVisibility(View.VISIBLE);
 					agreed.setVisibility(View.VISIBLE);
-					//					conditions.setVisibility(View.VISIBLE);
 					conditions_scroll.setVisibility(View.VISIBLE);
 
 					confirm_payment.setVisibility(View.VISIBLE);
-
-					//					new get_AHC_Detail().execute();
 
 					new_pay_rotate.startAnimation(AnimationUtils.loadAnimation(ReceivePayment.this, R.drawable.rotate_up));
 					save_rotate.startAnimation(AnimationUtils.loadAnimation(ReceivePayment.this, R.drawable.rotate_down));
@@ -294,8 +287,6 @@ public class ReceivePayment extends Activity{
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				// TODO Auto-generated method stub
-
-//				if(zipcode.getText().toString().trim().length()<=0){
 					if(s.length()>4){
 						full_half_payment.setVisibility(View.VISIBLE);
 						agreed.setVisibility(View.VISIBLE);
@@ -307,7 +298,6 @@ public class ReceivePayment extends Activity{
 						conditions_scroll.setVisibility(View.GONE);
 						confirm_payment.setVisibility(View.GONE);
 					}
-//				}
 			}
 
 			@Override
@@ -329,7 +319,6 @@ public class ReceivePayment extends Activity{
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				// TODO Auto-generated method stub
 
-//				if(c_zipcode.getText().toString().trim().length()<=0){
 					if(s.length()>4){
 						full_half_payment.setVisibility(View.VISIBLE);
 						agreed.setVisibility(View.VISIBLE);
@@ -341,8 +330,6 @@ public class ReceivePayment extends Activity{
 						conditions_scroll.setVisibility(View.GONE);
 						confirm_payment.setVisibility(View.GONE);
 					}
-//				}
-
 			}
 
 			@Override
@@ -387,7 +374,6 @@ public class ReceivePayment extends Activity{
 					if(pay_by_card.isChecked()){
 						if(pay_credit_chk()){
 							if(agreed.isChecked()){
-								//								ping(mContext, "Done");
 								isInternetPresent = Utility.isNetworkConnected(ReceivePayment.this);
 								if (!isInternetPresent) {
 									onDetectNetworkState().show();
@@ -401,7 +387,6 @@ public class ReceivePayment extends Activity{
 					}else if(pay_by_check.isChecked()){
 						if(pay_check_chk()){
 							if(agreed.isChecked()){
-								//								ping(mContext, "Done");
 								isInternetPresent = Utility.isNetworkConnected(ReceivePayment.this);
 								if (!isInternetPresent) {
 									onDetectNetworkState().show();
@@ -657,7 +642,6 @@ public class ReceivePayment extends Activity{
 			//Set condition message
 			if(Confirm_msg_arr.size()>0){
 				conditions_text.setText(Confirm_msg_arr.get(0));
-				//				conditions.setText(Confirm_msg_arr.get(0));
 			}
 		}
 	}
@@ -790,7 +774,6 @@ public class ReceivePayment extends Activity{
 						saved_detail=false;
 					}
 				}
-				//						saved_detail=false;
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -825,13 +808,11 @@ public class ReceivePayment extends Activity{
 		ahc_selection_group.removeAllViews();
 		full_half_payment.setVisibility(View.VISIBLE);
 		agreed.setVisibility(View.VISIBLE);
-		//		conditions.setVisibility(View.VISIBLE);
 		conditions_scroll.setVisibility(View.VISIBLE);
 
 		confirm_payment.setVisibility(View.VISIBLE);
 
 		for (int i = 0; i < _wu_CardAccNumber.size(); i++) {
-			//			for (int i = 0; i < 2; i++) {
 			LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE); 
 			View view = inflater.inflate(R.layout.custom_radio_button, null);
 
@@ -843,10 +824,8 @@ public class ReceivePayment extends Activity{
 			}else{
 				text = _wu_ClientName.get(i) + "\n" +_wu_CardAccNumber.get(i) +"\n" +_wu_PayType.get(i) +"\n" +_wu_ExpDate.get(i)+"\n" +_wu_BankRtngNum.get(i)+"\n" + _wu_BankName.get(i);
 			}
-			//			String text = _wu_ClientName.get(i) + "\n" +_wu_CardAccNumber.get(i) +"\n" +_wu_PayType.get(0)+"\n" + _wu_BankName.get(i) +"\n" +_wu_ExpDate.get(i)+"\n" +_wu_BankRtngNum.get(i);
 			ahc_selection.setText(text);
 			ahc_selection_group.addView(view,i);
-			//			saved_method_inflate.addView(view);
 		}
 	}
 

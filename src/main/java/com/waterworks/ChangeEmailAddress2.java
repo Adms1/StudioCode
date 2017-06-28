@@ -327,7 +327,6 @@ public class ChangeEmailAddress2 extends Activity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
                                 newEmail.setText("");
                                 newEmail.requestFocus();
                                 dialog.dismiss();

@@ -44,12 +44,12 @@
         "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\icon5.png"
     },
     {
-        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_0.png",
-        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_0.png"
-    },
-    {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\anim7.png",
         "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\anim7.png"
+    },
+    {
+        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\l_0.png",
+        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\drawable-hdpi\\l_0.png"
     },
     {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\custom_checkbox_check.png",

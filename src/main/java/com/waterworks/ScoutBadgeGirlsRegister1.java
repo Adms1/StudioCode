@@ -64,8 +64,6 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
     CardView btn_continue;
     TextView txtSelChildText, txtPriceinfo;
     EditText tv_fsn_info;
-    //	TableLayout table_dt_childs;
-//	ListView list;
     LinearLayout llListData;
     ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
     ArrayList<String> StudentName, Studentid, sendingID;
@@ -177,7 +175,6 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
                         i.putExtra("stulist", sendingID.toString().replaceAll("\\[", "").replaceAll("\\]", ""));
                         i.putExtra("childno", "" + sendingID.size());
                         startActivity(i);
-//                        finish();
                     } else {
                         Toast.makeText(getApplicationContext(), "Please select at least one child.", Toast.LENGTH_SHORT).show();
                     }
@@ -198,13 +195,11 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
         btn_site = (Button) findViewById(R.id.btn_dt_sites);
         relMenu = (Button) findViewById(R.id.relMenu);
         lpw_site = new ListPopupWindow(getApplicationContext());
-//		table_dt_childs = (TableLayout)findViewById(R.id.table_dt_childs);
         tv_fsn_info = (EditText) findViewById(R.id.tv_fsn_info);
         tv_fsn_info.setText(Utility.getProgramsInstructionText("10"));
 
         txtSelChildText = (TextView) findViewById(R.id.txtSelChildText);
         txtPriceinfo = (TextView) findViewById(R.id.txtPriceinfo);
-//        list = (ListView) findViewById(R.id.list);
         llListData = (LinearLayout) findViewById(R.id.llListData);
         StudentName = new ArrayList<String>();
         Studentid = new ArrayList<String>();
@@ -312,11 +307,7 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
             e.printStackTrace();
         }
     }
-
-    ///////////////////////////////////////////////
-
     ////////////////////SaveBasketId//////////////
-
     private class SaveBasketId extends AsyncTask<Void, Void, Void> {
         ProgressDialog pd;
 
@@ -423,11 +414,7 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
                 pd.dismiss();
             }
             if (data_load_site.toString().equalsIgnoreCase("True")) {
-//				btn_site.setText(sitename.get(0).toString());
-//				siteID = siteid.get(0);
-                lpw_site.setAdapter(new ArrayAdapter<String>(
-                        getApplicationContext(),
-                        R.layout.edittextpopup, sitename));
+                lpw_site.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.edittextpopup, sitename));
                 lpw_site.setAnchorView(btn_site);
                 lpw_site.setHeight(LayoutParams.WRAP_CONTENT);
                 lpw_site.setModal(true);
@@ -457,10 +444,8 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
     }
 
     /////////////////GetChild////////////////////
-
     private class GetChild extends AsyncTask<Void, Void, Void> {
         ProgressDialog pd;
-
         @Override
         protected void onPreExecute() {
             // TODO Auto-generated method stub
@@ -469,10 +454,9 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
             pd.show();
-            //data = 1;
+
             Studentid.clear();
             StudentName.clear();
-//			table_dt_childs.removeAllViews();
         }
 
         @Override
@@ -482,9 +466,7 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
             param.put("Token", token);
             param.put("ProgName", "Girl Scout Swim Programs");
 
-            String responseString = WebServicesCall
-                    .RunScript(AppConfiguration.GetChildDT, param);
-
+            String responseString = WebServicesCall.RunScript(AppConfiguration.GetChildDT, param);
             readAndParseJSON(responseString);
 
 
@@ -500,55 +482,9 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
                 pd.dismiss();
             }
             if (data_load_child.toString().equals("True")) {
-                //	rl_rs_inside_body.setVisibility(View.VISIBLE);
                 sendingID = new ArrayList<String>();
                 loadDataList(childList);
-//                CustomList adapter = new CustomList(ScoutBadgeGirlsRegister1.this, childList);
-//                list.setAdapter(adapter);
-                /*int offset_in_column=0, table_size=StudentName.size();
-                TableRow tr=null;
-				for (int offset_in_table=0; offset_in_table < table_size; offset_in_table++) {
-					*//* maybe you want to do something special with the data from the server here ? *//*
-
-					if (offset_in_column == 0) {
-						tr = new TableRow(ScoutBadgeGirlsRegister1.this);
-						tr.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-					}
-					final CheckBox check = new CheckBox(ScoutBadgeGirlsRegister1.this);
-					check.setButtonDrawable(getResources().getDrawable(R.drawable.customdrawablecheckbox));
-					check.setText(StudentName.get(offset_in_table));
-					check.setId(Integer.parseInt(Studentid.get(offset_in_table)));
-					check.setTextColor(getResources().getColor(R.color.app_text));
-					check.setPadding(10, 5, 0, 5);
-					check.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-						@Override
-						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-							// TODO Auto-generated method stub
-							if(isChecked){
-								sendingID.add(""+check.getId());
-							}
-							else{
-								sendingID.remove(""+check.getId());
-							}
-							Log.e(TAG,""+sendingID);
-						}
-					});
-					check.setLayoutParams(new TableRow.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-					tr.addView(check);
-
-					offset_in_column++;
-					if (offset_in_column == 2) {
-
-						table_dt_childs.addView(tr);
-						offset_in_column = 0;
-					}
-				}
-				if (offset_in_column != 0)
-					table_dt_childs.addView(tr);*/
             } else {
-                //	rl_rs_inside_body.setVisibility(View.GONE);
-//				Toast.makeText(getApplicationContext(),msg , Toast.LENGTH_LONG).show();
                 txtSelChildText.setText("You do not currently have a child that is eligible for this program.");
                 txtSelChildText.setTextColor(getResources().getColor(R.color.red));
             }
@@ -566,10 +502,8 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
                     HashMap<String, String> hashmap = new HashMap<String, String>();
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
-                    String StudentID = jsonChildNode.getString("Studentid")
-                            .trim();
-                    String StudentName = jsonChildNode.getString("StudentName")
-                            .trim();
+                    String StudentID = jsonChildNode.getString("Studentid").trim();
+                    String StudentName = jsonChildNode.getString("StudentName").trim();
 
                     hashmap.put("StudentID", StudentID);
                     hashmap.put("StudentName", StudentName);
@@ -602,8 +536,6 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
                 checkbox.setId(Integer.parseInt(childList.get(i).get("StudentID")));
                 textview.setId(i);
                 checkbox.setOnCheckedChangeListener(onCheckedChangeListener);
-//				checkbox.setChecked(thumbnailsselection[i]);
-
                 id = i;
                 textview.setText(childList.get(i).get("StudentName"));
                 llListData.addView(convertView);
@@ -630,75 +562,4 @@ public class ScoutBadgeGirlsRegister1 extends Activity {
             Log.e(TAG, "" + sendingID);
         }
     };
-
-    /*public class CustomList extends ArrayAdapter<String> {
-        private final Activity context;
-        private final ArrayList<HashMap<String, String>> data;
-
-        public CustomList(Activity context,
-                          ArrayList<HashMap<String, String>> list) {
-            super(context, R.layout.list_row_swim_camp_register1);
-            this.context = context;
-            this.data = list;
-
-        }
-
-        @Override
-        public int getCount() {
-            return data.size();
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        class ViewHolder {
-            TextView textview;
-            CheckBox checkbox;
-            int id;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            final ViewHolder holder;
-
-            if (convertView == null) {
-                holder = new ViewHolder();
-                convertView = LayoutInflater.from(context).inflate(
-                        R.layout.list_row_swim_camp_register1, null);
-                holder.textview = (TextView) convertView
-                        .findViewById(R.id.txtStudentName);
-                holder.checkbox = (CheckBox) convertView
-                        .findViewById(R.id.chb_students);
-                convertView.setTag(holder);
-            } else {
-                holder = (ViewHolder) convertView.getTag();
-            }
-            holder.checkbox.setId(Integer.parseInt(childList.get(position).get("StudentID")));
-            holder.textview.setId(position);
-            holder.checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    // TODO Auto-generated method stub
-                    if (isChecked) {
-                        sendingID.add("" + holder.checkbox.getId());
-                    } else {
-                        sendingID.remove("" + holder.checkbox.getId());
-                    }
-                    Log.e(TAG, "" + sendingID);
-                }
-            });
-            holder.textview.setOnClickListener(new OnClickListener() {
-                public void onClick(View v) {
-                    // TODO Auto-generated method stub
-                }
-            });
-            holder.textview.setText(childList.get(position).get("StudentName"));
-//			holder.checkbox.setChecked(thumbnailsselection[position]);
-            holder.id = position;
-            return convertView;
-        }
-    }*/
 }

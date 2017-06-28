@@ -63,7 +63,6 @@ public class JuniorLifeGuardRegister1 extends Activity {
     //	TableLayout table_dt_childs;
     ArrayList<String> StudentName, Studentid, sendingID;
     ArrayList<HashMap<String, String>> childList = new ArrayList<HashMap<String, String>>();
-//    ListView list;
     LinearLayout llListData;
     TextView txtPriceinfo, tv_lebel;
     ScrollView scrollviewjuniorlifeguard;
@@ -81,7 +80,6 @@ public class JuniorLifeGuardRegister1 extends Activity {
         Log.d(TAG, "Token=" + token + "\nFamilyID=" + familyID);
 
         Initialization();
-//        list = (ListView) findViewById(R.id.list);
         llListData = (LinearLayout) findViewById(R.id.llListData);
         isInternetPresent = Utility.isNetworkConnected(JuniorLifeGuardRegister1.this);
         if (!isInternetPresent) {
@@ -264,11 +262,7 @@ public class JuniorLifeGuardRegister1 extends Activity {
                 pd.dismiss();
             }
             if (data_load_site.toString().equalsIgnoreCase("True")) {
-                /*btn_site.setText(sitename.get(0).toString());
-				siteID = siteid.get(0);*/
-                lpw_site.setAdapter(new ArrayAdapter<String>(
-                        getApplicationContext(),
-                        R.layout.edittextpopup, sitename));
+                lpw_site.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.edittextpopup, sitename));
                 lpw_site.setAnchorView(btn_site);
                 lpw_site.setHeight(LayoutParams.WRAP_CONTENT);
                 lpw_site.setModal(true);
@@ -288,7 +282,6 @@ public class JuniorLifeGuardRegister1 extends Activity {
                                     txtPriceinfo.setVisibility(View.VISIBLE);
                                     txtPriceinfo.setText(textPrice);
                                 }
-
                                 lpw_site.dismiss();
                             }
                         });
@@ -311,10 +304,8 @@ public class JuniorLifeGuardRegister1 extends Activity {
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
             pd.show();
-            //data = 1;
             Studentid.clear();
             StudentName.clear();
-//			table_dt_childs.removeAllViews();
         }
 
         @Override
@@ -342,9 +333,6 @@ public class JuniorLifeGuardRegister1 extends Activity {
             if (data_load_child.toString().equals("True")) {
                 sendingID = new ArrayList<String>();
                 loadDataList(childList);
-                /*CustomList adapter = new CustomList(
-                        JuniorLifeGuardRegister1.this, childList);
-                list.setAdapter(adapter);*/
             } else {
                 tv_lebel.setText("You do not currently have a child that is eligible for this program.");
                 tv_lebel.setTextColor(getResources().getColor(R.color.red));
@@ -400,8 +388,6 @@ public class JuniorLifeGuardRegister1 extends Activity {
                 checkbox.setId(Integer.parseInt(childList.get(i).get("StudentID")));
                 textview.setId(i);
                 checkbox.setOnCheckedChangeListener(onCheckedChangeListener);
-//				checkbox.setChecked(thumbnailsselection[i]);
-
                 id = i;
                 textview.setText(childList.get(i).get("StudentName"));
                 llListData.addView(convertView);
@@ -431,79 +417,6 @@ public class JuniorLifeGuardRegister1 extends Activity {
             Log.e(TAG, "" + sendingID);
         }
     };
-
-    /*public class CustomList extends ArrayAdapter<String> {
-        private final Activity context;
-        private final ArrayList<HashMap<String, String>> data;
-
-        public CustomList(Activity context,
-                          ArrayList<HashMap<String, String>> list) {
-            super(context, R.layout.list_row_swim_camp_register1);
-            this.context = context;
-            this.data = list;
-
-        }
-
-        @Override
-        public int getCount() {
-            return data.size();
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        class ViewHolder {
-            TextView textview;
-            CheckBox checkbox;
-            int id;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            final ViewHolder holder;
-
-            if (convertView == null) {
-                holder = new ViewHolder();
-                convertView = LayoutInflater.from(context).inflate(
-                        R.layout.list_row_swim_camp_register1, null);
-                holder.textview = (TextView) convertView
-                        .findViewById(R.id.txtStudentName);
-                holder.checkbox = (CheckBox) convertView
-                        .findViewById(R.id.chb_students);
-                convertView.setTag(holder);
-            } else {
-                holder = (ViewHolder) convertView.getTag();
-            }
-            holder.checkbox.setId(Integer.parseInt(childList.get(position).get("StudentID")));
-            holder.textview.setId(position);
-            holder.checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    // TODO Auto-generated method stub
-                    if (isChecked) {
-                        sendingID.add("" + holder.checkbox.getId());
-                    } else {
-                        sendingID.remove("" + holder.checkbox.getId());
-                    }
-                    Log.e(TAG, "" + sendingID);
-                }
-            });
-            holder.textview.setOnClickListener(new OnClickListener() {
-                public void onClick(View v) {
-                    // TODO Auto-generated method stub
-                }
-            });
-            holder.textview.setText(childList.get(position).get("StudentName"));
-//			holder.checkbox.setChecked(thumbnailsselection[position]);
-            holder.id = position;
-            return convertView;
-
-        }
-    }*/
-
     public AlertDialog onDetectNetworkState() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(JuniorLifeGuardRegister1.this);
         builder1.setIcon(getResources().getDrawable(R.drawable.logo));
