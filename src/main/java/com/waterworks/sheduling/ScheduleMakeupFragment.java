@@ -79,7 +79,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 /**
  * @author Harsh Adms
@@ -94,7 +97,7 @@ public class ScheduleMakeupFragment extends Activity {
 
     ArrayList<String> siteName = new ArrayList<String>();
     String token, familyID, recount_data, message;
-    String successGetStudentList;
+    String successGetStudentList, lesson;
     RadioGroup enddate_vis;
     RelativeLayout rel_enddate, loadingScreens;
     LinearLayout students_lay, que1, que2, sites_lay, students_check,
@@ -123,6 +126,7 @@ public class ScheduleMakeupFragment extends Activity {
     // Questions Lay
     RadioGroup que1_grp, que2_grp;
     RadioButton yes1, no_prf1, yes2, no_prf2;
+    String selectstudentsize;
 
     // Next Button
     CardView btn_next_card;
@@ -137,6 +141,9 @@ public class ScheduleMakeupFragment extends Activity {
     View selected_1, selected_2, selected_3;
     LinearLayout scdl_lsn, scdl_mkp, waitlist;
     TextView txt_1, txt_2, txt_3, noti_count, makeup_alert;
+
+
+    public static final ArrayList<String> sp_lessonmakeup = new ArrayList<String>();
 
     public static final ArrayList<String> sp_lesson = new ArrayList<String>();
     public static final ArrayList<String> grp_lesson = new ArrayList<String>();
@@ -157,10 +164,13 @@ public class ScheduleMakeupFragment extends Activity {
     Fade mFade, Fadeout;
     Boolean isInternetPresent = false;
 
+    int counter_1 = 0, counter_2 = 0;
+    boolean comboflag = false;
 
     String clsID = "", clsTxt = "", clsID_2 = "", clsTxt_2 = "", clsID_3 = "",
             clsTxt_3 = "", clsID_4 = "", clsTxt_4 = "", clsID_5 = "",
             clsTxt_5 = "";
+
     /**
      * RefreshAll the global variables.
      */
@@ -175,14 +185,6 @@ public class ScheduleMakeupFragment extends Activity {
         AppConfiguration.pair2_Cmbo2 = "";
         AppConfiguration.pair3_Cmbo2 = "";
         AppConfiguration.pair4_Cmbo2 = "";
-
-
-//        12-06-2017 megha
-        AppConfiguration.pair1Check = "";
-        AppConfiguration.pair2Check = "";
-
-        AppConfiguration.pair1lessontype = "";
-        AppConfiguration.pair2lessontype = "";
 
 
         AppConfiguration.pair1_InstrList = "";
@@ -269,6 +271,7 @@ public class ScheduleMakeupFragment extends Activity {
         // InitialRequests();
     }
 
+
     public AlertDialog onDetectNetworkState() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
         builder1.setIcon(R.drawable.logo);
@@ -335,13 +338,13 @@ public class ScheduleMakeupFragment extends Activity {
         // TODO Auto-generated method stub
         super.onBackPressed();
         clearArray();
+        AppConfiguration.pair2Check = "0";
+        AppConfiguration.pair2lessontype = "";
         Intent i = new Intent(mContext, DashBoardActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
         ScheduleMakeupFragment.this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
         finish();
-
-//        ScheduleLessonFragement.this.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     public void clearArray() {
@@ -390,6 +393,145 @@ public class ScheduleMakeupFragment extends Activity {
         new SchedulePageLoad().execute();
     }
 
+    //11-07-2017 megha for makeup limit popup
+    public boolean checkMakeupLessonLimit(int count1) {
+        String[] selectlesson;
+        int splitlesson = 0;
+        for (int i = 0; i < selectedTextID.size(); i++) {
+            if (selectedTextID.get(0).contains("Semi-Private")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("Group")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("Stroke Clinic Int")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("P&M Adv")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("P&M Beg")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("P&M Int")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("P&M B/I")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("Stroke Clinic Adv")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("Stroke Clinic")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("Stroke Clinic Beg")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("Adult Stroke Clinic Beg")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(0).contains("Adult Stroke Clinic Int")) {
+                selectlesson = selectedTextID.get(0).split("\\[");
+                splitlesson = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            }
+        }
+
+
+        if (count1 > splitlesson) {
+
+            Toast.makeText(ScheduleMakeupFragment.this,
+                    "You can not combine lesson becuase available make up left count for selected lesson type is :" + splitlesson, Toast.LENGTH_LONG).show();
+
+            comboflag = true;
+            return true;
+        } else {
+            comboflag = false;
+            return false;
+        }
+
+    }
+
+    public boolean checkMakeupLessonLimit2(int count2) {
+        String[] selectlesson;
+        int splitlesson1 = 0;
+        for (int i = 0; i < selectedTextID.size(); i++) {
+            if (selectedTextID.get(1).contains("Semi-Private")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("Group")) {
+                selectlesson =selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("Stroke Clinic Int")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("P&M Adv")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("P&M Beg")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("P&M Int")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("P&M B/I")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("Stroke Clinic Adv")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("Stroke Clinic")) {
+                selectlesson =selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("Stroke Clinic Beg")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("Adult Stroke Clinic Beg")) {
+                selectlesson =selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            } else if (selectedTextID.get(1).contains("Adult Stroke Clinic Int")) {
+                selectlesson = selectedTextID.get(1).split("\\[");
+                splitlesson1 = Integer.parseInt(selectlesson[1].replaceAll("\\]", ""));
+                break;
+            }
+        }
+        if (count2 > splitlesson1) {
+            Toast.makeText(ScheduleMakeupFragment.this,
+                    "You can not combine lesson becuase available make up left count for selected lesson type is :" + splitlesson1, Toast.LENGTH_LONG).show();
+
+            comboflag = true;
+            return true;
+        } else {
+            comboflag = false;
+            return false;
+        }
+
+
+    }
+
     public void init() {
         AppConfiguration.reserverForever = "0";
 
@@ -410,6 +552,8 @@ public class ScheduleMakeupFragment extends Activity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AppConfiguration.pair2Check = "0";
+                AppConfiguration.pair2lessontype = "";
                 Intent intentCheckin = new Intent(ScheduleMakeupFragment.this, DashBoardActivity.class);
                 intentCheckin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentCheckin);
@@ -508,9 +652,6 @@ public class ScheduleMakeupFragment extends Activity {
                 ((AnimationDrawable) selected_3.getBackground()).start();
             }
         });
-
-//        lpw_sitelist = new ListPopupWindow(mContext);
-//        btn_sites = (Button) findViewById(R.id.btn_sites);
         start_date = (Button) findViewById(R.id.start_date);
         end_date = (Button) findViewById(R.id.end_date);
         enddate_vis = (RadioGroup) findViewById(R.id.enddate_vis);
@@ -520,7 +661,6 @@ public class ScheduleMakeupFragment extends Activity {
         start_redBorder = (LinearLayout) findViewById(R.id.start_redBorder);
 
         start_redBorder.setVisibility(View.GONE);
-//        site_Anchor = (LinearLayout) findViewById(R.id.site_Anchor);
         endDateredBorder = (LinearLayout) findViewById(R.id.endDateredBorder);
         endDateredBorder.setVisibility(View.GONE);
         sites_lay = (LinearLayout) findViewById(R.id.sites_lay);
@@ -561,14 +701,12 @@ public class ScheduleMakeupFragment extends Activity {
                 .fromHtml(" <font color='red'>Note :</font> If you want to continue past your end date, you must extend your schedule 2 weeks prior to your end date."));
 
         // Rakesh 16112015
-
         students_check.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                students_check
-                        .setBackgroundResource(R.drawable.pure_error_border_white);
+                students_check.setBackgroundResource(R.drawable.pure_error_border_white);
             }
         });
 
@@ -579,8 +717,18 @@ public class ScheduleMakeupFragment extends Activity {
                 // TODO Auto-generated method stub
                 que1.setBackgroundResource(R.drawable.pure_error_border_white);
                 que2.setBackgroundResource(R.drawable.pure_error_border_white);
-                students_check
-                        .setBackgroundResource(R.drawable.pure_error_border_white);
+                students_check.setBackgroundResource(R.drawable.pure_error_border_white);
+                counter_1++;
+                Log.d("counter", "" + counter_1);
+
+                checkMakeupLessonLimit(counter_1);
+
+                if (comboflag) {
+                    st_chk_1.setChecked(false);
+
+                } else {
+                    st_chk_1.setChecked(true);
+                }
 
                 if (checkCHEKCSvalue(Integer.parseInt(combo1_limit), Integer.parseInt(combo2_limit)) == false) {
 
@@ -596,6 +744,14 @@ public class ScheduleMakeupFragment extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                counter_1++;
+                checkMakeupLessonLimit(counter_1);
+                Log.d("counter", "" + counter_1);
+                if (comboflag) {
+                    st_chk_2.setChecked(false);
+                } else {
+                    st_chk_2.setChecked(true);
+                }
                 if (checkCHEKCSvalue(Integer.parseInt(combo1_limit), Integer.parseInt(combo2_limit)) == false) {
 
                 } else {
@@ -612,6 +768,18 @@ public class ScheduleMakeupFragment extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+
+                counter_1++;
+                Log.d("counter", "" + counter_1);
+
+                checkMakeupLessonLimit(counter_1);
+                if (comboflag) {
+                    st_chk_3.setChecked(false);
+
+                } else {
+                    st_chk_3.setChecked(true);
+                }
+
                 if (checkCHEKCSvalue(Integer.parseInt(combo1_limit), Integer.parseInt(combo2_limit)) == false) {
 
                 } else {
@@ -627,6 +795,14 @@ public class ScheduleMakeupFragment extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                counter_1++;
+                checkMakeupLessonLimit(counter_1);
+                Log.d("counter", "" + counter_1);
+                if (comboflag) {
+                    st_chk_4.setChecked(false);
+                } else {
+                    st_chk_4.setChecked(true);
+                }
                 if (checkCHEKCSvalue(Integer.parseInt(combo1_limit), Integer.parseInt(combo2_limit)) == false) {
 
                 } else {
@@ -642,6 +818,14 @@ public class ScheduleMakeupFragment extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                counter_1++;
+                checkMakeupLessonLimit(counter_1);
+                Log.d("counter", "" + counter_1);
+                if (comboflag) {
+                    st_chk_5.setChecked(false);
+                } else {
+                    st_chk_5.setChecked(true);
+                }
                 if (checkCHEKCSvalue(Integer.parseInt(combo1_limit), Integer.parseInt(combo2_limit)) == false) {
 
                 } else {
@@ -657,9 +841,6 @@ public class ScheduleMakeupFragment extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Animation animBounce = AnimationUtils.loadAnimation(mContext, R.anim.fade_in);
-//                animBounce.setDuration(600);
-                //sites_spinner.startAnimation(animBounce);
-//                btn_sites.setText(siteName.get(position));
                 if (position > 0) {
                     sites_spinner.setVisibility(View.VISIBLE);
                     spinner_selection(position);
@@ -678,8 +859,10 @@ public class ScheduleMakeupFragment extends Activity {
                             "SiteID"));
                     Log.d("siteMainList---id2", "" + siteMainList);
                     Log.d("siteMainList---id-po", "" + siteMainList.get(position));
-                    Log.d("siteMainList---name", "" + siteMainList.get(position).get(
-                            "SiteName"));
+                    Log.d("siteMainList---name", "" + siteMainList.get(position).get("SiteName"));
+
+                    new GetStartTimeRange().execute();
+
                 } else {
                     if (sites_lay.getVisibility() == View.VISIBLE) {
                         AppConfiguration.salStep1SiteID = "";
@@ -726,9 +909,6 @@ public class ScheduleMakeupFragment extends Activity {
                 endDateredBorder
                         .setBackgroundResource(R.drawable.pure_error_border_white);
                 Calendar minDate = Calendar.getInstance();
-                // minDate.set(mYEAR,
-                // mMONTH - 1,
-                // mDAY, 00, 00, 01);
                 DatePickerDialog mDialog1 = new DatePickerDialog(mContext,
                         mDateSetListener1, mDAY, mMONTH, mYEAR);
                 mDialog1.getDatePicker().setCalendarViewShown(false);
@@ -763,7 +943,7 @@ public class ScheduleMakeupFragment extends Activity {
                 mDialog.show();
             }
         });
-
+// 11-07-2017 megha change for some animation problem
         que1_grp.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
             @Override
@@ -772,13 +952,21 @@ public class ScheduleMakeupFragment extends Activity {
                 que1.setBackgroundResource(R.drawable.pure_error_border_white);
                 clearCheckboxes();
                 if (checkedId == R.id.yes1) {
+                    yes1.setButtonDrawable(R.drawable.r1);
+                    no_prf1.setButtonDrawable(R.drawable.r0);
                     makeAcombo();
                     chckStudents();
+                    AppConfiguration.schedulechoices = "1";
                     que2.setVisibility(View.GONE);
-                    tv_instruction_msg.setText(Html
-                            .fromHtml("Please select the students you would like to schedule in the same class."));
+                    tv_instruction_msg.setText(Html.fromHtml("Please select the students you would like to schedule in the same class."));
                     students_check.setVisibility(View.VISIBLE);
                 } else {
+                    counter_1 = 0;
+                    counter_2 = 0;
+                    yes1.setChecked(false);
+                    yes1.setButtonDrawable(R.drawable.r0);
+                    no_prf1.setButtonDrawable(R.drawable.r1);
+                    AppConfiguration.schedulechoices = "7";
                     que2.setVisibility(View.VISIBLE);
                     students_check.setVisibility(View.GONE);
                 }
@@ -792,12 +980,18 @@ public class ScheduleMakeupFragment extends Activity {
                 // TODO Auto-generated method stub
                 clearCheckboxes();
                 if (checkedId == R.id.yes2) {
+                    yes2.setButtonDrawable(R.drawable.r1);
+                    no_prf2.setButtonDrawable(R.drawable.r0);
                     makeAcombo();
                     chckStudents();
-                    tv_instruction_msg.setText(Html
-                            .fromHtml("Please select the students you would like to schedule with the same instructor."));
+                    tv_instruction_msg.setText(Html.fromHtml("Please select the students you would like to schedule with the same instructor."));
                     students_check.setVisibility(View.VISIBLE);
                 } else {
+                    counter_1 = 0;
+                    counter_2 = 0;
+                    yes2.setChecked(false);
+                    yes2.setButtonDrawable(R.drawable.r0);
+                    no_prf2.setButtonDrawable(R.drawable.r1);
                     students_check.setVisibility(View.GONE);
                 }
             }
@@ -828,9 +1022,11 @@ public class ScheduleMakeupFragment extends Activity {
             txtTitle.setText("Alert!");
 
             EditText txtBodyText = (EditText) dialog.findViewById(R.id.txtBodyText);
-            txtBodyText.setText("When scheduling two students together in the same class, we will only show search results for these two students. " +
+//            03-07-2017 Megha change message
+            txtBodyText.setText("Because you are scheduling students together in the same class, we will only offer classes with enough available spots to accommodate these students. " +
                     "After you have scheduled these students, please schedule separately for any additional students.");
-
+//            "When scheduling two students together in the same class, we will only show search results for these two students. " +
+//                    "After you have scheduled these students, please schedule separately for any additional students."
             TextView txtClose = (TextView) dialog.findViewById(R.id.txtClose);
             txtClose.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -945,26 +1141,28 @@ public class ScheduleMakeupFragment extends Activity {
             for (int l = 0; l < studentList.size(); l++) {
                 if (id[0].equals(studentList.get(l).get("StudentID"))) {
                     System.out.println("ID : " + rr.getId() + " Lsn ID : " + id[1] + " St Name : " + rr.getText().toString());
+                    lesson = rr.getText().toString();
+                    Log.d("lessson", lesson);
                     if (l == 0) {
                         clsID = id[1];
                         clsTxt = rr.getText().toString();
-                        addToCorrectArray(clsID, id[2]);
+                        addToCorrectArray(clsID, id[2], clsTxt);
                     } else if (l == 1) {
                         clsID_2 = id[1];
                         clsTxt_2 = rr.getText().toString();
-                        addToCorrectArray(clsID_2, id[2]);
+                        addToCorrectArray(clsID_2, id[2], clsTxt_2);
                     } else if (l == 2) {
                         clsID_3 = id[1];
                         clsTxt_3 = rr.getText().toString();
-                        addToCorrectArray(clsID_3, id[2]);
+                        addToCorrectArray(clsID_3, id[2], clsTxt_3);
                     } else if (l == 3) {
                         clsID_4 = id[1];
                         clsTxt_4 = rr.getText().toString();
-                        addToCorrectArray(clsID_4, id[2]);
+                        addToCorrectArray(clsID_4, id[2], clsTxt_4);
                     } else if (l == 4) {
                         clsID_5 = id[1];
                         clsTxt_5 = rr.getText().toString();
-                        addToCorrectArray(clsID_5, id[2]);
+                        addToCorrectArray(clsID_5, id[2], clsTxt_5);
                     }
                     //Name of the student
                     if (removeIT) {
@@ -974,6 +1172,10 @@ public class ScheduleMakeupFragment extends Activity {
                         //ID of the student
                         selectedStudents.remove(id[0]);
 
+
+                        if (selectedTextID.contains(rr.getText().toString())) {
+                            selectedTextID.remove(rr.getText().toString());
+                        }
                         if (filterd.containsKey(id[2])) {
                             filterd.remove(id[2]);
                         }
@@ -984,6 +1186,7 @@ public class ScheduleMakeupFragment extends Activity {
                         }
                         //ID of the student
                         selectedStudents.add(id[0]);
+                        selectedTextID.add(rr.getText().toString());
 
                         if (!filterd.containsKey(id[2])) {
                             filterd.put(id[2], id[0]);
@@ -999,13 +1202,20 @@ public class ScheduleMakeupFragment extends Activity {
                     selected_st_name.clear();
                     selected_st_name.addAll(duplicates);
 
+                    duplicates.clear();
+                    duplicates.addAll(selectedTextID);
+                    selectedTextID.clear();
+                    selectedTextID.addAll(duplicates);
+
                     System.out.println("STName : " + selected_st_name);
                     System.out.println("StID : " + selectedStudents);
                     System.out.println("Filtered : " + filterd);
+                    System.out.println("TextID :" + selectedTextID);
                 }
             }
         }
     }
+
     public void nextMethod() {
         AppConfiguration.studentsize = AppConfiguration.selectedStudentsName.size();
         AppConfiguration.selectedStudentNameToSchedule = AppConfiguration.Array2String
@@ -1032,6 +1242,7 @@ public class ScheduleMakeupFragment extends Activity {
             }
         }
     }
+
     /**
      * Common Checkbox click method for all checkboxes.
      * Just go through this method and you'll get desire output
@@ -1045,9 +1256,18 @@ public class ScheduleMakeupFragment extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                if (checkCHEKCSvalue(Integer.parseInt(combo2_limit)) == false) {
-
+                counter_2++;
+                checkMakeupLessonLimit2(counter_2);
+                Log.d("counter2", "" + counter_2);
+                if (comboflag) {
+                    check.setChecked(false);
                 } else {
+                    check.setChecked(true);
+                }
+                if (checkCHEKCSvalue(Integer.parseInt(combo2_limit)) == false) {
+                    AppConfiguration.pair2Check = "1";
+                } else {
+                    AppConfiguration.pair2Check = "0";
                     check.setChecked(false);
                     Toast.makeText(mContext, "Student Combo limit Exceeded", Toast.LENGTH_SHORT).show();
                 }
@@ -1144,8 +1364,29 @@ public class ScheduleMakeupFragment extends Activity {
         AppConfiguration.selectedStudentID = "";
         AppConfiguration.salStep1LessonID = "";
         AppConfiguration.salStep1LessonText = "";
+        if (yes1.isChecked()) { //Combo remove duplicate selectedID 22-06-2017 navin
+
+            List duplicateList = new ArrayList();
+            duplicateList.clear();
+
+            for (int p = 0; p < selectedID.size(); p++) {
+                duplicateList.add(selectedID.get(p));
+            }
+
+//            HashSet<String> listToSet = new HashSet<String>(duplicateList);
+            Set<String> listToSet = new LinkedHashSet<String>(duplicateList);
+            List<String> listWithoutDuplicates = new ArrayList<String>(listToSet);
+            selectedID.clear();
+            for (int k = 0; k < listWithoutDuplicates.size(); k++) {
+                if (!listWithoutDuplicates.get(k).equalsIgnoreCase("")) {
+                    selectedID.add(listWithoutDuplicates.get(k));
+                    System.out.println("Akjump" + selectedID);
+                }
+            }
+        }
 
         AppConfiguration.selectedStudentID = selectedStudents.toString().replaceAll("\\[", "").replaceAll("\\]", "");
+        AppConfiguration.selectedStudentIDforStep2 = selectedStudentsStep2.toString().replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s+", "");
         AppConfiguration.salStep1LessonID = selectedID.toString().replaceAll("\\[", "").replaceAll("\\]", "");
         AppConfiguration.salStep1LessonText = selectedText.toString().replaceAll("\\[", "").replaceAll("\\]", "");
 
@@ -1273,9 +1514,6 @@ public class ScheduleMakeupFragment extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-//            if (pd != null) {
-//                pd.dismiss();
-//            }
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_spinner_dropdown_item, siteName);
 
             sites_spinner.setAdapter(adapter);
@@ -1365,15 +1603,20 @@ public class ScheduleMakeupFragment extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            pd = new ProgressDialog(mContext);
+            pd.setMessage(getResources().getString(R.string.pleasewait));
+            pd.setCancelable(false);
+            pd.show();
         }
 
         @Override
         protected Void doInBackground(Void... params) {
             // TODO Auto-generated method stub
 
+
             HashMap<String, String> param = new HashMap<String, String>();
             param.put("Token", token);
-            param.put("SiteID", "1");
+            param.put("SiteID", AppConfiguration.salStep1SiteID);
 
             String responseString = WebServicesCall.RunScript(AppConfiguration.Schl_Get_ActiveSiteStartEndDate, param);
 
@@ -1399,7 +1642,9 @@ public class ScheduleMakeupFragment extends Activity {
         protected void onPostExecute(Void result) {
             // TODO Auto-generated method stub
             super.onPostExecute(result);
-
+            if (pd != null) {
+                pd.dismiss();
+            }
             start_date.setText(startmonth + "/" + startday + "/" + startyear);
 
             new GetStudentListAsyncTask().execute();
@@ -1523,6 +1768,7 @@ public class ScheduleMakeupFragment extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             studentList.clear();
+            temp_st_ID.clear();
         }
 
         @Override
@@ -1550,6 +1796,7 @@ public class ScheduleMakeupFragment extends Activity {
                         String SAge = jsonChildNode.getString("SAge").trim();
 
                         stNamestID.put(jsonChildNode.getString("SFirstName"), jsonChildNode.getString("StudentID"));
+
 
                         temp_st_ID.add(StudentID);
 
@@ -1600,7 +1847,10 @@ public class ScheduleMakeupFragment extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
+            pd = new ProgressDialog(mContext);
+            pd.setMessage(getResources().getString(R.string.pleasewait));
+            pd.setCancelable(false);
+            pd.show();
             lessonTypesMainListForStudent1.clear();
             lessonTypesMainListForStudent2.clear();
             lessonTypesMainListForStudent3.clear();
@@ -1612,6 +1862,8 @@ public class ScheduleMakeupFragment extends Activity {
             selectedID.clear();
             selectedStudents.clear();
             selectedText.clear();
+            counter_1 = 0;
+            counter_2 = 0;
         }
 
         @Override
@@ -1623,7 +1875,11 @@ public class ScheduleMakeupFragment extends Activity {
             HashMap<String, String> params = new HashMap<String, String>();
             params.put("Token", token);
             params.put("studentarray", selectedID);
-            params.put("siteid", "1");
+            if (AppConfiguration.salStep1SiteID.equalsIgnoreCase("")) {
+                params.put("siteid", "0");
+            } else {
+                params.put("siteid", AppConfiguration.salStep1SiteID);
+            }
             params.put("mup", String.valueOf(AppConfiguration.makeup_Clicked));
             params.put("familyid", familyID);
             String responseString = WebServicesCall.RunScript(AppConfiguration.Schl_Get_LessonListByStudent, params);
@@ -1709,19 +1965,25 @@ public class ScheduleMakeupFragment extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-//            if (pd != null) {
-//                pd.dismiss();
-//            }
+            if (pd != null) {
+                pd.dismiss();
+            }
 
             if (AppConfiguration.animation) {
                 TransitionManager.beginDelayedTransition(loadingScreens, Fadeout);
                 loadingScreens.setVisibility(View.GONE);
             }
-
+            doSomeStuff();
+            Clear();
             if (successLessonTypes.equalsIgnoreCase("True")) {
+//                Temp_Lessons.clear();
+                if (students_lay.getChildCount() > 0) {
+                    students_lay.removeAllViews();
+                }
+
                 for (int i = 0; i < studentList.size(); i++) {
                     // Temp_Lessons_Sigle_Student.clear();
-                    Temp_Lessons.clear();
+//                    Temp_Lessons.clear();
                     LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     View view = inflater.inflate(R.layout.d2_custom_studentslay, null);
 
@@ -1750,13 +2012,23 @@ public class ScheduleMakeupFragment extends Activity {
                     track.setText("0");
                     if (Temp_Lessons.size() == 0) {
                         superlay.setVisibility(View.GONE);
+
                     }
+
+
                     for (int j = 0; j < Temp_Lessons.size(); j++) {
                         LayoutInflater inflater1 = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View RadioView = inflater1.inflate(R.layout.d2_custom_lsntypes, null);
                         final RadioButton radioBtn = (RadioButton) RadioView.findViewById(R.id.radio_btn);
                         radioBtn.setText(Temp_Lessons.get(j).get("LessonName"));
                         radioBtn.setId(Integer.parseInt(Temp_Lessons.get(j).get("LessonID")));
+
+                        if (Temp_Lessons.get(j).get("Enable").equalsIgnoreCase("true")) {
+                        } else {
+                            radioBtn.setEnabled(false);
+                            radioBtn.setAlpha((float) 0.5);
+
+                        }
 
                         radioBtn.setTag(studentList.get(i).get("StudentID")
                                 + "|" + Temp_Lessons.get(j).get("LessonID")
@@ -1801,12 +2073,17 @@ public class ScheduleMakeupFragment extends Activity {
                                     removeIT = true;
                                     lsnTypes.clearCheck();
                                     track.setText("");
+                                    counter_1 = 0;
+                                    counter_2 = 0;
                                     superlay.setBackgroundResource(R.color.student_back);
                                     MainLay.setBackgroundResource(R.color.student_back);
                                 } else {
                                     studentName.setTag("checked");
                                     removeIT = false;
+                                    counter_1 = 0;
+                                    counter_2 = 0;
                                     track.setText(radioBtn.getText().toString());
+                                    Log.d("track", track.toString());
                                     superlay.setBackgroundResource(R.color.orange);
                                     MainLay.setBackgroundResource(R.color.orange);
                                 }
@@ -1837,8 +2114,8 @@ public class ScheduleMakeupFragment extends Activity {
                                                 if (removeIT) {
                                                     if (AppConfiguration.selectedStudentsName.contains(MainLay.getTag())) {
                                                         AppConfiguration.selectedStudentsName.remove(MainLay
-                                                                        .getTag()
-                                                                        .toString());
+                                                                .getTag()
+                                                                .toString());
                                                     }
                                                 } else {
                                                     if (!AppConfiguration.selectedStudentsName
@@ -1928,7 +2205,6 @@ public class ScheduleMakeupFragment extends Activity {
     LinkedHashMap<String, String> filterd = new LinkedHashMap<String, String>();
 
 
-
     public void addToarray() {
         selectedID.clear();
         selectedText.clear();
@@ -1957,7 +2233,7 @@ public class ScheduleMakeupFragment extends Activity {
      */
     boolean flag = true;
 
-    public void addToCorrectArray(String clsID, String stName) {
+    public void addToCorrectArray(String clsID, String stName, String clsTxt) {
         if (flag) {
             doSomeStuff();
         }
@@ -2007,6 +2283,7 @@ public class ScheduleMakeupFragment extends Activity {
             if (clsID.equals("2")) {//SemiPrivate
                 if (!sp_lesson.contains(stName)) {
                     sp_lesson.add(stName);
+
                     //RemoveFromOther
                     removeFromOther("2", stName);
                 }
@@ -2374,85 +2651,7 @@ public class ScheduleMakeupFragment extends Activity {
                 combo2 = temp1;
             }
         }
-
     }
-
-    /**
-     * this method is deprecated.
-     * use addToCorrectArray method for better result.
-     * @param current
-     * @param i
-     */
-    /*
-	public void compare(String current, int i) {
-		if (i == 0) {
-			if (current.equals(clsID_2)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_3)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_4)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_5)) {
-				que1.setVisibility(View.VISIBLE);
-			} else {
-				doSomeStuff();
-			}
-		} else if (i == 1) {
-			if (current.equals(clsID)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_3)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_4)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_5)) {
-				que1.setVisibility(View.VISIBLE);
-			} else {
-				doSomeStuff();
-			}
-		} else if (i == 2) {
-			if (current.equals(clsID_2)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_4)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_5)) {
-				que1.setVisibility(View.VISIBLE);
-			} else {
-				doSomeStuff();
-			}
-		} else if (i == 3) {
-			if (current.equals(clsID_2)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_3)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_5)) {
-				que1.setVisibility(View.VISIBLE);
-			} else {
-				doSomeStuff();
-			}
-		} else if (i == 4) {
-			if (current.equals(clsID_2)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_3)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID_4)) {
-				que1.setVisibility(View.VISIBLE);
-			} else if (current.equals(clsID)) {
-				que1.setVisibility(View.VISIBLE);
-			} else {
-				doSomeStuff();
-			}
-		}
-
-		if (que1.getVisibility() == View.VISIBLE) {
-			setLimit(current);
-		}
-		chckStudents();
-	}
-	 */
 
     /**
      * This method is use to reassign some values when
@@ -2512,6 +2711,7 @@ public class ScheduleMakeupFragment extends Activity {
                 combo2_limit = "12";
             } else if (current.equals("6")) {//P&M adv
                 combo2_limit = "3";
+                combo2_limit = "3";
             } else if (current.equals("7")
                     || current.equals("8")
                     || current.equals("9")) {//P&M Int,B/I,Beg
@@ -2530,28 +2730,21 @@ public class ScheduleMakeupFragment extends Activity {
         }
     }
 
-    /**
-     * Set the value of combo checkboxes from lessontypes.
-     * @param current
-     * deprecated
-     */
-	/*
-	public void setLimit(String current) {
-
-		if (current.equals("1")) {
-			limit = "1";
-		} else if (current.equals("2")) {
-			limit = "2";
-		} else if (current.equals("5") || current.equals("7")
-				|| current.equals("8")) {
-			limit = "5";
-		} else if (current.equals("6")) {
-			limit = "3";
-		} else {
-			limit = "100";
-		}
-	}
-	 */
+    // 05-07-2017 megha for clear the checkboxvalue
+    public void Clear() {
+        sp_lesson.clear();
+        grp_lesson.clear();
+        strkINT.clear();
+        PMadv.clear();
+        PMbeg.clear();
+        PMint.clear();
+        PMbi.clear();
+        strkadv.clear();
+        strk.clear();
+        strkBeg.clear();
+        adltBeg.clear();
+        adltInt.clear();
+    }
 
     /**
      * Clear the checks and reassign the null value to
@@ -2624,6 +2817,7 @@ public class ScheduleMakeupFragment extends Activity {
         }
 
         if (checkCHEKCSvalue(limit2)) ;
+
         System.out.println("Checked Value = " + checkedValue);
         return wrong;
     }
@@ -2659,6 +2853,7 @@ public class ScheduleMakeupFragment extends Activity {
                 // students_check.setBackground(getResources().getDrawable(R.drawable.error_border));
             } else {
             }
+            System.out.println("Checked Value2 = " + checkedValue_2);
         }
         return wrong;
     }
@@ -2916,10 +3111,10 @@ public class ScheduleMakeupFragment extends Activity {
         temp_ID.removeAll(Collections.singleton(""));
         temp_TXT.removeAll(Collections.singleton(""));
 
-        selectedID.clear();
+//        selectedID.clear();
         selectedText.clear();
 
-        selectedID.addAll(temp_ID);
+//        selectedID.addAll(temp_ID); 03-07-2017 megha
         selectedText.addAll(temp_TXT);
 
     }
@@ -2930,10 +3125,17 @@ public class ScheduleMakeupFragment extends Activity {
      * except 1st user ID.
      */
     public void ReFilterIDS() {
+        //        05-07-2017 megha change for 3&2 and 2&2 combo
         boolean found = false;
         ArrayList<String> tempID = new ArrayList<String>();
+        ArrayList<String> tempID1 = new ArrayList<String>();
+        ArrayList<String> tempID2 = new ArrayList<String>();
+        tempID1.clear();
+        tempID2.clear();
         tempID.addAll(selectedStudents);
         for (int i = 0; i < AppConfiguration.comboID.size(); i++) {
+            tempID1.add(AppConfiguration.comboID.get(i));
+
             if (new ArrayList<String>(filterd.values()).contains(AppConfiguration.comboID.get(i))) {
                 if (found) {
                     tempID.remove(AppConfiguration.comboID.get(i));
@@ -2944,6 +3146,7 @@ public class ScheduleMakeupFragment extends Activity {
 
         found = false;
         for (int i = 0; i < AppConfiguration.comboID2.size(); i++) {
+            tempID2.add(AppConfiguration.comboID2.get(i));
             if (new ArrayList<String>(filterd.values()).contains(AppConfiguration.comboID2.get(i))) {
                 if (found) {
                     tempID.remove(AppConfiguration.comboID2.get(i));
@@ -2951,18 +3154,28 @@ public class ScheduleMakeupFragment extends Activity {
                 found = true;
             }
         }
-
+        ArrayList<String> tempM = new ArrayList<String>();
+        if (tempID2.size() >= 1) {
+            tempM.add(tempID1 + "|" + tempID2);
+        } else {
+            tempM.add(String.valueOf(tempID1 + "" + tempID2));
+        }
 
         selectedStudents.clear();
+        selectedStudentsStep2.clear();
+
         selectedStudents.addAll(tempID);
+        selectedStudentsStep2.addAll(tempM);
         System.out.println("Filterd IDs " + tempID);
 
         nextMethod();
     }
 
+    ArrayList<String> selectedTextID = new ArrayList<String>();
     ArrayList<String> selectedStudents = new ArrayList<String>();
     ArrayList<String> selectedID = new ArrayList<String>();
     ArrayList<String> selectedText = new ArrayList<String>();
+    ArrayList<String> selectedStudentsStep2 = new ArrayList<String>();
 
     /**
      * This method generate MODAL view
@@ -3032,6 +3245,8 @@ public class ScheduleMakeupFragment extends Activity {
             }
         });
     }
+
+
     /**
      * Generates the CheckBoxes from the combo array.
      */
@@ -3042,6 +3257,7 @@ public class ScheduleMakeupFragment extends Activity {
                 String tempst[];
                 if (combo1.get(i).contains(" ")) {
                     tempst = combo1.get(i).split(" ");
+
                 } else {
                     tempst = combo1.get(i).toString().split("");
                 }
@@ -3105,7 +3321,9 @@ public class ScheduleMakeupFragment extends Activity {
             combo2_lay.setVisibility(View.GONE);
         }
     }
+
     ArrayList<String> selected_st_name = new ArrayList<String>();
+
     /**
      * WebServices
      *
@@ -3118,11 +3336,6 @@ public class ScheduleMakeupFragment extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-//            pd = new ProgressDialog(mContext);
-//            pd.setMessage("Please wait...");
-//            pd.setCancelable(true);
-            //			pd.show();
-
             siteMainList.clear();
             siteName.clear();
         }
@@ -3137,9 +3350,6 @@ public class ScheduleMakeupFragment extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-//            if (pd != null) {
-//                pd.dismiss();
-//            }
         }
     }
 
@@ -3193,11 +3403,6 @@ public class ScheduleMakeupFragment extends Activity {
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             super.onPreExecute();
-//            pd = new ProgressDialog(mContext);
-//            pd.setMessage("Please wait...");
-//            pd.setCancelable(true);
-//            pd.setCanceledOnTouchOutside(false);
-//            pd.show();
         }
 
         protected Void doInBackground(Void... params) {
@@ -3233,9 +3438,6 @@ public class ScheduleMakeupFragment extends Activity {
         protected void onPostExecute(Void result) {
             // TODO Auto-generated method stub
             super.onPostExecute(result);
-//            if (pd != null) {
-//                pd.dismiss();
-//            }
             if (data_load.toString().equals("True")) {
                 if (!AppConfiguration.Mup_cnt.equals("0")) {
                     // Rakesh 20112015............
@@ -3260,10 +3462,6 @@ public class ScheduleMakeupFragment extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-//            pd = new ProgressDialog(mContext);
-//            pd.setMessage(getResources().getString(R.string.pleasewait));
-//            pd.setCancelable(false);
-//            pd.show();
 
             schedulePageLoadList.clear();
             limits.clear();
@@ -3375,9 +3573,6 @@ public class ScheduleMakeupFragment extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-//            if (pd != null) {
-//                pd.dismiss();
-//            }
 
             if (schedulePageLoadList.get(0).get("Makeupflg").toString().equalsIgnoreCase("1")) {
                 HashMap<String, String> hashmap = new HashMap<String, String>();
@@ -3429,7 +3624,6 @@ public class ScheduleMakeupFragment extends Activity {
                         if (schedulePageLoadList.get(0).get("UnusedMsg").toString().length() > 0) {
                             makeup_alert.setVisibility(View.VISIBLE);
                             scrollview.setVisibility(View.GONE);
-//							tv_schd_name.setText("No Make ups Left");
                             makeup_alert.setText(Html.fromHtml(schedulePageLoadList.get(0).get("UnusedMsg").toString()));
                         } else {
                             makeup_alert.setVisibility(View.GONE);
@@ -3456,8 +3650,6 @@ public class ScheduleMakeupFragment extends Activity {
             pd.setMessage("Please wait while we update your make-up count...");
             pd.setCancelable(false);
             pd.show();
-//            progressBar.setVisibility(View.VISIBLE);
-//            ll_progress.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -3479,8 +3671,6 @@ public class ScheduleMakeupFragment extends Activity {
                 pd.dismiss();
                 pd = null;
             }
-//            progressBar.setVisibility(View.GONE);
-//            ll_progress.setVisibility(View.GONE);
         }
     }
 

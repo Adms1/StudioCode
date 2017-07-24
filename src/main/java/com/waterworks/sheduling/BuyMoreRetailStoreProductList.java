@@ -191,8 +191,6 @@ public class BuyMoreRetailStoreProductList extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                /*Intent i = new Intent(getApplicationContext(), BuyMoreRetailStore.class);
-                startActivity(i);*/
                 finish();
             }
         });

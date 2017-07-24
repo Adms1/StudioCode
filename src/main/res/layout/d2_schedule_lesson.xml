@@ -305,7 +305,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:button="@drawable/custom_radiobutton_orange"
+                            android:button="@drawable/r0"
                             android:checked="false"
                             android:paddingRight="5dp"
                             android:text="Yes"
@@ -316,11 +316,10 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:button="@drawable/custom_radiobutton_orange"
-
-
+                            android:button="@drawable/r0"
                             android:text="No Preference"
                             android:textColor="@color/black" />
+                        <!--android:button="@drawable/custom_radiobutton_orange"-->
                     </RadioGroup>
                 </LinearLayout>
 
@@ -352,17 +351,19 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:button="@drawable/custom_radiobutton_orange"
+                            android:button="@drawable/r0"
                             android:checked="false"
                             android:text="Yes" />
-
+                        <!--android:button="@drawable/custom_radiobutton_orange"-->
                         <RadioButton
                             android:id="@+id/no_prf2"
                             android:layout_width="0dp"
+                            android:button="@drawable/r0"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:button="@drawable/custom_radiobutton_orange"
+
                             android:text="No Preference" />
+                        <!--android:button="@drawable/custom_radiobutton_orange"-->
                     </RadioGroup>
                 </LinearLayout>
 
@@ -502,7 +503,7 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:clipToPadding="false"
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
@@ -561,8 +562,8 @@
                 </com.andexert.library.RippleView>
 
             </RelativeLayout>
-
         </LinearLayout>
     </ScrollView>
+
 
 </LinearLayout>

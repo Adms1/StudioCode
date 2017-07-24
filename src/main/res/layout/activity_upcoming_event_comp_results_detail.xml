@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtTitle"
                 android:layout_marginTop="5dp"
-                android:text="Event Details"
+                android:text="Event Details:"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="normal" />

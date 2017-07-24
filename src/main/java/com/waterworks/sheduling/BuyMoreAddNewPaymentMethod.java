@@ -64,28 +64,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListener {
-    //	ButtonRectangle btn_rectangle, btn_add_checkingaccount, btn_add_creditdebit;
     LinearLayout swimLsn, retailStore, otherPrograms, ll_add_credit_debit, ll_add_checking_accountt,
-            ll_debit_credit_card, ll_add_checking_account, ll_checking_account, start_redBorder;
+            ll_debit_credit_card, ll_checking_account, start_redBorder;
     ImageView imgv_creditdebit_down, imgv_checkingAccount_down;
     TextView txt_1, txt_2, txt_3, txt_btn_add_creditdebit;
     CheckBox checkBox_save_forFutureUse, checkBox_save_forFutureUseBank;
     EditText editText_fName, editText_lName, editText_cardNumber, editText_cvv, editText_addressC1, editText_addressC2, editText_city, editText_state, editText_zipCode,
-            editText_cardType;//editText_expireMonth, editText_expireYear
+            editText_cardType;
     EditText editText_nameOnAccount, editText_bankingRoutingNumber, editText_checkingAcNumber,
-            editText_re_enter_checkingAcNumber, editText_stateName, editText_bank_name, editText_accountType,
+            editText_stateName, editText_bank_name, editText_accountType,
             editText_address1, editText_address2, editText_chkCity, editText_chZipCode;
 
     View selected_1, selected_2, selected_3, vw_checkinAc, vw_hrline;
     Button BackButton, btn_viewCart;
     CardView btn_add_creditdebit, btn_add_checkingaccount;
-    String token, Basketid, msg, success, check_detail, card_detail, PaymenPaymentBillingAddresstCheck;
+    String token, Basketid, success, check_detail, card_detail, PaymenPaymentBillingAddresstCheck;
     Context mContext = this;
     Animation animSlidBottom, animSlidTop;
-    ListPopupWindow lpw_sitelist, lpw_sitelistState, lpw_cardType;//, lpw_cardExpireMonth, lpw_cardExpireYear;
+    ListPopupWindow lpw_sitelist, lpw_sitelistState, lpw_cardType;
     Spinner spinMonth, spinYear;
-    ArrayList<HashMap<String, String>> insertedCardDetailArray = new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> insertedCheckDetailArray = new ArrayList<HashMap<String, String>>();
     ArrayList<HashMap<String, String>> StateList = new ArrayList<HashMap<String, String>>();
     ArrayList<String> stateName = new ArrayList<String>();
     ArrayList<HashMap<String, String>> editCardArray = new ArrayList<HashMap<String, String>>();
@@ -103,7 +100,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(mContext);
         token = prefs.getString("Token", "");
-//        Basketid = AppConfiguration.Basketid;
         Basketid = AppConfiguration.BasketID;
         editCardArray = AppConfiguration.editCardArray;
         selected_1 = (View) findViewById(R.id.selected_1);
@@ -165,8 +161,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         lpw_sitelist = new ListPopupWindow(mContext);
         lpw_sitelistState = new ListPopupWindow(mContext);
         lpw_cardType = new ListPopupWindow(getApplicationContext());
-//        lpw_cardExpireMonth = new ListPopupWindow (getApplicationContext());
-//        lpw_cardExpireYear = new ListPopupWindow(getApplicationContext());
         checkBox_save_forFutureUse = (CheckBox) findViewById(R.id.checkBox_save_forFutureUse);
         checkBox_save_forFutureUseBank = (CheckBox) findViewById(R.id.checkBox_save_forFutureUseBank);
         start_redBorder = (LinearLayout) findViewById(R.id.start_redBorder);
@@ -174,24 +168,17 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         // Card detail variables
 
         editText_fName = (EditText) findViewById(R.id.editText_fName);
-
         editText_lName = (EditText) findViewById(R.id.editText_lName);
         editText_cardNumber = (EditText) findViewById(R.id.editText_cardNumber);
         editText_cardType = (EditText) findViewById(R.id.editText_cardType);
-//        editText_expireMonth = (EditText) findViewById(R.id.editText_expireMonth);
-//        editText_expireYear = (EditText) findViewById(R.id.editText_expireYear);
-
-
         editText_cvv = (EditText) findViewById(R.id.editText_cvv);
         editText_addressC1 = (EditText) findViewById(R.id.editText_addressC1);
         editText_addressC2 = (EditText) findViewById(R.id.editText_addressC2);
-
         editText_city = (EditText) findViewById(R.id.editText_city);
         editText_state = (EditText) findViewById(R.id.editText_state);
         editText_zipCode = (EditText) findViewById(R.id.editText_zipCode);
 
         // Checking account variables
-
         editText_nameOnAccount = (EditText) findViewById(R.id.editText_nameOnAccount);
         editText_bankingRoutingNumber = (EditText) findViewById(R.id.editText_bankingRoutingNumber);
         editText_checkingAcNumber = (EditText) findViewById(R.id.editText_checkingAcNumber);
@@ -213,9 +200,8 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         txt_2 = (TextView) view.findViewById(R.id.txt_2);
         txt_3 = (TextView) view.findViewById(R.id.txt_3);
 
-//		int maxLength = 16;
         editText_cardNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(cardTypeValidation(maxLength))});
-        Log.e("cardTypeValidation(maxLength)", "" + cardTypeValidation(maxLength));
+
         // Card type dropdown
         editText_cardType.setOnClickListener(new OnClickListener() {
 
@@ -266,14 +252,9 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                         .setBackgroundResource(R.drawable.pure_error_border_white);
                 if (editText_cardNumber.getText().toString().length() > 0) {
                     if (editText_cardNumber.getText().toString().length() < 15) {
-//                        editText_cardNumber.setError("Card Number is not valid.");
-//                        editText_cardNumber.requestFocus();
-                        start_redBorder
-                                .setBackgroundResource(R.drawable.error_border);
+                        start_redBorder.setBackgroundResource(R.drawable.error_border);
                     }
                 } else {
-//                    editText_cardNumber.setError("Card Number is missing.");
-//                    editText_cardNumber.requestFocus();
                     start_redBorder
                             .setBackgroundResource(R.drawable.error_border);
                 }
@@ -286,63 +267,12 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         spinYear = (Spinner) findViewById(R.id.spinYear);
         ArrayAdapter<String> adapterYear = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.year));
         spinYear.setAdapter(adapterYear);
-        /*// Card expire month drop down
-        editText_expireMonth.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                lpw_cardExpireMonth.show();
-            }
-        });
-        lpw_cardExpireMonth.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.edittextpopup,
-                getResources().getStringArray(R.array.month)));
-        lpw_cardExpireMonth.setAnchorView(editText_expireMonth);
-        lpw_cardExpireMonth.setModal(true);
-        lpw_cardExpireMonth.setHeight(LayoutParams.WRAP_CONTENT);
-        lpw_cardExpireMonth.setOnItemClickListener(new OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // TODO Auto-generated method stub
-                editText_expireMonth.setText(getResources().getStringArray(R.array.month)[position]);
-                lpw_cardExpireMonth.dismiss();
-            }
-        });
-        // Card expire year drop down
-        editText_expireYear.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                lpw_cardExpireYear.show();
-            }
-        });
-
-        lpw_cardExpireYear.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.edittextpopup,
-                getResources().getStringArray(R.array.year)));
-        lpw_cardExpireYear.setAnchorView(editText_expireYear);
-        lpw_cardExpireYear.setModal(true);
-        lpw_cardExpireYear.setHeight(android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        lpw_cardExpireYear.setOnItemClickListener(new OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // TODO Auto-generated method stub
-                editText_expireYear.setText(getResources().getStringArray(R.array.year)[position]);
-                lpw_cardExpireYear.dismiss();
-            }
-        });*/
-
         // back button function
-
         BackButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-//				Intent i = new Intent(getApplicationContext(), BuyMoreSelectPaymentMethod.class);
-//				startActivity(i);
                 BuyMoreAddNewPaymentMethod.this.finish();
             }
         });
@@ -600,7 +530,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                             break;
                     }
                 }
-//            }
             }
 
             @Override
@@ -635,11 +564,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
     public void onClick(View v) {
         // TODO Auto-generated method stub
         if (v == ll_add_credit_debit) {
-
-//            isInternetPresent = Utility.isNetworkConnected(LoginActivity.this);
-//            if(!isInternetPresent){
-//                onDetectNetworkState().show();
-//            }
             if (!ll_debit_credit_card.isShown()) {
 
                 ll_debit_credit_card.setVisibility(View.VISIBLE);
@@ -650,14 +574,9 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                 vw_checkinAc.setVisibility(View.VISIBLE);
                 if (checkBox_save_forFutureUseBank.isChecked())
                     checkBox_save_forFutureUseBank.setChecked(false);
-                // Toast.makeText(getApplicationContext(), "slid top",
-                // Toast.LENGTH_SHORT).show();
-
             } else {
 
                 ll_debit_credit_card.startAnimation(animSlidBottom);
-                // Toast.makeText(getApplicationContext(), "slid bottom",
-                // Toast.LENGTH_SHORT).show();
                 checkBox_save_forFutureUse.setChecked(false);
                 imgv_creditdebit_down.setImageResource(R.drawable.horizontal_arr);
                 new Handler().postDelayed(new Runnable() {
@@ -685,13 +604,8 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                 imgv_checkingAccount_down.setImageResource(R.drawable.down_arr);
                 if (checkBox_save_forFutureUse.isChecked())
                     checkBox_save_forFutureUse.setChecked(false);
-                // Toast.makeText(getApplicationContext(), "slid top 1",
-                // Toast.LENGTH_SHORT).show();
             } else {
                 ll_checking_account.startAnimation(animSlidBottom);
-
-                // Toast.makeText(getApplicationContext(), "slid bottom 1",
-                // Toast.LENGTH_SHORT).show();
                 checkBox_save_forFutureUseBank.setChecked(false);
                 imgv_checkingAccount_down.setImageResource(R.drawable.horizontal_arr);
                 new Handler().postDelayed(new Runnable() {
@@ -712,19 +626,11 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                     AppConfiguration.cardType = "Checking " + editText_checkingAcNumber.getText().toString().substring(0, 12).replaceAll(".", "*") + editText_checkingAcNumber.getText().toString().substring(Math.max(0, editText_checkingAcNumber.getText().toString().trim().length() - 4));
                     PaymentConfirmtAsyncTask paymentConfirmtAsyncTask = new PaymentConfirmtAsyncTask();
                     paymentConfirmtAsyncTask.execute();
-//                    new CheckingAcAsyncTask().execute();
-                    //add confirm payment ws
+
                 } catch (Exception e) {
                     // TODO: handle exception
                     e.printStackTrace();
                 }
-
-//                buyMoreSelectPaymentMethod.inflateSelectPaymentMethod(insertedCheckDetailArray);
-
-//                Intent i = new Intent(getApplicationContext(), BuyMoreOrderSummary.class);
-//                i.putExtra("payTypeCheck", "payTypeCheck");
-                // Toast.makeText(getApplicationContext(), "Your details have
-                // been updated successfully!", Toast.LENGTH_SHORT).show();
             } else {
                 pay_check_chk();
             }
@@ -744,12 +650,7 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                         AppConfiguration.cardType = editText_cardType.getText().toString() + " " + editText_cardNumber.getText().toString().substring(0, 12).replaceAll(".", "*") + editText_cardNumber.getText().toString().substring(Math.max(0, editText_cardNumber.getText().toString().trim().length() - 4));
                         PaymentConfirmtAsyncTask paymentConfirmtAsyncTask = new PaymentConfirmtAsyncTask();
                         paymentConfirmtAsyncTask.execute();
-                        //add confirm payment ws
-                    /*if (AppConfiguration.pmtId.equalsIgnoreCase("pmtIdEdt")) {
-//                        new CardAsyncTask().execute();
-                    } else {
-//                        new EditCardAsyncTask().execute();
-                    }*/
+
                     } catch (Exception e) {
                         // TODO: handle exception
                         e.printStackTrace();
@@ -758,15 +659,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                     pay_credit_chk();
                 }
             }
-//                buyMoreSelectPaymentMethod.inflateSelectPaymentMethod(insertedCardDetailArray);
-//                Intent i = new Intent(getApplicationContext(), BuyMoreOrderSummary.class);
-//				i.putExtra("payTypeCard", "payTypeCard");
-                /*Intent i = new Intent(getApplicationContext(), BuyMoreSelectPaymentMethod.class);
-                startActivity(i);
-                finish();*/
-            // Toast.makeText(getApplicationContext(), "Your details have
-            // been updated successfully!", Toast.LENGTH_SHORT).show();
-
         }
     }
 
@@ -821,7 +713,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         @Override
         protected void onPostExecute(String response) {
             super.onPostExecute(response);
-//            {"Success":"True","Msg":"Update Paymen t Detail Successful..."}
             pd.dismiss();
             try {
                 JSONObject reader = new JSONObject(response);
@@ -851,7 +742,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
             pd = new ProgressDialog(mContext);
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
-//            pd.show();
 
         }
 
@@ -865,7 +755,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-//            if (pd != null && pd.isShowing()) {
             try {
 
                 pd.dismiss();
@@ -874,15 +763,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
             } catch (Exception e) {
                 // TODO: handle exception
             }
-            //moved to order summary
-                /*try {
-                    new ConfirmSubmitPaymentAsyncTask().execute();
-                } catch (Exception e) {
-                    // TODO: handle exception
-                    e.printStackTrace();
-                }*/
-
-//            }
 
         }
     }
@@ -993,7 +873,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         param1.put("BasketID", AppConfiguration.BasketID);
         param1.put("pastduepaymentFlag", "false");
         param1.put("pastdueInvoiceId", "");
-//        param1.put("creditexp", editText_expireMonth.getText().toString() +""+ editText_expireYear.getText().toString());
         param1.put("creditexp", "");
         param1.put("strPaymentCredit", card_detail);
         param1.put("strPaymentCheck", check_detail);
@@ -1002,8 +881,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         param1.put("strPaymentShippingAddress", "");
         param1.put("Userid1", "");
         AppConfiguration.finalSelectedPaymentArray.add(param1);
-
-        Log.e("AppConfiguration.finalSelectedPaymentArray -- final", "" + AppConfiguration.finalSelectedPaymentArray);
 
         //take user directly to order summary as per new flow
         Intent intent = new Intent(BuyMoreAddNewPaymentMethod.this, BuyMoreOrderSummary.class);
@@ -1027,267 +904,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
         cardNumberSplitArray = strfinal.split("-");
         return cardNumberSplitArray;
     }
-
-    // Card details insert
-    /*class CardAsyncTask extends AsyncTask<Void, Void, Void> {
-        ProgressDialog pd;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            pd = new ProgressDialog(mContext);
-            pd.setMessage("Please wait...");
-            pd.setCancelable(false);
-            pd.show();
-            insertedCardDetailArray.clear();
-            // siteMainList.clear();
-            // siteName.clear();
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                insertCardDetails();
-            } catch (Exception e) {
-                // TODO: handle exception
-                e.printStackTrace();
-            }
-
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            if (pd != null && pd.isShowing()) {
-
-                pd.dismiss();
-
-            }
-
-        }
-    }
-
-    public void insertCardDetails() {
-        HashMap<String, String> param = new HashMap<String, String>();
-        param.put("Token", token);
-        param.put("Basketid", Basketid);
-        param.put("txtfname", editText_fName.getText().toString().trim());
-        param.put("txtlname", editText_lName.getText().toString().trim());
-        param.put("CardNo", editText_cardNumber.getText().toString().trim());
-        param.put("ddlctype", editText_cardType.getText().toString().trim());
-        param.put("txtcvv", editText_cvv.getText().toString().trim());
-        param.put("ddlexp1", editText_expireMonth.getText().toString().trim());
-        param.put("ddlexp2", editText_expireYear.getText().toString().trim());
-        param.put("txtaddress1", editText_addressC1.getText().toString().trim());
-        param.put("txtaddress2", editText_addressC2.getText().toString().trim());
-        param.put("txtcity", editText_city.getText().toString().trim());
-        param.put("txtstate", editText_state.getText().toString().trim());
-        param.put("txtzipcode", editText_zipCode.getText().toString().trim());
-
-        insertedCardDetailArray.add(param);
-//        AppConfiguration.insertedCardDetailArray = insertedCardDetailArray;
-        AppConfiguration.addNewCardPayment = true;
-        String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.AddCardDetails,
-                param);
-        Log.d("card responseString-", responseString);
-
-        readAndParseCardJSON(responseString);
-    }
-
-    public void readAndParseCardJSON(final String in) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    final JSONObject reader = new JSONObject(in);
-                    success = reader.getString("Success");
-                    if (success.equalsIgnoreCase("True")) {
-                        msg = reader.getString("Msg");
-
-                        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
-    // Checking Account details insert
-    class CheckingAcAsyncTask extends AsyncTask<Void, Void, Void> {
-        ProgressDialog pd;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            insertedCheckDetailArray.clear();
-            pd = new ProgressDialog(mContext);
-            pd.setMessage("Please wait...");
-            pd.setCancelable(false);
-            pd.show();
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            insertCheckingAc();
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            if (pd != null && pd.isShowing()) {
-                try {
-                    pd.dismiss();
-                    Intent i = new Intent(getApplicationContext(), BuyMoreSelectPaymentMethod.class);
-                    startActivity(i);
-                    finish();
-                } catch (Exception e) {
-                    // TODO: handle exception
-                }
-
-            }
-
-        }
-    }
-
-    public void insertCheckingAc() {
-//		Log.d("bankingRoutingNumber-",  editText_bankingRoutingNumber.getText().toString());
-        insertedCheckDetailArray.clear();
-        HashMap<String, String> param = new HashMap<String, String>();
-        param.put("Token", token);
-        param.put("Basketid", Basketid);
-        param.put("txtnameofcheck", editText_nameOnAccount.getText().toString().trim());
-        param.put("txtrouting", editText_bankingRoutingNumber.getText().toString().trim());
-        param.put("txtaccno", editText_checkingAcNumber.getText().toString().trim());
-        param.put("txtbankname", editText_bank_name.getText().toString().trim());
-        param.put("ddlAccountType", editText_accountType.getText().toString().trim());
-        param.put("chkaddressline1", editText_address1.getText().toString().trim());
-        param.put("chkaddressline2", editText_address2.getText().toString().trim());
-        param.put("chkcity", editText_chkCity.getText().toString().trim());
-        param.put("chkstate", editText_stateName.getText().toString().trim());
-        param.put("chkzip", editText_chZipCode.getText().toString().trim());
-
-        insertedCheckDetailArray.add(param);
-//        AppConfiguration.insertedCheckDetailArray = insertedCheckDetailArray;
-        AppConfiguration.addNewCheckPayment = true;
-        Log.d("insertedCheckDetailArray-", "" + insertedCheckDetailArray);
-        String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.AddACHDetails,
-                param);
-        Log.d("responseString-", responseString);
-        readAndParseJSON(responseString);
-    }
-
-    public void readAndParseJSON(String in) {
-        try {
-
-            JSONObject reader = new JSONObject(in);
-            success = reader.getString("Success");
-            if (success.equalsIgnoreCase("True")) {
-                msg = reader.getString("Msg");
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-
-            } else {
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Edit Card details
-    class EditCardAsyncTask extends AsyncTask<Void, Void, Void> {
-        ProgressDialog pd;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            pd = new ProgressDialog(mContext);
-            pd.setMessage("Please wait...");
-            pd.setCancelable(false);
-            pd.show();
-            insertedCardDetailArray.clear();
-            // siteMainList.clear();
-            // siteName.clear();
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                EditCardDetails();
-            } catch (Exception e) {
-                // TODO: handle exception
-                e.printStackTrace();
-            }
-
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            if (pd != null && pd.isShowing()) {
-
-                pd.dismiss();
-
-            }
-
-        }
-    }
-
-    public void EditCardDetails() {
-        HashMap<String, String> param = new HashMap<String, String>();
-        param.put("Token", token);
-        param.put("Basketid", Basketid);
-        param.put("pmtID", AppConfiguration.pmtId);
-        param.put("txtfname", editText_fName.getText().toString().trim());
-        param.put("txtlname", editText_lName.getText().toString().trim());
-        param.put("CardNo", editText_cardNumber.getText().toString().trim());
-        param.put("ddlctype", editText_cardType.getText().toString().trim());
-        param.put("txtcvv", editText_cvv.getText().toString().trim());
-        param.put("ddlexp1", editText_expireMonth.getText().toString().trim());
-        param.put("ddlexp2", editText_expireYear.getText().toString().trim());
-        param.put("txtaddress1", editText_addressC1.getText().toString().trim());
-        param.put("txtaddress2", editText_addressC2.getText().toString().trim());
-        param.put("txtcity", editText_city.getText().toString().trim());
-        param.put("txtstate", editText_state.getText().toString().trim());
-        param.put("chkzip", editText_zipCode.getText().toString().trim());
-
-        insertedCardDetailArray.add(param);
-//        AppConfiguration.insertedCardDetailArray = insertedCardDetailArray;
-        AppConfiguration.addNewCardPayment = true;
-        String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.EditCardDetails,
-                param);
-        Log.d("card responseString-", responseString);
-
-        readAndParseEditCardCardJSON(responseString);
-    }
-
-    public void readAndParseEditCardCardJSON(String in) {
-        try {
-
-            JSONObject reader = new JSONObject(in);
-            success = reader.getString("Success");
-            if (success.equalsIgnoreCase("True")) {
-                msg = reader.getString("Msg");
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
-
     // Get state list
 
     class StateListAsyncTask extends AsyncTask<Void, Void, Void> {
@@ -1300,9 +916,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
             pd.show();
-
-            // siteMainList.clear();
-            // siteName.clear();
         }
 
         @Override
@@ -1324,17 +937,11 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
             lpw_sitelistState.setAdapter(new ArrayAdapter<String>(mContext, R.layout.edittextpopup, stateName));
             lpw_sitelistState.setAnchorView(editText_state);
             lpw_sitelistState.setHeight(LayoutParams.WRAP_CONTENT);
-            // lpw_sitelist.setWidth(LayoutParams.WRAP_CONTENT);
             lpw_sitelistState.setModal(true);
             lpw_sitelistState.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-                    // AppConfiguration.salStep1SiteID =
-                    // StateList.get(pos).get("SiteID");
-                    // siteId = StateList.get(pos).get("SiteID");
-                    // Log.d("siteId----", siteId);
                     editText_state.setText(StateList.get(pos).get("State"));
-                    //
                     lpw_sitelistState.dismiss();
                 }
             });
@@ -1355,8 +962,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
     }
 
     public void loadStateList() {
-        // siteMainList.clear();
-
         HashMap<String, String> param = new HashMap<String, String>();
         param.put("state", " ");
 
@@ -1364,7 +969,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                 param);
 
         readStateAndParseJSON(responseString);
-        // Log.i("responseString--", responseString);
     }
 
     public void readStateAndParseJSON(String in) {
@@ -1379,7 +983,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                 HashMap<String, String> hashmap = new HashMap<String, String>();
 
                 hashmap.put("State", jsonChildNode.getString("State"));
-                // Log.i("States--", "" + jsonChildNode.getString("State"));
 
                 stateName.add("" + jsonChildNode.getString("State"));
                 StateList.add(hashmap);
@@ -1407,7 +1010,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                         if (spinMonth.getSelectedItem().toString().length() > 0) {
                             if (spinYear.getSelectedItem().toString().length() > 0) {
                                 if (editText_addressC1.getText().toString().length() > 0) {
-//                                        if (editText_addressC2.getText().toString().length() > 0) {
                                     if (editText_city.getText().toString().length() > 0) {
                                         if (editText_state.getText().toString().length() > 0) {
                                             if (editText_zipCode.getText().toString().length() > 0) {
@@ -1421,9 +1023,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                                     } else {
                                         ping(mContext, "City name is missing.");
                                     }
-//                                        } else {
-//                                            ping(mContext, "Address line 2 is missing.");
-//                                        }
                                 } else {
                                     ping(mContext, "Address line 1is missing.");
                                 }
@@ -1437,7 +1036,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                         ping(mContext, "Card type is missing.");
                     }
                 } else {
-//                    ping(mContext, "Card Number is not valid.");
                     editText_cardNumber.setError("Card Number is not valid.");
                     editText_cardNumber.requestFocus();
                 }
@@ -1461,7 +1059,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                             if (spinMonth.getSelectedItem().toString().length() > 0) {
                                 if (spinYear.getSelectedItem().toString().length() > 0) {
                                     if (editText_addressC1.getText().toString().length() > 0) {
-//                                        if (editText_addressC2.getText().toString().length() > 0) {
                                         if (editText_city.getText().toString().length() > 0) {
                                             if (editText_state.getText().toString().length() > 0) {
                                                 if (editText_zipCode.getText().toString().length() > 0) {
@@ -1475,9 +1072,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                                         } else {
                                             ping(mContext, "City name is missing.");
                                         }
-//                                        } else {
-//                                            ping(mContext, "Address line 2 is missing.");
-//                                        }
                                     } else {
                                         ping(mContext, "Address line 1is missing.");
                                     }
@@ -1494,7 +1088,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                         ping(mContext, "Card type is missing.");
                     }
                 } else {
-//                    ping(mContext, "Card Number is not valid.");
                     editText_cardNumber.setError("Card Number is not valid.");
                     editText_cardNumber.requestFocus();
                 }
@@ -1515,7 +1108,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                     if (editText_bank_name.getText().toString().trim().length() > 0) {
                         if (editText_accountType.getText().toString().trim().length() > 0) {
                             if (editText_address1.getText().toString().trim().length() > 0) {
-//                                if (editText_address2.getText().toString().trim().length() > 0) {
                                 if (editText_chkCity.getText().toString().trim().length() > 0) {
                                     if (editText_stateName.getText().toString().trim().length() > 0) {
                                         if (editText_chZipCode.getText().toString().trim().length() > 0) {
@@ -1532,9 +1124,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
                             } else {
                                 ping(mContext, "Address line 1 is missing.");
                             }
-//                            } else {
-//                                ping(mContext, "Address line 2 is missing.");
-//                            }
                         } else {
                             ping(mContext, "Bank account type is missing.");
                         }
@@ -1601,8 +1190,6 @@ public class BuyMoreAddNewPaymentMethod extends Activity implements OnClickListe
     public void onBackPressed() {
         // TODO Auto-generated method stub
         super.onBackPressed();
-//		Intent i = new Intent(getApplicationContext(), BuyMoreSelectPaymentMethod.class);
-//		startActivity(i);
         finish();
     }
 }

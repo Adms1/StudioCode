@@ -1376,10 +1376,6 @@
         "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\fragment_top_rated.xml"
     },
     {
-        "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scheduling_main.xml",
-        "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\scheduling_main.xml"
-    },
-    {
         "merged": "D:\\Megha\\StudioCode\\app\\build\\intermediates\\res\\merged\\debug\\layout\\privacy_policy.xml",
         "source": "D:\\Megha\\StudioCode\\app\\src\\main\\res\\layout\\privacy_policy.xml"
     },

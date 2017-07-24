@@ -30,12 +30,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
@@ -60,14 +58,12 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Locale;
-import java.util.Set;
 
 /**
  * @author Harsh Adms
@@ -90,6 +86,7 @@ public class ScheduleLessonFragement4 extends Activity {
 
     Snackbar mSnackbar;
     Context mContext = this;
+    boolean comboflag = false;
 
     private ArrayList<String> instructorList1 = null, instructorList2 = null, instructorList3 = null, instructorList4 = null, instructorList5 = null;
 
@@ -681,12 +678,14 @@ public class ScheduleLessonFragement4 extends Activity {
                 @Override
                 public void onAnimationStart(Animation animation) {
                 }
+
                 @Override
                 public void onAnimationEnd(Animation animation) {
                     v2.setVisibility(View.VISIBLE);
                     Animation animSlidInLeftLineRev = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_left_line);
                     v2.startAnimation(animSlidInLeftLineRev);
                 }
+
                 @Override
                 public void onAnimationRepeat(Animation animation) {
                 }
@@ -710,12 +709,14 @@ public class ScheduleLessonFragement4 extends Activity {
                     Animation animSlidInRightLine = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_right_line);
                     v2.startAnimation(animSlidInRightLine);
                 }
+
                 @Override
                 public void onAnimationRepeat(Animation animation) {
                 }
             });
         }
     }
+
     //This will clear old values.
     public void ClearAll() {
         AppConfiguration.pair1_DayTime = "";
@@ -843,7 +844,7 @@ public class ScheduleLessonFragement4 extends Activity {
         }
     }
 
-    public int count = 0, pr = 0, sp = 0, adult = 0;
+    public int count = 0, pr = 0, sp = 0, adult = 0, ski = 0, group = 0, PMA = 0, PMB = 0, PMI = 0, PMBI = 0, ska = 0, sc = 0, scb = 0, ascb = 0, asci = 0;
     public boolean flag = true;
 
     @SuppressWarnings("unused")
@@ -856,11 +857,16 @@ public class ScheduleLessonFragement4 extends Activity {
         AppConfiguration.st_Student5 = "";
 
         String[] tempname = AppConfiguration.Array2String(AppConfiguration.selectedStudentsName).toString().split("\\,");
-
         flag = true;
         pr = 0;
         sp = 0;
         adult = 0;
+        ski = 0;
+        PMB = 0;
+        PMI = 0;
+        ska = 0;
+        scb = 0;
+        PMA = 0;
         for (int i = 0; i < tempname.length; i++) {
             if (i == 0) {
                 AppConfiguration.st_Student1 = GetCheckedItems(ll_schedule3_body, i);
@@ -874,24 +880,106 @@ public class ScheduleLessonFragement4 extends Activity {
                 AppConfiguration.st_Student5 = GetCheckedItems(ll_schedule3_body_5, i);
             }
         }
+// 12-07-2017 megha for check makeup lesson count limit=================
         if (AppConfiguration.makeUpFlag.contains("1")) {
-            if (pr > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("private_lessons"))) {
-                flag = false;
-            } else if (sp > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("semiprivate"))) {
-                flag = false;
-            } else if (adult > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("adult"))) {
-                flag = false;
+
+            int countofstudent1 = 0, total = 0;
+            ArrayList<String> test = new ArrayList<String>();
+            ArrayList<String> countsplit0 = new ArrayList<String>();
+            ArrayList<String> countsplit1 = new ArrayList<String>();
+            List<String> myList = new ArrayList<String>();
+            List<String> mainstudentcountList = new ArrayList<String>();
+            ArrayList<String> finaltotal = new ArrayList<String>();
+
+            if (AppConfiguration.schedulechoices.equalsIgnoreCase("1")) {
+
+                for (int i = 0; i < AppConfiguration.selectedStudentsName.size(); i++) {
+                    String[] getstudentcount = AppConfiguration.selectedStudentsName.get(i).toString().split("\\s+");
+
+                    mainstudentcountList = Arrays.asList(getstudentcount);
+
+                    for (int j = 0; j < mainstudentcountList.size(); j++) {
+                        if (!mainstudentcountList.get(j).equalsIgnoreCase("")) {
+                            String replcestr = mainstudentcountList.get(j).replaceAll("&", ",");
+                            String[] splitcomma1str = replcestr.split(",");
+                            myList = Arrays.asList(splitcomma1str);
+                            countofstudent1 = myList.size();
+                            Log.d("countofstudent1", "" + countofstudent1);
+
+                        }
+                    }
+                }
+                comboflag = true;
+            } else {
+                comboflag = false;
             }
+            if (comboflag) {
+                finaltotal.add(String.valueOf(countofstudent1));
+                for (int p = 0; p < finaltotal.size(); p++) {
+                    if (sp > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("semiprivate")) / Integer.valueOf(finaltotal.get(p))) {
+                        flag = false;
+                    }
+                    if (adult > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("adult")) / Integer.valueOf(finaltotal.get(p))) {
+                        flag = false;
+                    }
+                    if (ski > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("scint")) / Integer.valueOf(finaltotal.get(p))) {
+                        flag = false;
+                    }
+                    if (PMA > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("pmad")) / Integer.valueOf(finaltotal.get(p))) {
+                        flag = false;
+                    }
+                    if (PMB > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("pmbeg")) / Integer.valueOf(finaltotal.get(p))) {
+                        flag = false;
+                    }
+                    if (PMI > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("pmint")) / Integer.valueOf(finaltotal.get(p))) {
+                        flag = false;
+                    }
+                    if (ska > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("scad")) / Integer.valueOf(finaltotal.get(p))) {
+                        flag = false;
+                    }
+                    if (scb > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("scbeg")) / Integer.valueOf(finaltotal.get(p))) {
+                        flag = false;
+                    }
+                }
+            } else {
+                if (pr > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("private_lessons"))) {
+                    flag = false;
+                }
+                if (sp > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("semiprivate"))) {
+                    flag = false;
+                }
+                if (adult > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("adult"))) {
+                    flag = false;
+                }
+                if (ski > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("scint"))) {
+                    flag = false;
+                }
+                if (PMA > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("pmad"))) {
+                    flag = false;
+                }
+                if (PMB > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("pmbeg"))) {
+                    flag = false;
+                }
+                if (PMI > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("pmint"))) {
+                    flag = false;
+                }
+                if (ska > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("scad"))) {
+                    flag = false;
+                }
+                if (scb > Integer.valueOf(ScheduleMakeupFragment.limits.get(0).get("scbeg"))) {
+                    flag = false;
+                }
+            }
+
+//==========================
         } else {
             flag = true;
         }
-
         System.out.println("Student 1: " + AppConfiguration.st_Student1);
         System.out.println("Student 2: " + AppConfiguration.st_Student2);
         System.out.println("Student 3: " + AppConfiguration.st_Student3);
         System.out.println("Student 4: " + AppConfiguration.st_Student4);
         System.out.println("Student 5: " + AppConfiguration.st_Student5);
-
 
         if (AppConfiguration.st_Student1.trim().length() > 0 ||
                 AppConfiguration.st_Student2.trim().length() > 0 ||
@@ -933,7 +1021,9 @@ public class ScheduleLessonFragement4 extends Activity {
                     }, 600);
                 }
             }
-        } else {
+        } else
+
+        {
             continue_disable = true;
             SelectInstructorDialog();
         }
@@ -1026,13 +1116,35 @@ public class ScheduleLessonFragement4 extends Activity {
                                                     CheckBox chBx = (CheckBox) sunChildView;
                                                     if (chBx instanceof CheckBox) {
                                                         if (chBx.isChecked()) {
-                                                            if (templessonid[whichSt].equals("1")) {
+                                                            //=================== 12-07-2017 megha for check makeup lesson count limit=====================
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("1")) {
                                                                 pr++;
-                                                            } else if (templessonid[whichSt].equals("2")) {
+                                                            }
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("2")) {
                                                                 sp++;
-                                                            } else if (templessonid[whichSt].equals("4")) {
+                                                            }
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("4")) {
                                                                 adult++;
                                                             }
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("5")) {
+                                                                ski++;
+                                                            }
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("6")) {
+                                                                PMA++;
+                                                            }
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("7")) {
+                                                                PMB++;
+                                                            }
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("8")) {
+                                                                PMI++;
+                                                            }
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("10")) {
+                                                                ska++;
+                                                            }
+                                                            if (templessonid[whichSt].trim().equalsIgnoreCase("15")) {
+                                                                scb++;
+                                                            }
+                                                            //=========================
                                                             count++;
                                                             if (chBx.getTag().toString().contains("Sunday")) {
                                                                 sunDay1.add(chBx.getTag().toString());
@@ -1183,7 +1295,9 @@ public class ScheduleLessonFragement4 extends Activity {
             }
         }
         main_lay.setVisibility(View.VISIBLE);
-    }public String GetArrayToString(ArrayList<String> monDay1, ArrayList<String> tueDay1, ArrayList<String> wedDay1,
+    }
+
+    public String GetArrayToString(ArrayList<String> monDay1, ArrayList<String> tueDay1, ArrayList<String> wedDay1,
                                    ArrayList<String> thuDay1, ArrayList<String> friDay1, ArrayList<String> satDay1, ArrayList<String> sunDay1) {
         String student = "";
 
@@ -1246,19 +1360,19 @@ public class ScheduleLessonFragement4 extends Activity {
                 && AppConfiguration.instructorListBuilder1
                 .charAt(AppConfiguration.instructorListBuilder1.length() - 1) == ',') {
             instructorListBuilder1 = AppConfiguration.instructorListBuilder1
-                    .toString().substring(0,AppConfiguration.instructorListBuilder1.length() - 1);
+                    .toString().substring(0, AppConfiguration.instructorListBuilder1.length() - 1);
 
             instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr1
-                    .toString().substring(0,AppConfiguration.instructorListBuilderForInstr1.length() - 1);
+                    .toString().substring(0, AppConfiguration.instructorListBuilderForInstr1.length() - 1);
         }
         if (AppConfiguration.instructorListBuilder2.length() > 0
                 && AppConfiguration.instructorListBuilder2
                 .charAt(AppConfiguration.instructorListBuilder2.length() - 1) == ',') {
             instructorListBuilder2 = AppConfiguration.instructorListBuilder2
-                    .toString().substring(0,AppConfiguration.instructorListBuilder2.length() - 1);
+                    .toString().substring(0, AppConfiguration.instructorListBuilder2.length() - 1);
 
             instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr2
-                    .toString().substring(0,AppConfiguration.instructorListBuilderForInstr2.length() - 1);
+                    .toString().substring(0, AppConfiguration.instructorListBuilderForInstr2.length() - 1);
         }
 
         if (AppConfiguration.instructorListBuilder3.length() > 0
@@ -1268,17 +1382,17 @@ public class ScheduleLessonFragement4 extends Activity {
                     .toString().substring(0, AppConfiguration.instructorListBuilder3.length() - 1);
 
             instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr3
-                    .toString().substring(0,AppConfiguration.instructorListBuilderForInstr3.length() - 1);
+                    .toString().substring(0, AppConfiguration.instructorListBuilderForInstr3.length() - 1);
         }
 
         if (AppConfiguration.instructorListBuilder4.length() > 0
                 && AppConfiguration.instructorListBuilder4
                 .charAt(AppConfiguration.instructorListBuilder4.length() - 1) == ',') {
             instructorListBuilder4 = AppConfiguration.instructorListBuilder4
-                    .toString().substring(0,AppConfiguration.instructorListBuilder4.length() - 1);
+                    .toString().substring(0, AppConfiguration.instructorListBuilder4.length() - 1);
 
             instructorListBuilderNew = AppConfiguration.instructorListBuilderForInstr4
-                    .toString().substring(0,AppConfiguration.instructorListBuilderForInstr4.length() - 1);
+                    .toString().substring(0, AppConfiguration.instructorListBuilderForInstr4.length() - 1);
         }
         String instructorlist = "";
         if (j == 0) {
@@ -1402,12 +1516,12 @@ public class ScheduleLessonFragement4 extends Activity {
         }
 
         if (j == 0) {
-
+//            101224$Client&PM1$5$1324*M*7/13/2017 4:20:00 PM*shivy$Monday|True|true_true_true$Tuesday|True|true_true_true
             AppConfiguration.pair1_DayTime = _mon + "-" + _tue + "-" + _wed + "-" + _thu + "-"
                     + _fri + "-" + _sat + "-" + _sun + ",";
 
             strstudentarry = strstudentarry + tempid[j] + "$" + tempname[j] + "$"
-                    + templessonid[j] + "$" + instructorlist + "$"
+                    + templessonid[j] + "$" + instructorlist + "$"    //templessonid[j]
                     + _mon + "$" + _tue + "$" + _wed + "$" + _thu + "$"
                     + _fri + "$" + _sat + "$" + _sun + ",";
         } else if (j == 1) {
@@ -1628,6 +1742,7 @@ public class ScheduleLessonFragement4 extends Activity {
         }
         return ClassAvailList;
     }
+
     String[] _gender;
 
     ProgressDialog pd;
@@ -1683,8 +1798,13 @@ public class ScheduleLessonFragement4 extends Activity {
             params.put("intrlist", instructorListBuilderNew);
             params.put("reserveforever", AppConfiguration.reserverForever);
             params.put("Type", "2");
-            params.put("schedulechoices", AppConfiguration.schedulechoices);//AppConfiguration.schedulechoices
-            params.put("scheduletype", String.valueOf(AppConfiguration.makeup_Clicked));
+
+            if (AppConfiguration.makeUpFlag.equalsIgnoreCase("1")) {
+                params.put("schedulechoices", "7");//AppConfiguration.schedulechoices
+            } else {
+                params.put("schedulechoices", AppConfiguration.schedulechoices);//AppConfiguration.schedulechoices
+            }
+            params.put("scheduletype", "0");  // String.valueOf(AppConfiguration.makeup_Clicked)
             params.put("SelectStudList", "");
             params.put("pair1Check", AppConfiguration.pair1Check);
             params.put("pair2Check", AppConfiguration.pair2Check);
@@ -1784,6 +1904,7 @@ public class ScheduleLessonFragement4 extends Activity {
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) {
             // TODO Auto-generated method stub
@@ -2805,6 +2926,7 @@ public class ScheduleLessonFragement4 extends Activity {
 
     public class getBio extends AsyncTask<Void, Void, Void> {
         ProgressDialog pd;
+
         @Override
         protected void onPreExecute() {
             // TODO Auto-generated method stub
@@ -3080,7 +3202,7 @@ public class ScheduleLessonFragement4 extends Activity {
         param.put("Makeupflg", AppConfiguration.makeUpFlag);
         param.put("sselected", AppConfiguration.selectedStudentID);
         param.put("intrlist", selectedInstructor);
-        param.put("calstartdate","");  /*AppConfiguration.d2_startDate*/
+        param.put("calstartdate", "");  /*AppConfiguration.d2_startDate*/
 
         String responseString = WebServicesCall.RunScript(AppConfiguration.scheduleALessionStep2InstructorAvailabilityURL, param);
         readAndParseJSONChildList_(responseString);
@@ -3143,8 +3265,7 @@ public class ScheduleLessonFragement4 extends Activity {
 
         TextView tv_description = (TextView) layout.findViewById(R.id.tv_description);
         if (AppConfiguration.makeUpFlag.contains("1")) {
-            tv_description.setText(
-                    "The start date for the available lesson is listed below the time.");
+            tv_description.setText("The start date for the available lesson is listed below the time.");
         } else {
             tv_description.setText(
                     "The start date for the available lesson is listed below the time.\n\nLessons will be scheduled from this date through the end date you selected.");

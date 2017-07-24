@@ -21,11 +21,13 @@ public class GetPoolDataAsyncTask extends AsyncTask<Void, Void, ArrayList<PoolRe
     Activity activity;
     String agegroupid;
     String strokeid;
+    String locationid;
 
-    public GetPoolDataAsyncTask(Activity activity, String agegroupid, String strokeid) {
+    public GetPoolDataAsyncTask(Activity activity, String agegroupid, String strokeid,String locationid) {
         this.activity = activity;
         this.agegroupid = agegroupid;
         this.strokeid = strokeid;
+        this.locationid=locationid;
     }
 
     @Override
@@ -40,6 +42,7 @@ public class GetPoolDataAsyncTask extends AsyncTask<Void, Void, ArrayList<PoolRe
         param.put("Token", prefs.getString("Token", ""));
         param.put("agegroupid", agegroupid);
         param.put("strokeid", strokeid);
+        param.put("siteid",locationid);
 
         String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.SwimCmpt_GetPoolRecords, param);
 

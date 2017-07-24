@@ -194,10 +194,10 @@ public class ByMoreMyCart extends Activity {
 //                }
 //                new cardDetailAsyncTask().execute();\
 //                20-06-2017 megha
-                if (!successStr1.equalsIgnoreCase("False")) {
-                    Intent i = new Intent(getApplicationContext(), BuyMoreSelectPaymentMethod.class);
-                    startActivity(i);
-                    finish();
+                if (totalPromoArray.size() > 0) {
+                        Intent i = new Intent(getApplicationContext(), BuyMoreSelectPaymentMethod.class);
+                        startActivity(i);
+                        finish();
                 } else {
                     Utility.ping(ByMoreMyCart.this, "Your cart is empty.");
                 }
@@ -503,9 +503,7 @@ public class ByMoreMyCart extends Activity {
                 for (int i = 0; i < jsonMainNode.length(); i++) {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     HashMap<String, String> hashmap = new HashMap<String, String>();
-
                     hashmap.put("Msg", jsonChildNode.getString("Msg"));
-
                     totalPromoArray.add(hashmap);
                     AppConfiguration.totalPromoArray = totalPromoArray;
                 }

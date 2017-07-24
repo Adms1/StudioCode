@@ -1601,9 +1601,9 @@ public class ScheduleLessonFragement2 extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            if (pd != null) {
-                pd.dismiss();
-            }
+                if (pd != null) {
+                    pd.dismiss();
+                }
 
             try {
                 if (successLoadChildList.toString().equals("True")) {
@@ -2035,7 +2035,7 @@ public class ScheduleLessonFragement2 extends Activity {
         param.put("StudentId", AppConfiguration.selectedStudentID);
         param.put("siteid", AppConfiguration.salStep1SiteID);
         param.put("lessontypeValue", AppConfiguration.salStep1LessonID);
-        param.put("lessontypeText", AppConfiguration.salStep1LessonText);
+        param.put("lessontypeText",AppConfiguration.salStep1LessonText);   // AppConfiguration.salStep1LessonText
         param.put("Pair1_CmbValue1", AppConfiguration.pair1_comboValue1);
         param.put("Pair1_CmbValue2", AppConfiguration.pair1_comboValue2);
         param.put("Pair1_CmbValue3", AppConfiguration.pair1_comboValue3);

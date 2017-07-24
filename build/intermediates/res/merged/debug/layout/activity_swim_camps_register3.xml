@@ -203,7 +203,7 @@
                             android:layout_toLeftOf="@+id/txtTotalPriceValue"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="Total Price Selected Session:"
+                            android:text="Total Price for Selected Sessions:"
                             android:textColor="@color/black" />
 
                         <TextView

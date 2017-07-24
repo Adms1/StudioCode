@@ -195,7 +195,11 @@ public class EditStudent extends Activity {
         btnLevelCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult(new Intent(mContext, AddStudent2.class), 11);
+//                startActivityForResult(new Intent(mContext, AddStudent2.class), 11);
+//05-07-2017 megha for recalculate level
+                Intent iAddStudent2 = new Intent(EditStudent.this, AddStudent2.class);
+                iAddStudent2.putExtra("fromWhere", "edit");
+                startActivity(iAddStudent2);
                 ManageStudents.edit = true;
                 recalculate = true;
             }
@@ -361,16 +365,6 @@ public class EditStudent extends Activity {
             checkBox.setTextColor(getResources().getColor(R.color.black));
 
             checkBox.setEnabled(true);
-
-//            if (!recalculate) {
-//
-//                if (AppConfiguration.classTypes.contains(AppConfiguration.lessionTypeList.get(i).get("lessonname"))) {
-//                    checkBox.setButtonDrawable(R.drawable.custom_check_orange);
-//                    checkBox.setChecked(true);
-//
-//                }
-//            }
-//            llCheckbox.addView(checkBox);
 
 //13-06-2017 megha
             if (!recalculate) {

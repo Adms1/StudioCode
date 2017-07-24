@@ -191,7 +191,10 @@ public class LapSwimsSessionActivity extends Activity {
                     siteID = null;
                 }else{
                     siteID = siteMainList.get(position).get("SiteID");
-					getLapSwimPrice();
+//					03-07-2017 megha
+					String textPrice = Utility.getProgramsPricingText("11", siteID);
+					txtCostDiscount.setText(textPrice);
+//					getLapSwimPrice();
 
                 }
                 Log.v(TAG, ""+siteID);

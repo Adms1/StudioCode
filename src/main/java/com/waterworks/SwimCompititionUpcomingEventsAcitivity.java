@@ -208,7 +208,7 @@ public class SwimCompititionUpcomingEventsAcitivity extends Activity {
             txtNextSwimComp.setText("You are not currently registered for any future swim competitions.");
             btnChecking.setEnabled(false);
             btnChecking.setBackgroundColor(Color.parseColor("#fee0bf"));
-            txtMiddleMessage.setText("You will be able to Check In on the day of the meet\n We look forward to seeing you there!");
+//            txtMiddleMessage.setText("You will be able to Check In on the day of the meet\n We look forward to seeing you there!");
             btnCompetitionSchedule.setEnabled(false);
             btnCompetitionSchedule.setTextColor(mContext.getResources().getColor(R.color.black_prefer_client_blur));
 

@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -33,7 +34,7 @@ public class UpcomingEventCompResultDetailActivity extends Activity {
     private View selected_1, selected_2, selected_3;
     private SwimCmpt_AllMeetResultForEventAsyncTask swimCmpt_allMeetResultForEventAsyncTask = null;
     private Context mContext = this;
-    private String StudIDEventIDSwimmeetID = "", studID, swimMeetID, eventID, selectedEventTitle;
+    private String StudIDEventIDSwimmeetID = "", studID, swimMeetID, eventID, selectedEventTitle, selectedEventName;
     private ProgressDialog progressDialog = null;
     private ArrayList<UpcomingEventResultsDetailModel> upcomingEventResultsListModels = new ArrayList<>();
     Boolean isInternetPresent = false;
@@ -44,11 +45,13 @@ public class UpcomingEventCompResultDetailActivity extends Activity {
         setContentView(R.layout.activity_upcoming_event_comp_results_detail);
 
         StudIDEventIDSwimmeetID = getIntent().getStringExtra("studentID");
+        Log.d("change", StudIDEventIDSwimmeetID);
         String[] data = StudIDEventIDSwimmeetID.split(":");
         studID = data[0];
         eventID = data[1];
         swimMeetID = data[2];
         selectedEventTitle = data[3];
+        selectedEventName = data[4];
 
         topTabsViewListnersAnimation();
         init();
@@ -59,12 +62,14 @@ public class UpcomingEventCompResultDetailActivity extends Activity {
             fetchAndShowStudentWiseEventData();
         }
     }
+
     public void init() {
         llStudentEventList = (LinearLayout) findViewById(R.id.llStudentEventList);
         txtEventTitle = (TextView) findViewById(R.id.txtEventTitle);
         llRowLayout = (LinearLayout) findViewById(R.id.llRowLayout);
 
-        txtEventTitle.setText(selectedEventTitle);
+        Log.d("event", selectedEventTitle);
+        txtEventTitle.setText(selectedEventTitle + ":" + " " + selectedEventName);
     }
 
     public void fetchAndShowStudentWiseEventData() {
@@ -107,18 +112,27 @@ public class UpcomingEventCompResultDetailActivity extends Activity {
             txtAge = (TextView) childll.findViewById(R.id.txtAge);
 
             txtTime.setText(upcomingEventResultsListModel.getMeetTime());
-            txtTimeImprovement.setText(upcomingEventResultsListModel.getTimeImprovement());
+            if (upcomingEventResultsListModel.getTimeImprovement().contains("-")) {
+                txtTimeImprovement.setText(upcomingEventResultsListModel.getTimeImprovement());
+                txtTimeImprovement.setTextColor(getResources().getColor(R.color.green_trophy_room));
+            } else if (upcomingEventResultsListModel.getTimeImprovement().contains("+")) {
+                txtTimeImprovement.setText(upcomingEventResultsListModel.getTimeImprovement());
+                txtTimeImprovement.setTextColor(getResources().getColor(R.color.red));
+            } else {
+                txtTimeImprovement.setText(upcomingEventResultsListModel.getTimeImprovement());
+            }
             txtPlace.setText(upcomingEventResultsListModel.getPlaceno());
             txtSwimmer.setText(upcomingEventResultsListModel.getSwimmer());
             txtAge.setText(upcomingEventResultsListModel.getAge());
 
-            if(studID.equalsIgnoreCase(upcomingEventResultsListModel.getStudentID())){
+            if (studID.equalsIgnoreCase(upcomingEventResultsListModel.getStudentID())) {
                 llRowLayout.setBackgroundColor(getResources().getColor(R.color.orange));
             }
 
             llStudentEventList.addView(childll);
         }
     }
+
     public AlertDialog onDetectNetworkState() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
         builder1.setIcon(R.drawable.logo);
@@ -142,6 +156,7 @@ public class UpcomingEventCompResultDetailActivity extends Activity {
                 });
         return builder1.create();
     }
+
     public void topTabsViewListnersAnimation() {
         View view = findViewById(R.id.include_swim_comp_custom_top);
         Button BackButton = (Button) view.findViewById(R.id.returnStack);

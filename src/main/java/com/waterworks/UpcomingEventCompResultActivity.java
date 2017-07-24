@@ -40,7 +40,7 @@ import java.util.HashMap;
 public class UpcomingEventCompResultActivity extends Activity {
 
     private LinearLayout ll_upcoming_meet, ll_register, ll_trophy_room;
-    private TextView txt_1, txt_2, txt_3, txtStudentName, txtEventTitle, txtPlacement, txtTime, txtEventNumber, txtTimeImprovement,txtResultmsg;
+    private TextView txt_1, txt_2, txt_3, txtStudentName, txtEventTitle, txtPlacement, txtTime, txtEventNumber, txtTimeImprovement, txtResultmsg;
     private LinearLayout llEventRow, llStudentList, llRowLayout;
     private View selected_1, selected_2, selected_3;
     private SwimCmpt_AllGetEventResultForStudentAsyncTask swimCmpt_allGetEventResultForStudentAsyncTask = null;
@@ -72,21 +72,20 @@ public class UpcomingEventCompResultActivity extends Activity {
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
-        for (int j = 0; j < studIDs.size(); j++) {
-            isInternetPresent = Utility.isNetworkConnected(UpcomingEventCompResultActivity.this);
-            if (!isInternetPresent) {
-                onDetectNetworkState().show();
-            } else {
-                fetchAndShowStudentWiseEventData(studIDs.get(j), studNames.get(j));
-                new GetResultMsg().execute();
-            }
+//        for (int j = 0; j < studIDs.size(); j++) {
+        isInternetPresent = Utility.isNetworkConnected(UpcomingEventCompResultActivity.this);
+        if (!isInternetPresent) {
+            onDetectNetworkState().show();
+        } else {
+            new GetResultMsg().execute();
         }
+//        }
         progressDialog.dismiss();
     }
 
     public void init() {
         llStudentList = (LinearLayout) findViewById(R.id.llStudentList);
-        txtResultmsg=(TextView)findViewById(R.id.txtResultmsg);
+        txtResultmsg = (TextView) findViewById(R.id.txtResultmsg);
     }
 
     public void fetchAndShowStudentWiseEventData(final String studID, final String studName) {
@@ -156,12 +155,22 @@ public class UpcomingEventCompResultActivity extends Activity {
             txtTimeImprovement = (TextView) childll.findViewById(R.id.txtTimeImprovement);
 
             txtEventNumber.setText("Event #" + upcomingEventResultsListModel.getEventNumber());
-            txtEventTitle.setText(upcomingEventResultsListModel.getStrokedescription());
+            txtEventTitle.setText(upcomingEventResultsListModel.getDistance()+" " + "-" +" "+upcomingEventResultsListModel.getStrokedescription());
             txtPlacement.setText(upcomingEventResultsListModel.getPlaceno());
             txtTime.setText(upcomingEventResultsListModel.getMeetTime());
+
+            if (upcomingEventResultsListModel.getTimeImprovement().contains("-")) {
+                txtTimeImprovement.setText(upcomingEventResultsListModel.getTimeImprovement());
+                txtTimeImprovement.setTextColor(getResources().getColor(R.color.green_trophy_room));
+            } else if (upcomingEventResultsListModel.getTimeImprovement().contains("+")) {
+                txtTimeImprovement.setText(upcomingEventResultsListModel.getTimeImprovement());
+                txtTimeImprovement.setTextColor(getResources().getColor(R.color.red));
+            } else {
+                txtTimeImprovement.setText(upcomingEventResultsListModel.getTimeImprovement());
+            }
             txtTimeImprovement.setText(upcomingEventResultsListModel.getTimeImprovement());
             llRowLayout.setTag(studID + ":" + upcomingEventResultsListModel.getEventNumber()
-                    + ":" + swimmeetid + ":" + txtEventNumber.getText().toString() + " " + txtEventTitle.getText().toString());
+                    + ":" + swimmeetid + ":" + txtEventNumber.getText().toString() + ":" + txtEventTitle.getText().toString());
             llRowLayout.setOnClickListener(myClickLIstener);
 
             llEventRow.addView(childll);
@@ -298,6 +307,7 @@ public class UpcomingEventCompResultActivity extends Activity {
             }
         });
     }
+
     /*-------------------- 30/05/2017 new code megha --------------------------------- */
     public void load_Result() {
         SharedPreferences prefs = AppConfiguration.getSharedPrefs(UpcomingEventCompResultActivity.this);
@@ -319,6 +329,7 @@ public class UpcomingEventCompResultActivity extends Activity {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     HashMap<String, String> hashmap = new HashMap<String, String>();
                     hashmap.put("header", jsonChildNode.getString("header"));
+                    hashmap.put("RemainingTimeFlag", jsonChildNode.getString("RemainingTimeFlag"));
                     HeaderText = jsonChildNode.getString("header");
                     Resultmessage.add(hashmap);
                 }
@@ -348,11 +359,22 @@ public class UpcomingEventCompResultActivity extends Activity {
             super.onPostExecute(aVoid);
             if (pd != null) {
                 pd.dismiss();
-                if (Resultmessage.equals("")) {
-                    txtResultmsg.setText("");
-                    txtResultmsg.setVisibility(View.GONE);
-                } else
-                    txtResultmsg.setText(HeaderText);
+                if (suceessResult.equalsIgnoreCase("True")) {
+                    if (Resultmessage.equals("")) {
+                        txtResultmsg.setText("");
+                        txtResultmsg.setVisibility(View.GONE);
+                    } else
+                        txtResultmsg.setText(HeaderText);
+                    for (int i = 0; i < Resultmessage.size(); i++) {
+                        if (Resultmessage.get(i).get("RemainingTimeFlag").equalsIgnoreCase("true")) {
+                            for (int j = 0; j < studIDs.size(); j++) {
+                                fetchAndShowStudentWiseEventData(studIDs.get(j), studNames.get(j));
+                            }
+                        } else {
+                            Toast.makeText(mContext, "Currently, results are not updated, Please check after some time.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
             }
         }
 
@@ -362,6 +384,7 @@ public class UpcomingEventCompResultActivity extends Activity {
             return null;
         }
     }
+
     @Override
     protected void onResume() {
         super.onResume();

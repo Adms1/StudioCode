@@ -41,7 +41,6 @@ import android.widget.Toast;
 
 public class BuyMoreRetailStore extends Activity {
     Button BackButton, btn_viewCart, btn_sites, btn_sites_category;
-    // LinearLayout scdl_lsn,scdl_mkp,waitlist;
     LinearLayout swimLsn, retailStore, otherPrograms, sites_lay, category_lay, lay_swim_caps, lay_goggles,
             sites_lay_dropdown, lay_thermalsuit;
     View selected_1, selected_2, selected_3, vw_dropdown;
@@ -120,7 +119,6 @@ public class BuyMoreRetailStore extends Activity {
     public void onPause() {
         super.onPause();
         this.overridePendingTransition(R.anim.slide_in_right, R.anim.zoom_out);
-//        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override
@@ -183,10 +181,6 @@ public class BuyMoreRetailStore extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                // BuyMoreRetailStore.this.finish();
-//				Intent i = new Intent(getApplicationContext(), BuyMoreSwimLession.class);
-//				startActivity(i);
-
                 finish();
             }
         });
@@ -340,9 +334,6 @@ public class BuyMoreRetailStore extends Activity {
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
             pd.show();
-
-            // siteMainList.clear();
-            // siteName.clear();
         }
 
         @Override
@@ -364,20 +355,13 @@ public class BuyMoreRetailStore extends Activity {
                 }
 
             }
-            // new GetStartTimeRange().execute();
 
             if (siteName.size() == 1) {
                 AppConfiguration.salStep1SiteID = siteMainList.get(0).get("SiteID");
                 sites_lay.setVisibility(View.GONE);
                 sites_lay_dropdown.setVisibility(View.GONE);
-                // category_lay.setVisibility(View.GONE);
                 lay_thermalsuit.setVisibility(View.GONE);
                 textView_swimsuit.setVisibility(View.GONE);
-                /*
-				 * if(type=="0"){ type="0"; new
-				 * productCategorytAsyncTask().execute(); } else if(type=="1"){
-				 * type="1"; new productCategorytAsyncTask().execute(); }
-				 */
                 isInternetPresent = Utility.isNetworkConnected(BuyMoreRetailStore.this);
                 if (!isInternetPresent) {
                     onDetectNetworkState().show();
@@ -388,12 +372,9 @@ public class BuyMoreRetailStore extends Activity {
 
                 sites_lay.setVisibility(View.VISIBLE);
                 sites_lay_dropdown.setVisibility(View.VISIBLE);
-//				lay_thermalsuit.setVisibility(View.VISIBLE);
                 lpw_sitelist.setAdapter(new ArrayAdapter<String>(mContext, R.layout.edittextpopup, siteName));
                 lpw_sitelist.setAnchorView(sites_lay_dropdown);
                 lpw_sitelist.setHeight(LayoutParams.WRAP_CONTENT);
-
-                // lpw_sitelist.setWidth(LayoutParams.WRAP_CONTENT);
                 lpw_sitelist.setModal(true);
                 lpw_sitelist.setOnItemClickListener(new OnItemClickListener() {
                     @Override
@@ -410,36 +391,12 @@ public class BuyMoreRetailStore extends Activity {
                         }
                     }
                 });
-
-				/*
-				 * sites_lay.setVisibility(View.VISIBLE);
-				 * lay_thermalsuit.setVisibility(View.VISIBLE);
-				 * lpw_sitelist.setAdapter(new ArrayAdapter<String>(mContext,
-				 * R.layout.edittextpopup, siteName));
-				 * lpw_sitelist.setAnchorView(btn_sites);
-				 * lpw_sitelist.setHeight(LayoutParams.WRAP_CONTENT);
-				 * lpw_sitelist.setModal(true);
-				 * lpw_sitelist.setOnItemClickListener(new OnItemClickListener()
-				 * {
-				 * 
-				 * @Override public void onItemClick(AdapterView<?> parent, View
-				 * view, int pos, long id) { AppConfiguration.salStep1SiteID =
-				 * siteMainList.get(pos).get("SiteID");
-				 * btn_sites.setText(siteMainList.get(pos).get("SiteName"));
-				 * 
-				 * lpw_sitelist.dismiss(); if (type == "0") { type = "0"; new
-				 * productCategorytAsyncTask().execute(); } if (type == "1") {
-				 * type = "1"; new productCategorytAsyncTask().execute(); } new
-				 * productCategorytAsyncTask().execute(); //
-				 * category_lay.setVisibility(View.GONE); } });
-				 */
             }
 
         }
     }
 
     public void loadSitesList() {
-        // siteMainList.clear();
 
         HashMap<String, String> param = new HashMap<String, String>();
         param.put("Token", token);
@@ -484,10 +441,6 @@ public class BuyMoreRetailStore extends Activity {
             pd = new ProgressDialog(mContext);
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
-//			pd.show();
-
-            // siteMainList.clear();
-            // siteName.clear();
         }
 
         @Override
@@ -515,7 +468,6 @@ public class BuyMoreRetailStore extends Activity {
                 lay_goggles.setVisibility(View.GONE);
                 textView_goggles.setVisibility(View.GONE);
             }
-            // else if (showcategroy == "true")
             else {
                 Log.e("category true--**", showcategroy1);
                 lay_goggles.setVisibility(View.VISIBLE);
@@ -527,22 +479,17 @@ public class BuyMoreRetailStore extends Activity {
                 lay_swim_caps.setVisibility(View.GONE);
                 textView_swimcaps.setVisibility(View.GONE);
             }
-            // else if (showcategroy == "true")
             else {
                 Log.e("category true--**", showcategroy2);
                 lay_swim_caps.setVisibility(View.VISIBLE);
                 textView_swimcaps.setVisibility(View.VISIBLE);
             }
-            //thermal should always be visible for anysite
             lay_thermalsuit.setVisibility(View.VISIBLE);
             textView_swimsuit.setVisibility(View.VISIBLE);
         }
     }
 
     public void loadCategoryList() {
-        // siteMainList.clear();
-
-        Log.e("AppConfiguration.salStep1SiteID---***", "" + AppConfiguration.salStep1SiteID);
 
         HashMap<String, String> param = new HashMap<String, String>();
 
@@ -553,8 +500,7 @@ public class BuyMoreRetailStore extends Activity {
 
         param.put("SiteID", AppConfiguration.salStep1SiteID);
 
-        String responseString = WebServicesCall
-                .RunScript(AppConfiguration.DOMAIN + AppConfiguration.ShowHideProductCategory, param);
+        String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.ShowHideProductCategory, param);
 
         readCategoryParseJSON(responseString, "0");
 
@@ -564,8 +510,7 @@ public class BuyMoreRetailStore extends Activity {
 
         param.put("SiteID", AppConfiguration.salStep1SiteID);
 
-        String responseString1 = WebServicesCall
-                .RunScript(AppConfiguration.DOMAIN + AppConfiguration.ShowHideProductCategory, param);
+        String responseString1 = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.ShowHideProductCategory, param);
 
         readCategoryParseJSON(responseString1, "1");
     }

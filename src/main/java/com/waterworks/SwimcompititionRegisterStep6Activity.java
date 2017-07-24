@@ -104,7 +104,7 @@ public class SwimcompititionRegisterStep6Activity extends Activity {
         currentStudentID = tempid.get(0).toString();
 
 //        06-06-2017 megha
-        String eventdisplay = AppConfiguration.SelectedEventDataStep2.toString().trim().replaceFirst(",", "");
+        String eventdisplay = AppConfiguration.SelectedEventDataStep2.toString().trim();
         eventData = eventdisplay;
 
         eventDataDisplayRow1 = AppConfiguration.selectedStudent1;

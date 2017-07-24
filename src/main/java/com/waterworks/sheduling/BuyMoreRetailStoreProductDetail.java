@@ -151,7 +151,6 @@ public class BuyMoreRetailStoreProductDetail extends Activity {
                 finish();
             }
         });
-//        txtDescription = (TextView) findViewById(R.id.txtDescription);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         imgProduct = (ImageView) findViewById(R.id.imgProduct);
         spinSize = (Spinner) findViewById(R.id.spinSize);
@@ -318,7 +317,7 @@ public class BuyMoreRetailStoreProductDetail extends Activity {
             JSONArray jsonMainNode = reader.optJSONArray("Color");
             ThermalProductDetailModel.ColorArray colorArray = null;
             ArrayList<ThermalProductDetailModel.ColorArray> colorArrays = new ArrayList<>();
-            ;
+
             for (int i = 0; i < jsonMainNode.length(); i++) {
                 JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                 colorArray = thermalProductDetailModel.new ColorArray();
@@ -431,8 +430,6 @@ public class BuyMoreRetailStoreProductDetail extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                /*Intent i = new Intent(getApplicationContext(), BuyMoreRetailStore.class);
-                startActivity(i);*/
                 finish();
             }
         });
@@ -589,21 +586,13 @@ public class BuyMoreRetailStoreProductDetail extends Activity {
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
                 mContext)
                 .threadPriority(Thread.MAX_PRIORITY)
-//                .memoryCacheSize(41943040)
                 .defaultDisplayImageOptions(defaultOptions)
 
 
                 .memoryCache(new WeakMemoryCache())
                 .denyCacheImageMultipleSizesInMemory()
-//                .threadPoolSize(5)
-
                 .tasksProcessingOrder(QueueProcessingType.LIFO)// .enableLogging()
-
                 .build();
-
-
-//        imageLoader.init(ImageLoaderConfiguration.createDefault(context));
-
         imageLoader.init(config.createDefault(mContext));
     }
 

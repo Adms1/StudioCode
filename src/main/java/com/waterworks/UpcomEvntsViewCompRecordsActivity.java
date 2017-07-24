@@ -17,13 +17,16 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.waterworks.asyncTasks.GetAllAgeAsyncTask;
 import com.waterworks.asyncTasks.GetAllEventAsyncTask;
+import com.waterworks.asyncTasks.GetAllLocationAsyncTask;
 import com.waterworks.asyncTasks.GetPoolDataAsyncTask;
 import com.waterworks.asyncTasks.SwimCmpt_AllMeetResultForEventAsyncTask;
 import com.waterworks.model.PoolRecordsModel;
 import com.waterworks.model.RecordsAgeGroup;
+import com.waterworks.model.RecordsLocationGroups;
 import com.waterworks.model.RecordsStrokeGroup;
 import com.waterworks.model.UpcomingEventResultsDetailModel;
 import com.waterworks.model.UpcomingEventResultsListModel;
@@ -34,22 +37,25 @@ import com.waterworks.utils.Utility;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class UpcomEvntsViewCompRecordsActivity extends Activity {
 
     private LinearLayout ll_upcoming_meet, ll_register, ll_trophy_room, llEventRow, llPoolDataList;
     private TextView txt_1, txt_2, txt_3, txtEventName, txtDate, txtSwimmer, txtAge, txtTime, txtClearFilters;
-    private Spinner spinAge, spinStroke;
+    private Spinner spinAge, spinStroke,spinLocation;
     private View selected_1, selected_2, selected_3;
     private Context mContext = this;
     private GetAllEventAsyncTask getAllEventAsyncTask = null;
     private GetAllAgeAsyncTask getAllAgeAsyncTask = null;
+    private GetAllLocationAsyncTask getAllLocationAsyncTask =null;
     private GetPoolDataAsyncTask getPoolDataAsyncTask = null;
     private ArrayList<RecordsAgeGroup> recordsAgeGroups = new ArrayList<>();
     private ArrayList<RecordsStrokeGroup> recordsStrokeGroups = new ArrayList<>();
+    private ArrayList<RecordsLocationGroups>recordsLocationGroups=new ArrayList<>();
     private ArrayList<PoolRecordsModel> poolRecordsModels = new ArrayList<>();
     private ProgressDialog progressDialog = null;
-    private String ageGroupID, strokeID;
+    private String ageGroupID, strokeID,locationID;
     Boolean isInternetPresent = false;
 
     @Override
@@ -64,29 +70,42 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
             onDetectNetworkState().show();
         } else {
             fetchSpinnerData();
-            fetchEventPoolData("0", "0");
+//            fetchEventPoolData("0", "0","0");
         }
     }
 
     public void init() {
         spinAge = (Spinner) this.findViewById(R.id.spinAge);
         spinStroke = (Spinner) this.findViewById(R.id.spinStroke);
+        spinLocation=(Spinner)this.findViewById(R.id.spinLocation);
         txtClearFilters = (TextView) this.findViewById(R.id.txtClearFilters);
         llPoolDataList = (LinearLayout) this.findViewById(R.id.llPoolDataList);
 
-        spinAge.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+        spinLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0 && spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")) {
-                    fetchEventPoolData("0", "0");
-                } else if (position > 0 && spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")) {
-                    for (int i = 0; i < recordsAgeGroups.size(); i++) {
-                        if (spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())) {
-                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                if (position == 0 && spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        &&spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")) {
+                    poolRecordsModels.clear();
+                    llPoolDataList.removeAllViews();
+//                    fetchEventPoolData("0", "0","0");
+                } else if (position > 0 && spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")) {
+                    for (int i = 0; i < recordsLocationGroups.size(); i++) {
+                        if (spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())) {
+                            locationID = recordsLocationGroups.get(i).getLocationID();
                         }
                     }
-                    fetchEventPoolData(ageGroupID, "0");
-                } else if (position > 0 && !spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")) {
+                    fetchEventPoolData("0","0",locationID);
+                } else if (position > 0 && !spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        &&!spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")) {
+                   for(int i=0;i<recordsLocationGroups.size();i++){
+                       if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                           locationID=recordsLocationGroups.get(i).getLocationID();
+                       }
+                   }
+
                     for (int i = 0; i < recordsAgeGroups.size(); i++) {
                         if (spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())) {
                             ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
@@ -97,7 +116,146 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
                             strokeID = recordsStrokeGroups.get(i).getEventID();
                         }
                     }
-                    fetchEventPoolData(ageGroupID, strokeID);
+                    fetchEventPoolData(ageGroupID, strokeID,locationID);
+                }else if(position>0 &&spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        &&!spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")){
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+
+                    for (int i = 0; i < recordsAgeGroups.size(); i++) {
+                        if (spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())) {
+                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID, "0",locationID);
+                }else if(position>0 &&!spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        &&spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")){
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+
+                    for (int i = 0; i < recordsStrokeGroups.size(); i++) {
+                        if (spinStroke.getSelectedItem().toString().equalsIgnoreCase(recordsStrokeGroups.get(i).getEventName())) {
+                            strokeID = recordsStrokeGroups.get(i).getEventID();
+                        }
+                    }
+                    fetchEventPoolData("0",strokeID,locationID);
+                }
+                else if(position==0 && !spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && !spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")){
+                    for (int i =0 ; i<recordsAgeGroups.size();i++){
+                        if(spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())){
+                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                        }
+                    }
+                    for (int i = 0; i < recordsStrokeGroups.size(); i++) {
+                        if (spinStroke.getSelectedItem().toString().equalsIgnoreCase(recordsStrokeGroups.get(i).getEventName())) {
+                            strokeID = recordsStrokeGroups.get(i).getEventID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID,strokeID,"0");
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+
+        spinAge.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0 && spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")) {
+                    poolRecordsModels.clear();
+                    llPoolDataList.removeAllViews();
+//                    fetchEventPoolData("0", "0","0");
+                } else if (position > 0 && spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")) {
+                    for (int i = 0; i < recordsAgeGroups.size(); i++) {
+                        if (spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())) {
+                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID, "0","0");
+                } else if (position > 0 && !spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && !spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")) {
+                    for (int i = 0; i < recordsAgeGroups.size(); i++) {
+                        if (spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())) {
+                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                        }
+                    }
+                    for (int i = 0; i < recordsStrokeGroups.size(); i++) {
+                        if (spinStroke.getSelectedItem().toString().equalsIgnoreCase(recordsStrokeGroups.get(i).getEventName())) {
+                            strokeID = recordsStrokeGroups.get(i).getEventID();
+                        }
+                    }
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID, strokeID,locationID);
+                }else if(position>0 && !spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")) {
+
+                    for (int i = 0; i < recordsAgeGroups.size(); i++) {
+                        if (spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())) {
+                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                        }
+                    }
+                    for (int i =0 ; i<recordsStrokeGroups.size();i++){
+                        if(spinStroke.getSelectedItem().toString().equalsIgnoreCase(recordsStrokeGroups.get(i).getEventName())){
+                            strokeID = recordsStrokeGroups.get(i).getEventID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID,strokeID,"0");
+                }else if (position>0 && spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && !spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-") ){
+
+                    for (int i = 0; i < recordsAgeGroups.size(); i++) {
+                        if (spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())) {
+                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                        }
+                    }
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID,"0",locationID);
+                }
+                else if(position==0 && !spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && !spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")){
+                    for (int i =0 ; i<recordsStrokeGroups.size();i++){
+                        if(spinStroke.getSelectedItem().toString().equalsIgnoreCase(recordsStrokeGroups.get(i).getEventName())){
+                            strokeID = recordsStrokeGroups.get(i).getEventID();
+                        }
+                    }
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+                    fetchEventPoolData("0",strokeID,locationID);
+                }else if(position==0&& spinStroke.getSelectedItem().toString().equalsIgnoreCase("-Select Stroke to Filter-")
+                        && !spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")){
+
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+                    fetchEventPoolData("0","0",locationID);
                 }
             }
 
@@ -110,16 +268,21 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
         spinStroke.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0 && spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")) {
-                    fetchEventPoolData("0", "0");
-                } else if (position > 0 && spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")) {
+                if (position == 0 && spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")
+                        && spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")) {
+                    poolRecordsModels.clear();
+                    llPoolDataList.removeAllViews();
+//                    fetchEventPoolData("0", "0","0");
+                } else if (position > 0 && spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")
+                        && spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")) {
                     for (int i = 0; i < recordsStrokeGroups.size(); i++) {
                         if (spinStroke.getSelectedItem().toString().equalsIgnoreCase(recordsStrokeGroups.get(i).getEventName())) {
                             strokeID = recordsStrokeGroups.get(i).getEventID();
                         }
                     }
-                    fetchEventPoolData("0", strokeID);
-                } else if (position > 0 && !spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")) {
+                    fetchEventPoolData("0", strokeID,"0");
+                } else if (position > 0 && !spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")
+                        && !spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")) {
                     for (int i = 0; i < recordsAgeGroups.size(); i++) {
                         if (spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())) {
                             ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
@@ -130,8 +293,55 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
                             strokeID = recordsStrokeGroups.get(i).getEventID();
                         }
                     }
-                    fetchEventPoolData(ageGroupID, strokeID);
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID, strokeID,locationID);
+                }else if(position>0 && !spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")
+                        && spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")) {
+
+                    for (int i =0 ; i<recordsAgeGroups.size();i++){
+                        if(spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())){
+                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                        }
+                    }
+                    for (int i = 0; i < recordsStrokeGroups.size(); i++) {
+                        if (spinStroke.getSelectedItem().toString().equalsIgnoreCase(recordsStrokeGroups.get(i).getEventName())) {
+                            strokeID = recordsStrokeGroups.get(i).getEventID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID,strokeID,"0");
+                }else if (position>0 && spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")
+                        && !spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-") ){
+
+                    for (int i = 0; i < recordsStrokeGroups.size(); i++) {
+                        if (spinStroke.getSelectedItem().toString().equalsIgnoreCase(recordsStrokeGroups.get(i).getEventName())) {
+                            strokeID = recordsStrokeGroups.get(i).getEventID();
+                        }
+                    }
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+                    fetchEventPoolData("0",strokeID,locationID);
+                }else if(position==0 && !spinAge.getSelectedItem().toString().equalsIgnoreCase("-Select Age to Filter-")
+                        && !spinLocation.getSelectedItem().toString().equalsIgnoreCase("-Select Location to Filter-")){
+                    for (int i =0 ; i<recordsAgeGroups.size();i++){
+                        if(spinAge.getSelectedItem().toString().equalsIgnoreCase(recordsAgeGroups.get(i).getAgeGroup())){
+                            ageGroupID = recordsAgeGroups.get(i).getAgeGroupID();
+                        }
+                    }
+                    for(int i=0;i<recordsLocationGroups.size();i++){
+                        if(spinLocation.getSelectedItem().toString().equalsIgnoreCase(recordsLocationGroups.get(i).getLocationName())){
+                            locationID=recordsLocationGroups.get(i).getLocationID();
+                        }
+                    }
+                    fetchEventPoolData(ageGroupID,"0",locationID);
                 }
+
             }
 
             @Override
@@ -145,24 +355,31 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
             public void onClick(View v) {
                 spinAge.setSelection(0);
                 spinStroke.setSelection(0);
+                spinLocation.setSelection(0);
+                poolRecordsModels.clear();
+                llPoolDataList.removeAllViews();
             }
         });
     }
 
-    public void fetchEventPoolData(final String ageGroupid, final String strokeID) {
+    public void fetchEventPoolData(final String ageGroupid, final String strokeID,final String LocationID) {
         progressDialog.show();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    getPoolDataAsyncTask = new GetPoolDataAsyncTask(UpcomEvntsViewCompRecordsActivity.this, ageGroupid, strokeID);
+                    getPoolDataAsyncTask = new GetPoolDataAsyncTask(UpcomEvntsViewCompRecordsActivity.this, ageGroupid, strokeID,LocationID);
                     poolRecordsModels = getPoolDataAsyncTask.execute().get();
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            setUI();
+                        if (poolRecordsModels.size()==0){
+                            llPoolDataList.setVisibility(View.GONE);
+                            Toast.makeText(mContext, "No Record Found", Toast.LENGTH_SHORT).show();
+                        }else{
+                            setUI();}
                             progressDialog.dismiss();
                         }
                     });
@@ -188,6 +405,9 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
 
                     getAllEventAsyncTask = new GetAllEventAsyncTask(UpcomEvntsViewCompRecordsActivity.this, "0");
                     recordsStrokeGroups = getAllEventAsyncTask.execute().get();
+
+                    getAllLocationAsyncTask =new GetAllLocationAsyncTask(UpcomEvntsViewCompRecordsActivity.this);
+                    recordsLocationGroups = getAllLocationAsyncTask.execute().get();
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -210,6 +430,15 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
                             ArrayAdapter<String> adapterEvent = new ArrayAdapter<String>(UpcomEvntsViewCompRecordsActivity.this, android.R.layout.simple_dropdown_item_1line, eventList);
                             spinStroke.setAdapter(adapterEvent);
 
+
+                            ArrayList<String> locationList=new ArrayList<String>();
+                            locationList.add("-Select Location to Filter-");
+                            for(int i=0;i<recordsLocationGroups.size();i++) {
+                                locationList.add(recordsLocationGroups.get(i).getLocationName());
+                            }
+                            ArrayAdapter<String> adapterLocation = new ArrayAdapter<String>(UpcomEvntsViewCompRecordsActivity.this, android.R.layout.simple_dropdown_item_1line, locationList);
+                            spinLocation.setAdapter(adapterLocation);
+
                             progressDialog.dismiss();
 
                         }
@@ -222,7 +451,7 @@ public class UpcomEvntsViewCompRecordsActivity extends Activity {
     }
 
     public void setUI() {
-
+        llPoolDataList.setVisibility(View.VISIBLE);
         if (llPoolDataList.getChildCount() != 0) {
             llPoolDataList.removeAllViews();
         }

@@ -60,7 +60,6 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class BuyMoreSelectPaymentMethod extends Activity {
 
-    //	ButtonRectangle btn_continue;
     LinearLayout swimLsn, retailStore, otherPrograms, ll_select_payment;
     TextView txt_1, txt_2, txt_3, tv_add_new_payment_method2;
     View selected_1, selected_2, selected_3;
@@ -68,27 +67,18 @@ public class BuyMoreSelectPaymentMethod extends Activity {
     CardView tv_add_new_payment_method, btn_continue;
     String token, familyID, pastdueAmount = "", msg, expireDate, CustomerId, pmtId;
     Button BackButton, btn_viewCart, btn_continue2;//tv_add_new_payment_method2
-    ListView lv_card_detail;
     CardDetailAsyncTask cardDetailAsyncTask = null;
-
-    // String DOMAIN = AppConfiguration.DOMAIN;
-    String cred_exp = "", card_detail = "", check_detail = "", address = "";
+    String  card_detail = "", check_detail = "";
     ArrayList<HashMap<String, String>> myCartArray = new ArrayList<HashMap<String, String>>();
     ArrayList<HashMap<String, String>> MonthlyArray = new ArrayList<HashMap<String, String>>();
     ArrayList<HashMap<String, String>> editCardArray = new ArrayList<HashMap<String, String>>();
     ArrayList<HashMap<String, String>> selectedCardDetailArray = new ArrayList<HashMap<String, String>>();
-    //    ArrayList<HashMap<String, String>> finalSelectedPaymentArray = new ArrayList<HashMap<String, String>>();
-//    public static ArrayList<HashMap<String, String>> insertedCheckDetailArray = new ArrayList<HashMap<String, String>>();
-//    public static ArrayList<HashMap<String, String>> insertedCardDetailArray = new ArrayList<HashMap<String, String>>();
-    // CardDetailArrayAdapter cardDetailArrAdp;
-    String insertedCardDetails, insertedCheckDetails, checkShippAdd, cardShippAdd,
-            SelectedCheckDetail, InvoiceID = "", errormsg = "", PaymenPaymentBillingAddresstCheck;
+    String SelectedCheckDetail, errormsg = "", PaymenPaymentBillingAddresstCheck;
     Boolean isInternetPresent = false;
 
     public void typeFace() {
         Typeface regular = Typeface.createFromAsset(mContext.getAssets(),
                 "RobotoRegular.ttf");
-//        btn_continue.setTypeface(regular);
         BackButton.setTypeface(regular);
         btn_continue2.setTypeface(regular);
     }
@@ -109,85 +99,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             cardDetailAsyncTask = new CardDetailAsyncTask();
             cardDetailAsyncTask.execute();
         }
-//        cardDetailArray = AppConfiguration.cardDetailArray;
-        /*Log.e("insertedCheckDetailArray--25-", "" + cardDetailArrayTemp);
-        insertedCardDetailArray = AppConfiguration.insertedCardDetailArray;
-        insertedCheckDetailArray = AppConfiguration.insertedCheckDetailArray;
-        Log.e("insertedCheckDetailArray--12#-", "" + insertedCheckDetailArray);
-
-        try {
-            if (insertedCardDetailArray.size() != 0) {
-                Log.d("insertedCardDetailArray--12#-", "" + insertedCardDetailArray);
-                insertedCardDetails = insertedCardDetailArray.get(0).get("txtfname") + "|"
-                        + insertedCardDetailArray.get(0).get("txtlname") + "|"
-                        + insertedCardDetailArray.get(0).get("CardNo") + "|"
-                        + insertedCardDetailArray.get(0).get("ddlctype") + "|"
-                        + insertedCardDetailArray.get(0).get("txtcvv") + "|"
-                        + insertedCardDetailArray.get(0).get("ddlexp1") + "|"
-                        + insertedCardDetailArray.get(0).get("ddlexp2") + "|"
-                        + insertedCardDetailArray.get(0).get("txtaddress1") + "|"
-                        + insertedCardDetailArray.get(0).get("txtaddress2") + "|"
-                        + insertedCardDetailArray.get(0).get("txtcity") + "|"
-                        + insertedCardDetailArray.get(0).get("txtstate") + "|"
-                        + insertedCardDetailArray.get(0).get("chkzip");
-                card_detail = insertedCardDetails;
-
-                address = "";
-                cred_exp = insertedCardDetailArray.get(0).get("ddlexp1")
-                        + insertedCardDetailArray.get(0).get("ddlexp2");
-
-                cardShippAdd = insertedCardDetailArray.get(0).get("txtaddress1") + "|"
-                        + insertedCardDetailArray.get(0).get("txtaddress2") + "|"
-                        + insertedCardDetailArray.get(0).get("txtcity") + "|"
-                        + insertedCardDetailArray.get(0).get("txtstate") + "|"
-                        + insertedCardDetailArray.get(0).get("chkzip");
-
-                address = cardShippAdd;
-
-                try {
-                    new paymentConfirmtAsyncTask().execute();
-                } catch (Exception e) {
-                    // TODO: handle exception
-                    e.printStackTrace();
-                }
-            }
-        } catch (Exception e) {
-            // TODO: handle exception
-        }*/
-
-        /*try {
-            if (insertedCheckDetailArray.size() != 0) {
-                Log.d("insertedCheckDetailArray--12#-", "" + insertedCheckDetailArray);
-                insertedCheckDetails = insertedCheckDetailArray.get(0).get("txtnameofcheck").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("txtrouting").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("txtaccno").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("txtbankname").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("ddlAccountType").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("chkaddressline1").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("chkaddressline2").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("chkcity").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("chkstate").toString().trim() + "|"
-                        + insertedCheckDetailArray.get(0).get("chkzip").toString().trim();
-                Log.d("check_detail--12#-", "" + check_detail);
-                checkShippAdd = insertedCheckDetailArray.get(0).get("chkaddressline1") + "|"
-                        + insertedCheckDetailArray.get(0).get("chkaddressline2") + "|"
-                        + insertedCheckDetailArray.get(0).get("chkcity") + "|"
-                        + insertedCheckDetailArray.get(0).get("chkstate") + "|"
-                        + insertedCheckDetailArray.get(0).get("chkzip");
-                address = checkShippAdd;
-
-                try {
-                    new paymentConfirmtAsyncTask().execute();
-                } catch (Exception e) {
-                    // TODO: handle exception
-                    e.printStackTrace();
-                }
-            }
-
-        } catch (Exception e) {
-            // TODO: handle exception
-        }*/
-
         selected_1 = (View) findViewById(R.id.selected_1);
         selected_2 = (View) findViewById(R.id.selected_2);
         selected_3 = (View) findViewById(R.id.selected_3);
@@ -197,9 +108,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
         init();
         typeFace();
     }
-
-    //    public void InitialRequests() {
-//    }
     public AlertDialog onDetectNetworkState() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
         builder1.setIcon(R.drawable.logo);
@@ -228,14 +136,12 @@ public class BuyMoreSelectPaymentMethod extends Activity {
     public void onPause() {
         super.onPause();
         this.overridePendingTransition(R.anim.slide_in_right, R.anim.zoom_out);
-//        inflateSelectPaymentMethod(cardDetailArray);
     }
 
     @Override
     public void onResume() {
         super.onResume();
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
-//        inflateSelectPaymentMethod(cardDetailArray);
     }
 
     @SuppressWarnings("unchecked")
@@ -266,8 +172,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                 if (AppConfiguration.selectedCardDetailArray.size() != 0) {
 
                     try {
-
-//                        || errormsg.toString().trim().equalsIgnoreCase("Not Submited SuccessFully....")
                         if (AppConfiguration.selectedCardDetailArray.get(0).get("wu_PmtID").equals("")) {
                             Toast.makeText(getApplicationContext(), errormsg, Toast.LENGTH_SHORT).show();
                         } else {
@@ -299,8 +203,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                 if (AppConfiguration.selectedCardDetailArray.size() != 0) {
 
                     try {
-
-//                        || errormsg.toString().trim().equalsIgnoreCase("Not Submited SuccessFully....")
                         if (AppConfiguration.selectedCardDetailArray.get(0).get("wu_PmtID").equals("")) {
                             Toast.makeText(getApplicationContext(), errormsg, Toast.LENGTH_SHORT).show();
                         } else {
@@ -437,31 +339,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                 startActivity(i);
             }
         });
-        /*if (insertedCardDetailArray.size() == 0 && insertedCheckDetailArray.size() == 0) {
-            cardDetailArray = AppConfiguration.cardDetailArray;
-            inflateSelectPaymentMethod(cardDetailArray);
-
-
-        } else {
-            if (insertedCardDetailArray.size() != 0) {
-                cardDetailArray = AppConfiguration.cardDetailArray;
-                Log.e("cardDetailArray--01", "" + cardDetailArray);
-
-                cardDetailArray.addAll(insertedCardDetailArray);
-                Log.e("cardDetailArray--00", "" + cardDetailArray);
-                inflateSelectPaymentMethod(cardDetailArray);
-            }
-
-            if (insertedCheckDetailArray.size() != 0) {
-                cardDetailArray = AppConfiguration.cardDetailArray;
-                Log.e("cardDetailArray--1", "" + cardDetailArray);
-                cardDetailArray.addAll(insertedCheckDetailArray);
-                Log.e("cardDetailArray--0", "" + cardDetailArray);
-                inflateSelectPaymentMethod(cardDetailArray);
-            }
-        }*/
-
-//        inflateSelectPaymentMethod(cardDetailArray);
     }
 
     public void inflateSelectPaymentMethod(final ArrayList<HashMap<String, String>> cardDetailArray) {
@@ -486,10 +363,7 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             final TextView textView_paymentId = (TextView) view.findViewById(R.id.textView_paymentId);
             final CheckBox chkbx = (CheckBox) view.findViewById(R.id.chkbx);
             chkbx.setTag(cardDetailArray.get(i).get("wu_PmtID"));
-            /*if(!cardDetailArray.get(i).get("CardNo").equalsIgnoreCase("")){
 
-			}*/
-// card detail..............
             if (cardDetailArray.get(i).containsKey("wu_PayTypeID")) {
                 if (cardDetailArray.get(i).get("wu_PayTypeID").equalsIgnoreCase("0") && cardDetailArray.get(i).get("wu_PayType").equalsIgnoreCase("Card")) {
 
@@ -534,9 +408,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-
-
-//                    tv_expire_date.setText("Expires" + " " + cardDetailArray.get(i).get("wu_ExpDate"));
                     tempPaymentId.add(cardDetailArray.get(i).get("wu_PmtID"));
                     Log.e("tempPaymentId-", "" + tempPaymentId);
                     if (AppConfiguration.addNewCardPayment == true) {
@@ -548,7 +419,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                     }
                 } else {
 //                    check details........
-
                     Log.e("cardDetailArray-test", "" + cardDetailArray.get(i));
                     Log.e("cardDetailArray-tes1", "" + cardDetailArray);
                     tv_card_holder_name.setVisibility(View.GONE);
@@ -558,7 +428,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                     textView_bankName.setVisibility(View.VISIBLE);
                     textView_bankRoutingNo.setVisibility(View.INVISIBLE);
                     tv_cardType.setText("Checking - " + cardDetailArray.get(i).get("wu_CardAccNumber").toString().trim().replace("*****", ""));
-//                    textView_bankRoutingNo.setText(cardDetailArray.get(i).get("wu_CardAccNumber").toString().trim().replace("*****",""));
                     textView_bankName.setText(cardDetailArray.get(i).get("wu_BankName"));
                     Log.e("tempPaymentId-", "" + tempPaymentId);
                     if (AppConfiguration.addNewCheckPayment == true) {
@@ -570,7 +439,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                         }
                     }
                 }
-//                cardDetailArray.clear();
             }
 
             textViewPayTypeId.setText(cardDetailArray.get(i).get("wu_PayTypeID"));
@@ -588,8 +456,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                         Log.e("pmtId--", "" + pmtId);
 
                         new CardDetailsByPmtIdAsyncTask().execute();
-//                        Intent i=new Intent(BuyMoreSelectPaymentMethod.this,BuyMoreAddNewPaymentMethod.class);
-//                        startActivity(i);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -601,9 +467,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            /*chkbx.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {*/
                     if (chkbx.isChecked()) {
 
                         chkbx.setButtonDrawable(R.drawable.custom_checkbox_check_orange);
@@ -631,8 +494,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                         getChild();
 
                     } else {
-//                        selectedCardDetailArray.clear();
-//                        Log.d("AppConfiguration.selectedCardDetailArray---&", "Clear");
                         chkbx.setButtonDrawable(R.drawable.custom_checkbox_uncheck);
                     }
                 }
@@ -642,17 +503,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
 
         }
     }
-
-    /*View
-
-    View.OnClickListener myClickLIstener = new View.OnClickListener() {
-        public void onClick(View v) {
-            Intent intent = new Intent(mContext, SwimCompititionTrophyRoomResultsAcitivity.class);
-            intent.putExtra("studentID", v.getTag().toString());
-            startActivity(intent);
-        }
-    }*/;
-
     String checkedValue = "";
 
     public void getChild() {
@@ -661,8 +511,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                 View view = ll_select_payment.getChildAt(i);
                 LinearLayout superLay = (LinearLayout) view;
                 View view2 = superLay.getChildAt(0);
-//                LinearLayout lay_card_type = (LinearLayout) view2;
-//                View view3 = lay_card_type.getChildAt(0);
                 LinearLayout lay_check = (LinearLayout) view2;
                 LinearLayout view4 = (LinearLayout) lay_check.getChildAt(1);
                 View view5 = view4.getChildAt(0);
@@ -688,8 +536,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
             pd.show();
-
-//            cardDetailArray.clear();
         }
 
         @Override
@@ -714,37 +560,21 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                 btn_continue.setVisibility(View.VISIBLE);
                 btn_continue2.setVisibility(View.GONE);
                 tv_add_new_payment_method2.setVisibility(View.GONE);
-//                contitional coding to put continue button above add new payment button : removed by client
-                /*tv_add_new_payment_method.setVisibility(View.GONE);
-                btn_continue.setVisibility(View.GONE);
-                btn_continue2.setVisibility(View.VISIBLE);
-                tv_add_new_payment_method2.setVisibility(View.VISIBLE);*/
             }
             inflateSelectPaymentMethod(AppConfiguration.cardDetailArray);
             if (pd != null && pd.isShowing())
                 pd.dismiss();
             AppConfiguration.myCartPackageArray = myCartArray;
             AppConfiguration.myCartMonthlyPlanArray = MonthlyArray;
-            Log.e("myCartArray---##", "" + AppConfiguration.myCartPackageArray);
-            /*if (cardDetailArray.size() == 0 && myCartArray.size() == 0 && MonthlyArray.size() == 0) {
-                Toast.makeText(getApplicationContext(), "Your cart is empty cotinue shopping", Toast.LENGTH_SHORT).show();
-                // finish();
-            }*/
-
-//            }
-
         }
     }
 
     public String loadCardDetailListReal() {
 
         HashMap<String, String> param = new HashMap<String, String>();
-
-//        param.put("Basketid", AppConfiguration.Basketid);
         param.put("Basketid", AppConfiguration.BasketID);
         param.put("Token", token);
         String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.payDGetACHCardDetail, param);
-        // Log.i("responseString", responseString);
         return responseString;
     }
 
@@ -755,7 +585,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             String successStr = reader.getString("Success");
             AppConfiguration.cardDetailArray.clear();
             if (successStr.equalsIgnoreCase("True")) {
-                // Log.i("successStr--1-", successStr);
                 JSONArray jsonMainNode = reader.optJSONArray("ACHList");
 
                 for (int i = 0; i < jsonMainNode.length(); i++) {
@@ -795,7 +624,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             pd = new ProgressDialog(mContext);
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
-//            pd.show();
 
         }
 
@@ -809,7 +637,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-//            if (pd != null && pd.isShowing()) {
             try {
 
                 pd.dismiss();
@@ -817,15 +644,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             } catch (Exception e) {
                 // TODO: handle exception
             }
-            //moved to order summary
-                /*try {
-                    new ConfirmSubmitPaymentAsyncTask().execute();
-                } catch (Exception e) {
-                    // TODO: handle exception
-                    e.printStackTrace();
-                }*/
-
-//            }
 
         }
     }
@@ -836,21 +654,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             HashMap<String, String> param = new HashMap<String, String>();
             HashMap<String, String> param1 = new HashMap<String, String>();
 
-//            param1.put("Token", token);
-//            param1.put("BasketID", Basketid);
-//            param1.put("wu_recurring", "0");
-//            param1.put("pmtid", "0");
-//            param1.put("strType", "");
-//            param1.put("strCard", "");
-//            param1.put("ShippingAddress", "");
-//            param1.put("chkagree", "True");
-//            param1.put("ChkAddShippingAddress", "False");
-//            param1.put("RBPaymentType", "0");
-//            param1.put("chkSaveACH", "True");
-//            param1.put("chkSaveCard", "False");
-//            param1.put("strCheckDtl", "ankit|45885|5558336|sycyc|dgfgg|dgfgg. shfc|fhggyy|duhgh|AS|556685");
-//            param1.put("strCreditDtl", "");
-
             param.put("Token", token);
             param.put("BasketID", AppConfiguration.BasketID);
             param.put("wu_recurring", "0");
@@ -858,33 +661,8 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             param.put("ShippingAddress", "");
             param.put("chkagree", "True");
 
-            /*if (insertedCardDetailArray.size() != 0) {
-                param.put("RBPaymentType", "0");
-                param.put("pmtid", "");
-                param.put("strType", "");
-                param.put("strCard", "");
-                param.put("chkSaveACH", "False");
-                param.put("chkSaveCard", "True");
-                param.put("strCheckDtl", "");
-                param.put("strCreditDtl", insertedCardDetails);
-                param.put("ChkAddShippingAddress", "");
-            }
-            if (insertedCheckDetailArray.size() != 0) {
-                Log.i("insertedCheckDetails--$$", "" + insertedCheckDetails);
-                param.put("RBPaymentType", "0");
-                param.put("pmtid", "");
-                param.put("strType", "");
-                param.put("strCard", "");
-                param.put("chkSaveACH", "True");
-                param.put("chkSaveCard", "False");
-                param.put("strCheckDtl", insertedCheckDetails);
-                param.put("strCreditDtl", "");
-                param.put("ChkAddShippingAddress", "");
-            }*/
-            // else {
             selectedCardDetailArray = AppConfiguration.selectedCardDetailArray;
             if (selectedCardDetailArray.size() != 0) {
-                Log.i("selectedCardDetailArray--$$", "" + selectedCardDetailArray);
                 SelectedCheckDetail = selectedCardDetailArray.get(0).get("wu_ClientName") + "|"
                         + selectedCardDetailArray.get(0).get("wu_CardAccNumber") + "|"
                         + selectedCardDetailArray.get(0).get("wu_ExpDate") + "|"
@@ -914,12 +692,7 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                     param.put("ChkAddShippingAddress", "False");
                 }
             }
-
-//            finalSelectedPaymentArray.add(param);
-
             String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.confirm_pay, param);
-//            AppConfiguration.finalSelectedPaymentArray = finalSelectedPaymentArray;
-//            Log.i("AppConfiguration.finalSelectedPaymentArray--", "" + AppConfiguration.finalSelectedPaymentArray);
             readpaymentConfirmAndParseJSON(responseString);
             Log.i("responseString--", responseString);
             CreateConfirmSubmitPaymentArray();//will be used in order summary page
@@ -964,7 +737,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
         param1.put("BasketID", AppConfiguration.BasketID);
         param1.put("pastduepaymentFlag", "false");
         param1.put("pastdueInvoiceId", "");
-//        param1.put("creditexp", cred_exp);
         param1.put("creditexp", "");
         param1.put("strPaymentCredit", card_detail);
         param1.put("strPaymentCheck", check_detail);
@@ -973,9 +745,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
         param1.put("strPaymentShippingAddress", PaymenPaymentBillingAddresstCheck);
         param1.put("Userid1", "");
         AppConfiguration.finalSelectedPaymentArray.add(param1);
-        Log.e("AppConfiguration.finalSelectedPaymentArray -- final", "" + AppConfiguration.finalSelectedPaymentArray);
-//        insertedCheckDetailArray.add(param1);
-//        AppConfiguration.insertedCheckDetailArray = insertedCheckDetailArray;
     }
 
     String success;
@@ -990,10 +759,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
             pd = new ProgressDialog(mContext);
             pd.setMessage("Please wait...");
             pd.setCancelable(false);
-//            pd.show();
-//            insertedCardDetailArray.clear();
-            // siteMainList.clear();
-            // siteName.clear();
         }
 
         @Override
@@ -1012,11 +777,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-//            if (pd != null) {
-//
-//                pd.dismiss();
-//
-//            }
             if (success.equalsIgnoreCase("True")) {
                 Intent i = new Intent(BuyMoreSelectPaymentMethod.this, BuyMoreAddNewPaymentMethod.class);
                 startActivity(i);
@@ -1034,10 +794,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
         param.put("Basketid", AppConfiguration.BasketID);
         param.put("CustomerId", CustomerId);
         param.put("pmtId", pmtId);
-
-//        insertedCardDetailArray.add(param);
-//        AppConfiguration.insertedCardDetailArray = insertedCardDetailArray;
-//        AppConfiguration.addNewCardPayment=true;
         String responseString = WebServicesCall.RunScript(AppConfiguration.DOMAIN + AppConfiguration.GetCardDetailByPmtID,
                 param);
         Log.d("card buy pmt id-", responseString);
@@ -1062,8 +818,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                         map.put("wu_CardAccNumber", cardObj.getString("wu_CardAccNumber"));
                         map.put("wu_CardType", cardObj.getString("wu_CardType"));
                         map.put("wu_ExpDate", cardObj.getString("wu_ExpDate"));
-//                    map.put("wu_Cvv",cardObj.getString("wu_Cvv"));
-//                    map.put("wu_PmtID",cardObj.getString("wu_PmtID"));
                         map.put("wu_Address1", cardObj.getString("wu_Address1"));
                         map.put("wu_Address2", cardObj.getString("wu_Address2"));
                         map.put("wu_City", cardObj.getString("wu_City"));
@@ -1075,7 +829,6 @@ public class BuyMoreSelectPaymentMethod extends Activity {
                     }
                 }
             } else {
-//                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
             }
 
         } catch (Exception e) {

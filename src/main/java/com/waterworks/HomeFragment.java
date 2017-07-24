@@ -361,11 +361,14 @@ public class HomeFragment extends Fragment {
         typeFace();
     }
 //26-05-2017 megha
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.zoom_out);
-//    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.zoom_out);
+        AppConfiguration.pair2Check="0";
+        AppConfiguration.pair2lessontype = "";
+        AppConfiguration.schedulechoices="7";
+    }
 @Override
     public void onResume() {
         super.onResume();

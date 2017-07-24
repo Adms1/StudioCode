@@ -21,6 +21,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.widget.CardView;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -89,6 +90,7 @@ public class SwimCampRegister3Activity extends Activity {
     ArrayList<String> SUM = new ArrayList<String>();
     ArrayList<String> DropOffValue = new ArrayList<String>();
     ArrayList<String> DiscountValue = new ArrayList<String>();
+    ArrayList<String> Discount = new ArrayList<String>();
     ArrayList<String> SubTotal = new ArrayList<String>();
 
     ArrayList<ArrayList<String>> _LineCount = new ArrayList<ArrayList<String>>();
@@ -100,7 +102,8 @@ public class SwimCampRegister3Activity extends Activity {
     ArrayList<ArrayList<String>> _Type = new ArrayList<ArrayList<String>>();
 
     List<SwimCampRegi3Items> itemData;
-	/* new code */
+
+    /* new code */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,6 +161,7 @@ public class SwimCampRegister3Activity extends Activity {
             });
         }
     }
+
     public AlertDialog onDetectNetworkState() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
         builder1.setIcon(getResources().getDrawable(R.drawable.logo));
@@ -184,6 +188,7 @@ public class SwimCampRegister3Activity extends Activity {
                 });
         return builder1.create();
     }
+
     public void initialize() {
         Button btnHome = (Button) findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
@@ -234,6 +239,7 @@ public class SwimCampRegister3Activity extends Activity {
         String responseString = WebServicesCall.RunScript(AppConfiguration.swimCampRegister3, params);
         readAndParseJSON(responseString);
     }
+
     public void readAndParseJSON(String in) {
         try {
             JSONObject reader = new JSONObject(in);
@@ -244,11 +250,11 @@ public class SwimCampRegister3Activity extends Activity {
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
 
                     HashMap<String, String> hashmap = new HashMap<String, String>();
-                    hashmap.put("StudentID",jsonChildNode.getString("StudentID"));
-                    hashmap.put("StudentName",jsonChildNode.getString("StudentName"));
+                    hashmap.put("StudentID", jsonChildNode.getString("StudentID"));
+                    hashmap.put("StudentName", jsonChildNode.getString("StudentName"));
                     hashmap.put("SUM", jsonChildNode.getString("SUM"));
-                    hashmap.put("DropOffValue",jsonChildNode.getString("DropOffValue"));
-                    hashmap.put("DiscountValue",jsonChildNode.getString("DiscountValue"));
+                    hashmap.put("DropOffValue", jsonChildNode.getString("DropOffValue"));
+                    hashmap.put("DiscountValue", jsonChildNode.getString("DiscountValue"));
                     hashmap.put("SubTotal", jsonChildNode.getString("SubTotal"));
 
                     JSONArray jsonStudentNode = jsonChildNode.getJSONArray("StudentDetail");
@@ -303,6 +309,7 @@ public class SwimCampRegister3Activity extends Activity {
             e.printStackTrace();
         }
     }
+
     class SwimCampListAsyncTask extends AsyncTask<Void, Void, Void> {
         ProgressDialog pd;
 
@@ -318,11 +325,13 @@ public class SwimCampRegister3Activity extends Activity {
             subSwimCampList.clear();
             swimCampTotalList.clear();
         }
+
         @Override
         protected Void doInBackground(Void... params) {
             loadSwimCampList();
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
@@ -341,7 +350,10 @@ public class SwimCampRegister3Activity extends Activity {
 
                 if (!swimCampTotalList.get(0).get("SublingAccount").contains("0child")
                         || !swimCampTotalList.get(0).get("SublingAccount").contains("0 child")) {
-                    txtTotalSibDisctLabel.setText("" + swimCampTotalList.get(0).get("SublingAccounthdr"));
+//                    14-07-2017 megha change for show proper
+                    String siblingdiscount = swimCampTotalList.get(0).get("SublingAccounthdr");
+                    String[] discountstr = siblingdiscount.split("\\(");
+                    txtTotalSibDisctLabel.setText("" + discountstr[0] + "\n" + "(" + discountstr[1]);
                 }
                 System.out.println("Set -- " + swimCampTotalList.get(0).get("SublingAccounthdr"));
                 txtTotalSibDisctValue.setText("" + swimCampTotalList.get(0).get("SublingAccount"));
@@ -365,15 +377,17 @@ public class SwimCampRegister3Activity extends Activity {
                 arrsession1 = swimCampTotalList.get(0).get("arrsession1");
                 arrsibsc = swimCampTotalList.get(0).get("arrsibdisc");
 
-            } else {}
+            } else {
+            }
         }
     }
+
     public class CustomList extends ArrayAdapter<String> {
         private final Activity context;
         private final ArrayList<HashMap<String, String>> data;
         ViewHolder holder;
 
-        public CustomList(Activity context,ArrayList<HashMap<String, String>> list) {
+        public CustomList(Activity context, ArrayList<HashMap<String, String>> list) {
             super(context, R.layout.list_row_swim_camp_register3);
             this.context = context;
             this.data = list;
@@ -396,7 +410,7 @@ public class SwimCampRegister3Activity extends Activity {
                 holder = new ViewHolder();
 
                 LayoutInflater inflater = context.getLayoutInflater();
-                view = inflater.inflate(R.layout.list_row_swim_camp_register3,null, true);
+                view = inflater.inflate(R.layout.list_row_swim_camp_register3, null, true);
 
                 holder.txtDescription = (TextView) view.findViewById(R.id.txtDescription);
                 holder.txtUnitPrice = (TextView) view.findViewById(R.id.txtUnitPrice);
@@ -426,10 +440,12 @@ public class SwimCampRegister3Activity extends Activity {
             return view;
         }
     }
+
     public class ViewHolder {
         TextView txtDescription, txtUnitPrice, txtStartDate, txtEndDate,
                 txtEndDropOff, txtLineCount, txtSessionID;
     }
+
     public class GetBasketID extends AsyncTask<Void, Void, Void> {
         ProgressDialog pd;
 
@@ -441,6 +457,7 @@ public class SwimCampRegister3Activity extends Activity {
             pd.setCancelable(false);
             pd.show();
         }
+
         @Override
         protected Void doInBackground(Void... params1) {
 
@@ -452,6 +469,7 @@ public class SwimCampRegister3Activity extends Activity {
             GetBasketID(responseString);
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) {
             // TODO Auto-generated method stub
@@ -461,10 +479,13 @@ public class SwimCampRegister3Activity extends Activity {
             }
             if (data_load_basket.toString().equalsIgnoreCase("True")) {
                 if (AppConfiguration.BasketID.equalsIgnoreCase("0")) {
-                } else {}
-            } else {}
+                } else {
+                }
+            } else {
+            }
         }
     }
+
     public void GetBasketID(String response) {
         try {
             JSONObject reader = new JSONObject(response);
@@ -501,6 +522,7 @@ public class SwimCampRegister3Activity extends Activity {
         String responseString = WebServicesCall.RunScript(AppConfiguration.makePurchaseAddToCart, params);
         readAndParseJSONAdd(responseString);
     }
+
     public void readAndParseJSONAdd(String in) {
         try {
             JSONObject reader = new JSONObject(in);
@@ -540,11 +562,13 @@ public class SwimCampRegister3Activity extends Activity {
 
             swimCampList.clear();
         }
+
         @Override
         protected Void doInBackground(Void... params) {
             addToCartProcess();
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
@@ -560,6 +584,7 @@ public class SwimCampRegister3Activity extends Activity {
             }
         }
     }
+
     /*---------------------------------------new code---------------------------------------*/
     private class SwimCampListNew extends AsyncTask<Void, Void, Void> {
         ProgressDialog pd;
@@ -605,7 +630,7 @@ public class SwimCampRegister3Activity extends Activity {
                             StudentName.add(jsonChildNode.getString("StudentName"));
                             SUM.add(jsonChildNode.getString("SUM"));
                             DropOffValue.add(jsonChildNode.getString("DropOffValue"));
-                            DiscountValue.add(jsonChildNode.getString("DiscountValue"));
+                            DiscountValue.add(jsonChildNode.getString("Discount")); //DiscountValue
                             SubTotal.add(jsonChildNode.getString("SubTotal"));
 
                             JSONArray jsonStudentNode = jsonChildNode.getJSONArray("StudentDetail");
@@ -667,6 +692,7 @@ public class SwimCampRegister3Activity extends Activity {
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
@@ -683,8 +709,8 @@ public class SwimCampRegister3Activity extends Activity {
                     for (int i = 0; i < StudentID.size(); i++) {
                         Log.e(TAG, "Session size = " + _SessionID.get(i).size());
                         itemData.add(new SwimCampRegi3Items(StudentName.get(i),
-                                StudentID.get(i), SUM.get(i), DropOffValue.get(i),
-                                DiscountValue.get(i), SubTotal.get(i), _LineCount
+                                StudentID.get(i), SUM.get(i), DropOffValue.get(i)
+                                , DiscountValue.get(i), SubTotal.get(i), _LineCount
                                 .get(i), _SessionID.get(i), _Description
                                 .get(i), _StartDate.get(i),
                                 _EndDate.get(i), _Cost.get(i), _Type.get(i)));
@@ -703,7 +729,11 @@ public class SwimCampRegister3Activity extends Activity {
                             || swimCampTotalList.get(0).get("SublingAccounthdr").toString().contains("0 child")) {
                         txtTotalSibDisctLabel.setText("Total Amount of Sibling Discount");
                     } else {
-                        txtTotalSibDisctLabel.setText("" + swimCampTotalList.get(0).get("SublingAccounthdr"));
+                        //                    14-07-2017 megha change for show proper
+                        String siblingdiscount = swimCampTotalList.get(0).get("SublingAccounthdr");
+                        String[] discountstr = siblingdiscount.split("\\(");
+                        txtTotalSibDisctLabel.setText("" + discountstr[0] + "\n" + "(" + discountstr[1]);
+//                        txtTotalSibDisctLabel.setText("" + swimCampTotalList.get(0).get("SublingAccounthdr"));
                     }
                     System.out.println("Here ++ :" + swimCampTotalList.get(0).get("SublingAccounthdr"));
                     txtTotalSibDisctValue.setText("" + swimCampTotalList.get(0).get("SublingAccount"));
@@ -730,6 +760,7 @@ public class SwimCampRegister3Activity extends Activity {
             }
         }
     }
+
     public void loadList(List<SwimCampRegi3Items> itemData) {
         // TODO Auto-generated method stub
         for (int i = 0; i < itemData.size(); i++) {
@@ -748,7 +779,8 @@ public class SwimCampRegister3Activity extends Activity {
                 tv_studentname.setText(_itemData.getStudentName());
                 tv_sum.setText(AppConfiguration.currency + _itemData.getSUM());
                 tv_dropoff.setText(AppConfiguration.currency + _itemData.getDropOffValue());
-                tv_discount.setText(AppConfiguration.currency + _itemData.getDiscountValue());
+                tv_discount.setText(_itemData.DiscountValue()); //AppConfiguration.currency +  change for display discount 12-07-2017 megha
+                Log.d("discount", _itemData.DiscountValue());
                 tv_subtotal.setText(AppConfiguration.currency + _itemData.getSubTotal());
 
                 for (int j = 0; j < _itemData.get_SessionID().size(); j++) {
@@ -762,7 +794,7 @@ public class SwimCampRegister3Activity extends Activity {
                     TextView tv_startdate = (TextView) childView.findViewById(R.id.txtStartDate);
                     TextView tv_enddate = (TextView) childView.findViewById(R.id.txtEndDate);
                     TextView tv_dropoff1 = (TextView) childView.findViewById(R.id.txtEndDropOff1);
-                    tv_desc.setText("Description:"+ _itemData.get_Description().get(j));
+                    tv_desc.setText("Description:" + _itemData.get_Description().get(j));
 
                     tv_unitprice.setText("Price:" + AppConfiguration.currency + df.format(Double.parseDouble(_itemData.get_Cost().get(j))));
                     tv_linecount.setText("Line#:" + _itemData.get_LineCount().get(j));
@@ -789,11 +821,13 @@ public class SwimCampRegister3Activity extends Activity {
             }
         }
     }
+
     public class SwimCampRegi3Items {
-        String StudentName, StudentID, SUM, DropOffValue, DiscountValue,
+        String StudentName, StudentID, SUM, DropOffValue, DiscountValue, Discount,
                 SubTotal;
         ArrayList<String> _LineCount, _SessionID, _Description, _StartDate,
                 _EndDate, _Cost, _Type;
+
 
         public SwimCampRegi3Items(String studentName, String studentID,
                                   String sUM, String dropOffValue, String discountValue,
@@ -838,6 +872,7 @@ public class SwimCampRegister3Activity extends Activity {
             return SUM;
 
         }
+
         public void setSUM(String sUM) {
             SUM = sUM;
         }
@@ -854,7 +889,7 @@ public class SwimCampRegister3Activity extends Activity {
             DiscountValue = discountValue;
         }
 
-        public String getDiscountValue() {
+        public String DiscountValue() {
             return DiscountValue;
         }
 

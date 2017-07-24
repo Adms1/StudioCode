@@ -395,6 +395,7 @@ public class LoginActivity extends Activity {
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("Email", userEmailForgot);
 
+
         String responseString = WebServicesCall.RunScript(AppConfiguration.forgot_passwordURL, params);
         readAndParseJSONforgot(responseString);
     }

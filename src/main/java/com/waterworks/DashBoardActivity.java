@@ -60,26 +60,23 @@ public class DashBoardActivity extends Activity {
     Boolean isInternetPresent = false;
     Context mContext = this;
 
-//    18-05-2017 megha
+    @Override
+    protected void onResume() {
+        // TODO Auto-generated method stub
+        super.onResume();
+        this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+        if (AppConfiguration.custom_flow) {
+            displayView(AppConfiguration.transform);
+            AppConfiguration.custom_flow = false;
+        }
 
-//    @Override
-//    protected void onResume() {
-//        // TODO Auto-generated method stub
-//        super.onResume();
-//        this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
-//
-//        if (AppConfiguration.custom_flow) {
-//            displayView(AppConfiguration.transform);
-//            AppConfiguration.custom_flow = false;
-//        }
-//
-//        if (fragment != null && fragment instanceof HomeFragment) {
-//            if (dispPOS == 0) {
-//                AppConfiguration.makeup_Clicked = 0;
-//            } else {
-//            }
-//        }
-//    }
+        if (fragment != null && fragment instanceof HomeFragment) {
+            if (dispPOS == 0) {
+                AppConfiguration.makeup_Clicked = 0;
+            } else {
+            }
+        }
+    }
 
     @Override
     protected void onPause() {

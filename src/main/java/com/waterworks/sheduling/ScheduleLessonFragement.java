@@ -80,6 +80,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -290,6 +291,8 @@ public class ScheduleLessonFragement extends Activity {
         super.onBackPressed();
         clearArray();
         AppConfiguration.custom_flow = false;
+        AppConfiguration.pair2Check = "0";
+        AppConfiguration.pair2lessontype = "";
         Intent i = new Intent(mContext, DashBoardActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
@@ -360,6 +363,8 @@ public class ScheduleLessonFragement extends Activity {
             @Override
             public void onClick(View v) {
                 AppConfiguration.custom_flow = false;
+                AppConfiguration.pair2Check = "0";
+                AppConfiguration.pair2lessontype = "";
                 Intent intentCheckin = new Intent(mContext, DashBoardActivity.class);
                 intentCheckin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentCheckin);
@@ -636,33 +641,37 @@ public class ScheduleLessonFragement extends Activity {
                 que1.setBackgroundResource(R.drawable.pure_error_border_white);
                 clearCheckboxes();
                 if (checkedId == R.id.yes1) {
+                    yes1.setButtonDrawable(R.drawable.r1);
+                    no_prf1.setButtonDrawable(R.drawable.r0);
                     makeAcombo();
                     chckStudents();
                     scrollview.canScrollVertically(scrollview.getBottom());
 
-                    tv_instruction_msg.setText(Html.fromHtml("Please select the students you would like to schedule in the same class."));
                     AppConfiguration.schedulechoices = "1";
+                    tv_instruction_msg.setText(Html.fromHtml("Please select the students you would like to schedule in the same class."));
 
                     que2.startAnimation(new ExpandCollapseAnimation(que2, 500, 1, ScheduleLessonFragement.this));
-
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             students_check.startAnimation(new ExpandCollapseAnimation(students_check, 500, 0, ScheduleLessonFragement.this));
-                            scrollview.scrollTo(1,scrollview.getBottom());
-
+                            scrollview.fullScroll(scrollview.FOCUS_DOWN);
                         }
                     }, 500);
                 } else {
                     yes1.setChecked(false);
+                    yes1.setButtonDrawable(R.drawable.r0);
+
+                    no_prf1.setButtonDrawable(R.drawable.r1);
+
+                    students_check.setVisibility(View.GONE);
                     AppConfiguration.schedulechoices = "7";
                     students_check.startAnimation(new ExpandCollapseAnimation(students_check, 500, 1, ScheduleLessonFragement.this));
-
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             que2.startAnimation(new ExpandCollapseAnimation(que2, 500, 0, ScheduleLessonFragement.this));
-                            scrollview.scrollTo(1,scrollview.getBottom());
+                            scrollview.scrollTo(0, scrollview.getBottom());
                         }
                     }, 500);
                 }
@@ -675,13 +684,19 @@ public class ScheduleLessonFragement extends Activity {
                 // TODO Auto-generated method stub
                 clearCheckboxes();
                 if (checkedId == R.id.yes2) {
+                    yes2.setButtonDrawable(R.drawable.r1);
+                    no_prf2.setButtonDrawable(R.drawable.r0);
                     makeAcombo();
                     chckStudents();
                     scrollview.smoothScrollBy(500, 0);
                     students_check.requestFocus();
                     tv_instruction_msg.setText(Html.fromHtml("Please select the students you would like to schedule with the same instructor."));
                     students_check.startAnimation(new ExpandCollapseAnimation(students_check, 500, 0, ScheduleLessonFragement.this));
+//                    scrollview.scrollTo(500, 0);
                 } else {
+                    yes2.setChecked(false);
+                    yes2.setButtonDrawable(R.drawable.r0);
+                    no_prf2.setButtonDrawable(R.drawable.r1);
                     students_check.startAnimation(new ExpandCollapseAnimation(students_check, 500, 1, ScheduleLessonFragement.this));
                     scrollview.smoothScrollBy(500, 0);
                 }
@@ -692,7 +707,7 @@ public class ScheduleLessonFragement extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                scrollview.smoothScrollBy(500, 0);
+
                 isInternetPresent = Utility.isNetworkConnected(ScheduleLessonFragement.this);
                 if (!isInternetPresent) {
                     onDetectNetworkState().show();
@@ -864,17 +879,20 @@ public class ScheduleLessonFragement extends Activity {
             note_upper.setVisibility(View.INVISIBLE);
             que1.setVisibility(View.INVISIBLE);
         }
+
         @Override
         public void onAnimationEnd(Animation animation) {
             rel_enddate.setVisibility(View.VISIBLE);
             note.setVisibility(View.VISIBLE);
             note_upper.setVisibility(View.VISIBLE);
-            que1.setVisibility(View.VISIBLE);
+//            que1.setVisibility(View.VISIBLE);
         }
+
         @Override
         public void onAnimationRepeat(Animation animation) {
         }
     };
+
     public void radioButtonLogic(String forWhich, RadioButton rr) {
         System.out.println(forWhich);
         if (forWhich.equalsIgnoreCase("next")) {
@@ -896,23 +914,23 @@ public class ScheduleLessonFragement extends Activity {
                     if (l == 0) {
                         clsID = id[1];
                         clsTxt = rr.getText().toString();
-                        addToCorrectArray(clsID, id[2]);
+                        addToCorrectArray(clsID.trim(), id[2]);
                     } else if (l == 1) {
                         clsID_2 = id[1];
                         clsTxt_2 = rr.getText().toString();
-                        addToCorrectArray(clsID_2, id[2]);
+                        addToCorrectArray(clsID_2.trim(), id[2]);
                     } else if (l == 2) {
                         clsID_3 = id[1];
                         clsTxt_3 = rr.getText().toString();
-                        addToCorrectArray(clsID_3, id[2]);
+                        addToCorrectArray(clsID_3.trim(), id[2]);
                     } else if (l == 3) {
                         clsID_4 = id[1];
                         clsTxt_4 = rr.getText().toString();
-                        addToCorrectArray(clsID_4, id[2]);
+                        addToCorrectArray(clsID_4.trim(), id[2]);
                     } else if (l == 4) {
                         clsID_5 = id[1];
                         clsTxt_5 = rr.getText().toString();
-                        addToCorrectArray(clsID_5, id[2]);
+                        addToCorrectArray(clsID_5.trim(), id[2]);
                     }
                     //Name of the student
                     if (removeIT) {
@@ -959,10 +977,12 @@ public class ScheduleLessonFragement extends Activity {
             }
         }
     }
+
     public void nextMethod() {
         AppConfiguration.studentsize = AppConfiguration.selectedStudentsName.size();
         AppConfiguration.selectedStudentNameToSchedule = AppConfiguration.Array2String(AppConfiguration.selectedStudentsName);
         if (students_check.getVisibility() == View.VISIBLE) {
+            scrollview.fullScroll(View.FOCUS_DOWN);
             if (checkCHEKCSvalue(Integer.parseInt(combo1_limit), Integer.parseInt(combo2_limit)) == false) {
                 AppConfiguration.pair1Check = "1";
                 if (validation()) {
@@ -983,6 +1003,7 @@ public class ScheduleLessonFragement extends Activity {
             }
         }
     }
+
     /**
      * Common Checkbox click method for all checkboxes.
      * Just go through this method and you'll get desire output
@@ -1006,6 +1027,7 @@ public class ScheduleLessonFragement extends Activity {
             }
         });
     }
+
     /**
      * Common validation like : startdate
      * EndDate
@@ -1043,6 +1065,7 @@ public class ScheduleLessonFragement extends Activity {
         }
         return validate;
     }
+
     /**
      * Questions validation
      *
@@ -1069,6 +1092,7 @@ public class ScheduleLessonFragement extends Activity {
         }
         return validate;
     }
+
     /**
      * After the all filters jump from this activity to Another.
      */
@@ -1084,20 +1108,25 @@ public class ScheduleLessonFragement extends Activity {
             List duplicateList = new ArrayList();
             duplicateList.clear();
 
-            for (int p=0;p<selectedID.size();p++) {
-                duplicateList.add(selectedID.get(p));
+            for (int p = 0; p < selectedID.size(); p++) {
+                duplicateList.add(selectedID.get(p).trim());
             }
 
-            HashSet<String> listToSet = new HashSet<String>(duplicateList);
-             List<String> listWithoutDuplicates = new ArrayList<String>(listToSet);
+//            HashSet<String> listToSet = new HashSet<String>(duplicateList);
+            Set<String> listToSet = new LinkedHashSet<String>(duplicateList);
+            List<String> listWithoutDuplicates = new ArrayList<String>(listToSet);
             selectedID.clear();
-            for(int k=0;k<listWithoutDuplicates.size();k++) {
-                if(!listWithoutDuplicates.get(k).equalsIgnoreCase("")) {
-                    selectedID.add(listWithoutDuplicates.get(k));
+            for (int k = 0; k < listWithoutDuplicates.size(); k++)
+            {
+                if (!listWithoutDuplicates.get(k).equalsIgnoreCase(""))
+                {
+                    selectedID.add(listWithoutDuplicates.get(k).trim());
                     System.out.println("Akjump" + selectedID);
                 }
             }
+
         }
+
 
         AppConfiguration.selectedStudentID = selectedStudents.toString().replaceAll("\\[", "").replaceAll("\\]", "");
         AppConfiguration.selectedStudentIDforStep2 = selectedStudentsStep2.toString().replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s+", "");
@@ -1173,7 +1202,7 @@ public class ScheduleLessonFragement extends Activity {
             c_hour = 8;
             c_min = 00;
             start_date.setText(m + "/" + d + "/" + y);
-
+            AppConfiguration.schdl_startDate = start_date.getText().toString();
             Log.v("daySelected2", "" + d);
             Log.v("monthSelected2", "" + m);
             Log.v("yearSelected2", "" + y);
@@ -1205,6 +1234,7 @@ public class ScheduleLessonFragement extends Activity {
             loadSitesList();
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
@@ -1269,7 +1299,6 @@ public class ScheduleLessonFragement extends Activity {
                 hashmap.put("Lafitness", jsonChildNode.getString("Lafitness"));
 
                 siteName.add("" + jsonChildNode.getString("sitename"));
-
                 siteMainList.add(hashmap);
             }
 
@@ -1458,17 +1487,19 @@ public class ScheduleLessonFragement extends Activity {
                         hashmap.put("SAge", SAge);
                         studentList.add(hashmap);
                     }
-                } else {}
+                } else {
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
-            if (successGetStudentList.toString().equals("True")) {
+            if (successGetStudentList.equals("True")) {
 
                 new LessonTypesAsyncTask().execute();
 
@@ -1498,7 +1529,6 @@ public class ScheduleLessonFragement extends Activity {
             lessonTypesMainListForStudent5.clear();
 
             AppConfiguration.selectedStudentsName.clear();
-
             selectedID.clear();
             selectedStudents.clear();
             selectedText.clear();
@@ -1579,7 +1609,8 @@ public class ScheduleLessonFragement extends Activity {
                             lessonTypesMainListForStudent5.add(hashmap);
                         }
                     }
-                } else {}
+                } else {
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1590,6 +1621,7 @@ public class ScheduleLessonFragement extends Activity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             if (successLessonTypes.equalsIgnoreCase("True")) {
+
                 for (int i = 0; i < studentList.size(); i++) {
                     // Temp_Lessons_Sigle_Student.clear();
                     Temp_Lessons.clear();
@@ -1627,11 +1659,12 @@ public class ScheduleLessonFragement extends Activity {
                         final RadioButton radioBtn = (RadioButton) RadioView.findViewById(R.id.radio_btn);
                         radioBtn.setText(Temp_Lessons.get(j).get("LessonName"));
                         radioBtn.setId(Integer.parseInt(Temp_Lessons.get(j).get("LessonID")));
-//                        if (Temp_Lessons.get(j).get("Enable").equalsIgnoreCase("true")) {
-//
-//                        }else{
-//                            radioBtn.setEnabled(false);
-//                        }
+                        if (Temp_Lessons.get(j).get("Enable").equalsIgnoreCase("true")) {
+
+                        } else {
+                            radioBtn.setEnabled(false);
+                            radioBtn.setAlpha((float) 0.5);
+                        }
                         radioBtn.setTag(studentList.get(i).get("StudentID")
                                 + "|" + Temp_Lessons.get(j).get("LessonID").trim()
                                 + "|" + studentList.get(i).get("SFirstName")
@@ -1680,8 +1713,9 @@ public class ScheduleLessonFragement extends Activity {
                                     removeIT = true;
                                     clearCheckboxes();
                                     lsnTypes.clearCheck();
-                                    que1_grp.clearCheck();
-                                    yes1.setChecked(false);
+//                                    que1_grp.clearCheck();
+//                                    yes1.setChecked(false);
+
                                     track.setText("");
 //                                    TransitionDrawable transition = (TransitionDrawable) superlay.getBackground();
 //                                    transition.reverseTransition(200);
@@ -1797,7 +1831,9 @@ public class ScheduleLessonFragement extends Activity {
                         .setDuration(300)
                         .setListener(new Animator.AnimatorListener() {
                             @Override
-                            public void onAnimationStart(Animator animation) {}
+                            public void onAnimationStart(Animator animation) {
+                            }
+
                             @Override
                             public void onAnimationEnd(Animator animation) {
                                 loadingScreens.setVisibility(View.GONE);
@@ -1808,9 +1844,11 @@ public class ScheduleLessonFragement extends Activity {
                                 endDateredBorder.startAnimation(animSlidup);
                                 student_title.startAnimation(animSlidup);
                             }
+
                             @Override
                             public void onAnimationCancel(Animator animation) {
                             }
+
                             @Override
                             public void onAnimationRepeat(Animator animation) {
                             }
@@ -1822,18 +1860,19 @@ public class ScheduleLessonFragement extends Activity {
             new GetMakeUpCount().execute();
         }
     }
+
     LinkedHashMap<String, String> filterd = new LinkedHashMap<String, String>();
+
     public void addToarray() {
-            selectedID.clear();
-            selectedText.clear();
-            selectedID.add(clsID.trim());
-            selectedID.add(clsID_2.trim());
-            selectedID.add(clsID_3.trim());
-            selectedID.add(clsID_4.trim());
-            selectedID.add(clsID_5.trim());
+        selectedID.clear();
+        selectedText.clear();
+        selectedID.add(clsID.trim());
+        selectedID.add(clsID_2.trim());
+        selectedID.add(clsID_3.trim());
+        selectedID.add(clsID_4.trim());
+        selectedID.add(clsID_5.trim());
 
-
-
+Log.d("selectedID@addtoarray",selectedID.toString());
         selectedText.add(clsTxt);
         selectedText.add(clsTxt_2);
         selectedText.add(clsTxt_3);
@@ -1852,6 +1891,7 @@ public class ScheduleLessonFragement extends Activity {
      * @param stName
      */
     boolean flag = true;
+
     public void addToCorrectArray(String clsID, String stName) {
         if (flag) {
             doSomeStuff();
@@ -2017,7 +2057,7 @@ public class ScheduleLessonFragement extends Activity {
                 || strkBeg.size() > 1
                 || adltBeg.size() > 1
                 || adltInt.size() > 1) {
-            AppConfiguration.reserverForever = "0";
+//            AppConfiguration.reserverForever = "0";
             que1.startAnimation(new ExpandCollapseAnimation(que1, 500, 0, ScheduleLessonFragement.this));
         } else {
             try {
@@ -2266,14 +2306,18 @@ public class ScheduleLessonFragement extends Activity {
         } else {
             que2.setVisibility(View.GONE);
             yes2.setChecked(false);
+            yes2.setButtonDrawable(R.drawable.r0);
             no_prf2.setChecked(false);
+            no_prf2.setButtonDrawable(R.drawable.r0);
         }
         if (que1.getVisibility() == View.VISIBLE) {
             que1.startAnimation(new ExpandCollapseAnimation(que1, 500, 1, ScheduleLessonFragement.this));
         } else {
             que1.setVisibility(View.GONE);
             yes1.setChecked(false);
+            yes1.setButtonDrawable(R.drawable.r0);
             no_prf1.setChecked(false);
+            no_prf1.setButtonDrawable(R.drawable.r0);
         }
         if (students_check.getVisibility() == View.VISIBLE) {
             students_check.startAnimation(new ExpandCollapseAnimation(students_check, 500, 1, ScheduleLessonFragement.this));
@@ -2383,6 +2427,7 @@ public class ScheduleLessonFragement extends Activity {
      * @return
      */
     public boolean checkCHEKCSvalue(int limit, int limit2) {
+        scrollview.fullScroll(View.FOCUS_DOWN);
         int count = 0;
         checkedValue.clear();
         checkedValue_2.clear();
@@ -2707,10 +2752,10 @@ public class ScheduleLessonFragement extends Activity {
         temp_ID.removeAll(Collections.singleton(""));
         temp_TXT.removeAll(Collections.singleton(""));
 
-       // selectedID.clear();
+        // selectedID.clear();
         selectedText.clear();
 
-        //selectedID.addAll(temp_ID); navin 22-06-22017
+//        selectedID.addAll(temp_ID); //navin 22-06-22017
         selectedText.addAll(temp_TXT);
 
     }
@@ -2852,7 +2897,6 @@ public class ScheduleLessonFragement extends Activity {
      * Generates the CheckBoxes from the combo array.
      */
     public void chckStudents() {
-
         if (combo1.size() > 0) {
             combo1_lay.setVisibility(View.VISIBLE);
             for (int i = 0; i < combo1.size(); i++) {

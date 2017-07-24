@@ -25,6 +25,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -62,6 +63,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
     CardView nextcv;
     Context mContext = this;
     Boolean isInternetPresent = false;
+    ScrollView scrollview3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +159,8 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
 
         nextcv = (CardView) findViewById(R.id.btn_swim_next);
 
+        scrollview3=(ScrollView)findViewById(R.id.scrollView3);
+
         Animation slide_up = AnimationUtils.loadAnimation(mContext, R.anim.slid_up_popup);
         slide_up.setDuration(1000);
         acknowlegement_chk1.setAnimation(slide_up);
@@ -177,6 +181,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt2.setAnimation(slide_up);
                         acknowlegements_txt2.setVisibility(View.VISIBLE);
                         acknowlegement_chk2.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk2.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(1);
@@ -196,6 +201,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt3.setAnimation(slide_up);
                         acknowlegements_txt3.setVisibility(View.VISIBLE);
                         acknowlegement_chk3.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk3.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(2);
@@ -215,6 +221,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt4.setAnimation(slide_up);
                         acknowlegements_txt4.setVisibility(View.VISIBLE);
                         acknowlegement_chk4.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk4.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(3);
@@ -234,6 +241,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt5.setAnimation(slide_up);
                         acknowlegements_txt5.setVisibility(View.VISIBLE);
                         acknowlegement_chk5.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk5.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(4);
@@ -253,6 +261,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt6.setAnimation(slide_up);
                         acknowlegements_txt6.setVisibility(View.VISIBLE);
                         acknowlegement_chk6.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk6.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(5);
@@ -272,6 +281,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt7.setAnimation(slide_up);
                         acknowlegements_txt7.setVisibility(View.VISIBLE);
                         acknowlegement_chk7.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk7.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(6);
@@ -291,6 +301,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt8.setAnimation(slide_up);
                         acknowlegements_txt8.setVisibility(View.VISIBLE);
                         acknowlegement_chk8.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk8.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(7);
@@ -310,6 +321,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt9.setAnimation(slide_up);
                         acknowlegements_txt9.setVisibility(View.VISIBLE);
                         acknowlegement_chk9.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk9.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(8);
@@ -329,6 +341,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         acknowlegements_txt10.setAnimation(slide_up);
                         acknowlegements_txt10.setVisibility(View.VISIBLE);
                         acknowlegement_chk10.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk10.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(9);
@@ -346,6 +359,7 @@ public class SwimcompititionRegisterStep5Activity extends Activity {
                         slide_up.setDuration(400);
                         nextcv.setAnimation(slide_up);
                         nextcv.setVisibility(View.VISIBLE);
+                        scrollview3.scrollTo(0,acknowlegement_chk2.getBottom());
                     }
                 } else {
                     hideUncheckChekboxAckMessage(10);

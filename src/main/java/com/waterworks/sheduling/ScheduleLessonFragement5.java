@@ -100,7 +100,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
     private boolean timerHasStarted = false;
     private final long startTime = 120 * 1000;
     private final long interval = 1 * 1000;
-    TextView tv_timeleft;
+    TextView tv_timeleft, tv_time_msg;
     ScaleAnimation animSlide;
     /* (non-Javadoc)
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -113,7 +113,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
     String ErrorMsgConfirmschedule;
     public static int last_clicked_position = 1;
     View view_1, view_2;
-
+    String LAFitness_for_time_msg;
 //    ==============
 
     @Override
@@ -393,7 +393,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
                         //						}
                     }
                 }
-
+                Log.d("CheckBoxDtl.size()", "" + CheckBoxDtl.size());
                 if (CheckBoxDtl.size() > 0 ||
                         CheckBoxDtl1.size() > 0 ||
                         CheckBoxDtl2.size() > 0 ||
@@ -623,6 +623,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
         selected_classes_4 = (LinearLayout) findViewById(R.id.days_st_5);
 
         tv_timeleft = (TextView) findViewById(R.id.tv_timeleft);
+        tv_time_msg = (TextView) findViewById(R.id.tv_time_msg);
         tv_timeleft.setText("02:00");
 
 		/*animSlide = AnimationUtils.loadAnimation(mContext,
@@ -681,6 +682,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
         }
         return temp;
     }
+
     boolean slide_left = false;
 
     public void decide_layout(final View v_1, final View v_2) {
@@ -702,6 +704,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
             slide_left = false;
         }
     }
+
     LinearLayout temp1, temp2, temp3, temp4;
 
     public void select_lay(int pos_1, int pos_2) {
@@ -741,6 +744,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
         }
 
     }
+
     public void animation_slide(
             final LinearLayout ll2,
 
@@ -1200,7 +1204,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
             LinkedHashMap<String, String> param = new LinkedHashMap<String, String>();
 
             param.put("Token", token);
-            param.put("schedulechoices", "7");
+            param.put("schedulechoices","7");      //""7  AppConfiguration.schedulechoices
             param.put("scheduletype", String.valueOf(AppConfiguration.makeup_Clicked));
             param.put("SelectStudList",
                     SelectStudListsch5);
@@ -1240,6 +1244,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
                     JSONArray jsonMainNode = reader
                             .optJSONArray("ConformList1");
                     Counter_list.add(String.valueOf(jsonMainNode.length()));
+
 
                     for (int i = 0; i < jsonMainNode.length(); i++) {
                         hashMap = new HashMap<>();
@@ -1359,6 +1364,11 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
                         Calendar_Event.add(hashMap);
                     }
 
+                    Boolean LaFitnessA = reader.getBoolean("LaFitness");
+                    LAFitness_for_time_msg = LaFitnessA.toString();
+
+                    Log.d("@@@@@@@", LAFitness_for_time_msg);
+
                     System.out.println("Sizes : " + InstructorName.size() + Dates.size() + CheckBoxDtl.size() + Day.size());
                 } else {
                 }
@@ -1408,6 +1418,27 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
                     timerHasStarted = true;
                     viewLine.startAnimation(animSlide);
                 }
+
+//                            04-07-2017 megha for display 2 minit timer message
+                if (LAFitness_for_time_msg.equalsIgnoreCase("true")) {
+                    for (int i = 0; i < AppConfiguration.CountArray.size(); i++)
+                        if (AppConfiguration.CountArray.get(i).contains("Past due") || AppConfiguration.CountArray.get(i).equalsIgnoreCase("0")) {
+                            tv_time_msg.setText
+                                    ("We have placed a temporary hold on the lessons you have selected." +
+                                            " Please confirm your selections before the hold expires.After you confirm your schedule," +
+                                            " you will be asked to submit payment in order to finalize your schedule.");
+                        } else {
+                            tv_time_msg.setText
+                                    ("We have placed a temporary hold on the lessons you have selected." +
+                                            " Please confirm your selections before the hold expires.");
+                        }
+                } else {
+                    tv_time_msg.setText
+                            ("We have placed a temporary hold on the lessons you have selected." +
+                                    " Please confirm your selections before the hold expires.");
+                }
+
+
             } else {
                 Toast.makeText(mContext, "No data found", Toast.LENGTH_SHORT)
                         .show();
@@ -1545,7 +1576,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
             // TODO Auto-generated method stub
             HashMap<String, String> param = new HashMap<String, String>();
             param.put("Token", token);
-            param.put("schedulechoices", "7");
+            param.put("schedulechoices","7");  //"7" AppConfiguration.schedulechoices
             param.put("scheduletype", String.valueOf(AppConfiguration.makeup_Clicked));
             param.put("SelectStudList",
                     SelectStudList);
@@ -1568,7 +1599,7 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
             param.put("reserveforever",
                     AppConfiguration.reserverForever);
             param.put("calstartdate",
-                    AppConfiguration.schdl_startDate);
+                    AppConfiguration.d2_startDate);
             param.put("pair1_Cmbo1", AppConfiguration.pair1_comboValue1);
             param.put("pair1_Cmbo2", AppConfiguration.pair1_comboValue2);
             param.put("pair1_Cmbo3", AppConfiguration.pair1_comboValue3);
@@ -1904,8 +1935,8 @@ public class ScheduleLessonFragement5 extends Activity implements AnimationListe
     }
 
 
-    String[] tempid = AppConfiguration.selectedStudentID.toString()
-            .split("\\,");
+    String[] tempid = AppConfiguration.selectedStudentID.toString().split("\\,");
+
 
     String[] tempName = AppConfiguration.salStep1LessonText.toString()
             .split("\\,");

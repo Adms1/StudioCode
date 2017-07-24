@@ -14,7 +14,7 @@ import org.acra.annotation.ReportsCrashes;
 //@ReportsCrashes(mailTo = "shrenik.diwanji@gmail.com,jon@waterworksswim.com,navin@admsystems.net", // my email here
 //        mode = ReportingInteractionMode.TOAST,
 //        resToastText = R.string.toast_crash)
-@ReportsCrashes(mailTo = "admsbuild@gmail.com", // my email here
+@ReportsCrashes(mailTo = "admsbuild@gmail.com,shah10846@gmail.com", // my email here
         mode = ReportingInteractionMode.SILENT,
         resToastText = R.string.toast_crash)
 

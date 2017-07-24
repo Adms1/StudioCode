@@ -50,26 +50,21 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class BuyMoreOrderSummary extends Activity {
-    //	ButtonRectangle btn_rectangle;
     LinearLayout swimLsn, retailStore, otherPrograms, ll_inflate_orderSummary_package,
             ll_inflate_orderSummary_monthlyplan, llProductSummary;
     RelativeLayout rlQuantity;
     TextView txt_1, txt_2, txt_3, tv_payment_type, txtProductName, txtPrice, txtTax, txtQuantity, txtSubTotal,
-            txtLblPromoCode, txtPromoCode, txtTotalTax, txtTotal, txtPackage;
-    //    tv_subtotal, tv_promo, tv_salesTax, tv_total
+            txtLblPromoCode, txtPromoCode, txtTotalTax, txtTotal, txtPackage, txtLblQuantity;
     View selected_1, selected_2, selected_3, includeAddBillAddress;
     Context mContext = this;
     Button BackButton, btn_place_order, btn_viewCart;
     RadioButton rbShipBillAddress, rbShipDiffAddress;
     EditText edtAddressLine1, edtAddressLine2, edtCity, edtState, edtZipCode;
-    ListView lv_order_summary;
-    // myCartArrayAdapter myCartAdp;
     ArrayList<HashMap<String, String>> packageOrderSumaryArray = new ArrayList<HashMap<String, String>>();
     ArrayList<HashMap<String, String>> MonthlyOrderSumaryArray = new ArrayList<HashMap<String, String>>();
     String msg, token, familyID;
     ProgressDialog progressDialog;
     String errormsg = "", InvoiceID = "", pastdueAmount = "", success = "";
-    //    double subTotal, totalTax, grandTotal;
     String ErrorMsgDisplay;
     Boolean isInternetPresent = false;
 
@@ -91,7 +86,6 @@ public class BuyMoreOrderSummary extends Activity {
         Log.e("packageOrderSumaryAr-", "" + packageOrderSumaryArray);
         Log.e("MonthlyOrderSumaryAr-", "" + MonthlyOrderSumaryArray);
         msg = AppConfiguration.totalPromoArray.get(0).get("Msg");
-        // Log.e("msg--$$", msg);
         Button btnHome = (Button) findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +112,6 @@ public class BuyMoreOrderSummary extends Activity {
     public void onPause() {
         super.onPause();
         this.overridePendingTransition(R.anim.slide_in_right, R.anim.zoom_out);
-//        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override
@@ -148,50 +141,21 @@ public class BuyMoreOrderSummary extends Activity {
         txtPromoCode = (TextView) findViewById(R.id.txtPromoCode);
         txtTotalTax = (TextView) findViewById(R.id.txtTotalTax);
         txtTotal = (TextView) findViewById(R.id.txtTotal);
-
-        //Gone till no promocode implementation is done
-        /*ll_subtotal = (RelativeLayout) findViewById(R.id.ll_subtotal);
-        ll_promo = (RelativeLayout) findViewById(R.id.ll_promo);
-		ll_sales_tax = (RelativeLayout) findViewById(R.id.ll_sales_tax);*/
-//		ll_total = (RelativeLayout) findViewById(R.id.ll_total);
         ll_inflate_orderSummary_package = (LinearLayout) findViewById(R.id.ll_inflate_orderSummary_package);
         ll_inflate_orderSummary_monthlyplan = (LinearLayout) findViewById(R.id.ll_inflate_orderSummary_monthlyplan);
         tv_payment_type = (TextView) findViewById(R.id.tv_payment_type);
-        /*tv_subtotal = (TextView) findViewById(R.id.tv_subtotal);
-        tv_promo = (TextView) findViewById(R.id.tv_promo_lesson);
-		tv_salesTax = (TextView) findViewById(R.id.tv_salesTax);
-		tv_total = (TextView) findViewById(R.id.tv_total_amount);*/
-        Log.e("AppConfiguration.finalSelectedPaymentArray--check", "" + AppConfiguration.finalSelectedPaymentArray);
-        // select payment from list
+
         try {
             if (AppConfiguration.finalSelectedPaymentArray.size() != 0) {
-//			if (AppConfiguration.finalSelectedPaymentArray.get(0).get("chkSaveACH").equalsIgnoreCase("")
-//					&& AppConfiguration.finalSelectedPaymentArray.get(0).get("chkSaveCard").equalsIgnoreCase("")) {
                 tv_payment_type.setText(AppConfiguration.cardType);
-                /*if (AppConfiguration.selectedCardDetailArray.get(0).get("wu_PayTypeID").toString().equalsIgnoreCase("1")) {
-
-//				tv_payment_type.setText("Checking"
-//						+ " " + AppConfiguration.selectedCardDetailArray.get(0).get("wu_CardAccNumber"));
-
-                } else {
-//				tv_payment_type.setText(
-//						AppConfiguration.insertedCardDetailArray.get(0).get("wu_PayType") + " " + AppConfiguration.selectedCardDetailArray.get(0).get("wu_CardAccNumber"));
-                    tv_payment_type.setText(AppConfiguration.cardType);
-                }*/
-//			}
             } else {
                 // select payment by add new payment
                 // By Check
-
                 if (AppConfiguration.finalSelectedPaymentArray.get(0).get("chkSaveACH").equalsIgnoreCase("True")) {
-
                     tv_payment_type.setText(AppConfiguration.finalSelectedPaymentArray.get(0).get("txtaccno") + " " + AppConfiguration.finalSelectedPaymentArray.get(0).get("txtaccno"));
                 }
-
                 // By Card
                 if (AppConfiguration.finalSelectedPaymentArray.get(0).get("chkSaveACH").equalsIgnoreCase("False")) {
-
-//				tv_payment_type.setText(AppConfiguration.insertedCardDetailArray.get(0).get("ddlctype") + " "
                     tv_payment_type.setText(AppConfiguration.finalSelectedPaymentArray.get(0).get("strCard"));
 
                 }
@@ -209,12 +173,6 @@ public class BuyMoreOrderSummary extends Activity {
 
         inflateMonthlyPlans(MonthlyOrderSumaryArray);
         inflatePackage(packageOrderSumaryArray);
-        /*if (AppConfiguration.myCartPackageArray.size() == 0) {
-
-			Toast.makeText(getApplicationContext(), "Please select atleast one package", Toast.LENGTH_SHORT).show();
-
-		} else {
-		}*/
 
         BackButton.setOnClickListener(new OnClickListener() {
 
@@ -477,27 +435,17 @@ public class BuyMoreOrderSummary extends Activity {
                                 runOnUiThread(new Runnable() {
                                     public void run() {
                                         progressDialog.dismiss();
-                                        Toast.makeText(getApplicationContext(), errormsg, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), AppConfiguration.successMsg1, Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(BuyMoreOrderSummary.this, BuyMoreThankYou.class);
                                         startActivity(intent);
                                         finish();
                                     }
                                 });
-                                    /*JSONArray jArr = reader2.getJSONArray("InvoiceDtl");
-                                    Log.d("jArr-", "" + jArr);
-                                    for (int i = 0; i < jArr.length(); i++) {
-                                        JSONObject jObj = jArr.getJSONObject(i);
-                                        if (jObj.toString().contains("InvoiceID")) {
-                                            InvoiceID = jObj.getString("InvoiceID");
-                                            errormsg = jObj.getString("Msg");
-                                        }
-                                    }*/
                             } else {
                                 errormsg = reader.getString("Msg");
                                 runOnUiThread(new Runnable() {
                                     public void run() {
                                         progressDialog.dismiss();
-//                                        Toast.makeText(getApplicationContext(), errormsg, Toast.LENGTH_SHORT).show();
                                         SelectInstructorDialog();
                                     }
                                 });
@@ -507,7 +455,6 @@ public class BuyMoreOrderSummary extends Activity {
                             runOnUiThread(new Runnable() {
                                 public void run() {
                                     progressDialog.dismiss();
-//                                    Toast.makeText(getApplicationContext(), errormsg, Toast.LENGTH_SHORT).show();
                                     SelectInstructorDialog();
                                 }
                             });
@@ -518,7 +465,6 @@ public class BuyMoreOrderSummary extends Activity {
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 progressDialog.dismiss();
-//                                Toast.makeText(getApplicationContext(), errormsg, Toast.LENGTH_SHORT).show();
                                 SelectInstructorDialog();
                             }
                         });
@@ -546,37 +492,21 @@ public class BuyMoreOrderSummary extends Activity {
     }
 
     public void totalPromoVisibility(ArrayList<HashMap<String, String>> promoArray) {
-        // Log.e("totalpromoarray--$$",
-        // AppConfiguration.totalPromoArray.get(0).get("Msg"));
         if (msg != null) {
             if (msg.equals("No balace due.. ")) {
-				/*ll_subtotal.setVisibility(View.INVISIBLE);
-				ll_promo.setVisibility(View.INVISIBLE);
-				ll_sales_tax.setVisibility(View.INVISIBLE);*/
-//				ll_total.setVisibility(View.INVISIBLE);
             }
         } else {
-//			if(AppConfiguration.totalPromoArray.get(0).get("Tax").equalsIgnoreCase("$0.00")&& AppConfiguration.totalPromoArray.get(0).get("Promocode").equalsIgnoreCase("")){
-//				ll_sales_tax.setVisibility(View.INVISIBLE);
-//				ll_subtotal.setVisibility(View.INVISIBLE);
-//				ll_promo.setVisibility(View.INVISIBLE);
-//			}
-//			else{
-//				tv_subtotal.setText(BuyMoreSwimLession2.formatedCurrency(AppConfiguration.totalPromoArray.get(0).get("Subtotal")));
-//				tv_promo.setText(AppConfiguration.totalPromoArray.get(0).get("Package") +" FREE LESSONS");
-//				tv_salesTax.setText(AppConfiguration.totalPromoArray.get(0).get("Tax"));
-//			}
-//			tv_total.setText(BuyMoreSwimLession2.formatedCurrency(AppConfiguration.totalPromoArray.get(0).get("Total")));
             for (int i = 0; i < promoArray.size(); i++) {
                 View child = getLayoutInflater().inflate(R.layout.layout_products_order_summary, null, false);
                 txtProductName = (TextView) child.findViewById(R.id.txtProductName);
                 txtPrice = (TextView) child.findViewById(R.id.txtPrice);
                 txtTax = (TextView) child.findViewById(R.id.txtTax);
                 txtQuantity = (TextView) child.findViewById(R.id.txtQuantity);
+                txtLblQuantity = (TextView) child.findViewById(R.id.txtLblQuantity);
                 txtPackage = (TextView) child.findViewById(R.id.txtPackage);
                 llProductSummary = (LinearLayout) findViewById(R.id.llProductSummary);
                 rlQuantity = (RelativeLayout) child.findViewById(R.id.rlQuantity);
-
+//06-07-2017 megha
                 if (promoArray.get(i).get("Type").equalsIgnoreCase("lessons")) {
                     if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("8") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("9")) {
                         rlQuantity.setVisibility(View.VISIBLE);
@@ -584,10 +514,24 @@ public class BuyMoreOrderSummary extends Activity {
                     } else {
                         rlQuantity.setVisibility(View.GONE);
                     }
+
+                } else if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("34") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("33")
+                        || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("38") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("37")
+                        || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("35") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("10")
+                        || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("15") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("36")
+                        || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("12") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("14")) {
+                    rlQuantity.setVisibility(View.VISIBLE);
+                    txtQuantity.setText(promoArray.get(i).get("Location"));
+                    txtLblQuantity.setText("Location: ");
+                } else if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("6")) {
+                    rlQuantity.setVisibility(View.VISIBLE);
+                    txtQuantity.setText(promoArray.get(i).get("StudentName"));
+                    txtLblQuantity.setText("Student: ");
                 } else {
                     rlQuantity.setVisibility(View.VISIBLE);
                     txtQuantity.setText(promoArray.get(i).get("Qty"));
                 }
+
                 //this condition is to hide and show the billing address layout
                 if (promoArray.get(i).get("ItemTypeID").equals("40")) {
                     includeAddBillAddress.setVisibility(View.VISIBLE);
@@ -595,7 +539,10 @@ public class BuyMoreOrderSummary extends Activity {
                 if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("8") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("9")) {
                     txtProductName.setText(promoArray.get(i).get("Item") + " Night");
                 } else {
-                    if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("4") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("7") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("37") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("36") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("35") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("34") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("33") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("3")) {
+                    if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("4") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("7")
+                            || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("37") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("36")
+                            || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("35") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("34")
+                            || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("33") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("3")) {
                         txtProductName.setText(promoArray.get(i).get("Item"));
                     } else {
                         txtProductName.setText(promoArray.get(i).get("Item") + " " + promoArray.get(i).get("Type"));
@@ -610,24 +557,39 @@ public class BuyMoreOrderSummary extends Activity {
                     builder.append("\nSize: " + sizeString[0]);
                     txtPackage.setText(builder.toString());
 
-                } else if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("37") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("36") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("35") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("12") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("10") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("34") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("33") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("14") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("15")) {
+                } else if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("37") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("36")
+                        || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("35") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("12")
+                        || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("10") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("34")
+                        || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("33") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("14")
+                        || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("15")) {
                     txtPackage.setText("Student: " + promoArray.get(i).get("StudentName"));
 
                 } else if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("3") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("4")) {
                     txtPackage.setText("Location: " + promoArray.get(i).get("Location"));
 
                 } else {
-                    //tv_view_cart_item_package.setText("Pkg: "+ myCartArray.get(i).get("Package"));
-                    if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("8") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("9")) {
+                    if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("8") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("9")
+                            || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("7")) {
                         txtPackage.setText(promoArray.get(i).get("Package"));
+                    } else if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("13") || promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("11")) {
+                        txtPackage.setVisibility(View.GONE);
                     } else {
-                        txtPackage.setText(promoArray.get(i).get("Package") + " Lesson Package");
+//                    24-05-2017 megha
+                        if (promoArray.get(i).get("ItemTypeID").equalsIgnoreCase("1")) {
+                            int packagestr = Integer.parseInt(promoArray.get(i).get("Package"));
+                            int qtystr = Integer.parseInt(promoArray.get(i).get("Qty"));
+                            if (qtystr >= packagestr) {
+                                txtPackage.setText(promoArray.get(i).get("Qty") + " Lesson Package");
+                            } else {
+                                txtPackage.setText(promoArray.get(i).get("Package") + " Lesson Package");
+                            }
+                        } else {
+                            txtPackage.setText(promoArray.get(i).get("Package") + " Lesson Package");
+                        }
                     }
                 }
-//                txtProductName.setText(promoArray.get(i).get("Type") + " : " + promoArray.get(i).get("Item"));
                 txtPrice.setText(promoArray.get(i).get("Subtotal"));
                 txtTax.setText(promoArray.get(i).get("Tax"));
-                //txtPackage.setText(promoArray.get(i).get("Package"));
                 llProductSummary.addView(child);
             }
             txtSubTotal.setText(promoArray.get(0).get("SubTotalSum"));
@@ -642,15 +604,6 @@ public class BuyMoreOrderSummary extends Activity {
                 txtPromoCode.setVisibility(View.VISIBLE);
                 txtPromoCode.setText(promoArray.get(0).get("promotext").toString());
             }
-//            if (promoArray.get(0).get("PromoCodeInternal").toString().equals("")) {
-//                txtLblPromoCode.setVisibility(View.GONE);
-//                txtPromoCode.setVisibility(View.GONE);
-//            } else {
-//                txtLblPromoCode.setVisibility(View.VISIBLE);
-//                txtPromoCode.setVisibility(View.VISIBLE);
-//                txtPromoCode.setText(promoArray.get(0).get("PromoCodeInternal").toString());
-//            }
-
             if (includeAddBillAddress.getVisibility() == View.VISIBLE) {
                 rbShipBillAddress = (RadioButton) includeAddBillAddress.findViewById(R.id.rbShipBillAddress);
                 rbShipDiffAddress = (RadioButton) includeAddBillAddress.findViewById(R.id.rbShipDiffAddress);
@@ -717,10 +670,9 @@ public class BuyMoreOrderSummary extends Activity {
             final TextView tv_package_lesson = (TextView) view.findViewById(R.id.tv_package_lesson);
             tv_package_lesson.setText(packageOrderSumaryArray.get(i).get("Item") + " " + packageOrderSumaryArray.get(i).get("Type"));
             tv_view_cart_item_type.setVisibility(View.INVISIBLE);
-            tv_quantity.setText("Qty:" + "1");
+//            tv_quantity.setText("Qty:" + "1");
             tv_view_cart_item_price.setText(packageOrderSumaryArray.get(i).get("Price"));
             tv_view_cart_item_qty.setVisibility(View.INVISIBLE);
-//			tv_view_cart_item_qty.setText(packageOrderSumaryArray.get(i).get("Package") + " Lesson Package");
             totalQuantity = totalQuantity + Integer.parseInt(packageOrderSumaryArray.get(i).get("Package"));
             Log.e("totalQty-0", "" + totalQuantity);
             String totalQty = String.valueOf(totalQuantity);
@@ -743,9 +695,9 @@ public class BuyMoreOrderSummary extends Activity {
             final TextView tv_package_lesson = (TextView) view.findViewById(R.id.tv_package_lesson);
             tv_package_lesson.setVisibility(View.INVISIBLE);
             tv_view_cart_item_type.setText(AppConfiguration.lessionType);
-            tv_quantity.setText("Qty:" + "1");
+//            tv_quantity.setText("Qty:" + "1");
             tv_view_cart_item_price.setText(MonthlyOrderSumaryArray.get(i).get("Price"));
-            tv_view_cart_item_qty.setText(MonthlyOrderSumaryArray.get(i).get("Quantity") + " Lesson Package");
+//            tv_view_cart_item_qty.setText(MonthlyOrderSumaryArray.get(i).get("Quantity") + " Lesson Package");
 
             ll_inflate_orderSummary_monthlyplan.addView(view);
             ll_inflate_orderSummary_monthlyplan.setPadding(0, 2, 0, 2);

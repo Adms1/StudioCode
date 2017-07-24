@@ -64,23 +64,25 @@ public class AppConfiguration {
     }
 
     //This local is in use
-    public static String SOAP_ADDRESS = "http://103.204.192.187:8081/WWWebService/Service.asmx?WSDL";
-    public static String DOMAIN = "http://103.204.192.187:8081/WWWebServices/Services_Front.asmx/";
-    public static String PhotoDomain = "http://103.204.192.187:8081/NewCode";
+//    public static String SOAP_ADDRESS = "http://103.204.192.187:8081/WWWebService/Service.asmx?WSDL";
+//    public static String DOMAIN = "http://103.204.192.187:8081/WWWebServices/Services_Front.asmx/";
+//    public static String PhotoDomain = "http://103.204.192.187:8081/NewCode";
 
 //    kishansir pc 07-06-2017
 //    public static String DOMAIN = "http://103.204.192.187:8091/Services_Front.asmx/";
 
+
+//    public static String DOMAIN ="http://dev1.office.waterworksswim.com/WWWebService/Services_Front.asmx/";
     //For Live Configration
 //shrenik was here.
 
     // //U.S.
     // ="http://103.246.84.229:8081/WWWebServices/Services_Front.asmx/"; //
 
-    // live
-//    public static final String DOMAIN = "http://office.waterworksswimonline.com/WWWebService/Services_Front.asmx/";
-//    public static String SOAP_ADDRESS = "http://office.waterworksswimonline.com/WWWebService/Service.asmx?WSDL";
-//    public static String PhotoDomain = "http://office.waterworksswimonline.com/NewCode";
+////    // live
+    public static final String DOMAIN = "http://office.waterworksswimonline.com/WWWebService/Services_Front.asmx/";
+    public static String SOAP_ADDRESS = "http://office.waterworksswimonline.com/WWWebService/Service.asmx?WSDL";
+    public static String PhotoDomain = "http://office.waterworksswimonline.com/NewCode";
 
     public static int currentapiVersion = android.os.Build.VERSION.SDK_INT;
     public static boolean animation = false;
@@ -110,6 +112,8 @@ public class AppConfiguration {
     //    09-01-2017 megha
     public static ArrayList<String> selectedStudentEventID = new ArrayList<String>();
     public static ArrayList<String> CountArray = new ArrayList<String>();
+
+    public static String GetAllRecentChatsByID="GetAllRecentChatsByID";
 
     public static String Get_RegLapSwimPriceBySite = "Get_RegLapSwimPriceBySite";
     public static String Get_MonthlyLapSwimPriceBySite = "Get_MonthlyLapSwimPriceBySite";
@@ -349,6 +353,7 @@ public class AppConfiguration {
     public static String SwimCmpt_AllMeetResultForEvent = "SwimCmpt_AllMeetResultForEvent";
     public static String GetAgeGroupListForSwimMeet = "GetAgeGroupListForSwimMeet";
     public static String GetStudentEvents = "GetStudentEvents";
+    public static String Get_SiteListForFamilyPoolRecords = "Get_SiteListForFamilyPoolRecords";
     public static String SwimCmpt_GetPoolRecords = "SwimCmpt_GetPoolRecords";
     public static String SwimCmpt_AllEventList_MeetOverTime = "SwimCmpt_AllEventList_MeetOverTime";
 
@@ -362,6 +367,7 @@ public class AppConfiguration {
     public static HashMap<String, String> ShowHideScanProgramsList = new HashMap<String, String>();
     public static String st_Student1, st_Student2, st_Student3, st_Student4,
             st_Student5, list1, list2, list3, list4, list5;
+    public static ArrayList<String> st_Student1_check=new ArrayList<String>();
 
 
     // Contact Us

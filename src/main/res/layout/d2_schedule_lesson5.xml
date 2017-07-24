@@ -32,11 +32,12 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
+                    android:id="@+id/tv_time_msg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/tv_timeleft"
-                    android:text="@string/confirm_schedule_instruction" />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/tv_timeleft"
