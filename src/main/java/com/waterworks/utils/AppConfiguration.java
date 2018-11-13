@@ -356,6 +356,7 @@ public class AppConfiguration {
     public static String Get_SiteListForFamilyPoolRecords = "Get_SiteListForFamilyPoolRecords";
     public static String SwimCmpt_GetPoolRecords = "SwimCmpt_GetPoolRecords";
     public static String SwimCmpt_AllEventList_MeetOverTime = "SwimCmpt_AllEventList_MeetOverTime";
+    public static String MakePurchase_SwmTm_BindGroupByStudent="MakePurchase_SwmTm_BindGroupByStudent";
 
 
     // New Design Scheduling

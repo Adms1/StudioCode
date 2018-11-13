@@ -546,7 +546,6 @@ public class SwimcompititionRegisterStep3Activity extends Activity {
                 public void onClick(View v) {
                     // TODO Auto-generated method stub
                     if (chk1.isChecked()) {
-                        itemChecked[position] = true;
                         chkvalue = true;
                         chk1.setButtonDrawable(R.drawable.custom_check);
                         rel.setBackgroundColor(getResources().getColor(R.color.orange));

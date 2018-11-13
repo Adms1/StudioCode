@@ -2850,7 +2850,7 @@ public class ScheduleMakeupFragment extends Activity {
 
             if (wrong) {
                 checkedValue_2.clear();
-                // students_check.setBackground(getResources().getDrawable(R.drawable.error_border));
+                AppConfiguration.pair2Check = "0";
             } else {
             }
             System.out.println("Checked Value2 = " + checkedValue_2);

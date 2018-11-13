@@ -464,6 +464,7 @@ public class ManageProfile extends Activity {
                     custom_additional.addView(view);
                 } else {
                     Toast.makeText(mContext, "Limit exceeded", Toast.LENGTH_SHORT).show();
+
                 }
 
             }

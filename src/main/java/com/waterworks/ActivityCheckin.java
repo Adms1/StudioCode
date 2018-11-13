@@ -38,6 +38,8 @@ public class ActivityCheckin extends Activity {
     Boolean isInternetPresent = false;
     Context mContext = this;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -2491,6 +2491,8 @@ Log.d("selectedID@addtoarray",selectedID.toString());
 
             if (wrong) {
                 checkedValue_2.clear();
+                AppConfiguration.pair2Check = "0";
+
             } else {
             }
         }

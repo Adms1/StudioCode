@@ -8,39 +8,39 @@ package com.andexert.library;
 
 public final class R {
     public static final class attr {
-        public static final int rv_alpha = 0x7f010121;
-        public static final int rv_centered = 0x7f010126;
-        public static final int rv_color = 0x7f010125;
-        public static final int rv_framerate = 0x7f010122;
-        public static final int rv_rippleDuration = 0x7f010123;
-        public static final int rv_ripplePadding = 0x7f010128;
-        public static final int rv_type = 0x7f010127;
-        public static final int rv_zoom = 0x7f010129;
-        public static final int rv_zoomDuration = 0x7f010124;
-        public static final int rv_zoomScale = 0x7f01012a;
+        public static final int rv_alpha = 0x7f0400f3;
+        public static final int rv_centered = 0x7f0400f4;
+        public static final int rv_color = 0x7f0400f5;
+        public static final int rv_framerate = 0x7f0400f6;
+        public static final int rv_rippleDuration = 0x7f0400f7;
+        public static final int rv_ripplePadding = 0x7f0400f8;
+        public static final int rv_type = 0x7f0400f9;
+        public static final int rv_zoom = 0x7f0400fa;
+        public static final int rv_zoomDuration = 0x7f0400fb;
+        public static final int rv_zoomScale = 0x7f0400fc;
     }
     public static final class color {
-        public static final int rippelColor = 0x7f0c0077;
+        public static final int rippelColor = 0x7f060085;
     }
     public static final class id {
-        public static final int doubleRipple = 0x7f0d0040;
-        public static final int rectangle = 0x7f0d0031;
-        public static final int simpleRipple = 0x7f0d0041;
+        public static final int doubleRipple = 0x7f0901ba;
+        public static final int rectangle = 0x7f0904ba;
+        public static final int simpleRipple = 0x7f090591;
     }
     public static final class style {
-        public static final int AppTheme = 0x7f090038;
+        public static final int AppTheme = 0x7f0e0008;
     }
     public static final class styleable {
-        public static final int[] RippleView = { 0x7f010121, 0x7f010122, 0x7f010123, 0x7f010124, 0x7f010125, 0x7f010126, 0x7f010127, 0x7f010128, 0x7f010129, 0x7f01012a };
+        public static final int[] RippleView = { 0x7f0400f3, 0x7f0400f4, 0x7f0400f5, 0x7f0400f6, 0x7f0400f7, 0x7f0400f8, 0x7f0400f9, 0x7f0400fa, 0x7f0400fb, 0x7f0400fc };
         public static final int RippleView_rv_alpha = 0;
-        public static final int RippleView_rv_centered = 5;
-        public static final int RippleView_rv_color = 4;
-        public static final int RippleView_rv_framerate = 1;
-        public static final int RippleView_rv_rippleDuration = 2;
-        public static final int RippleView_rv_ripplePadding = 7;
+        public static final int RippleView_rv_centered = 1;
+        public static final int RippleView_rv_color = 2;
+        public static final int RippleView_rv_framerate = 3;
+        public static final int RippleView_rv_rippleDuration = 4;
+        public static final int RippleView_rv_ripplePadding = 5;
         public static final int RippleView_rv_type = 6;
-        public static final int RippleView_rv_zoom = 8;
-        public static final int RippleView_rv_zoomDuration = 3;
+        public static final int RippleView_rv_zoom = 7;
+        public static final int RippleView_rv_zoomDuration = 8;
         public static final int RippleView_rv_zoomScale = 9;
     }
 }

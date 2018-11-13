@@ -1,0 +1,3 @@
+# Referenced at E:\Vijay\StudioCode\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:39
+-keep class com.waterworks.ClientApp { <init>(...); }
+

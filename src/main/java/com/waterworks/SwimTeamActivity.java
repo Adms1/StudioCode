@@ -679,7 +679,7 @@ public class SwimTeamActivity extends Activity {
 
                     GroupIDSW.clear();
                     GroupName.clear();
-                    new GetGroup().execute();
+//                    new GetGroup().execute();
                 } else {
                     btn_site.setText("Select Site");
                     siteID = siteid.get(0);
@@ -706,7 +706,7 @@ public class SwimTeamActivity extends Activity {
 
                             GroupIDSW.clear();
                             GroupName.clear();
-                            new GetGroup().execute();
+//                            new GetGroup().execute();
                         }
                     });
                 }
@@ -737,8 +737,9 @@ public class SwimTeamActivity extends Activity {
             HashMap<String, String> param = new HashMap<String, String>();
             param.put("Token", "" + token);
             param.put("SiteID", siteID);
+            param.put("studentid",ChildID);
 
-            String responseString = WebServicesCall.RunScript(DOMAIN + AppConfiguration.MakePurchase_SwmTm_BindGroup,
+            String responseString = WebServicesCall.RunScript(DOMAIN + AppConfiguration.MakePurchase_SwmTm_BindGroupByStudent/*MakePurchase_SwmTm_BindGroup*/,
                     param);
             try {
                 JSONObject reader = new JSONObject(responseString);
@@ -746,6 +747,8 @@ public class SwimTeamActivity extends Activity {
                 if (data_load_group.toString().equals("True")) {
 
                     JSONArray jsonMainNode = reader.optJSONArray("MonthList");
+                    GroupName.clear();
+                    GroupIDSW.clear();
                     for (int i = 0; i < jsonMainNode.length(); i++) {
                         JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                         GroupName.add(jsonChildNode.getString("GroupName"));
@@ -875,6 +878,8 @@ public class SwimTeamActivity extends Activity {
                         btn_child.setText(Student.get(pos));
                         ChildID = StudentID.get(pos);
                         lpw_child.dismiss();
+
+                        new GetGroup().execute();
                     }
                 });
             } else {
